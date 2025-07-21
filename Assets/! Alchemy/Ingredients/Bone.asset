@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216fb22c5a5bdb048896b7c2916a1d32, type: 3}
+  m_Name: Bone
+  m_EditorClassIdentifier: 
+  ingredientID: Bone
+  sprite: {fileID: 21300000, guid: d552e02302cc9b64b8481abcb2248098, type: 3}
+  description: 'Wait, was that Larry?
+
+    Welp, bone-appetit! A boney bone from
+    a very boney someone.
+
+    Surprisingly high in calcium and magical nutrients.'
+  parchment: {fileID: 3250846232140058071, guid: f4dc9132e5bb2714e8d74711380a130f,
+    type: 3}

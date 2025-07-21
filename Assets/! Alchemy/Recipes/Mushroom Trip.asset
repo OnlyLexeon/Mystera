@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89850b7988552c43a3c390d78a44fe5, type: 3}
+  m_Name: Mushroom Trip
+  m_EditorClassIdentifier: 
+  recipeName: Mushroom Trip
+  ingredients:
+  - {fileID: 11400000, guid: 89c482e058bf2c6448e2748d95b47602, type: 2}
+  - {fileID: 11400000, guid: f8015086b455865428e0d7fbd8c6caf0, type: 2}
+  - {fileID: 11400000, guid: 5bcf3e7d22f3ed74a8145cf94803f4da, type: 2}
+  icon: {fileID: 21300000, guid: 5ebe4d39942db6b4a8fb901434e29b92, type: 3}
+  description: 'Nothing brings you joy in life, wizard? Try this!
+
+
+    The flavours
+    of the mushroom, mental levitation and aggrovation of the redshroom, and lastly
+    the devilness of the witchschroom extracted and pulled into a single bottle.
+
+
+    Recommended:
+    Add Time stones to boost duration of trip.
+
+
+    Keep away from children below
+    the age of 800.
+
+
+    Duration: 7.5 seconds'
+  defaultDuration: 7.5
+  defaultFrequency: 1.2
+  defaultIntensity: 2
+  potionType: 1
+  liquidMaterial: {fileID: 2100000, guid: def7efa64fecc694a98862ac7154258e, type: 2}
+  isShaderEffect: 1
+  isNonPotion: 0
+  objectToSpawn: {fileID: 0}

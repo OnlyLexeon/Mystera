@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89850b7988552c43a3c390d78a44fe5, type: 3}
+  m_Name: Duplication Potion
+  m_EditorClassIdentifier: 
+  recipeName: Duplication Potion
+  ingredients:
+  - {fileID: 11400000, guid: 0a69358f2deb8f94faaf74c981c35413, type: 2}
+  - {fileID: 11400000, guid: 5bcf3e7d22f3ed74a8145cf94803f4da, type: 2}
+  icon: {fileID: 21300000, guid: 75e621054fbcb1f44bbd68b94f4cf09c, type: 3}
+  description: 'Anything you can grab, you can clone!
+
+
+    Duplicate literally anything!
+    Maybe not gold though, we don''t want trouble with the IRS--
+
+
+    Radius when
+    thrown: 0.5'
+  defaultDuration: 0
+  defaultFrequency: 0
+  defaultIntensity: 0.5
+  potionType: 8
+  liquidMaterial: {fileID: 2100000, guid: c2cff53c1d718cc4e964f22749fc9d06, type: 2}
+  isShaderEffect: 0
+  isNonPotion: 0
+  objectToSpawn: {fileID: 0}

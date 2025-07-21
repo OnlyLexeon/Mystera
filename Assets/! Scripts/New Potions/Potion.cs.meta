@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 89c5b01ec1101fb4da506dc28e1b0e8b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - drinkSound: {instanceID: 0}
+  - corkRemoveSound: {instanceID: 0}
+  - clearMat: {fileID: 2100000, guid: e67f83e0ce622574584051701fd0268c, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

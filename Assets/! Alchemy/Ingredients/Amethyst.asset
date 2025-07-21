@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216fb22c5a5bdb048896b7c2916a1d32, type: 3}
+  m_Name: Amethyst
+  m_EditorClassIdentifier: 
+  ingredientID: Amethyst
+  sprite: {fileID: 21300000, guid: a53acce6d99f7a343946c4eaa9377cc1, type: 3}
+  description: "A purple gemstone imbued with lightning\u2019s pulse.\nCapable of
+    storing volatile energy for centuries,\nwaiting to be unleashed by only the strongest
+    of mages."
+  parchment: {fileID: 3250846232140058071, guid: d45ac8d984b1ce84b8541a7d8e18b028,
+    type: 3}

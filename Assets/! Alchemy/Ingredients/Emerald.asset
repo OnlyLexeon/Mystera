@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216fb22c5a5bdb048896b7c2916a1d32, type: 3}
+  m_Name: Emerald
+  m_EditorClassIdentifier: 
+  ingredientID: Emerald
+  sprite: {fileID: 21300000, guid: 7aa85e0e1837f4e4696333318fafa4f1, type: 3}
+  description: '"hrMM-", whatever they said.
+
+    A vibrant green gem pulsing with
+    ancient life.
+
+    Grown in veins of earth kissed by forgotten gods.'
+  parchment: {fileID: 3250846232140058071, guid: 1265f6eb7c10c444fbb56eb3c7910ab2,
+    type: 3}

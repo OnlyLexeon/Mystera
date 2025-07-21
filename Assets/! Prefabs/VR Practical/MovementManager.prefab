@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5555473841640945287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8196142510245374489}
+  - component: {fileID: 2750385838765408405}
+  - component: {fileID: 2826668426977937065}
+  m_Layer: 0
+  m_Name: MovementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8196142510245374489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555473841640945287}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.839058, y: -8.942982, z: -14.940591}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2750385838765408405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555473841640945287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23de1eb380a2927448da5cb0c7b3a96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMode: 0
+  continuousMoveProvider: {fileID: 0}
+  teleportationProvider: {fileID: 0}
+  leftTeleportRay: {fileID: 0}
+  leftRayInteractor: {fileID: 0}
+  xrCamera: {fileID: 0}
+  teleportActivate:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Teleport Activate
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: fc8d3223-bb90-47f3-9403-b50807da6a54
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 5733415d-2313-42b2-b085-09900b663596
+        m_Path: <QuestTouchPlusController>{LeftHand}/thumbstick/up
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Teleport Activate
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  teleportCancel:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Teleport Cancel
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: be9a2758-b057-451b-a774-5715a6b1e579
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 8fedc2a7-71af-49b3-a817-941d67710552
+        m_Path: <XRInputV1::Oculus::MetaQuestTouchPlusControllerOpenXR>{LeftHand}/grippressed
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Teleport Cancel
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  OnTeleport:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: FadeCanvas, Assembly-CSharp
+        m_MethodName: QuickFadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2826668426977937065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555473841640945287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336e797c5fff7c048b508ae52be51431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xrOrigin: {fileID: 0}
+  moveThreshold: 1
+  teleportThreshold: 1
+  turnThreshold: 15
+  hasMoved: 0
+  hasTurned: 0
+  isTracking: 0

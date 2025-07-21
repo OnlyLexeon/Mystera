@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3b737542b103eed45bcfca6820404c34
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - particleFire: {fileID: 785221139251955134, guid: edd1d166a8f073e458f105731aecfba8,
+      type: 3}
+  - burnedSound: {fileID: 8300000, guid: 697a4644771096642879f85a88c713a3, type: 3}
+  - onFireSound: {fileID: 8300000, guid: faafd00bcf091bf468767bfd6a7a28be, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

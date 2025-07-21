@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216fb22c5a5bdb048896b7c2916a1d32, type: 3}
+  m_Name: Ruby
+  m_EditorClassIdentifier: 
+  ingredientID: Ruby
+  sprite: {fileID: 21300000, guid: 0a518736f8b6e4b4e9b1572f11d535ec, type: 3}
+  description: 'A gem born in volcanic fury and tempered in ancient fire.
+
+    Pulses
+    with warmth, passion, and the occasional fireball.
+
+
+    The cousin of Amber
+    gems, the only difference is this burns *internally*.'
+  parchment: {fileID: 3250846232140058071, guid: 7811751d5e757294ab1c948535fea995,
+    type: 3}

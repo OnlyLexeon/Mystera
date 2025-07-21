@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216fb22c5a5bdb048896b7c2916a1d32, type: 3}
+  m_Name: Iron
+  m_EditorClassIdentifier: 
+  ingredientID: Iron
+  sprite: {fileID: 21300000, guid: 6ff648946a838c04096ca3c81c9cf2dd, type: 3}
+  description: 'A metal forged through centuries of toil and fire.
+
+    Heavy in
+    both weight and magical potential.
+
+    Known to make things unbreakable.'
+  parchment: {fileID: 3250846232140058071, guid: e49bafce27b4fd44cba07558cf5ca000,
+    type: 3}

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\admin\\Downloads\\Mystera\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\admin\\downloads\\mystera\\assets\\! scripts\\managers\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TutorialManager.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\TutorialManager.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\TutorialManager.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\TutorialManager.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Managers\\TutorialManager.cs",
+              "ViewState": "AQIAAFkBAAAAAAAAAAAiwEoAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T16:49:19.931Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

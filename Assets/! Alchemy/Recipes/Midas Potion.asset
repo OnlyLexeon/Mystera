@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89850b7988552c43a3c390d78a44fe5, type: 3}
+  m_Name: Midas Potion
+  m_EditorClassIdentifier: 
+  recipeName: Midas Potion
+  ingredients:
+  - {fileID: 11400000, guid: c47cc93b96d76a540aee2422a3d65743, type: 2}
+  - {fileID: 11400000, guid: 09e87c3c3a45a744789148883d26a0c1, type: 2}
+  icon: {fileID: 21300000, guid: 084fe5c0b3bf36749bfe6590c35a75c5, type: 3}
+  description: 'Low on gold? Midas'' touch turns anything you touch into solid-mineral
+    gold!
+
+
+    Warning: Do not touch any loved ones while in effect. I miss her.
+
+
+    Duration:
+    25 seconds'
+  defaultDuration: 25
+  defaultFrequency: 0
+  defaultIntensity: 0
+  potionType: 2
+  liquidMaterial: {fileID: 2100000, guid: b55f4cfa480998b42a1988c8779bffc6, type: 2}
+  isShaderEffect: 0
+  isNonPotion: 0
+  objectToSpawn: {fileID: 0}

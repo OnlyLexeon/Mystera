@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89850b7988552c43a3c390d78a44fe5, type: 3}
+  m_Name: Glow Potion
+  m_EditorClassIdentifier: 
+  recipeName: Glow Potion
+  ingredients:
+  - {fileID: 11400000, guid: 5ddcb14b029eece4da5efdab053e1daf, type: 2}
+  - {fileID: 11400000, guid: ea75f301944ea514a98a4392d15ed5c6, type: 2}
+  icon: {fileID: 21300000, guid: 3c70097e22e2d9043a46143a6832ed38, type: 3}
+  description: 'Shine like a star!
+
+    Chuck this at anything and it starts emitting
+    light!
+
+
+    Safe for consumption!
+
+    Caution: Effects may cause temporary
+    blindness.
+
+
+    Duration: 30
+
+    Intensity: 1
+
+    Radius when thrown: 1'
+  defaultDuration: 30
+  defaultFrequency: 1
+  defaultIntensity: 1
+  potionType: 6
+  liquidMaterial: {fileID: 2100000, guid: b57e049713bb44740bc008fc38917aad, type: 2}
+  isShaderEffect: 0
+  isNonPotion: 0
+  objectToSpawn: {fileID: 0}

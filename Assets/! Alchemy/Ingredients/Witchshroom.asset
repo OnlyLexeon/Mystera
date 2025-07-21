@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216fb22c5a5bdb048896b7c2916a1d32, type: 3}
+  m_Name: Witchshroom
+  m_EditorClassIdentifier: 
+  ingredientID: Witchshroom
+  sprite: {fileID: 21300000, guid: f35214a6886c99b4ebea4c6b984d92db, type: 3}
+  description: 'Dark, twisted, and deeply enchanted.
+
+    Said to grow only under
+    full moons and whispered curses.
+
+
+    Used in forbidden brews.
+
+    Not recommended
+    for snacks. Or friends. Or sanity.'
+  parchment: {fileID: 3250846232140058071, guid: f9358472a1b353c45b84099744cf0678,
+    type: 3}
