@@ -1,21 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\TARUMT\\Downloads\\Mystera\\",
+  "WorkspaceRootPath": "D:\\admin\\Downloads\\Mystera\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|c:\\users\\tarumt\\downloads\\mystera\\assets\\! scripts\\managers\\altartabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\admin\\downloads\\mystera\\assets\\! scripts\\ui\\tutorialdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\ui\\tutorialdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\! scripts\\managers\\altartabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\altartabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\TARUMT\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\admin\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\TARUMT\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Runtime\\RendererFeatures\\FullScreenPassRendererFeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\admin\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Runtime\\RendererFeatures\\FullScreenPassRendererFeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal\\Runtime\\RendererFeatures\\FullScreenPassRendererFeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Users\\TARUMT\\Downloads\\Mystera\\assets\\! scripts\\managers\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\! scripts\\managers\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -31,36 +35,47 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AltarTabManager.cs",
-              "DocumentMoniker": "C:\\Users\\TARUMT\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\AltarTabManager.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\AltarTabManager.cs",
-              "ToolTip": "C:\\Users\\TARUMT\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\AltarTabManager.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Managers\\AltarTabManager.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAqwHUAAAA1AAAAAAAAAA==",
+              "Title": "TutorialDialogue.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\UI\\TutorialDialogue.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\UI\\TutorialDialogue.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\UI\\TutorialDialogue.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\UI\\TutorialDialogue.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T08:01:16.297Z",
+              "WhenOpened": "2025-07-22T14:25:01.826Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TMP_PackageResourceImporter.cs",
-              "DocumentMoniker": "C:\\Users\\TARUMT\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs",
-              "ToolTip": "C:\\Users\\TARUMT\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAADZAAAAAAAAAA==",
+              "Title": "AltarTabManager.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\AltarTabManager.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\AltarTabManager.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\AltarTabManager.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Managers\\AltarTabManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T07:47:54.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T08:01:16.297Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "TMP_PackageResourceImporter.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.ugui\\Runtime\\TMP\\TMP_PackageResourceImporter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAADZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T07:47:54.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "FullScreenPassRendererFeature.cs",
-              "DocumentMoniker": "C:\\Users\\TARUMT\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Runtime\\RendererFeatures\\FullScreenPassRendererFeature.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Runtime\\RendererFeatures\\FullScreenPassRendererFeature.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal\\Runtime\\RendererFeatures\\FullScreenPassRendererFeature.cs",
-              "ToolTip": "C:\\Users\\TARUMT\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Runtime\\RendererFeatures\\FullScreenPassRendererFeature.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Runtime\\RendererFeatures\\FullScreenPassRendererFeature.cs",
               "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.universal\\Runtime\\RendererFeatures\\FullScreenPassRendererFeature.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAqwFoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -68,11 +83,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TutorialManager.cs",
-              "DocumentMoniker": "C:\\Users\\TARUMT\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\TutorialManager.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\TutorialManager.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\TutorialManager.cs",
-              "ToolTip": "C:\\Users\\TARUMT\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\TutorialManager.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\TutorialManager.cs",
               "RelativeToolTip": "Assets\\! Scripts\\Managers\\TutorialManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
