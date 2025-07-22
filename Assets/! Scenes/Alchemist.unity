@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: e1c2863809fd6444a8f04bcf638615d6, type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 4890085278179872738, guid: e064aab152cde5341983ff970384a69a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -14590,11 +14590,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6652420436152535796, guid: b8335dd087f3d03489cd374559b8f139, type: 3}
---- !u!23 &547367777 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 8486991637886531992, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
-  m_PrefabInstance: {fileID: 2510315233684837444}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &549750838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18184,11 +18179,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804455435}
   m_CullTransparentMesh: 1
---- !u!23 &806170696 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1282935966780549055, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
-  m_PrefabInstance: {fileID: 2510315233684837444}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &815872062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48597,10 +48587,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1306062287}
-    - target: {fileID: 1911926219457923615, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
-      propertyPath: handRenderer
-      value: 
-      objectReference: {fileID: 806170696}
     - target: {fileID: 1929276816838263102, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -48645,10 +48631,6 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 782010907}
-    - target: {fileID: 3553525618359386631, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
-      propertyPath: handRenderer
-      value: 
-      objectReference: {fileID: 547367777}
     - target: {fileID: 3571304681766249118, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -48781,10 +48763,6 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 782010907}
-    - target: {fileID: 7478074693993493499, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7651877697072771811, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
       propertyPath: m_Name
       value: XR Rig - Player
