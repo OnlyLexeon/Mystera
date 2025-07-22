@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: df88808ccf7162f418b016ba761bfa39
+guid: 4444434ac8d0dfc41b538e0c01127389
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dungeons_MAIN.002
-    second: {fileID: 2100000, guid: d08a0d1aba6bbce4b815d4bd76548e32, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dungeons_MAIN.005
-    second: {fileID: 2100000, guid: d08a0d1aba6bbce4b815d4bd76548e32, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dungeons_MAIN.011
-    second: {fileID: 2100000, guid: d08a0d1aba6bbce4b815d4bd76548e32, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
