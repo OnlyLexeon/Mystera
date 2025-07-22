@@ -835,8 +835,7 @@ MonoBehaviour:
   m_text: Witchshroom yes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
-  m_sharedMaterial: {fileID: 2661962436221633166, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd,
-    type: 2}
+  m_sharedMaterial: {fileID: 2661962436221633166, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 6529f8cc57f999a4fb37ae5baacab0e6, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: e1c2863809fd6444a8f04bcf638615d6, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: e064aab152cde5341983ff970384a69a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -2748,7 +2748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &127121261
 Transform:
   m_ObjectHideFlags: 0
@@ -3568,8 +3568,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 643fb3b771ac0cc45a09838341f855f7, type: 2}
   - {fileID: 11400000, guid: 9ebbb576829df1041ba7d7a94ba3d24f, type: 2}
   - {fileID: 11400000, guid: f74cc86938f3a7c49b711e1115de3e31, type: 2}
-  - {fileID: 11400000, guid: 24ab03b804f54af4c8a48085606bb9b5, type: 2}
-  - {fileID: 11400000, guid: 608311edb82086f419ec09b2ce58a390, type: 2}
 --- !u!4 &205272230
 Transform:
   m_ObjectHideFlags: 0
@@ -4027,7 +4025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &249764933
 Transform:
   m_ObjectHideFlags: 0
@@ -4650,8 +4648,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Playing: Lena Raine - Aerie'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
-  m_sharedMaterial: {fileID: 2661962436221633166, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4952,7 +4950,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13387,8 +13385,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Recipes
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
-  m_sharedMaterial: {fileID: 2661962436221633166, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13576,7 +13574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &463795874
 Transform:
   m_ObjectHideFlags: 0
@@ -14371,7 +14369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57bc1d17afc306a4cae984805d647a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rendererData: {fileID: 11400000, guid: 19b3aa91c1484d34ea9146992850059d, type: 2}
+  rendererData: {fileID: 11400000, guid: f905e58814a147a43951a33877447a82, type: 2}
 --- !u!4 &509564892
 Transform:
   m_ObjectHideFlags: 0
@@ -14592,6 +14590,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6652420436152535796, guid: b8335dd087f3d03489cd374559b8f139, type: 3}
+--- !u!23 &547367777 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8486991637886531992, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
+  m_PrefabInstance: {fileID: 2510315233684837444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &549750838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18181,6 +18184,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804455435}
   m_CullTransparentMesh: 1
+--- !u!23 &806170696 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1282935966780549055, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
+  m_PrefabInstance: {fileID: 2510315233684837444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &815872062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18724,7 +18732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &848667589
 Transform:
   m_ObjectHideFlags: 0
@@ -21915,7 +21923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &998149997
 Transform:
   m_ObjectHideFlags: 0
@@ -24677,6 +24685,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 931766338}
     m_Modifications:
+    - target: {fileID: 261211707151206815, guid: ff30e4f1591d8fe42bc7101077b2d905, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 578558936870152242, guid: ff30e4f1591d8fe42bc7101077b2d905, type: 3}
       propertyPath: m_Name
       value: Light_03
@@ -24720,6 +24732,10 @@ PrefabInstance:
     - target: {fileID: 2061538603361262306, guid: ff30e4f1591d8fe42bc7101077b2d905, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8853438881220211252, guid: ff30e4f1591d8fe42bc7101077b2d905, type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24872,7 +24888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1158527026
 Transform:
   m_ObjectHideFlags: 0
@@ -25259,8 +25275,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Shuffle
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
-  m_sharedMaterial: {fileID: 2661962436221633166, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -26712,7 +26728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1218908043
 Transform:
   m_ObjectHideFlags: 0
@@ -27604,7 +27620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1272540505
 Transform:
   m_ObjectHideFlags: 0
@@ -28340,8 +28356,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ingredients
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
-  m_sharedMaterial: {fileID: 2661962436221633166, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -29419,7 +29435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1375714655
 Transform:
   m_ObjectHideFlags: 0
@@ -33860,7 +33876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1707057997
 Transform:
   m_ObjectHideFlags: 0
@@ -36056,7 +36072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1844034944
 Transform:
   m_ObjectHideFlags: 0
@@ -36205,8 +36221,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '"Imprisoned" Bard Bob'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
-  m_sharedMaterial: {fileID: 2661962436221633166, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -37548,8 +37564,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Items
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
-  m_sharedMaterial: {fileID: 2661962436221633166, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -38138,7 +38154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1950036077
 Transform:
   m_ObjectHideFlags: 0
@@ -39153,7 +39169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2005424065
 Transform:
   m_ObjectHideFlags: 0
@@ -39635,8 +39651,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sleep
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
-  m_sharedMaterial: {fileID: 2661962436221633166, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -40663,7 +40679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2104327007
 Transform:
   m_ObjectHideFlags: 0
@@ -48581,6 +48597,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1306062287}
+    - target: {fileID: 1911926219457923615, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
+      propertyPath: handRenderer
+      value: 
+      objectReference: {fileID: 806170696}
     - target: {fileID: 1929276816838263102, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -48625,6 +48645,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 782010907}
+    - target: {fileID: 3553525618359386631, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
+      propertyPath: handRenderer
+      value: 
+      objectReference: {fileID: 547367777}
     - target: {fileID: 3571304681766249118, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -48645,14 +48669,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1306062287}
-    - target: {fileID: 4135539923292481141, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 4135539923292481141, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 4145945767711723045, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -48765,6 +48781,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 782010907}
+    - target: {fileID: 7478074693993493499, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7651877697072771811, guid: 6700b225d5498f8489c8f0b2b788be5d, type: 3}
       propertyPath: m_Name
       value: XR Rig - Player

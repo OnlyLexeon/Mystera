@@ -23,7 +23,6 @@ public enum TutorialStep
     EndTutorial
 }
 
-[RequireComponent(typeof(LineRenderer))]
 public class TutorialManager : MonoBehaviour
 {
     [Header("Events References")]
