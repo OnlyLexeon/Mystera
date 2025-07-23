@@ -26,14 +26,21 @@ public class MovementDetection : MonoBehaviour
         instance = this;
     }
 
-    void Start()
+    public void StartTracking()
     {
+        isTracking = true;
+
         if (xrOrigin != null)
         {
             lastPosition = xrOrigin.transform.position;
             lastTeleportCheckPosition = lastPosition;
             lastYRotation = xrOrigin.transform.eulerAngles.y;
         }
+    }
+
+    public void StopTracking()
+    {
+        isTracking = false;
     }
 
     void Update()

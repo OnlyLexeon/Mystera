@@ -112,7 +112,7 @@ public class TutorialManager : MonoBehaviour
         wand.hasBeenActivated = false;
         potScript.hasAddedIngredient = false;
 
-        MovementDetection.instance.isTracking = true;
+        MovementDetection.instance.StartTracking();
 
         DoTutorialNextStep();
     }
@@ -225,7 +225,10 @@ public class TutorialManager : MonoBehaviour
                     break;
                 case TutorialStep.RotateRight:
                     if (MovementDetection.instance.hasTurned)
+                    {
+                        MovementDetection.instance.StartTracking();
                         CompleteStep(TutorialStep.RotateRight);
+                    }
                     break;
                 case TutorialStep.MoveToAltar:
                     if (IsPlayerCloseToTarget())
