@@ -316,31 +316,7 @@ MonoBehaviour:
       m_Calls: []
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4746259061576935392}
-        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
-        m_MethodName: set_useGravity
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4746259061576935392}
-        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
-        m_MethodName: set_isKinematic
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -504,8 +480,7 @@ AudioSource:
   m_GameObject: {fileID: 9190544803535663311}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 7617387242652746421, guid: 66c572b2aa40a2c4b8818dbb68a12e0c,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 7617387242652746421, guid: 66c572b2aa40a2c4b8818dbb68a12e0c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 117ea5767c719ad4ab95cc8aef8cd71c, type: 3}
   m_Resource: {fileID: 8300000, guid: 117ea5767c719ad4ab95cc8aef8cd71c, type: 3}
   m_PlayOnAwake: 1
@@ -611,8 +586,7 @@ MonoBehaviour:
   isOnFire: 0
   health: 5
   isBurned: 0
-  particleFire: {fileID: 785221139251955134, guid: edd1d166a8f073e458f105731aecfba8,
-    type: 3}
+  particleFire: {fileID: 785221139251955134, guid: edd1d166a8f073e458f105731aecfba8, type: 3}
   particleScale: 0.5
   burnedSound: {fileID: 8300000, guid: 697a4644771096642879f85a88c713a3, type: 3}
   onFireSound: {fileID: 8300000, guid: faafd00bcf091bf468767bfd6a7a28be, type: 3}
