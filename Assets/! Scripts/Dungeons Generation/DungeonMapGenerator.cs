@@ -223,7 +223,7 @@ public class DungeonMapGenerator : MonoBehaviour
     void SpawnExitRoom()
     {
         int attempts = 0;
-        while (attempts < 10)
+        while (attempts < 50)
         {
             if (openConnectors.Count == 0)
             {
@@ -244,6 +244,9 @@ public class DungeonMapGenerator : MonoBehaviour
             foreach (var exitConn in exitScript.connectors)
             {
                 AlignRoom(exitScript, exitConn, conn);
+
+                exitScript.boundsCollider.enabled = false;
+                exitScript.boundsCollider.enabled = true;
 
                 if (IsRoomValid(exitScript, conn.parentRoom))
                 {
