@@ -34693,6 +34693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ca4ca8a856dcb44b36584cd0816eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slots: []
+  MaxSlots: 15
 --- !u!4 &2079449602
 Transform:
   m_ObjectHideFlags: 0
@@ -57357,7 +57359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5222453940505540540, guid: 364b4f12314d0fb4ea2870ddcc2f1842, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4220589
+      value: 1.1220589
       objectReference: {fileID: 0}
     - target: {fileID: 5222453940505540540, guid: 364b4f12314d0fb4ea2870ddcc2f1842, type: 3}
       propertyPath: m_LocalPosition.z
