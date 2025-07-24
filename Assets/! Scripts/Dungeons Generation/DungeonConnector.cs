@@ -16,7 +16,9 @@ public class DungeonConnector : MonoBehaviour
     {
         if (used || sealPrefab == null) return;
 
-        Instantiate(sealPrefab, transform.position, transform.rotation, transform);
+        Quaternion sealRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
+        Instantiate(sealPrefab, transform.position, sealRotation, transform);
+
     }
 
 #if UNITY_EDITOR
