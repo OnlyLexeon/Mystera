@@ -11,9 +11,17 @@ public class EffectManager : MonoBehaviour
 
     public static EffectManager instance;
 
-    private void Awake()
+    void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()
