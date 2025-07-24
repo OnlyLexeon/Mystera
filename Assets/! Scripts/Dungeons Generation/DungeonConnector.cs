@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class DungeonConnector : MonoBehaviour
+{
+    public DungeonRoom parentRoom;
+    public GameObject sealPrefab;
+
+    [HideInInspector] public bool used = false;
+
+    public void MarkUsed()
+    {
+        used = true;
+    }
+
+    public void Seal()
+    {
+        if (used || sealPrefab == null) return;
+
+        Instantiate(sealPrefab, transform.position, transform.rotation, transform);
+    }
+
+#if UNITY_EDITOR
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = used ? Color.green : Color.red;
+        Gizmos.DrawRay(transform.position, transform.forward * 0.5f);
+
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * 0.75f);
+        Gizmos.DrawWireSphere(transform.position, 0.05f);
+    }
+#endif
+}
