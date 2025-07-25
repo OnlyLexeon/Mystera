@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework.Constraints;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpellCasting : MonoBehaviour
@@ -15,6 +16,8 @@ public class SpellCasting : MonoBehaviour
     public int maxPoints = 100;
     public float pointInterval = 0.01f;
     public bool grabbing = false;
+    [Range(0, 100)]
+    public float matchingThreshold = 0.75f;
 
     [Header("Matching Algo")]
     [Tooltip("Higher the vectors amount, higher accuracy but more calculation time.")]
@@ -29,7 +32,15 @@ public class SpellCasting : MonoBehaviour
     public LineRenderer currentLine;
     public Vector3 canvaStartingPoint;
 
+    [Header("Private Resamplaing Data")]
+    public List<Vector2> resamplePoints = new List<Vector2>();
     public List<Vector2> resampleVectors = new List<Vector2>();
+    public float totalLength = 0;
+    public float matchingScore = 0f;
+
+    [Header("Testing")]
+    public List<Vector2> prevResampledVectors = new List<Vector2>();
+    public LineRenderer testingLine;
 
     private void Start()
     {
@@ -50,7 +61,6 @@ public class SpellCasting : MonoBehaviour
         //canvaStartingPoint.transform.position = drawPoint.transform.position;
         if (linePositionIndex == 0)
         {
-            Debug.Log("First Point");
             linePositionIndex++;
             currentLine.positionCount = linePositionIndex;
             newPoint = drawPoint.transform.position - canvaStartingPoint;
@@ -65,6 +75,7 @@ public class SpellCasting : MonoBehaviour
 
             if (Vector3.Distance(newPoint, currentLine.GetPosition(currentLine.positionCount - 1)) > pointInterval)
             {
+                totalLength += Vector3.Distance(newPoint, currentLine.GetPosition(currentLine.positionCount - 1));
                 linePositionIndex++;
                 currentLine.positionCount = linePositionIndex;
                 currentLine.SetPosition(linePositionIndex - 1, newPoint);
@@ -73,17 +84,11 @@ public class SpellCasting : MonoBehaviour
         }
     }
 
-    public void ResetDrawing()
-    {
-        linePositionIndex = 0;
-        drawnPoints.Clear();
-        Destroy(currentLine);
-    }
-
     public void StartDrawing()
     {
         if (canDraw)
         {
+            totalLength = 0;
             canDraw = false;
             isDrawing = true;
             canvaStartingPoint = drawPoint.transform.position;
@@ -102,7 +107,18 @@ public class SpellCasting : MonoBehaviour
     public void StopDrawing()
     {
         isDrawing = false;
+        ResampleVectors();
         ResetDrawing();
+
+        //if (prevResampledVectors.Count > 0)
+        //{
+        //    CompareVectors(prevResampledVectors);
+        //}
+
+        //prevResampledVectors = resampleVectors;
+
+        CompareVectors(prevResampledVectors);
+
         StartCoroutine(DrawingCooldown());
     }
 
@@ -112,106 +128,82 @@ public class SpellCasting : MonoBehaviour
         canDraw = true;
     }
 
-    List<Vector2> ResamplePoints(List<Vector2> points)
+    // Shape Recognition Algorithms
+
+    public void ResetDrawing()
     {
-        List<Vector2> resampledPoints = new List<Vector2>();
-        float totalLength = 0f;
+        linePositionIndex = 0;
+        drawnPoints.Clear();
 
-        for(int i =1;i<points.Count;i++)
+        //testingLine.positionCount = resamplePoints.Count;
+        //for (int i = 0; i < resamplePoints.Count; i++)
+        //{
+        //    testingLine.SetPosition(i, resamplePoints[i]);
+        //}
+        testingLine.positionCount = resampleVectors.Count;
+        for (int i = 0; i < resampleVectors.Count; i++)
         {
-            totalLength += Vector2.Distance(points[i - 1], points[i]);
+            testingLine.SetPosition(i, resampleVectors[i]);
         }
+        //currentLine = null;
 
-        if (totalLength == 0) return points;
+        Destroy(currentLine);
+    }
 
-        float step = totalLength / (vectorAmount - 1);
+    public void ResampleVectors()
+    {
+        if (resamplePoints.Count > 0)
+            resamplePoints.Clear();
+        if (resampleVectors.Count > 0)
+            resampleVectors.Clear();
+
+        float steps = totalLength / vectorAmount;
         float currentDistance = 0f;
         int currentIndex = 0;
-        resampledPoints.Add(points[0]);
+        resamplePoints.Add(drawnPoints[0]);
 
-        for(int i=1;i<vectorAmount-1;i++)
+        for (int i = 1; i < vectorAmount; i++)
         {
-            float targetDistance = i * step;
-            while (currentDistance < targetDistance && currentIndex < points.Count - 1)
+            float targetDistance = i * steps;
+            while (currentDistance < targetDistance && currentIndex < drawnPoints.Count - 1)
             {
-                float segmentLength = Vector2.Distance(points[currentIndex], points[currentIndex + 1]);
+                float segmentLength = Vector2.Distance(drawnPoints[currentIndex], drawnPoints[currentIndex + 1]);
                 currentDistance += segmentLength;
                 currentIndex++;
-
             }
-            if (currentIndex >= points.Count) break;
+            if (currentIndex >= drawnPoints.Count)
+                break;
 
-            float overshoot = currentDistance - targetDistance;
-            float t = overshoot / Vector2.Distance(points[currentIndex - 1], points[currentIndex]);
-            Vector2 interpolatedPoint = Vector2.Lerp(points[currentIndex], points[currentIndex - 1], t);
-            resampledPoints.Add(interpolatedPoint);
+            float overshootDistance = currentDistance - targetDistance;
+            float lerpT = overshootDistance / Vector2.Distance(drawnPoints[currentIndex - 1], drawnPoints[currentIndex]);
+            Vector2 interpolatedPoint = Vector2.Lerp(drawnPoints[currentIndex], drawnPoints[currentIndex - 1], lerpT);
+            resamplePoints.Add(interpolatedPoint);
         }
-        resampledPoints.Add(points[points.Count - 1]);
-        return resampledPoints;
+
+        resamplePoints.Add(drawnPoints[drawnPoints.Count - 1]);
+
+        for (int i = 0; i < resamplePoints.Count - 1; i++)
+        {
+            //resampleVectors.Add(resamplePoints[i + 1] - resamplePoints[i]);
+            //resampleVectors[i].Normalize();
+
+            Vector2 newVector = resamplePoints[i + 1] - resamplePoints[i];
+            newVector.Normalize();
+            resampleVectors.Add(newVector);
+
+            //Debug.Log(i +"Sample Vectors :" +resampleVectors[i]);
+        }
     }
 
-    List<Vector2> NormalizePoints(List<Vector2> points)
+    public void CompareVectors(List<Vector2> targetVectors)
     {
-        if (points.Count == 0) return points;
-
-        //find the bounding box
-        float minX = points[0].x, maxX = points[0].x;
-        float minY = points[0].y, maxY = points[0].y;
-        for (int i = 1; i < points.Count; i++)
+        matchingScore = 0f;
+        for (int i = 0; i < vectorAmount; i++)
         {
-            minX = Mathf.Min(minX, points[i].x);
-            maxX = Mathf.Max(maxX, points[i].x);
-            minY = Mathf.Min(minY, points[i].y);
-            maxY = Mathf.Min(maxY, points[i].y);
+            matchingScore += Vector2.Dot(resampleVectors[i], targetVectors[i]);
+            Debug.Log(i + ": " + matchingScore);
         }
 
-        float centerX = (minX + maxX) / 2f;
-        float centerY = (minY + maxY) / 2f;
-        float width = maxX - minX;
-        float height = maxY - minY;
-        if (width == 0 || height == 0) return points; //avoid division by 0
-
-        //normalize to 0-1 range
-        List<Vector2> normalizedPoints = new List<Vector2>();
-        for (int i = 0; i < points.Count; i++)
-        {
-            float normalizedX = (points[i].x - centerX) / width;
-            float normalizedY = (points[i].y - centerY) / height;
-            normalizedPoints.Add(new Vector2(normalizedX, normalizedY));
-        }
-        return normalizedPoints;
-    }
-
-    List<float> CalculateTurningAngles(List<Vector2> points)
-    {
-        List<float> angles = new List<float>();
-        if (points.Count < 3) return angles;
-
-        for (int i = 1; i < points.Count - 1; i++)
-        {
-            Vector2 p1 = points[i - 1];
-            Vector2 p2 = points[i];
-            Vector2 p3 = points[i + 1];
-
-            //calculate vector
-            Vector2 v1 = p1 - p2;
-            Vector2 v2 = p2 - p3;
-
-            float angle = Vector2.Angle(v1, v2);
-            angles.Add(angle);
-        }
-
-        //connect back to first point (handle tha angle at the last point
-        if (points.Count >= 3)
-        {
-            Vector2 p1 = points[points.Count - 2];
-            Vector2 p2 = points[points.Count - 1];
-            Vector2 p3 = points[0];
-            Vector2 v1 = p1 - p2;
-            Vector2 v2 = p3 - p2;
-            float angle = Vector2.Angle(v1, v2);
-            angles.Add(angle);
-        }
-        return angles;
+        Debug.Log("Final Matching Score: " + matchingScore);
     }
 }
