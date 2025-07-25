@@ -17,6 +17,7 @@ public class DungeonMapGenerator : MonoBehaviour
     public int minRooms = 5;
     public int maxRooms = 10;
     public float borderOffset = -0.1f;
+    public int spawnAttempts = 100;
 
     private List<DungeonRoom> spawnedRooms = new();
     private List<DungeonConnector> openConnectors = new();
@@ -75,7 +76,7 @@ public class DungeonMapGenerator : MonoBehaviour
     {
         int safety = 0;
 
-        while (roomsPlaced < maxTargetRooms && safety < 200)
+        while (roomsPlaced < maxTargetRooms && safety < spawnAttempts)
         {
             safety++;
 
@@ -223,7 +224,7 @@ public class DungeonMapGenerator : MonoBehaviour
     void SpawnExitRoom()
     {
         int attempts = 0;
-        while (attempts < 50)
+        while (attempts < spawnAttempts)
         {
             if (openConnectors.Count == 0)
             {
