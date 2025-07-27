@@ -5,6 +5,8 @@ public class Hat : MonoBehaviour
 {
     public Transform spawnPos;
 
+    public bool isSelected = false;
+
     [Header("sounds")]
     public AudioSource audioSource;
     public AudioClip spawnSound;
@@ -14,6 +16,11 @@ public class Hat : MonoBehaviour
     [Header("Particles")]
     public ToggleParticle storeParticle;
     public ToggleParticle spawnParticle;
+
+    public void SetSelected(bool state)
+    {
+        isSelected = state;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

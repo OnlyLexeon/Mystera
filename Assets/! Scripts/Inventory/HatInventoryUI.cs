@@ -22,16 +22,16 @@ public class HatInventoryUI : MonoBehaviour
     private void Start()
     {
         HideUI();
+        RefreshUI();
 
         if (hat == null) hat = GetComponent<Hat>();
     }
 
+    //hide and show is called a lot by gaze interactor
     public void ShowUI()
     {
-        RefreshUI();
-        uiCanvas.SetActive(true);
+        if (hat.isSelected) uiCanvas.SetActive(true);
     }
-
     public void HideUI()
     {
         uiCanvas.SetActive(false);
