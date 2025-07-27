@@ -8,18 +8,18 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Explosion
-  m_Shader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHABLEND_ON
   - _EMISSION
   - _FADING_ON
-  - _REQUIRE_UV2
-  m_InvalidKeywords:
   - _FLIPBOOKBLENDING_ON
   - _SOFTPARTICLES_ON
   - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords:
+  - _ALPHABLEND_ON
+  - _REQUIRE_UV2
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -127,7 +127,7 @@ Material:
     - _flip: 0
     - _pow: 1
     m_Colors:
-    - _BaseColor: {r: 47.937267, g: 29.113731, b: 14.305884, a: 1}
+    - _BaseColor: {r: 47.937286, g: 29.113743, b: 14.305888, a: 1}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 47.937275, g: 29.113737, b: 14.305886, a: 1}
