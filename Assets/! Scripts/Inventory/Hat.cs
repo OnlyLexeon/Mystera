@@ -1,10 +1,23 @@
+using Unity.XR.CoreUtils.Datums;
 using UnityEngine;
 
 public class Hat : MonoBehaviour
 {
+    public Transform spawnPos;
+
+    [Header("sounds")]
+    public AudioSource audioSource;
+    public AudioClip spawnSound;
+    public AudioClip storeSound;
+    public AudioClip rejectSound;
+
+    [Header("Particles")]
+    public ToggleParticle storeParticle;
+    public ToggleParticle spawnParticle;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (HatInventoryManager.Instance == null) return;
+        if (HatInventoryManager.instance == null) return;
 
         GameObject obj = other.gameObject;
 
@@ -19,15 +32,16 @@ public class Hat : MonoBehaviour
             return;
         }
 
-        if (!HatInventoryManager.Instance.TryAddItem(obj))
+        if (!HatInventoryManager.instance.TryAddItem(obj))
         {
             Reject(obj);
             return;
         }
 
+        storeParticle.Play();
+
         Destroy(obj); //stored!
     }
-
     private void Reject(GameObject obj)
     {
         if (obj.TryGetComponent<Rigidbody>(out var rb))
@@ -35,5 +49,10 @@ public class Hat : MonoBehaviour
             Vector3 rejectForce = (obj.transform.position - transform.position).normalized * 2f + Vector3.up;
             rb.AddForce(rejectForce, ForceMode.Impulse);
         }
+    }
+
+    public void SpawnedDoEffects()
+    {
+        spawnParticle.Play();
     }
 }

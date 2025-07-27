@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HatInventoryManager : MonoBehaviour
 {
-    public static HatInventoryManager Instance;
+    public static HatInventoryManager instance;
     public List<InventorySlot> slots = new List<InventorySlot>();
     public int MaxSlots = 15;
     
@@ -12,13 +12,13 @@ public class HatInventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
 
-        Instance = this;
+        instance = this;
         DontDestroyOnLoad(gameObject);
 
         LoadInventory();
@@ -43,7 +43,13 @@ public class HatInventoryManager : MonoBehaviour
         //checking maximum
         if (slots.Count >= MaxSlots) return false;
 
-        slots.Add(new InventorySlot(storable.itemID, 1));
+        //data type shit
+        IStorableData customData = null;
+        var potionStore = item.GetComponent<PotionStorable>();
+        if (potionStore != null)
+            customData = potionStore.GetPotionData();
+
+        slots.Add(new InventorySlot(storable.itemID, 1, customData));
         SaveInventory();
         return true;
     }
@@ -90,10 +96,35 @@ public class HatInventoryManager : MonoBehaviour
         public string itemID;
         public int stackCount;
 
-        public InventorySlot(string id, int count)
+        public string jsonData;
+        public string dataType;
+
+        public InventorySlot(string id, int count, IStorableData data = null)
         {
             itemID = id;
             stackCount = count;
+
+            if (data != null)
+            {
+                jsonData = JsonUtility.ToJson(data);
+                dataType = data.GetType().Name;
+            }
+        }
+
+        public IStorableData GetDeserializedData()
+        {
+            if (string.IsNullOrEmpty(jsonData) || string.IsNullOrEmpty(dataType))
+                return null;
+
+            switch (dataType)
+            {
+                case nameof(StoredPotionData):
+                    return JsonUtility.FromJson<StoredPotionData>(jsonData);
+
+                default:
+                    Debug.LogWarning($"Unsupported data type: {dataType}");
+                    return null;
+            }
         }
     }
 

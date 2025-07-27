@@ -73,4 +73,16 @@ public class RecipeManager : MonoBehaviour
         return countDict;
     }
 
+    public Recipe GetRecipeByName(string recipeName)
+    {
+        foreach (var recipe in recipes)
+        {
+            if (recipe != null && recipe.name == recipeName)
+                return recipe;
+        }
+
+        Debug.LogWarning($"[RecipeManager] Recipe '{recipeName}' not found.");
+        return null;
+    }
+
 }

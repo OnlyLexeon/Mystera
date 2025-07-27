@@ -4,12 +4,33 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+public enum PotionType
+{
+    Empty,
+    Nausea,
+    Midas,
+    Jump,
+    SlowFall,
+    Fire,
+    Glow,
+    Levitation,
+    Duplication,
+}
 
+[System.Serializable]
+public class StoredPotionData : IStorableData
+{
+    public string recipeID;
+    public float duration;
+    public float intensity;
+    public float frequency;
+    public bool isDrank;
+    public bool isCorkRemoved;
+}
 
 public class Potion : MonoBehaviour
 {
     public Recipe recipe;
-    public PotionType type;
 
     public bool isVelocity = false;
     public bool isSelected = false;
@@ -17,6 +38,7 @@ public class Potion : MonoBehaviour
     [Header("Reference")]
     public AudioSource audioSource;
     public MeshRenderer meshRenderer;
+    public PotionMaterialsManager materialsManager;
 
     [Header("Dynamic Ground Mask")]
     public LayerMask groundMask;
@@ -27,6 +49,11 @@ public class Potion : MonoBehaviour
     public float duration;
     public float intensity;
     public float frequency;
+
+    private void Start()
+    {
+        materialsManager = PotionMaterialsManager.instance;
+    }
 
     public void SetSelected(bool state)
     {
@@ -67,7 +94,7 @@ public class Potion : MonoBehaviour
         OnConsume();
 
         //consume before marking as empty
-        type = PotionType.Empty;
+        recipe.potionType = PotionType.Empty;
         recipe = null;
     }
 
@@ -93,7 +120,7 @@ public class Potion : MonoBehaviour
         Material[] mats = meshRenderer.materials;
         if (mats.Length > 1)
         {
-            mats[1] = PotionMaterialsManager.instance.clear;
+            mats[1] = materialsManager.clear;
             meshRenderer.materials = mats;
         }
         else
@@ -121,7 +148,7 @@ public class Potion : MonoBehaviour
         Material[] mats = meshRenderer.materials;
         if (mats.Length > 0)
         {
-            mats[0] = PotionMaterialsManager.instance.clear;
+            mats[0] = materialsManager.clear;
             meshRenderer.materials = mats;
         }
         else
@@ -135,7 +162,7 @@ public class Potion : MonoBehaviour
         Material[] mats = meshRenderer.materials;
         if (mats.Length > 0)
         {
-            mats[0] = PotionMaterialsManager.instance.cork;
+            mats[0] = materialsManager.cork;
             meshRenderer.materials = mats;
         }
         else
@@ -151,12 +178,12 @@ public class Potion : MonoBehaviour
 
     protected void PlayDrinkSound()
     {
-        audioSource.PlayOneShot(PotionMaterialsManager.instance.drinkSound);
+        audioSource.PlayOneShot(materialsManager.drinkSound);
     }
 
     protected void PlayCorkPopSound()
     {
-        audioSource.PlayOneShot(PotionMaterialsManager.instance.corkRemoveSound);
+        audioSource.PlayOneShot(materialsManager.corkRemoveSound);
     }
 
     //=====================================
@@ -165,7 +192,7 @@ public class Potion : MonoBehaviour
         //instantiate particles NOT AS CHILD
         //...
         //particles should play the sound since this potion is destroyed
-        Instantiate(PotionMaterialsManager.instance.glassParticles, transform.position, Quaternion.identity);
+        Instantiate(materialsManager.glassParticles, transform.position, Quaternion.identity);
 
         DoDestroy();
         //destroy
@@ -177,12 +204,12 @@ public class Potion : MonoBehaviour
         float radius = intensity;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
 
-        switch (type)
+        switch (recipe.potionType)
         {
             case PotionType.Fire:
                 
                 //Spwan combust
-                GameObject combustParticles = Instantiate(PotionMaterialsManager.instance.combustParticles, transform.position, Quaternion.identity);
+                GameObject combustParticles = Instantiate(materialsManager.combustParticles, transform.position, Quaternion.identity);
                 combustParticles.transform.localScale = new Vector3(radius, radius, radius);
 
                 //do fire
@@ -234,7 +261,7 @@ public class Potion : MonoBehaviour
 
             case PotionType.Duplication:
                 //sound
-                Instantiate(PotionMaterialsManager.instance.cloneParticles, transform.position, Quaternion.identity);
+                Instantiate(materialsManager.cloneParticles, transform.position, Quaternion.identity);
 
                 List<GameObject> targetsToClone = new List<GameObject>();
 
@@ -253,10 +280,41 @@ public class Potion : MonoBehaviour
                     Vector3 randomOffset = new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(0.25f, 0.5f), Random.Range(-0.2f, 0.2f));
                     GameObject clones = Instantiate(target, target.transform.position + randomOffset, Quaternion.identity);
 
-                    GameObject cloneParticles = Instantiate(PotionMaterialsManager.instance.duplicatonParticles, clones.transform.position, Quaternion.identity);
+                    GameObject cloneParticles = Instantiate(materialsManager.duplicatonParticles, clones.transform.position, Quaternion.identity);
                 }
                 break;
         }
     }
     //=====================================
+
+    public StoredPotionData GetSaveData()
+    {
+        return new StoredPotionData
+        {
+            recipeID = recipe != null ? recipe.name : "",
+            duration = duration,
+            intensity = intensity,
+            frequency = frequency,
+            isDrank = isDrank,
+            isCorkRemoved = isCorkRemoved
+        };
+    }
+
+    public void LoadFromData(StoredPotionData data)
+    {
+        if (data == null) return;
+
+        recipe = RecipeManager.Instance.GetRecipeByName(data.recipeID);
+        duration = data.duration;
+        intensity = data.intensity;
+        frequency = data.frequency;
+        isDrank = data.isDrank;
+        isCorkRemoved = data.isCorkRemoved;
+
+        SetLiquid(recipe.liquidMaterial);
+        if (isCorkRemoved) SetCorkClear();
+        else SetCork();
+    }
+
+
 }

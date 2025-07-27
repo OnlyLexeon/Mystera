@@ -143,7 +143,7 @@ public class Pot : MonoBehaviour
 
         //EMPTY POTION BOTTLE
         Potion potionToSet = other.GetComponent<Potion>();
-        if (canDipEmptyBottle && potionToSet != null && potionToSet.type == PotionType.Empty)
+        if (canDipEmptyBottle && potionToSet != null && potionToSet.recipe.potionType == PotionType.Empty)
         {
             Debug.Log("Dipped!");
 
@@ -341,7 +341,6 @@ public class Pot : MonoBehaviour
         potionScript.isCorkRemoved = false;
 
         potionScript.recipe = currentRecipe;
-        potionScript.type = currentRecipe.potionType;
         potionScript.SetLiquid(currentRecipe.liquidMaterial);
         potionScript.SetCork();
         //set defaults

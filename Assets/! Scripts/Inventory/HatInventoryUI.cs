@@ -2,9 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.XR.CoreUtils.Datums;
+using UnityEngine.EventSystems;
 
 public class HatInventoryUI : MonoBehaviour
 {
+    public Hat hat;
+
     public GameObject tooltip;
     public RectTransform tooltipBackground;
     public TextMeshProUGUI tooltipText;
@@ -18,6 +22,8 @@ public class HatInventoryUI : MonoBehaviour
     private void Start()
     {
         HideUI();
+
+        if (hat == null) hat = GetComponent<Hat>();
     }
 
     public void ShowUI()
@@ -38,7 +44,7 @@ public class HatInventoryUI : MonoBehaviour
             Destroy(child.gameObject);
 
         //set
-        List<HatInventoryManager.InventorySlot> inventory = HatInventoryManager.Instance.GetInventory();
+        List<HatInventoryManager.InventorySlot> inventory = HatInventoryManager.instance.GetInventory();
         foreach (var slot in inventory)
         {
             GameObject slotObj = Instantiate(slotPrefab, gridParent);
