@@ -143,7 +143,7 @@ public class Pot : MonoBehaviour
 
         //EMPTY POTION BOTTLE
         Potion potionToSet = other.GetComponent<Potion>();
-        if (canDipEmptyBottle && potionToSet != null && potionToSet.recipe.potionType == PotionType.Empty)
+        if (canDipEmptyBottle && potionToSet != null && potionToSet.isEmpty == PotionType.Empty)
         {
             Debug.Log("Dipped!");
 

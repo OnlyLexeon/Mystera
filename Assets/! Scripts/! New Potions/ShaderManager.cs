@@ -10,9 +10,16 @@ public class ShaderManager : MonoBehaviour
 
     public static ShaderManager instance;
 
-    void Awake()
+    private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void ToggleFeature(string featureName, bool enabled)

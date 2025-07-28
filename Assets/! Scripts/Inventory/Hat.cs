@@ -24,7 +24,7 @@ public class Hat : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (HatInventoryManager.instance == null) return;
+        if (HatInventoryManager.instance == null || isSelected == false) return;
 
         GameObject obj = other.gameObject;
 

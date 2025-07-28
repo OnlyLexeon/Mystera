@@ -26,18 +26,9 @@ public class ResetMenuManager : MonoBehaviour
 
     public void Reset()
     {
-        StartCoroutine(ResetCoroutine());
+        StartCoroutine(SceneController.instance.ResetCoroutine());
     }
 
-    public IEnumerator ResetCoroutine()
-    {
-        fadeCanvas.StartFadeIn();
-
-        yield return new WaitForSeconds(fadeDelay);
-
-        // Reloads the currently active scene
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.buildIndex);
-    }
+    
 
 }

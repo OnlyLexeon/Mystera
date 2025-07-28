@@ -1,10 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 public class DungeonMapGenerator : MonoBehaviour
 {
     [Header("Room Settings")]

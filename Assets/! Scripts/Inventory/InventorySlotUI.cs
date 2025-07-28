@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventorySlotUI : MonoBehaviour
 {
-    public Sprite icon;
+    public Image icon;
     public TextMeshProUGUI countText;
     public Button button;
 
@@ -22,13 +22,13 @@ public class InventorySlotUI : MonoBehaviour
         data = StorableDatabase.Instance.GetDataByID(itemID);
         hatUI = FindFirstObjectByType<HatInventoryUI>();
 
-        icon = data.icon;
+        icon.sprite = data.icon;
         if (slot.GetDeserializedData() is StoredPotionData potionData)
         {
             Recipe recipe = RecipeManager.Instance.GetRecipeByName(potionData.recipeID);
             if (recipe != null && recipe.icon != null)
             {
-                icon = recipe.icon;
+                icon.sprite = recipe.icon;
             }
         }
 
@@ -83,12 +83,12 @@ public class InventorySlotUI : MonoBehaviour
                 potion.LoadPotionData(potionData);
 
             //prevent same item from getting back into hat
-            var storable = obj.GetComponent<StorableObject>();
+            StorableObject storable = obj.GetComponent<PotionStorable>() ?? obj.GetComponent<StorableObject>();
             if (storable != null)
                 storable.SetFreshSpawn(2.5f);
 
             //disable buttons
-            hatUI.DisableAllButtons(1.5f);
+            hatUI.DisableAllButtons(1f);
 
 
             //Sound & particles

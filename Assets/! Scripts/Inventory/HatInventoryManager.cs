@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class HatInventoryManager : MonoBehaviour
 {
+#if UNITY_EDITOR
+    [ContextMenu("Clear Saved Inventory")]
+    private void Editor_ClearInventory()
+    {
+        ClearSavedInventory();
+    }
+#endif
+
+
     public static HatInventoryManager instance;
     public List<InventorySlot> slots = new List<InventorySlot>();
     public int MaxSlots = 15;
-    
+
+    private HatInventoryUI ui;
+
     private string savePath => Path.Combine(Application.persistentDataPath, "inventory.json");
 
     private void Awake()
@@ -26,7 +37,7 @@ public class HatInventoryManager : MonoBehaviour
 
     public bool TryAddItem(GameObject item)
     {
-        StorableObject storable = item.GetComponent<StorableObject>();
+        StorableObject storable = item.GetComponent<PotionStorable>() ?? item.GetComponent<StorableObject>();
         if (storable == null) return false;
 
         //stacking
@@ -51,6 +62,11 @@ public class HatInventoryManager : MonoBehaviour
 
         slots.Add(new InventorySlot(storable.itemID, 1, customData));
         SaveInventory();
+
+        //UI
+        if (ui == null) ui = FindFirstObjectByType<HatInventoryUI>();
+        ui.RefreshUI();
+
         return true;
     }
 
@@ -66,6 +82,11 @@ public class HatInventoryManager : MonoBehaviour
                     slots.RemoveAt(i);
 
                 SaveInventory();
+
+                //UI
+                if (ui == null) ui = FindFirstObjectByType<HatInventoryUI>();
+                ui.RefreshUI();
+
                 return true;
             }
         }
@@ -88,6 +109,20 @@ public class HatInventoryManager : MonoBehaviour
         string json = File.ReadAllText(savePath);
         InventorySaveData data = JsonUtility.FromJson<InventorySaveData>(json);
         slots = data.slots ?? new List<InventorySlot>();
+    }
+
+    public void ClearSavedInventory()
+    {
+        if (File.Exists(savePath))
+        {
+            File.Delete(savePath);
+            Debug.Log("Inventory save file deleted.");
+        }
+
+        slots.Clear();
+
+        if (ui == null) ui = FindFirstObjectByType<HatInventoryUI>();
+        ui.RefreshUI();
     }
 
     [System.Serializable]

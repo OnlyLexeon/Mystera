@@ -7246,7 +7246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969b8e08cffa4e44681eb600a8dfc099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDuration: 2
+  defaultDuration: 2.5
 --- !u!114 &6336253853352107656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9729,6 +9729,7 @@ GameObject:
   - component: {fileID: 4920387702796157553}
   - component: {fileID: 6029574571518264373}
   - component: {fileID: 8290691639478988292}
+  - component: {fileID: 7732664924567776623}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -9863,6 +9864,20 @@ MonoBehaviour:
   minValueBelt: -2.25
   maxValueBelt: -1.25
   defaultValueBelt: -1.75
+--- !u!114 &7732664924567776623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313212497788941383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0c2274558a43a40aee5509454c7048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialOnScene: Alchemist
+  tutorialButton: {fileID: 7518602531071686199}
 --- !u!1 &1321741837377403628
 GameObject:
   m_ObjectHideFlags: 0
@@ -13556,7 +13571,7 @@ GameObject:
   - component: {fileID: 13045703325147657}
   m_Layer: 7
   m_Name: XR Rig - Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

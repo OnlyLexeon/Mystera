@@ -31,6 +31,7 @@ public class StoredPotionData : IStorableData
 public class Potion : MonoBehaviour
 {
     public Recipe recipe;
+    public PotionType isEmpty;
 
     public bool isVelocity = false;
     public bool isSelected = false;
@@ -94,7 +95,7 @@ public class Potion : MonoBehaviour
         OnConsume();
 
         //consume before marking as empty
-        recipe.potionType = PotionType.Empty;
+        isEmpty = PotionType.Empty;
         recipe = null;
     }
 
@@ -162,6 +163,11 @@ public class Potion : MonoBehaviour
         Material[] mats = meshRenderer.materials;
         if (mats.Length > 0)
         {
+            if (materialsManager == null)
+            {
+                materialsManager = PotionMaterialsManager.instance;
+            }
+
             mats[0] = materialsManager.cork;
             meshRenderer.materials = mats;
         }
@@ -204,6 +210,7 @@ public class Potion : MonoBehaviour
         float radius = intensity;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
 
+        if (recipe == null) return;
         switch (recipe.potionType)
         {
             case PotionType.Fire:

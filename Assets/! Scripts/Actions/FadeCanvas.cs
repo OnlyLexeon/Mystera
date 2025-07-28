@@ -17,8 +17,12 @@ public class FadeCanvas : MonoBehaviour
 
     private float quickFadeDuration = 0.25f;
 
+    public static FadeCanvas instance;
+
     private void Awake()
     {
+        instance = this;
+
         canvasGroup = GetComponent<CanvasGroup>();
     }
 

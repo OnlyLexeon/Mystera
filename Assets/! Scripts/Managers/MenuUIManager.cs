@@ -135,11 +135,6 @@ public class MenuUIManager : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();
-
-        // This line is just for testing in the Unity Editor
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        SceneController.instance.QuitGame();
     }
 }
