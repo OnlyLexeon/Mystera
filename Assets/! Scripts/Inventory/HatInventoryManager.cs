@@ -15,7 +15,8 @@ public class HatInventoryManager : MonoBehaviour
 
     public static HatInventoryManager instance;
     public List<InventorySlot> slots = new List<InventorySlot>();
-    public int MaxSlots = 15;
+    public int maxSlots = 15;
+    public int maxStack = 9;
 
     private HatInventoryUI ui;
 
@@ -35,6 +36,11 @@ public class HatInventoryManager : MonoBehaviour
         LoadInventory();
     }
 
+    private void Start()
+    {
+        if (ui == null) ui = FindFirstObjectByType<HatInventoryUI>();
+    }
+
     public bool TryAddItem(GameObject item)
     {
         StorableObject storable = item.GetComponent<PotionStorable>() ?? item.GetComponent<StorableObject>();
@@ -44,6 +50,9 @@ public class HatInventoryManager : MonoBehaviour
         var potionStore = item.GetComponent<PotionStorable>();
         if (potionStore != null)
             customData = potionStore.GetPotionData();
+
+        //adding
+        if (slots.Count >= maxSlots) return false;
 
         //try to stack
         foreach (var slot in slots)
@@ -56,24 +65,29 @@ public class HatInventoryManager : MonoBehaviour
             {
                 if (ArePotionsIdentical(existingPotion, newPotion))
                 {
+                    if (slot.stackCount >= maxStack) continue;
+                    else
+                    {
+                        slot.stackCount++;
+                        SaveInventory();
+                        ui?.RefreshUI();
+                        return true;
+                    }
+                }
+            }
+            //no potion
+            else if (customData == null && string.IsNullOrEmpty(slot.jsonData))
+            {
+                if (slot.stackCount >= maxStack) continue;
+                else
+                {
                     slot.stackCount++;
                     SaveInventory();
                     ui?.RefreshUI();
                     return true;
                 }
             }
-            //no potion
-            else if (customData == null && string.IsNullOrEmpty(slot.jsonData))
-            {
-                slot.stackCount++;
-                SaveInventory();
-                ui?.RefreshUI();
-                return true;
-            }
         }
-
-        //adding
-        if (slots.Count >= MaxSlots) return false;
 
         slots.Add(new InventorySlot(storable.itemID, 1, customData));
         SaveInventory();
@@ -95,7 +109,7 @@ public class HatInventoryManager : MonoBehaviour
 
     public bool TryRemoveItem(string itemID, IStorableData data = null)
     {
-        for (int i = 0; i < slots.Count; i++)
+        for (int i = slots.Count - 1; i >= 0 ; i--)
         {
             var slot = slots[i];
 
@@ -156,8 +170,7 @@ public class HatInventoryManager : MonoBehaviour
 
         slots.Clear();
 
-        if (ui == null) ui = FindFirstObjectByType<HatInventoryUI>();
-        ui.RefreshUI();
+        ui?.RefreshUI();
     }
 
     [System.Serializable]

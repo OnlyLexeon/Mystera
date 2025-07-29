@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5535593957826413955}
   - component: {fileID: 1984332263757045529}
   - component: {fileID: 263707066319450193}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 5639767613118026589}
   - component: {fileID: 8231211005252270220}
   - component: {fileID: 4698766726074131803}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Inventory Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 6507467013827545617}
   - component: {fileID: 4811261402137718256}
   - component: {fileID: 2940137288503796611}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Count Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 3074552433366073267}
   - component: {fileID: 2839677911922680556}
   - component: {fileID: 8285552313664056677}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sub Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 376266682044518589}
   - component: {fileID: 3887236939340325140}
   - component: {fileID: 6698966801541423115}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}

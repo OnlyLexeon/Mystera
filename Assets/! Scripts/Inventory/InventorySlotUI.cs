@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class InventorySlotUI : MonoBehaviour
 {
@@ -30,8 +31,8 @@ public class InventorySlotUI : MonoBehaviour
             if (recipe != null && recipe.icon != null)
             {
                 icon.sprite = PotionMaterialsManager.instance.emptyGlassSprite;
+                subIcon.gameObject.SetActive(true);
                 subIcon.sprite = recipe.icon;
-                subIcon.enabled = true;
             }
         }
 
@@ -90,6 +91,15 @@ public class InventorySlotUI : MonoBehaviour
             if (storable != null)
                 storable.SetFreshSpawn(2.5f);
 
+            //rigidbody
+            //make item float MAKE SURE ONHOVER WILL MAKE THEM iskinematic false and gravity true
+            Rigidbody rb = obj.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = true;
+                rb.useGravity = false;
+            }
+
             //disable all buttons
             hatUI.DisableAllButtons(1f);
 
@@ -98,6 +108,7 @@ public class InventorySlotUI : MonoBehaviour
 
             //UI
             hatUI.RefreshUI();
+            OnExitXR();
         }
 
     }

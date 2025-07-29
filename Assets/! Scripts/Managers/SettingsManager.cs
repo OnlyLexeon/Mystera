@@ -17,13 +17,13 @@ public class SettingsManager : MonoBehaviour
     public float defaultValueCamera;
 
     [Header("BeltOffset Settings")]
-    public Belt belt;
-    public Slider beltOffset;
-    public TextMeshProUGUI beltOffsetvalue;
-    public Button beltResetButton;
-    public float minValueBelt;
-    public float maxValueBelt;
-    public float defaultValueBelt;
+    public HatOffset hat;
+    public Slider hatOffset;
+    public TextMeshProUGUI hatOffsetvalue;
+    public Button hatResetButton;
+    public float minValueHat;
+    public float maxValueHat;
+    public float defaultValueHat;
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class SettingsManager : MonoBehaviour
         InitializeBeltSlider();
 
         cameraResetButton.onClick.AddListener(ResetCameraOffset);
-        beltResetButton.onClick.AddListener(ResetBeltOffset);
+        hatResetButton.onClick.AddListener(ResetBeltOffset);
     }
 
     // === CAMERA ===
@@ -68,14 +68,14 @@ public class SettingsManager : MonoBehaviour
     // === BELT ===
     public void InitializeBeltSlider()
     {
-        beltOffset.minValue = minValueBelt;
-        beltOffset.maxValue = maxValueBelt;
+        hatOffset.minValue = minValueHat;
+        hatOffset.maxValue = maxValueHat;
 
-        float savedValue = PlayerPrefs.GetFloat("BeltOffset", defaultValueBelt);
-        beltOffset.value = savedValue;
+        float savedValue = PlayerPrefs.GetFloat("BeltOffset", defaultValueHat);
+        hatOffset.value = savedValue;
         UpdateBeltHeight(savedValue);
 
-        beltOffset.onValueChanged.AddListener(OnBeltSliderChanged);
+        hatOffset.onValueChanged.AddListener(OnBeltSliderChanged);
     }
 
     private void OnBeltSliderChanged(float value)
@@ -87,12 +87,12 @@ public class SettingsManager : MonoBehaviour
 
     private void UpdateBeltHeight(float value)
     {
-        beltOffsetvalue.text = value.ToString("F3");
-        belt.yOffset = value;
+        hatOffsetvalue.text = value.ToString("F3");
+        hat.yOffset = value;
     }
 
     public void ResetBeltOffset()
     {
-        beltOffset.value = defaultValueBelt; // Triggers OnBeltSliderChanged
+        hatOffset.value = defaultValueHat; // Triggers OnBeltSliderChanged
     }
 }

@@ -1,12 +1,18 @@
 using System.Collections.Generic;
 using Unity.XR.CoreUtils.Datums;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit;
+using Unity.VisualScripting;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class Hat : MonoBehaviour
 {
     public Transform spawnPos;
-
+    public XRSocketInteractor socket;
+    public float comeBackDistance = 4f;
     public bool isSelected = false;
+    public float rejectForce = 0.2f;
 
     [Header("sounds")]
     public AudioSource audioSource;
@@ -17,12 +23,53 @@ public class Hat : MonoBehaviour
     [Header("Particles")]
     public ToggleParticle storeParticle;
     public ToggleParticle spawnParticle;
+    public ToggleParticle comeBackParticle;
 
     private HatInventoryUI ui;
+    private Player player;
 
     private void Start()
     {
         ui = GetComponent<HatInventoryUI>();
+        player = FindFirstObjectByType<Player>();
+
+        if (socket == null) transform.parent.GetComponentInChildren<XRSocketInteractor>();
+    }
+
+    private void Update()
+    {
+        if (!isSelected && socket != null && player != null)
+        {
+            float distance = Vector3.Distance(player.transform.position, transform.position);
+            if (distance > comeBackDistance && !socket.hasSelection)
+            {
+                TrySocketHat();
+            }
+        }
+    }
+
+    private void TrySocketHat()
+    {
+        var interactable = GetComponent<XRGrabInteractable>();
+        if (interactable != null)
+        {
+            //Force Socket
+            socket.interactionManager.SelectEnter((IXRSelectInteractor)socket, (IXRSelectInteractable)interactable);
+            comeBackParticle.Play();
+        }
+    }
+
+    public void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        if (args.interactorObject is XRDirectInteractor || args.interactorObject is XRRayInteractor)
+            SetSelected(true);
+        else ui?.HideUI(); //if selected but not by direct or ray, (prolly socket) hide
+    }
+
+    public void OnSelectExited(SelectExitEventArgs args)
+    {
+        if (args.interactorObject is XRDirectInteractor || args.interactorObject is XRRayInteractor)
+            SetSelected(false);
     }
 
     public void SetSelected(bool state)
@@ -38,7 +85,6 @@ public class Hat : MonoBehaviour
 
         if (!obj.TryGetComponent<StorableObject>(out var storable))
         {
-            Reject(obj);
             return;
         }
 
@@ -53,22 +99,28 @@ public class Hat : MonoBehaviour
             return;
         }
 
+        //Effects
         storeParticle.Play();
+        audioSource.PlayOneShot(storeSound);
         ui.RefreshUI();
 
         Destroy(obj); //stored!
     }
+
     private void Reject(GameObject obj)
     {
         if (obj.TryGetComponent<Rigidbody>(out var rb))
         {
-            Vector3 rejectForce = (obj.transform.position - transform.position).normalized * 2f + Vector3.up;
-            rb.AddForce(rejectForce, ForceMode.Impulse);
+            Vector3 force = (obj.transform.position - transform.position).normalized * rejectForce + Vector3.up;
+            rb.AddForce(force, ForceMode.Impulse);
+
+            audioSource.PlayOneShot(rejectSound);
         }
     }
 
     public void SpawnedDoEffects()
     {
         spawnParticle.Play();
+        audioSource.PlayOneShot(spawnSound);
     }
 }

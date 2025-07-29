@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Belt : MonoBehaviour
+public class HatOffset : MonoBehaviour
 {
     [Header("References")]
     public Transform cameraTransform;
