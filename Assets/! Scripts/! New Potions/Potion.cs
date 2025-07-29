@@ -121,6 +121,8 @@ public class Potion : MonoBehaviour
         Material[] mats = meshRenderer.materials;
         if (mats.Length > 1)
         {
+            if (materialsManager == null) materialsManager = PotionMaterialsManager.instance;
+
             mats[1] = materialsManager.clear;
             meshRenderer.materials = mats;
         }
@@ -135,6 +137,8 @@ public class Potion : MonoBehaviour
         Material[] mats = meshRenderer.materials;
         if (mats.Length > 1)
         {
+            if (materialsManager == null) materialsManager = PotionMaterialsManager.instance;
+
             mats[1] = mat;
             meshRenderer.materials = mats;
         }
@@ -149,6 +153,8 @@ public class Potion : MonoBehaviour
         Material[] mats = meshRenderer.materials;
         if (mats.Length > 0)
         {
+            if (materialsManager == null) materialsManager = PotionMaterialsManager.instance;
+
             mats[0] = materialsManager.clear;
             meshRenderer.materials = mats;
         }
@@ -163,10 +169,7 @@ public class Potion : MonoBehaviour
         Material[] mats = meshRenderer.materials;
         if (mats.Length > 0)
         {
-            if (materialsManager == null)
-            {
-                materialsManager = PotionMaterialsManager.instance;
-            }
+            if (materialsManager == null) materialsManager = PotionMaterialsManager.instance;
 
             mats[0] = materialsManager.cork;
             meshRenderer.materials = mats;
@@ -318,7 +321,7 @@ public class Potion : MonoBehaviour
         isDrank = data.isDrank;
         isCorkRemoved = data.isCorkRemoved;
 
-        SetLiquid(recipe.liquidMaterial);
+        if (recipe != null) SetLiquid(recipe.liquidMaterial);
         if (isCorkRemoved) SetCorkClear();
         else SetCork();
     }

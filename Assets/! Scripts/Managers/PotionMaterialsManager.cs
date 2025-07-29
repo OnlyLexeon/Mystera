@@ -17,6 +17,7 @@ public class PotionMaterialsManager : MonoBehaviour
     }
 
     [Header("Bottle")]
+    public Sprite emptyGlassSprite;
     public Material cork;
     public Material clear;
 

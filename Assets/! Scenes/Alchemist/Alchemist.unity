@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83d2f7ae04ab6f4f99b0d85377be998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializedBakingSet: {fileID: 0}
+  serializedBakingSet: {fileID: 11400000, guid: 0c4339b5edba7674981837db6abcfd9a, type: 2}
   sceneGUID: 2cca5e72491b30d47bd31b7a21e46a01
   obsoleteAsset: {fileID: 0}
   obsoleteCellSharedDataAsset: {fileID: 0}
@@ -731,7 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 2
-  size: {x: 28.584087, y: 10.264807, z: 13.559289}
+  size: {x: 35.90672, y: 11.114132, z: 16.536102}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -740,25 +740,25 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 7
   overridesSubdivLevels: 0
-  mightNeedRebaking: 1
+  mightNeedRebaking: 0
   cachedTransform:
-    e00: 0.084268056
+    e00: 1
     e01: 0
     e02: 0
-    e03: 1.7502962
+    e03: 18.697084
     e10: 0
-    e11: 0.19370125
+    e11: 1
     e12: 0
-    e13: -0.75737184
+    e13: -4.061494
     e20: 0
     e21: 0
-    e22: 0.15735984
-    e23: -0.056997724
+    e22: 1
+    e23: 0.126194
     e30: 0
     e31: 0
     e32: 0
     e33: 1
-  cachedHashCode: 199166818
+  cachedHashCode: -1513566533
   fillEmptySpaces: 0
   version: 2
   globalVolume: 0
@@ -771,8 +771,8 @@ Transform:
   m_GameObject: {fileID: 49616971}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.770578, y: 3.9099998, z: 0.36221266}
-  m_LocalScale: {x: 11.866893, y: 5.1625896, z: 6.3548617}
+  m_LocalPosition: {x: -18.697084, y: 4.061494, z: -0.126194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -893,6 +893,14 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: df88808ccf7162f418b016ba761bfa39, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259723992818381191, guid: df88808ccf7162f418b016ba761bfa39, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243260089283536967, guid: df88808ccf7162f418b016ba761bfa39, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -4370,6 +4378,10 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 5ebb376f5af51b841bca32d8f7c557a7, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 5ebb376f5af51b841bca32d8f7c557a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5ebb376f5af51b841bca32d8f7c557a7, type: 3}
       propertyPath: m_Name
@@ -13785,6 +13797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4856c042dfae8c4280245f4dafaee17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emptyGlassSprite: {fileID: 21300000, guid: 55f3707a6ae9a9e41b67b4747b4f76c5, type: 3}
   cork: {fileID: 2100000, guid: 3fb942a4d96e94a4dbc20e285ef7f470, type: 2}
   clear: {fileID: 2100000, guid: e67f83e0ce622574584051701fd0268c, type: 2}
   nausea: {fileID: 2100000, guid: 0e7318510e7b41846abaaccf536ab85b, type: 2}
@@ -30926,6 +30939,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2792855536247004230, guid: 460d509f4915c374ba615dc875a97408, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5148817236446094103, guid: 460d509f4915c374ba615dc875a97408, type: 3}
@@ -33694,6 +33711,10 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: b8dcfb76d04e3834ea02f5e163fd8106, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: b8dcfb76d04e3834ea02f5e163fd8106, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b8dcfb76d04e3834ea02f5e163fd8106, type: 3}
       propertyPath: m_Name

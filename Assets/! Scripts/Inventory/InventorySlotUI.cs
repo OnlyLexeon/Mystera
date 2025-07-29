@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventorySlotUI : MonoBehaviour
 {
     public Image icon;
+    public Image subIcon;
     public TextMeshProUGUI countText;
     public Button button;
 
@@ -28,7 +29,9 @@ public class InventorySlotUI : MonoBehaviour
             Recipe recipe = RecipeManager.Instance.GetRecipeByName(potionData.recipeID);
             if (recipe != null && recipe.icon != null)
             {
-                icon.sprite = recipe.icon;
+                icon.sprite = PotionMaterialsManager.instance.emptyGlassSprite;
+                subIcon.sprite = recipe.icon;
+                subIcon.enabled = true;
             }
         }
 
@@ -36,19 +39,17 @@ public class InventorySlotUI : MonoBehaviour
         button.onClick.AddListener(SpawnItem);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnEnterXR()
     {
         if (hatUI != null && data != null)
         {
             hatUI.tooltipText.text = data.displayName;
             hatUI.tooltip.SetActive(true);
 
-            //resize tooltip image backgroun with text
             LayoutRebuilder.ForceRebuildLayoutImmediate(hatUI.tooltipText.rectTransform);
             Vector2 textSize = hatUI.tooltipText.rectTransform.sizeDelta;
-            hatUI.tooltipBackground.sizeDelta = textSize + new Vector2(1f, 1f); //padding
+            hatUI.tooltipBackground.sizeDelta = textSize + new Vector2(1f, 1f);
 
-            //position
             RectTransform tooltipRect = hatUI.tooltip.GetComponent<RectTransform>();
             RectTransform myRect = GetComponent<RectTransform>();
             if (tooltipRect != null && myRect != null)
@@ -59,7 +60,7 @@ public class InventorySlotUI : MonoBehaviour
         }
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnExitXR()
     {
         if (hatUI != null)
         {
@@ -68,32 +69,36 @@ public class InventorySlotUI : MonoBehaviour
         }
     }
 
+
     private void SpawnItem()
     {
         if (hatUI.buttonsDisabled || data == null || hatUI == null) return;
 
-        if (HatInventoryManager.instance.TryRemoveItem(itemID))
+        var storedData = mySlot.GetDeserializedData();
+
+        if (HatInventoryManager.instance.TryRemoveItem(itemID, storedData))
         {
             GameObject obj = Instantiate(data.prefab, hatUI.hat.spawnPos.position, Quaternion.identity);
 
-            //only for potions
+            //potions
             var potion = obj.GetComponent<PotionStorable>();
-            var storedData = mySlot.GetDeserializedData();
             if (potion != null && storedData is StoredPotionData potionData)
                 potion.LoadPotionData(potionData);
 
-            //prevent same item from getting back into hat
+            //lockout the object from being stored again
             StorableObject storable = obj.GetComponent<PotionStorable>() ?? obj.GetComponent<StorableObject>();
             if (storable != null)
                 storable.SetFreshSpawn(2.5f);
 
-            //disable buttons
+            //disable all buttons
             hatUI.DisableAllButtons(1f);
 
-
-            //Sound & particles
+            //effects
             hatUI.hat.SpawnedDoEffects();
 
+            //UI
+            hatUI.RefreshUI();
         }
+
     }
 }

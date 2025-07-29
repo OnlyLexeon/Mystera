@@ -21,6 +21,8 @@ public class RubbishBin : MonoBehaviour
         XRGrabInteractable interactable = other.GetComponent<XRGrabInteractable>();
         if (interactable != null)
         {
+            if (interactable.GetComponent<Hat>() != null || interactable.GetComponent<Wand>() != null) return;
+
             // Play trash sound
             if (trashedSound != null && audioSource != null)
             {

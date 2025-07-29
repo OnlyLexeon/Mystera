@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.XR.CoreUtils.Datums;
 using UnityEngine;
 
@@ -16,6 +17,13 @@ public class Hat : MonoBehaviour
     [Header("Particles")]
     public ToggleParticle storeParticle;
     public ToggleParticle spawnParticle;
+
+    private HatInventoryUI ui;
+
+    private void Start()
+    {
+        ui = GetComponent<HatInventoryUI>();
+    }
 
     public void SetSelected(bool state)
     {
@@ -46,6 +54,7 @@ public class Hat : MonoBehaviour
         }
 
         storeParticle.Play();
+        ui.RefreshUI();
 
         Destroy(obj); //stored!
     }

@@ -40,58 +40,93 @@ public class HatInventoryManager : MonoBehaviour
         StorableObject storable = item.GetComponent<PotionStorable>() ?? item.GetComponent<StorableObject>();
         if (storable == null) return false;
 
-        //stacking
-        foreach (var slot in slots)
-        {
-            if (slot.itemID == storable.itemID)
-            {
-                slot.stackCount++;
-                SaveInventory();
-                return true;
-            }
-        }
-
-        //checking maximum
-        if (slots.Count >= MaxSlots) return false;
-
-        //data type shit
         IStorableData customData = null;
         var potionStore = item.GetComponent<PotionStorable>();
         if (potionStore != null)
             customData = potionStore.GetPotionData();
 
-        slots.Add(new InventorySlot(storable.itemID, 1, customData));
-        SaveInventory();
-
-        //UI
-        if (ui == null) ui = FindFirstObjectByType<HatInventoryUI>();
-        ui.RefreshUI();
-
-        return true;
-    }
-
-    //remove 1 item from stack
-    public bool TryRemoveItem(string itemID)
-    {
-        for (int i = 0; i < slots.Count; i++)
+        //try to stack
+        foreach (var slot in slots)
         {
-            if (slots[i].itemID == itemID)
+            if (slot.itemID != storable.itemID)
+                continue;
+
+            //If potion, try to match with existing
+            if (customData is StoredPotionData newPotion && slot.GetDeserializedData() is StoredPotionData existingPotion)
             {
-                slots[i].stackCount--;
-                if (slots[i].stackCount <= 0)
-                    slots.RemoveAt(i);
-
+                if (ArePotionsIdentical(existingPotion, newPotion))
+                {
+                    slot.stackCount++;
+                    SaveInventory();
+                    ui?.RefreshUI();
+                    return true;
+                }
+            }
+            //no potion
+            else if (customData == null && string.IsNullOrEmpty(slot.jsonData))
+            {
+                slot.stackCount++;
                 SaveInventory();
-
-                //UI
-                if (ui == null) ui = FindFirstObjectByType<HatInventoryUI>();
-                ui.RefreshUI();
-
+                ui?.RefreshUI();
                 return true;
             }
         }
+
+        //adding
+        if (slots.Count >= MaxSlots) return false;
+
+        slots.Add(new InventorySlot(storable.itemID, 1, customData));
+        SaveInventory();
+        return true;
+    }
+
+    private bool ArePotionsIdentical(StoredPotionData a, StoredPotionData b)
+    {
+        if (a == null || b == null) return false;
+
+        return a.recipeID == b.recipeID &&
+               Mathf.Approximately(a.duration, b.duration) &&
+               Mathf.Approximately(a.intensity, b.intensity) &&
+               Mathf.Approximately(a.frequency, b.frequency) &&
+               a.isDrank == b.isDrank &&
+               a.isCorkRemoved == b.isCorkRemoved;
+    }
+
+
+    public bool TryRemoveItem(string itemID, IStorableData data = null)
+    {
+        for (int i = 0; i < slots.Count; i++)
+        {
+            var slot = slots[i];
+
+            if (slot.itemID != itemID)
+                continue;
+
+            //if custom data
+            if (data is StoredPotionData toRemovePotion &&
+                slot.GetDeserializedData() is StoredPotionData slotPotion)
+            {
+                if (!ArePotionsIdentical(slotPotion, toRemovePotion))
+                    continue;
+            }
+            else if (data != null || !string.IsNullOrEmpty(slot.jsonData))
+            {
+                //no match
+                continue;
+            }
+
+            //removing
+            slot.stackCount--;
+            if (slot.stackCount <= 0)
+                slots.RemoveAt(i);
+
+            SaveInventory();
+            return true;
+        }
+
         return false;
     }
+
 
     public List<InventorySlot> GetInventory() => new List<InventorySlot>(slots);
 

@@ -8641,7 +8641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 6166971039754835093}
-  handRenderer: {fileID: 0}
+  handRenderer: {fileID: 1648430298188576989}
   handMaterial: {fileID: 2100000, guid: b0a75733367056e4ab6e392e0912164e, type: 2}
   isMidas: 0
   midasGold: {fileID: 2100000, guid: e48f2f00f4ac7f440b2866008f4271c5, type: 2}
@@ -9854,9 +9854,9 @@ MonoBehaviour:
   cameraOffset: {fileID: 1722093877410990763}
   cameraOffsetvalue: {fileID: 7854621663060949055}
   cameraResetButton: {fileID: 2600723595150831686}
-  minValueCamera: 0.75
-  maxValueCamera: 1.75
-  defaultValueCamera: 1.25
+  minValueCamera: 0.6
+  maxValueCamera: 1.6
+  defaultValueCamera: 1
   belt: {fileID: 5677549462243133214}
   beltOffset: {fileID: 1576393261919487220}
   beltOffsetvalue: {fileID: 5632485840482960916}
@@ -9876,7 +9876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0c2274558a43a40aee5509454c7048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialOnScene: Alchemist
   tutorialButton: {fileID: 7518602531071686199}
 --- !u!1 &1321741837377403628
 GameObject:
@@ -27440,7 +27439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 5048299629452952576}
-  handRenderer: {fileID: 0}
+  handRenderer: {fileID: 1325036811167693537}
   handMaterial: {fileID: 2100000, guid: b0a75733367056e4ab6e392e0912164e, type: 2}
   isMidas: 0
   midasGold: {fileID: 2100000, guid: e48f2f00f4ac7f440b2866008f4271c5, type: 2}
