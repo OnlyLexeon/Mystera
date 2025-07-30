@@ -27,7 +27,7 @@ public class InventorySlotUI : MonoBehaviour
         icon.sprite = data.icon;
         if (slot.GetDeserializedData() is StoredPotionData potionData)
         {
-            Recipe recipe = RecipeManager.Instance.GetRecipeByName(potionData.recipeID);
+            Recipe recipe = RecipeManager.instance.GetRecipeByName(potionData.recipeID);
             if (recipe != null && recipe.icon != null)
             {
                 icon.sprite = PotionMaterialsManager.instance.emptyGlassSprite;
