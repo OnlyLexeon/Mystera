@@ -34,7 +34,7 @@ public class AltarTabManager : MonoBehaviour
     public List<ParchmentNonIngre> nonIngredients;
     public List<Ingredient> ingredientsItems;
 
-    [Header("Parchment Spawns")]
+    [Header("Parchment Spawns (Auto Take from Ingredients Manager)")]
     public List<Ingredient> ingredients;
 
     [Header("Recipes (Auto Take from Recipe Manager)")]
@@ -44,9 +44,14 @@ public class AltarTabManager : MonoBehaviour
     public bool hasOpenedRecipes = false;
     public bool hasOpenedIngredients = false;
 
+    private IngredientsManager ingreManager;
+
     private void Start()
     {
-        recipes = RecipeManager.Instance.recipes;
+        recipes = RecipeManager.instance.recipes;
+
+        ingreManager = IngredientsManager.instance;
+        ingredients = ingreManager.allIngredients;
 
         PopulateItemsTab();
         PopulateIngredientsTab();
@@ -91,6 +96,11 @@ public class AltarTabManager : MonoBehaviour
             prefabScript.ingreName.text = ingredient.ingredientID;
             prefabScript.description.text = ingredient.description;
             prefabScript.parchmentToSpawn = ingredient.parchment;
+
+            if (!ingreManager.IsUnlocked(ingredient.ingredientID))
+            {
+                prefabScript.DisableIngredient();
+            }
         }
 
 

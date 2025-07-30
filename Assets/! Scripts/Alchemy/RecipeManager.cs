@@ -3,13 +3,20 @@ using UnityEngine;
 
 public class RecipeManager : MonoBehaviour
 {
-    public static RecipeManager Instance;
+    public static RecipeManager instance;
 
     public List<Recipe> recipes; // List of all recipes
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public Recipe FindMatchingRecipe(List<Ingredient> potIngredients)

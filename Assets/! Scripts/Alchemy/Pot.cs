@@ -242,7 +242,7 @@ public class Pot : MonoBehaviour
         //testlist = current ingredients in pot + to be added ingredient
         List<Ingredient> testList = new List<Ingredient>(currentIngredients) { ingredient };
         //match? if not, null
-        Recipe match = RecipeManager.Instance.FindMatchingRecipe(testList);
+        Recipe match = RecipeManager.instance.FindMatchingRecipe(testList);
 
         //not null?
         if (match != null) //added successfully 
@@ -264,7 +264,7 @@ public class Pot : MonoBehaviour
             hasAddedIngredient = true;
 
             //check if the recipe is now complete
-            if (RecipeManager.Instance.IsRecipeComplete(match.ingredients, currentIngredients))
+            if (RecipeManager.instance.IsRecipeComplete(match.ingredients, currentIngredients))
             {
                 matchedRecipe = match;
                 canStir = true;

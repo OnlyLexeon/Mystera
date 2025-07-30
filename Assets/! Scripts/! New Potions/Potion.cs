@@ -314,7 +314,7 @@ public class Potion : MonoBehaviour
     {
         if (data == null) return;
 
-        recipe = RecipeManager.Instance.GetRecipeByName(data.recipeID);
+        recipe = RecipeManager.instance.GetRecipeByName(data.recipeID);
         duration = data.duration;
         intensity = data.intensity;
         frequency = data.frequency;

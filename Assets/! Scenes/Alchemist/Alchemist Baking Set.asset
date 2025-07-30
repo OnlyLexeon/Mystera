@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Alchemist Baking Set
   m_EditorClassIdentifier: 
   singleSceneMode: 1
-  dialogNoProbeVolumeInSetShown: 0
+  dialogNoProbeVolumeInSetShown: 1
   settings:
     m_Version: 1
     dilationSettings:
-      enableDilation: 1
+      enableDilation: 0
       dilationDistance: 1
       dilationValidityThreshold: 0.25
       dilationIterations: 1
@@ -381,11 +381,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 1
     - position: {x: -1, y: 0, z: -1}
       index: 2
-      probeCount: 29760
+      probeCount: 30080
       minSubdiv: 0
       indexChunkCount: 117
       shChunkCount: 4
-      bricksCount: 465
+      bricksCount: 470
       indirectionEntryInfo:
       - positionInBricks: {x: -81, y: 0, z: -81}
         minSubdiv: 4
@@ -551,11 +551,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 1
     - position: {x: -1, y: 0, z: 0}
       index: 8
-      probeCount: 29952
+      probeCount: 30208
       minSubdiv: 0
       indexChunkCount: 117
       shChunkCount: 4
-      bricksCount: 468
+      bricksCount: 472
       indirectionEntryInfo:
       - positionInBricks: {x: -81, y: 0, z: 0}
         minSubdiv: 4
@@ -742,7 +742,7 @@ MonoBehaviour:
     m_Keys:
     - Default
     m_Values:
-    - sceneHash: -1483419077
+    - sceneHash: 1727643547
       cellDataAsset:
         m_AssetGUID: 28e292b1723237d43a3ffd32d7052983
         m_StreamableAssetPath: APVStreamingAssets\0c4339b5edba7674981837db6abcfd9a\28e292b1723237d43a3ffd32d7052983.bytes
@@ -803,9 +803,9 @@ MonoBehaviour:
       - offset: 1344
         elementCount: 85
       - offset: 2704
-        elementCount: 465
-      - offset: 10144
-        elementCount: 468
+        elementCount: 470
+      - offset: 10224
+        elementCount: 472
     m_Asset: {fileID: 0}
   cellSupportDataAsset:
     m_AssetGUID: 78dbdf27a9813f149b8e5f67e1e8a348

@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class IngreAltarButton : MonoBehaviour
 {
@@ -23,6 +24,23 @@ public class IngreAltarButton : MonoBehaviour
     {
         if (spawnButton != null)
             spawnButton.onClick.AddListener(OnSpawnButtonClicked);
+    }
+
+    public void DisableIngredient()
+    {
+        if (spawnButton == null) return;
+
+        spawnButton.interactable = false;
+
+        ColorBlock cb = spawnButton.colors;
+        Color dimGray = new Color(0.4f, 0.4f, 0.4f);
+
+        cb.normalColor = dimGray;
+        cb.highlightedColor = dimGray * 1.1f;
+        cb.pressedColor = dimGray * 0.9f;
+        cb.disabledColor = dimGray;
+
+        spawnButton.colors = cb;
     }
 
     public void ToggleDescription()
