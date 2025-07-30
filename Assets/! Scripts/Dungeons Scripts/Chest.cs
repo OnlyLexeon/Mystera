@@ -22,6 +22,7 @@ public class Chest : MonoBehaviour
     public int maxLoot = 3;
     public float ejectForce = 1.2f;
     public float ejectVariance = 0.2f;
+    public float itemInterval = 1f;
 
     [Header("Player Detection")]
     public float proximityRadius = 3f;
@@ -104,13 +105,17 @@ public class Chest : MonoBehaviour
                         Random.Range(-ejectVariance, ejectVariance)
                     );
                     rb.AddForce(force, ForceMode.Impulse);
-
-                    audioSource.PlayOneShot(chestSpawnSound);
-
-                    spawnParticle.Play();
                 }
+
+                audioSource.PlayOneShot(chestSpawnSound);
+
+                spawnParticle.Play();
+
+                yield return new WaitForSeconds(itemInterval);
             }
         }
+
+        openedParticles.Stop();
     }
 
     private GameObject GetWeightedLoot()

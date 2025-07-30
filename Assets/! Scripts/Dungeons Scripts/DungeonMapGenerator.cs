@@ -87,27 +87,49 @@ public class DungeonMapGenerator : MonoBehaviour
                 continue;
             }
 
-            DungeonConnector targetConnector = openConnectors[Random.Range(0, openConnectors.Count)];
-            GameObject prefab = SelectNextRoomPrefab();
-            Debug.Log($"Trying to spawn room: {prefab.name} at RoomIndex={roomsPlaced}");
+            List<DungeonConnector> availableConnectors = new(openConnectors);
+            bool roomPlaced = false;
 
-            GameObject roomObj = Instantiate(prefab);
-            DungeonRoom newRoom = roomObj.GetComponent<DungeonRoom>();
-
-            if (TryPlaceRoom(newRoom, targetConnector))
+            while (availableConnectors.Count > 0)
             {
-                Debug.Log($"Placed room: {newRoom.name} at RoomIndex={roomsPlaced}");
-                spawnedRooms.Add(newRoom);
-                AddRoomConnectors(newRoom);
-                roomsPlaced++;
+                int index = Random.Range(0, availableConnectors.Count);
+                DungeonConnector targetConnector = availableConnectors[index];
+                availableConnectors.RemoveAt(index);
+
+                GameObject prefab = SelectNextRoomPrefab();
+                Debug.Log($"Trying to spawn room: {prefab.name} at RoomIndex={roomsPlaced}");
+
+                GameObject roomObj = Instantiate(prefab);
+                DungeonRoom newRoom = roomObj.GetComponent<DungeonRoom>();
+
+                if (TryPlaceRoom(newRoom, targetConnector))
+                {
+                    Debug.Log($"Placed room: {newRoom.name} at RoomIndex={roomsPlaced}");
+                    spawnedRooms.Add(newRoom);
+                    AddRoomConnectors(newRoom);
+                    roomsPlaced++;
+                    roomPlaced = true;
+                    break;
+                }
+                else
+                {
+                    Debug.LogWarning($"Failed to place room: {prefab.name} at connector {targetConnector.name}");
+                    Destroy(roomObj);
+                }
             }
-            else
+
+            if (!roomPlaced)
             {
-                Debug.LogWarning($"Failed to place room: {prefab.name}, destroying...");
-                Destroy(roomObj);
+                Debug.LogWarning("All available connectors failed. Attempting backtrack...");
+                if (!BacktrackLastRoom())
+                {
+                    Debug.LogError("Backtracking failed. Dungeon generation halted.");
+                    return;
+                }
             }
         }
     }
+
 
     bool BacktrackLastRoom()
     {
@@ -220,6 +242,7 @@ public class DungeonMapGenerator : MonoBehaviour
     void SpawnExitRoom()
     {
         int attempts = 0;
+
         while (attempts < spawnAttempts)
         {
             if (openConnectors.Count == 0)
@@ -234,34 +257,52 @@ public class DungeonMapGenerator : MonoBehaviour
                 continue;
             }
 
-            DungeonConnector conn = openConnectors[Random.Range(0, openConnectors.Count)];
-            GameObject exitRoomObj = Instantiate(exitRoom);
-            DungeonRoom exitScript = exitRoomObj.GetComponent<DungeonRoom>();
+            List<DungeonConnector> availableConnectors = new(openConnectors);
+            bool exitPlaced = false;
 
-            foreach (var exitConn in exitScript.connectors)
+            while (availableConnectors.Count > 0)
             {
-                AlignRoom(exitScript, exitConn, conn);
+                int index = Random.Range(0, availableConnectors.Count);
+                DungeonConnector targetConn = availableConnectors[index];
+                availableConnectors.RemoveAt(index);
 
-                exitScript.boundsCollider.enabled = false;
-                exitScript.boundsCollider.enabled = true;
+                GameObject exitRoomObj = Instantiate(exitRoom);
+                DungeonRoom exitScript = exitRoomObj.GetComponent<DungeonRoom>();
 
-                if (IsRoomValid(exitScript, conn.parentRoom))
+                foreach (var exitConn in exitScript.connectors)
                 {
-                    exitConn.MarkUsed();
-                    conn.MarkUsed();
-                    openConnectors.Remove(conn);
-                    spawnedRooms.Add(exitScript);
-                    Debug.Log($"Exit room placed successfully at connector from {conn.parentRoom.name}");
-                    return;
+                    AlignRoom(exitScript, exitConn, targetConn);
+
+                    exitScript.boundsCollider.enabled = false;
+                    exitScript.boundsCollider.enabled = true;
+
+                    if (IsRoomValid(exitScript, targetConn.parentRoom))
+                    {
+                        exitConn.MarkUsed();
+                        targetConn.MarkUsed();
+                        openConnectors.Remove(targetConn);
+                        spawnedRooms.Add(exitScript);
+
+                        Debug.Log($"Exit room placed successfully at connector from {targetConn.parentRoom.name}");
+                        exitPlaced = true;
+                        break;
+                    }
                 }
+
+                if (exitPlaced) break;
+
+                Destroy(exitRoomObj);
             }
 
-            Destroy(exitRoomObj);
+            if (exitPlaced)
+                return;
+
             attempts++;
         }
 
         Debug.LogError("Unable to spawn exit room after retries.");
     }
+
 
     void SealUnusedConnectors()
     {
