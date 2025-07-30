@@ -71,7 +71,7 @@ public class Potion : MonoBehaviour
         if (collision != null && isVelocity)
         {
             // Ignore collisions with objects tagged "Ladel"
-            if (collision.gameObject.CompareTag("Ladel"))
+            if (collision.gameObject.CompareTag("Ladel") || collision.gameObject.CompareTag("Hat") || collision.gameObject.CompareTag("Chest"))
                 return;
 
             // Check if the collision object is on the dynamic groundMask

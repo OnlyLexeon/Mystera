@@ -8,6 +8,7 @@ TagManager:
   - Ladel
   - Draw
   - Hat
+  - Chest
   layers:
   - Default
   - TransparentFX

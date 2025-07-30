@@ -14,6 +14,8 @@ public class Billboard : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (!gameObject.activeSelf) return;
+
         frameCounter++;
         if (frameCounter >= updateEveryXFrames)
         {

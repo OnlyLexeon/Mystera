@@ -52,6 +52,20 @@ public class IngreAltarButton : MonoBehaviour
         if (bg != null) bg.color = dimGray;
     }
 
+    public void EnableIngredient()
+    {
+        if (spawnButton != null)
+        {
+            spawnButton.interactable = true;
+            spawnButton.colors = ColorBlock.defaultColorBlock;
+        }
+
+        if (sprite != null) sprite.color = Color.white;
+        if (ingreName != null) ingreName.color = Color.white;
+        if (description != null) description.color = Color.white;
+    }
+
+
     public void ToggleDescription()
     {
         isDescVisible = !isDescVisible;

@@ -1,9 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class AltarBook : MonoBehaviour
 {
+    public GameObject alert;
+    public Transform alertPos;
+
     [Header("Parchment Spawning")]
     public GameObject cloudParticle;
     public Transform spawnPos;
@@ -66,5 +70,15 @@ public class AltarBook : MonoBehaviour
             TutorialParchmentComplete parchMentToComplete = spawnedParchment.AddComponent<TutorialParchmentComplete>();
             TutorialManager.instance.SubscribeParchmentCompleteEvent(parchMentToComplete);
         }
+    }
+    
+    public void DoAlert(Ingredient ingredient)
+    {
+        if (ingredient == null || ingredient.sprite == null || alert == null || alertPos == null) return;
+
+        GameObject alertObj = Instantiate(alert, alertPos.position, Quaternion.identity);
+        alertObj.GetComponentInChildren<Image>().sprite = ingredient.sprite;
+
+        Destroy(alertObj, 5f);
     }
 }

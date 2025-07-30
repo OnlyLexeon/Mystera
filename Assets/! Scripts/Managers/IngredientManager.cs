@@ -68,9 +68,29 @@ public class IngredientsManager : MonoBehaviour
         }
     }
 
+    [ContextMenu("Clear Unlocked Ingredients")]
+    public void ClearUnlockedIngredients()
+    {
+        unlockedIDs.Clear();
+
+        if (File.Exists(savePath))
+        {
+            File.Delete(savePath);
+        }
+
+        //reset defaults
+        foreach (var ingre in defaultUnlocked)
+        {
+            if (ingre != null)
+                unlockedIDs.Add(ingre.ingredientID);
+        }
+    }
+
+
     [System.Serializable]
     public class UnlockedData
     {
         public List<string> unlockedIDs;
     }
+
 }

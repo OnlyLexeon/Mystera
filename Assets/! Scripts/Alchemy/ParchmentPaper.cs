@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class ParchmentPaper : MonoBehaviour
@@ -81,7 +82,12 @@ public class ParchmentPaper : MonoBehaviour
 
         if (ingredientPrefab != null)
         {
-            Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
+            Ingredient ingredient = obj.GetComponent<IngredientObject>().ingredient;
+            IngredientsManager.instance.UnlockIngredient(ingredient.ingredientID);
+
+            AltarTabManager.instance.PopulateIngredientsTab();
+            AltarBook.instance.DoAlert(ingredient);
         }
 
         //Set parchment on fire

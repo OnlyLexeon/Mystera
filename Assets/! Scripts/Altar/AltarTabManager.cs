@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.EventSystems.EventTrigger;
@@ -45,6 +47,13 @@ public class AltarTabManager : MonoBehaviour
     public bool hasOpenedIngredients = false;
 
     private IngredientsManager ingreManager;
+
+    public static AltarTabManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -101,6 +110,7 @@ public class AltarTabManager : MonoBehaviour
             {
                 prefabScript.DisableIngredient();
             }
+            else { prefabScript.EnableIngredient(); }
         }
 
 
