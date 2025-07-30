@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8790336812360904477}
-  - component: {fileID: 7289549704909099352}
   - component: {fileID: 2929338294684216550}
   - component: {fileID: 679657645161337506}
-  - component: {fileID: 7836965684043202918}
+  - component: {fileID: 4012279156716396371}
   m_Layer: 0
   m_Name: PaintingFrame
   m_TagString: Untagged
@@ -36,21 +35,6 @@ Transform:
   - {fileID: 4580341154630437862}
   m_Father: {fileID: 4337326005839729520}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &7289549704909099352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68152924643189587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d4909774f6a09b45a2962be3f0a14a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  isHorizontal: 0
-  paintings: []
 --- !u!33 &2929338294684216550
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -104,7 +88,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7836965684043202918
+--- !u!65 &4012279156716396371
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,8 +107,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3280219, y: 0.0836562, z: 1.9324589}
-  m_Center: {x: 0, y: -0.041242287, z: -0.04150024}
+  m_Size: {x: 1.3280213, y: 0.08365574, z: 1.9324589}
+  m_Center: {x: 0, y: -0.041242298, z: -0.04150025}
 --- !u!1 &2240080875169115352
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4337326005839729520}
+  - component: {fileID: 5896030078164602176}
   m_Layer: 0
   m_Name: Painting
   m_TagString: Untagged
@@ -157,6 +142,30 @@ Transform:
   - {fileID: 8790336812360904477}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: 180}
+--- !u!114 &5896030078164602176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240080875169115352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4909774f6a09b45a2962be3f0a14a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 5688802605116841086}
+  isHorizontal: 0
+  paintings:
+  - {fileID: 21300000, guid: 1e6eecbf53bd1344895067c3b4de4872, type: 3}
+  - {fileID: 21300000, guid: 1f12682a7dd223748a47dc57db870b59, type: 3}
+  - {fileID: 21300000, guid: 6cf0a0d4f518ed248968cef3e8303c2a, type: 3}
+  - {fileID: 21300000, guid: 4cee62e368d21534e95ed7f0ad153f9e, type: 3}
+  - {fileID: 21300000, guid: db9c6dd1df0c6e14694d9b9a561a67c3, type: 3}
+  - {fileID: 21300000, guid: d7cd9580b0575194fa11902523088ff1, type: 3}
+  - {fileID: 21300000, guid: 8ecabe426f60e0247b5cc1fa07fed394, type: 3}
+  - {fileID: 21300000, guid: 8eda836cce5e3404f8f0c08b0a8c32b4, type: 3}
+  - {fileID: 21300000, guid: be07e12ca680a854e95a4cf67a748653, type: 3}
 --- !u!1 &5879380398807235388
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
