@@ -6810,7 +6810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mediator: {fileID: 1738763122204227017}
   m_TransformationPriority: 0
-  m_TurnSpeed: 70
+  m_TurnSpeed: 80
   m_LeftHandTurnInput:
     m_InputSourceMode: 2
     m_InputAction:
@@ -6853,7 +6853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mediator: {fileID: 1738763122204227017}
   m_TransformationPriority: 0
-  m_TurnAmount: 30
+  m_TurnAmount: 35
   m_DebounceTime: 0.5
   m_EnableTurnLeftRight: 1
   m_EnableTurnAround: 1
@@ -7084,7 +7084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mediator: {fileID: 1738763122204227017}
   m_TransformationPriority: 0
-  m_MoveSpeed: 1.15
+  m_MoveSpeed: 2
   m_EnableStrafe: 1
   m_EnableFly: 1
   m_UseGravity: 0
@@ -10661,7 +10661,7 @@ MonoBehaviour:
   m_MaxRaycastDistance: 30
   m_RayOriginTransform: {fileID: 774334963583434641}
   m_ReferenceFrame: {fileID: 0}
-  m_Velocity: 6.5
+  m_Velocity: 5.5
   m_Acceleration: 9.8
   m_AdditionalGroundHeight: 0.1
   m_AdditionalFlightTime: 0.5
@@ -10670,8 +10670,8 @@ MonoBehaviour:
   m_ControlPointDistance: 10
   m_ControlPointHeight: 5
   m_SampleFrequency: 50
-  m_HitDetectionType: 1
-  m_SphereCastRadius: 0.15
+  m_HitDetectionType: 0
+  m_SphereCastRadius: 0.027
   m_ConeCastAngle: 6
   m_LiveConeCastDebugVisuals: 0
   m_RaycastMask:
@@ -20986,10 +20986,10 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: Continuous
+    - m_Text: Snap
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Snap
+    - m_Text: Continuous
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
@@ -28933,7 +28933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continuous
+  m_text: Snap
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -40253,7 +40253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mediator: {fileID: 1738763122204227017}
   m_TransformationPriority: 0
-  m_DelayTime: 0
+  m_DelayTime: 0.5
 --- !u!1 &7845513751147406681
 GameObject:
   m_ObjectHideFlags: 0
