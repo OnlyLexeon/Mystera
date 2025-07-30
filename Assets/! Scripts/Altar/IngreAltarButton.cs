@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 public class IngreAltarButton : MonoBehaviour
 {
     public Image sprite;
+    public Image bg;
     public TextMeshProUGUI ingreName;
     public TextMeshProUGUI description;
     public GameObject parchmentToSpawn;
@@ -41,6 +42,14 @@ public class IngreAltarButton : MonoBehaviour
         cb.disabledColor = dimGray;
 
         spawnButton.colors = cb;
+
+        Button rootButton = GetComponent<Button>();
+        if (rootButton != null) rootButton.colors = cb;
+
+        if (sprite != null) sprite.color = dimGray;
+        if (ingreName != null) ingreName.color = dimGray;
+        if (description != null) description.color = dimGray;
+        if (bg != null) bg.color = dimGray;
     }
 
     public void ToggleDescription()

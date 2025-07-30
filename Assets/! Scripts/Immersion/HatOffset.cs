@@ -20,9 +20,5 @@ public class HatOffset : MonoBehaviour
                          cameraTransform.forward * zOffset;
 
         transform.position = cameraTransform.position + offset;
-
-        // Only follow Y rotation (yaw)
-        Vector3 cameraEuler = cameraTransform.rotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(0, cameraEuler.y, 0);
     }
 }

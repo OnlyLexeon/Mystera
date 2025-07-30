@@ -368,6 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 6059600927070503137}
+  bg: {fileID: 7850224976641407111}
   ingreName: {fileID: 7295097043580361249}
   description: {fileID: 1417900508399500346}
   parchmentToSpawn: {fileID: 0}
