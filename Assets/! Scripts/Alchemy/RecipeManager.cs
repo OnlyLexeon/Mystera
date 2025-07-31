@@ -88,7 +88,6 @@ public class RecipeManager : MonoBehaviour
                 return recipe;
         }
 
-        Debug.LogWarning($"[RecipeManager] Recipe '{recipeName}' not found.");
         return null;
     }
 

@@ -52,7 +52,7 @@ public class TurnModeManager : MonoBehaviour
 
     private void LoadTurnMode()
     {
-        int savedIndex = PlayerPrefs.GetInt(TurnModeKey, (int)TurnMode.Continuous);
+        int savedIndex = PlayerPrefs.GetInt(TurnModeKey, (int)TurnMode.Snap);
         turnModeDropdown.value = savedIndex;
         SetTurnMode((TurnMode)savedIndex);
     }

@@ -6,7 +6,6 @@ using System.Collections;
 public class Bed : MonoBehaviour
 {
     public Button sleepButton;
-    public FadeCanvas fadeCanvas;
 
     [Header("Settings")]
     public float minPlayerDistance = 2f;
@@ -65,13 +64,13 @@ public class Bed : MonoBehaviour
 
     public IEnumerator MorningCoroutine()
     {
-        fadeCanvas.StartFadeIn();
+        FadeCanvas.instance.StartFadeIn();
 
-        yield return new WaitForSeconds(fadeCanvas.defaultDuration);
+        yield return new WaitForSeconds(FadeCanvas.instance.defaultDuration);
 
         DayNightManager.instance.SetTimeMorning();
 
-        fadeCanvas.StartFadeOut();
+        FadeCanvas.instance.StartFadeOut();
         sleepButton.interactable = true;
     }
 }

@@ -23,10 +23,6 @@ public class DungeonMapGenerator : MonoBehaviour
     private int maxTargetRooms;
     private Queue<(int roomIndex, GameObject prefab)> scheduledConfirmedRooms = new();
 
-    public void Start()
-    {
-        Generate();
-    }
 
     public void Generate()
     {
