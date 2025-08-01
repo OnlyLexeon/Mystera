@@ -14,4 +14,11 @@ public class SpellListAltar : MonoBehaviour
 
         AltarTabManager.instance.OpenSpellsTab();
     }
+
+    public void UnequipSpellPressed()
+    {
+        SpellsManager.instance.UnequipSpell();
+
+        AltarTabManager.instance.OpenSpellsTab();
+    }
 }

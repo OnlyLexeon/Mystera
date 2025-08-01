@@ -72,6 +72,15 @@ public class SpellsManager : MonoBehaviour
         SaveSpellState();
     }
 
+    public void UnequipSpell()
+    {
+        if(_currentSlotIndex >=0)
+        {
+            equippedSpells[_currentSlotIndex] = null;
+        }
+        SaveSpellState();
+    }
+
     public void ResetManaRegenTimer()
     {
         _timePassed = 0.0f;
