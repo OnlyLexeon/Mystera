@@ -5,7 +5,8 @@ public class SpellObject : ScriptableObject
 {
     [Header("Spell Information")]
     public string spellID;
-    public Sprite spellSprite;
+    public Sprite spellIconSprite;
+    public Sprite spellArrayStructure;
     [TextArea] public string spellDescrtipion;
     public bool defaultLearned;
 

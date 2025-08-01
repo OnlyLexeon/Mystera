@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,16 +22,23 @@ public class AltarTabManager : MonoBehaviour
     public GameObject ingredientEntryPrefab;
     public GameObject recipeEntryPrefab;
     public GameObject recipeIngreImagePrefab;
+    public GameObject equippedSpellListPrefab;
+    public GameObject spellSlotPrefab;
+    public GameObject spellListItemPrefab;
 
     [Header("Tabs")]
     public Transform itemsScrollView;
     public Transform ingredientsScrollView;
     public Transform recipeScrollView;
+    public Transform spellSlotScrollView;
+    public Transform spellListItemScrollView;
 
     [Header("Tab Content")]
     public Transform itemsHolder;
     public Transform ingredientsHolder;
     public Transform recipeHolder;
+    public Transform spellSlotHolder;
+    public Transform spellListItemHolder;
 
     [Header("Items")]
     public List<ParchmentNonIngre> nonIngredients;
@@ -65,6 +73,8 @@ public class AltarTabManager : MonoBehaviour
         PopulateItemsTab();
         PopulateIngredientsTab();
         PopulateRecipeTab();
+        PopulateEquippedSpellsTab();
+        PopulateLearnedSpellsTab();
 
         OpenItemsTab();
     }
@@ -74,6 +84,8 @@ public class AltarTabManager : MonoBehaviour
         itemsScrollView.gameObject.SetActive(true);
         recipeScrollView.gameObject.SetActive(false);
         ingredientsScrollView.gameObject.SetActive(false);
+        spellSlotScrollView.gameObject.SetActive(false);
+        spellListItemScrollView.gameObject.SetActive(false);
     }
 
     public void OpenRecipesTab()
@@ -83,6 +95,8 @@ public class AltarTabManager : MonoBehaviour
         itemsScrollView.gameObject.SetActive(false);
         recipeScrollView.gameObject.SetActive(true);
         ingredientsScrollView.gameObject.SetActive(false);
+        spellSlotScrollView.gameObject.SetActive(false);
+        spellListItemScrollView.gameObject.SetActive(false);
     }
 
     public void OpenIngredientsTab()
@@ -92,6 +106,31 @@ public class AltarTabManager : MonoBehaviour
         itemsScrollView.gameObject.SetActive(false);
         recipeScrollView.gameObject.SetActive(false);
         ingredientsScrollView.gameObject.SetActive(true);
+        spellSlotScrollView.gameObject.SetActive(false);
+        spellListItemScrollView.gameObject.SetActive(false);
+    }
+
+    public void OpenSpellsTab()
+    {
+        SpellsManager.instance._currentSlotIndex = -1;
+
+        itemsScrollView.gameObject.SetActive(false);
+        recipeScrollView.gameObject.SetActive(false);
+        ingredientsScrollView.gameObject.SetActive(false);
+        spellSlotScrollView.gameObject.SetActive(true);
+        spellListItemScrollView.gameObject.SetActive(false);
+
+        Destroy(spellSlotHolder.GetChild(0).gameObject);
+        PopulateEquippedSpellsTab();
+    }
+
+    public void OpenLearnedSpellsTab()
+    {
+        itemsScrollView.gameObject.SetActive(false);
+        recipeScrollView.gameObject.SetActive(false);
+        ingredientsScrollView.gameObject.SetActive(false);
+        spellSlotScrollView.gameObject.SetActive(false);
+        spellListItemScrollView.gameObject.SetActive(true);
     }
 
     public void PopulateIngredientsTab()
@@ -206,6 +245,70 @@ public class AltarTabManager : MonoBehaviour
         }
 
         RebuildLayout((RectTransform)itemsHolder);
+    }
+
+    public void PopulateEquippedSpellsTab()
+    {
+        List<SpellObject> equippedSpellList = SpellsManager.instance.equippedSpells;
+
+        var entry = Instantiate(equippedSpellListPrefab, spellSlotHolder);
+
+        for(int i =0;i<equippedSpellList.Count;i++)
+        {
+            var spellSlot = Instantiate(spellSlotPrefab, entry.transform);
+            SpellSlotAltar spellSlotScript = spellSlot.GetComponent<SpellSlotAltar>();
+            spellSlotScript.slotIndex = i;
+            if (equippedSpellList[i] != null)
+            {
+                spellSlotScript.spellIcon.sprite = equippedSpellList[i].spellIconSprite;
+                spellSlotScript.spellArrayStructure.sprite = equippedSpellList[i].spellArrayStructure;
+                spellSlotScript.spellName.text = equippedSpellList[i].spellID;
+            }
+        }
+
+        //REBUILD LAYOUT BUTTON PRESS
+        foreach (Transform child in recipeHolder)
+        {
+            Button button = child.GetComponent<Button>();
+            if (button != null)
+            {
+                button.onClick.AddListener(() => RebuildLayout((RectTransform)recipeHolder));
+            }
+        }
+
+        RebuildLayout((RectTransform)recipeHolder);
+    }
+
+    public void PopulateLearnedSpellsTab()
+    {
+        List<SpellList> spellList = SpellsManager.instance.spellList;
+
+        for(int i=0;i<spellList.Count;i++)
+        {
+            if(spellList[i] != null)
+            {
+                if (spellList[i].learned)
+                {
+                    var spellListItem = Instantiate(spellListItemPrefab, spellListItemHolder);
+                    SpellListAltar spellListItemScript = spellListItem.GetComponent<SpellListAltar>();
+                    spellListItemScript.spellIndex = i;
+                    spellListItemScript.spellIcon.sprite = spellList[i].spellObj.spellIconSprite;
+                    spellListItemScript.spellName.text = spellList[i].spellID;
+                }
+            }
+        }
+
+        //REBUILD LAYOUT BUTTON PRESS
+        foreach (Transform child in recipeHolder)
+        {
+            Button button = child.GetComponent<Button>();
+            if (button != null)
+            {
+                button.onClick.AddListener(() => RebuildLayout((RectTransform)recipeHolder));
+            }
+        }
+
+        RebuildLayout((RectTransform)recipeHolder);
     }
 
     private void RebuildLayout(RectTransform layout)

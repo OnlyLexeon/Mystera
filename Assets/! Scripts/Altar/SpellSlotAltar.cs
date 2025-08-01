@@ -1,16 +1,22 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpellSlotAltar : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int slotIndex;
+    public Image spellIcon;
+    public TextMeshProUGUI spellName;
+    public Image spellArrayStructure;
+
+    public Sprite defaultSprite;
+    public string defaultSpellName;
+
+    public void SlotSelected()
     {
-        
+        SpellsManager.instance._currentSlotIndex = slotIndex;
+
+        AltarTabManager.instance.OpenLearnedSpellsTab();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

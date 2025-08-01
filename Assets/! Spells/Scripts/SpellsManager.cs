@@ -22,7 +22,7 @@ public class SpellsManager : MonoBehaviour
 
     [Header("Private Data (For Debug Only)")]
     public float _timePassed = 0.0f;
-    public int _currentIndex = 0;
+    public int _currentSlotIndex = -1;
 
     private string savePath => Path.Combine(Application.persistentDataPath, "spellSate.json");
 
@@ -63,9 +63,13 @@ public class SpellsManager : MonoBehaviour
         }
     }
 
-    public void EquipSpell(int spellIndex, int index)
+    public void EquipSpell(int spellIndex)
     {
-
+        if (_currentSlotIndex >= 0)
+        {
+            equippedSpells[_currentSlotIndex] = spellList[spellIndex].spellObj;
+        }
+        SaveSpellState();
     }
 
     public void ResetManaRegenTimer()
@@ -101,23 +105,19 @@ public class SpellsManager : MonoBehaviour
 
     public void LoadSpellState()
     {
-        equippedSpells.Clear();
-        for(int i =0;i<maxSpellSlots;i++)
-        {
-            equippedSpells.Add(null);
-        }
+        ResetEquippedSpellList();
 
         if (File.Exists(savePath))
         {
             string json = File.ReadAllText(savePath);
             var data = JsonUtility.FromJson<SpellState>(json);
 
-            foreach(var spells in spellList)
+            foreach (var spells in spellList)
             {
-                if(data.learnedSpellID.Contains(spells.spellID))
+                if (data.learnedSpellID.Contains(spells.spellID))
                 {
                     spells.learned = true;
-                    if(data.equippedSpellID.Contains(spells.spellID))
+                    if (data.equippedSpellID.Contains(spells.spellID))
                     {
                         equippedSpells[data.equippedSpellID.IndexOf(spells.spellID)] = spells.spellObj;
                     }
@@ -127,6 +127,22 @@ public class SpellsManager : MonoBehaviour
                     spells.learned = false;
                 }
             }
+        }
+        else
+        {
+            foreach (var spells in spellList)
+            {
+                spells.learned = spells.spellObj.defaultLearned;
+            }
+        }
+    }
+
+    public void ResetEquippedSpellList()
+    {
+        equippedSpells.Clear();
+        for (int i = 0; i < maxSpellSlots; i++)
+        {
+            equippedSpells.Add(null);
         }
     }
 
