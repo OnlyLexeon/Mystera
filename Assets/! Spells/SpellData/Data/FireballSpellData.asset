@@ -19,11 +19,17 @@ MonoBehaviour:
   - {x: 0, y: 1}
   spellDamge: 10
   spellChargeTime: 2
-  projectileSpeed: 30
+  projectileSpeed: 10
   applyStatus: 0
   statusDuration: 0
   spellHitBoxRadius: 2
-  spellLifeTime: 2
+  spellHitBoxMask:
+    serializedVersion: 2
+    m_Bits: 512
+  spellIgnoreMask:
+    serializedVersion: 2
+    m_Bits: 1463
+  spellLifeTime: 0.5
   maximumLifeTime: 10
   hitEffectObject: {fileID: 1121192042590650, guid: 36e3541d26ac5b6409987643532bf433, type: 3}
   hitEffectLifeTime: 2

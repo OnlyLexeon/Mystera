@@ -12,6 +12,8 @@ public class DefaultSpellData : ScriptableObject
     public int applyStatus;
     public float statusDuration;
     public float spellHitBoxRadius;
+    public LayerMask spellHitBoxMask;
+    public LayerMask spellIgnoreMask;
 
     [Header("Spells Effect Data")]
     //public GameObject projectileObject;
