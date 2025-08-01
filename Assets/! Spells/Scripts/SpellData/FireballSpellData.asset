@@ -10,23 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b49b151147aff4e4fb04cd29f556074f, type: 3}
-  m_Name: FireballSpell
+  m_Name: FireballSpellData
   m_EditorClassIdentifier: 
-  spellID: 1
   spellsArrayStructure:
   - {x: 1, y: 0}
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   - {x: 0, y: 1}
-  spellDamge: 0
+  spellDamge: 10
   spellChargeTime: 2
   projectileSpeed: 30
   applyStatus: 0
   statusDuration: 0
-  spellHitBoxRadius: 0
-  spellLifeTime: 0
+  spellHitBoxRadius: 2
+  spellLifeTime: 2
   maximumLifeTime: 10
-  hitEffectObject: {fileID: 0}
-  hitEffectLifeTime: 0
+  hitEffectObject: {fileID: 1121192042590650, guid: 36e3541d26ac5b6409987643532bf433, type: 3}
+  hitEffectLifeTime: 2
   projectileAudio: {fileID: 0}
   hitEffectAudio: {fileID: 0}

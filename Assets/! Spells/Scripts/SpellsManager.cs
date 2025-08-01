@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class SpellsManager : MonoBehaviour
@@ -20,7 +21,10 @@ public class SpellsManager : MonoBehaviour
     public float currentMana = 0;
 
     [Header("Private Data (For Debug Only)")]
-    public float timePassed = 0.0f;
+    public float _timePassed = 0.0f;
+    public int _currentIndex = 0;
+
+    private string savePath => Path.Combine(Application.persistentDataPath, "spellSate.json");
 
     private void Awake()
     {
@@ -35,17 +39,22 @@ public class SpellsManager : MonoBehaviour
         currentMana = maxMana;
     }
 
+    private void Start()
+    {
+        LoadSpellState();
+    }
+
     private void Update()
     {
         if (!isCasting)
         {
             if (currentMana < maxMana)
             {
-                timePassed += Time.deltaTime;
-                if (timePassed > manaRegenRate)
+                _timePassed += Time.deltaTime;
+                if (_timePassed > manaRegenRate)
                 {
-                    int manaRegen = (int)(timePassed / manaRegenRate);
-                    timePassed -= manaRegen;
+                    int manaRegen = (int)(_timePassed / manaRegenRate);
+                    _timePassed -= manaRegen;
                     currentMana += manaRegen;
                     if (currentMana > maxMana)
                         currentMana = maxMana;
@@ -54,9 +63,78 @@ public class SpellsManager : MonoBehaviour
         }
     }
 
+    public void EquipSpell(int spellIndex, int index)
+    {
+
+    }
+
     public void ResetManaRegenTimer()
     {
-        timePassed = 0.0f;
+        _timePassed = 0.0f;
+    }
+
+    public void SaveSpellState()
+    {
+        SpellState data = new SpellState();
+        foreach (var spells in spellList)
+        {
+            if (spells.learned)
+            {
+                data.learnedSpellID.Add(spells.spellObj.spellID);
+            }
+        }
+        for (int i = 0; i < equippedSpells.Count; i++)
+        {
+            if (equippedSpells[i] != null)
+            {
+                data.equippedSpellID.Add(equippedSpells[i].spellID);
+            }
+            else
+            {
+                data.equippedSpellID.Add(null);
+            }
+        }
+
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(savePath, json);
+    }
+
+    public void LoadSpellState()
+    {
+        equippedSpells.Clear();
+        for(int i =0;i<maxSpellSlots;i++)
+        {
+            equippedSpells.Add(null);
+        }
+
+        if (File.Exists(savePath))
+        {
+            string json = File.ReadAllText(savePath);
+            var data = JsonUtility.FromJson<SpellState>(json);
+
+            foreach(var spells in spellList)
+            {
+                if(data.learnedSpellID.Contains(spells.spellID))
+                {
+                    spells.learned = true;
+                    if(data.equippedSpellID.Contains(spells.spellID))
+                    {
+                        equippedSpells[data.equippedSpellID.IndexOf(spells.spellID)] = spells.spellObj;
+                    }
+                }
+                else
+                {
+                    spells.learned = false;
+                }
+            }
+        }
+    }
+
+    public class SpellState
+    {
+        public List<string> learnedSpellID = new List<string>();
+
+        public List<string> equippedSpellID = new List<string>();
     }
 }
 
@@ -64,5 +142,6 @@ public class SpellsManager : MonoBehaviour
 public class SpellList
 {
     public SpellObject spellObj;
+    public string spellID => spellObj.spellID;
     public bool learned = false;
 }

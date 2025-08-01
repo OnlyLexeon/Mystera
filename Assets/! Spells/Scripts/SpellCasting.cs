@@ -238,7 +238,7 @@ public class SpellCasting : MonoBehaviour
     {
         // Call the spell's shooting function
         DefaultSpellsScript newSpellScript =
-            Instantiate(_spellManager.equippedSpells[spellIndex], drawPoint.position, drawPoint.transform.rotation)
+            Instantiate(_spellManager.equippedSpells[spellIndex].spellPrefab, drawPoint.position, drawPoint.transform.rotation)
             .GetComponent<DefaultSpellsScript>();
         newSpellScript.ShootProjectile(drawPoint.forward);
     }

@@ -7,6 +7,7 @@ public class SpellObject : ScriptableObject
     public string spellID;
     public Sprite spellSprite;
     [TextArea] public string spellDescrtipion;
+    public bool defaultLearned;
 
     [Header("Spell Prefab")]
     public GameObject spellPrefab;
