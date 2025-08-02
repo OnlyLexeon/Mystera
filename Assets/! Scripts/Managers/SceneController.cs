@@ -39,9 +39,9 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
-        FadeCanvas.instance.StartFadeIn();
+        FadeCanvasInstance.instance.StartFadeIn();
 
-        yield return new WaitForSeconds(FadeCanvas.instance.defaultDuration);
+        yield return new WaitForSeconds(FadeCanvasInstance.instance.defaultDuration);
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         asyncLoad.allowSceneActivation = false;
@@ -113,16 +113,16 @@ public class SceneController : MonoBehaviour
         LoadingScreenManager.instance.Hide();
 
         yield return new WaitForSeconds(LoadingScreenManager.instance.defaultDuration);
-        
-        FadeCanvas.instance.StartFadeOut();
+
+        FadeCanvasInstance.instance.StartFadeOut();
         
     }
 
     public IEnumerator ResetCoroutine()
     {
-        FadeCanvas.instance.StartFadeIn();
+        FadeCanvasInstance.instance.StartFadeIn();
 
-        yield return new WaitForSeconds(FadeCanvas.instance.defaultDuration);
+        yield return new WaitForSeconds(FadeCanvasInstance.instance.defaultDuration);
 
         // Reloads the currently active scene
         Scene currentScene = SceneManager.GetActiveScene();

@@ -7130,7 +7130,7 @@ GameObject:
   - component: {fileID: 1948945409509573219}
   - component: {fileID: 2839418801370163396}
   - component: {fileID: 6597922431166818101}
-  - component: {fileID: 8617800314182580293}
+  - component: {fileID: 5312860456935036393}
   m_Layer: 5
   m_Name: Fade Canvas
   m_TagString: Untagged
@@ -7233,7 +7233,7 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &8617800314182580293
+--- !u!114 &5312860456935036393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7242,7 +7242,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 594339164069508240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 969b8e08cffa4e44681eb600a8dfc099, type: 3}
+  m_Script: {fileID: 11500000, guid: 67a06ebdb84675a4088e7ab9600c8210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDuration: 2.5
@@ -9765,7 +9765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isResetMenuOpen: 0
   resetMenu: {fileID: 6375005545822853238}
-  fadeCanvas: {fileID: 8617800314182580293}
+  fadeCanvas: {fileID: 0}
   fadeDelay: 2
 --- !u!114 &4920387702796157553
 MonoBehaviour:
@@ -31865,7 +31865,7 @@ MonoBehaviour:
   OnTeleport:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8617800314182580293}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FadeCanvas, Assembly-CSharp
         m_MethodName: QuickFadeOut
         m_Mode: 1
