@@ -40,7 +40,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5454235130706482126}
-  - component: {fileID: 3893691560501606844}
   - component: {fileID: 8754317805311033451}
   - component: {fileID: 2547269194141746584}
   - component: {fileID: 2150550116295925863}
@@ -72,21 +71,6 @@ Transform:
   - {fileID: 5349552901584501433}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 17.307, y: 0, z: 180}
---- !u!114 &3893691560501606844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3851576709923950932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d83a0e58c7a0e49804a28b43ef17e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isVelocity: 0
-  isSelected: 0
-  isStirring: 0
 --- !u!114 &8754317805311033451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,18 +88,6 @@ MonoBehaviour:
   OnBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3893691560501606844}
-        m_TargetAssemblyTypeName: PotStirrer, Assembly-CSharp
-        m_MethodName: SetVelocity
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 4422615969840438925}
         m_TargetAssemblyTypeName: OnLandPlaySound, Assembly-CSharp
         m_MethodName: SetVelocity
@@ -131,18 +103,6 @@ MonoBehaviour:
   OnEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3893691560501606844}
-        m_TargetAssemblyTypeName: PotStirrer, Assembly-CSharp
-        m_MethodName: SetVelocity
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4422615969840438925}
         m_TargetAssemblyTypeName: OnLandPlaySound, Assembly-CSharp
         m_MethodName: SetVelocity
@@ -304,7 +264,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3893691560501606844}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PotStirrer, Assembly-CSharp
         m_MethodName: SetSelected
         m_Mode: 6
@@ -319,7 +279,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3893691560501606844}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PotStirrer, Assembly-CSharp
         m_MethodName: SetSelected
         m_Mode: 6
@@ -366,11 +326,11 @@ MonoBehaviour:
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
   m_TrackScale: 1
