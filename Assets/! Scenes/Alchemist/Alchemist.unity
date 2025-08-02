@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 2
-  size: {x: 29.194489, y: 12.98304, z: 20.432259}
+  size: {x: 29.194489, y: 12.98304, z: 26.277142}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -794,7 +794,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 7
   overridesSubdivLevels: 0
-  mightNeedRebaking: 0
+  mightNeedRebaking: 1
   cachedTransform:
     e00: 1
     e01: 0
@@ -825,7 +825,7 @@ Transform:
   m_GameObject: {fileID: 49616971}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.773972, y: 4.5119963, z: -1.4674053}
+  m_LocalPosition: {x: -21.773972, y: 4.5119963, z: 1.4550366}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1213,6 +1213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 977030779}
   - {fileID: 858960692}
   - {fileID: 1301608414}
   - {fileID: 500637590}
@@ -17256,6 +17257,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 954621125948624509, guid: f0fb96ec1d5e5884cbe00bcbfa4d8ada, type: 3}
   m_PrefabInstance: {fileID: 975577368}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &977030778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 977030779}
+  m_Layer: 0
+  m_Name: Static Props
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &977030779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977030778}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 62106893}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &981342235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63140,6 +63172,7 @@ SceneRoots:
   - {fileID: 970746489}
   - {fileID: 588894329}
   - {fileID: 1291829653}
+  - {fileID: 278644252}
   - {fileID: 474619463}
   - {fileID: 931766338}
   - {fileID: 49616973}
@@ -63147,4 +63180,3 @@ SceneRoots:
   - {fileID: 296347920}
   - {fileID: 32402870}
   - {fileID: 2140749720}
-  - {fileID: 278644252}
