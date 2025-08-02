@@ -8,7 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit.Filtering;
 
 public class SpellCasting : MonoBehaviour
 {
-    public SpellsManager _spellManager;
+    private SpellsManager _spellManager;
 
     [Header("Drawing")]
     public Transform drawPoint;
@@ -17,9 +17,7 @@ public class SpellCasting : MonoBehaviour
     public float cooldownTime = 1f;
     public float lineWidth = 0.01f;
     public Color lineColor = Color.white;
-    //public int maxPoints = 100;
     public float pointInterval = 0.01f;
-    public bool grabbing = false;
     [Range(0, 1)]
     public float matchingThreshold = 0.75f;
     public GameObject aimLine;
@@ -31,6 +29,7 @@ public class SpellCasting : MonoBehaviour
     [Header("Private Attributes (For Debug Only)")]
     public bool _canDraw = true;
     public bool _isDrawing = false;
+    public bool _stopDrawing = false;
     public List<Vector2> _drawnPoints = new List<Vector2>();
     public int _linePositionIndex = 0;
     public Vector3 _newPoint = new Vector3(0, 0, 0);
@@ -53,9 +52,9 @@ public class SpellCasting : MonoBehaviour
         // Reset flags
         _canDraw = true;
         _isDrawing = false;
+        _stopDrawing = false;
 
-        // Find the spell manager singleton
-        _spellManager = GameObject.Find("SpellsManager").GetComponent<SpellsManager>();
+        _spellManager = SpellsManager.instance;
 
         // Disable the aiming line first
         aimLine.SetActive(false);
@@ -68,6 +67,10 @@ public class SpellCasting : MonoBehaviour
             #region Update Drawing
             UpdateDrawing();
             #endregion
+        }
+        if(_stopDrawing)
+        {
+            StopDrawing();
         }
     }
 
@@ -157,6 +160,7 @@ public class SpellCasting : MonoBehaviour
     {
         // Turn off the flag
         _isDrawing = false;
+        _stopDrawing = false;
 
         if (_drawnPoints.Count >= vectorAmount)
         {
@@ -195,6 +199,8 @@ public class SpellCasting : MonoBehaviour
             // Wand enter cooldown if drawn points are too few
             CastingCoolDown();
         }
+
+        Destroy(_currentLine.gameObject);
     }
 
     public void CastingCoolDown()

@@ -37,6 +37,8 @@ public class Wand : MonoBehaviour
     public bool hasBeenSelected = false;
     public bool hasBeenActivated = false;
 
+    private SpellCasting spellCastingScript;
+
     private void Start()
     {
         ResetSize();
@@ -45,6 +47,11 @@ public class Wand : MonoBehaviour
         if (sceneController != null)
         {
             isCombat = !sceneController.IsMainScene(); //false of is main scene
+        }
+
+        if (spellCastingScript == null)
+        {
+            spellCastingScript = gameObject.GetComponent<SpellCasting>();
         }
     }
 
@@ -78,7 +85,7 @@ public class Wand : MonoBehaviour
             //KEE YEE do draw logic here
             else //else if combat:
             {
-
+                spellCastingScript.StartDrawing();
             }
         }
         else DoDeactivate(); //disable drawing
@@ -154,6 +161,9 @@ public class Wand : MonoBehaviour
         wandCapsuleCollider.enabled = false;
 
         audioSource.Stop();
+
+        if (spellCastingScript._isDrawing)
+            spellCastingScript._stopDrawing = true;
     }
 
     public void PlayLoopingSound(AudioClip clip)
