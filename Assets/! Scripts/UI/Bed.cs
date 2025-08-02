@@ -64,13 +64,13 @@ public class Bed : MonoBehaviour
 
     public IEnumerator MorningCoroutine()
     {
-        FadeCanvas.instance.StartFadeIn();
+        FadeCanvasInstance.instance.StartFadeIn();
 
-        yield return new WaitForSeconds(FadeCanvas.instance.defaultDuration);
+        yield return new WaitForSeconds(FadeCanvasInstance.instance.defaultDuration);
 
         DayNightManager.instance.SetTimeMorning();
 
-        FadeCanvas.instance.StartFadeOut();
+        FadeCanvasInstance.instance.StartFadeOut();
         sleepButton.interactable = true;
     }
 }

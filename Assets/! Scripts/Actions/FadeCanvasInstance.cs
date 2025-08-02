@@ -5,7 +5,7 @@ using UnityEngine;
 /// Fades a canvas over time using a coroutine and a canvas group
 /// </summary>
 [RequireComponent(typeof(CanvasGroup))]
-public class FadeCanvas : MonoBehaviour
+public class FadeCanvasInstance : MonoBehaviour
 {
     [Tooltip("The speed at which the canvas fades")]
     public float defaultDuration = 1.0f;
@@ -17,10 +17,15 @@ public class FadeCanvas : MonoBehaviour
 
     private float quickFadeDuration = 0.25f;
 
+    public static FadeCanvasInstance instance;
+
     private void Awake()
     {
+        instance = this;
+
         canvasGroup = GetComponent<CanvasGroup>();
     }
+
 
     public void StartFadeIn()
     {
