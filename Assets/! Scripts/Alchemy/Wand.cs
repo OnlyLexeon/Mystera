@@ -8,8 +8,6 @@ public enum WandMode
 
 public class Wand : MonoBehaviour
 {
-    public bool isCombat = false;
-
     public WandMode wandMode;
     public bool isPressed = false;
     public bool isSelected = false;
@@ -39,12 +37,6 @@ public class Wand : MonoBehaviour
     private void Start()
     {
         ResetSize();
-
-        SceneController sceneController = SceneController.instance;
-        if (sceneController != null)
-        {
-            isCombat = sceneController.isMainScene();
-        }
     }
 
     public void SetPressed(bool state)
@@ -63,21 +55,13 @@ public class Wand : MonoBehaviour
     {
         if (isPressed && isSelected)
         {
-            if (!isCombat)
+            if (wandMode != previousMode)
             {
-                //Wand Drawing
-                if (wandMode != previousMode)
-                {
-                    previousMode = wandMode;
-                    ResetParticles();
-                }
-                DoActivate();
+                previousMode = wandMode;
+                ResetParticles();
             }
-            else
-            {
-                //kee yee logic
 
-            }
+            DoActivate();
         }
         else DoDeactivate();
     }
