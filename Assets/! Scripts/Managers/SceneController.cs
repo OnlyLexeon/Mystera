@@ -114,6 +114,10 @@ public class SceneController : MonoBehaviour
         return SceneManager.GetActiveScene().name;
     }
 
+    public bool isMainScene()
+    {
+        return SceneManager.GetActiveScene().name == mainScene;
+    }
 
     public void QuitGame()
     {
