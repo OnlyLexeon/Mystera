@@ -7,8 +7,6 @@ public class LoadingScreenManager : MonoBehaviour
 {
     public static LoadingScreenManager instance;
 
-    public float lerpSpeed = 2.5f;
-
     [Header("References")]
     public GameObject loadingUI;
     public TextMeshProUGUI text;

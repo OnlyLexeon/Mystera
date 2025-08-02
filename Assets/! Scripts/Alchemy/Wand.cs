@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum WandMode
 {
@@ -8,6 +9,8 @@ public enum WandMode
 
 public class Wand : MonoBehaviour
 {
+    public bool isCombat = false;
+
     public WandMode wandMode;
     public bool isPressed = false;
     public bool isSelected = false;
@@ -37,6 +40,12 @@ public class Wand : MonoBehaviour
     private void Start()
     {
         ResetSize();
+
+        SceneController sceneController = SceneController.instance;
+        if (sceneController != null)
+        {
+            isCombat = !sceneController.IsMainScene(); //false of is main scene
+        }
     }
 
     public void SetPressed(bool state)
@@ -55,15 +64,24 @@ public class Wand : MonoBehaviour
     {
         if (isPressed && isSelected)
         {
-            if (wandMode != previousMode)
+            //Non Combat
+            if (!isCombat)
             {
-                previousMode = wandMode;
-                ResetParticles();
-            }
+                if (wandMode != previousMode)
+                {
+                    previousMode = wandMode;
+                    ResetParticles();
+                }
 
-            DoActivate();
+                DoActivate(); //activate drawing
+            }
+            //KEE YEE do draw logic here
+            else //else if combat:
+            {
+
+            }
         }
-        else DoDeactivate();
+        else DoDeactivate(); //disable drawing
     }
 
     public void ChangeColliderSize(float radius, float height)

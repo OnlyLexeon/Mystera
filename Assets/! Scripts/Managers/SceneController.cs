@@ -27,13 +27,6 @@ public class SceneController : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void LoadScene(string sceneName, string dungeonIDToLoad = "")
@@ -69,7 +62,7 @@ public class SceneController : MonoBehaviour
         asyncLoad.allowSceneActivation = true;
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void OnSceneLoaded()
     {
         StartCoroutine(FinalizeSceneLoad());
     }
@@ -81,8 +74,17 @@ public class SceneController : MonoBehaviour
         // If it's a dungeon, generate
         if (currentScene == dungeonScene)
         {
-            DungeonManager.instance.GenerateDungeon(dungeonID);
-            Debug.Log($"Generated Dungeon with ID: {dungeonID}");
+            DungeonManager dungeonManager= DungeonManager.instance;
+            if (dungeonManager != null)
+            {
+                DungeonManager.instance.GenerateDungeon(dungeonID);
+                Debug.Log($"Generated Dungeon with ID: {dungeonID}");
+            }
+            else
+            {
+                Debug.LogWarning("CANT FIND DUNGEON MANAGER");
+            }
+            
         }
 
         yield return null; // wait 1 frame
@@ -114,6 +116,10 @@ public class SceneController : MonoBehaviour
         return SceneManager.GetActiveScene().name;
     }
 
+    public bool IsMainScene()
+    {
+        return (SceneManager.GetActiveScene().name == mainScene);
+    }
 
     public void QuitGame()
     {

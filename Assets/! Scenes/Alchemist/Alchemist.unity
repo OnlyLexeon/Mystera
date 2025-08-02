@@ -4174,6 +4174,10 @@ PrefabInstance:
       value: Skeleton_01
       objectReference: {fileID: 0}
     - target: {fileID: 2449338111380396674, guid: a5eb48a5c116fac4c8b3bae3a1b9f3bd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449338111380396674, guid: a5eb48a5c116fac4c8b3bae3a1b9f3bd, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -9513,10 +9517,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 758160194, guid: 681e8c7fed95aa7419814bc1821d704e, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7256602617229109319, guid: 681e8c7fed95aa7419814bc1821d704e, type: 3}
@@ -17821,10 +17821,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3338350272218636627, guid: b97eefb17f24b0e4191921db18ac6999, type: 3}
       propertyPath: m_Mass
       value: 2
@@ -23495,10 +23491,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3338350272218636627, guid: b97eefb17f24b0e4191921db18ac6999, type: 3}
       propertyPath: m_Mass
       value: 2
@@ -25176,10 +25168,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 522286499653982151, guid: 804115930a90c4b4ea161a97b32f6165, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -25438,10 +25426,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10603838, guid: b97eefb17f24b0e4191921db18ac6999, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3338350272218636627, guid: b97eefb17f24b0e4191921db18ac6999, type: 3}
@@ -28667,6 +28651,10 @@ PrefabInstance:
     - target: {fileID: 6469865493407884148, guid: 279066419a4cb014485a7a97292660aa, type: 3}
       propertyPath: m_Name
       value: Background_Hills
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469865493407884148, guid: 279066419a4cb014485a7a97292660aa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6469865493407884148, guid: 279066419a4cb014485a7a97292660aa, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -35405,10 +35393,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8003066844573949702, guid: b97eefb17f24b0e4191921db18ac6999, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.19
@@ -37820,7 +37804,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1879184153}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: DoOnSceneLoad
+        m_MethodName: OnSceneLoaded
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39040,6 +39024,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6748607432583054993, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043947983848472117, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

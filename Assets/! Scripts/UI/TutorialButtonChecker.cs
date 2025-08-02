@@ -7,7 +7,7 @@ public class TutorialButtonChecker : MonoBehaviour
     void Start()
     {
         SceneController sceneController = SceneController.instance;
-        if (sceneController.GetSceneName() == sceneController.mainScene) tutorialButton.SetActive(true);
+        if (sceneController.IsMainScene()) tutorialButton.SetActive(true);
         else tutorialButton.SetActive(false);
 
         Debug.Log($"Tutorial Button: {tutorialButton.activeSelf}");
