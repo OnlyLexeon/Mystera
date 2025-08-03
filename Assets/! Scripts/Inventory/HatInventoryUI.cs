@@ -42,7 +42,9 @@ public class HatInventoryUI : MonoBehaviour
     {
         //clear
         foreach (Transform child in gridParent)
-            Destroy(child.gameObject);
+        {
+            if (child) Destroy(child.gameObject);
+        }
 
         //set
         List<HatInventoryManager.InventorySlot> inventory = HatInventoryManager.instance.GetInventory();

@@ -4479,7 +4479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984652082948596268, guid: 1c9dc210593b75645ae66a4edff5edb6, type: 3}
       propertyPath: lootPool.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8984652082948596268, guid: 1c9dc210593b75645ae66a4edff5edb6, type: 3}
       propertyPath: lootPool.Array.data[0].prefab
@@ -4504,6 +4504,14 @@ PrefabInstance:
     - target: {fileID: 8984652082948596268, guid: 1c9dc210593b75645ae66a4edff5edb6, type: 3}
       propertyPath: lootPool.Array.data[2].weight
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984652082948596268, guid: 1c9dc210593b75645ae66a4edff5edb6, type: 3}
+      propertyPath: lootPool.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 7965604961983364622, guid: 7cd1b0c039b4649429fa00cded3c9f2f, type: 3}
+    - target: {fileID: 8984652082948596268, guid: 1c9dc210593b75645ae66a4edff5edb6, type: 3}
+      propertyPath: lootPool.Array.data[3].weight
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5764,7 +5772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984652082948596268, guid: 1c9dc210593b75645ae66a4edff5edb6, type: 3}
       propertyPath: lootPool.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8984652082948596268, guid: 1c9dc210593b75645ae66a4edff5edb6, type: 3}
       propertyPath: lootPool.Array.data[0].prefab
@@ -5789,6 +5797,14 @@ PrefabInstance:
     - target: {fileID: 8984652082948596268, guid: 1c9dc210593b75645ae66a4edff5edb6, type: 3}
       propertyPath: lootPool.Array.data[2].weight
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984652082948596268, guid: 1c9dc210593b75645ae66a4edff5edb6, type: 3}
+      propertyPath: lootPool.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 7965604961983364622, guid: 7cd1b0c039b4649429fa00cded3c9f2f, type: 3}
+    - target: {fileID: 8984652082948596268, guid: 1c9dc210593b75645ae66a4edff5edb6, type: 3}
+      propertyPath: lootPool.Array.data[3].weight
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
