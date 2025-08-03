@@ -347,7 +347,7 @@ public class SkeletonEnemy : Enemy
         return 3f;
     }
     
-    protected override void OnTakeDamageWithAttacker(int damage, GameObject attacker)
+    public override void OnTakeDamageWithAttacker(int damage, GameObject attacker)
     {
         // 死亡状态不受伤害
         if (isDead)

@@ -114,7 +114,7 @@ public class DummyEnemy : Enemy
         // 靶子不会产生仇恨
     }
 
-    protected override void OnTakeDamage(int damage)
+    public override void OnTakeDamage(int damage)
     {
         if (isDead) return;
 
@@ -130,8 +130,8 @@ public class DummyEnemy : Enemy
         // 播放受伤音效
         PlayHurtSound();
     }
-    
-    protected override void OnTakeDamageWithAttacker(int damage, GameObject attacker)
+
+    public override void OnTakeDamageWithAttacker(int damage, GameObject attacker)
     {
         if (isDead) return;
         

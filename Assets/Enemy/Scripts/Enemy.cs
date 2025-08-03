@@ -493,7 +493,7 @@ public abstract class Enemy : MonoBehaviour
 
     #region Damage and Alert System
     // 伤害回调
-    protected virtual void OnTakeDamage(int damage)
+    public virtual void OnTakeDamage(int damage)
     {
         if (isDead || isStunned) return;
 
@@ -519,7 +519,7 @@ public abstract class Enemy : MonoBehaviour
         StartCoroutine(FlashRed());
     }
 
-    protected virtual void OnTakeDamageWithAttacker(int damage, GameObject attacker)
+    public virtual void OnTakeDamageWithAttacker(int damage, GameObject attacker)
     {
         if (enableDebugLogs)
         {

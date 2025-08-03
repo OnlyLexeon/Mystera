@@ -7622,7 +7622,6 @@ MonoBehaviour:
   lineWidth: 0.01
   lineColor: {r: 1, g: 1, b: 1, a: 1}
   pointInterval: 0.01
-  grabbing: 0
   matchingThreshold: 0.85
   aimLine: {fileID: 123309953}
   vectorAmount: 4
@@ -31217,7 +31216,6 @@ MonoBehaviour:
   lineWidth: 0.01
   lineColor: {r: 1, g: 1, b: 1, a: 1}
   pointInterval: 0.01
-  grabbing: 0
   matchingThreshold: 0.85
   aimLine: {fileID: 1888593649}
   vectorAmount: 4

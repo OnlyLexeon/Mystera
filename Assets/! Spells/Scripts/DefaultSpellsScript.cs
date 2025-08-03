@@ -52,8 +52,9 @@ public class DefaultSpellsScript : MonoBehaviour
         if (hitObject.tag == "Enemy")
         {
             Debug.Log("HIT!");
-            //var enemyScript = hitObject.GetComponent<EnemyScript>();
-            //enemyScript.BeenHit(spellData.spellDamge);
+            Enemy enemyScript = hitObject.GetComponent<Enemy>();
+            GameObject attacker = GameObject.FindGameObjectWithTag("Player");
+            enemyScript.OnTakeDamageWithAttacker(spellData.spellDamge,attacker);
         }
 
         _rigidBody.linearVelocity = Vector3.zero;
