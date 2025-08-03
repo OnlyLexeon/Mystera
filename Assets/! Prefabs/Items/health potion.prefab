@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33db10912e4107f4c95dda860f22841e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 52f6fad3fe171aa409272f2b29dd7ce2, type: 2}
+  data: {fileID: 11400000, guid: 801223372621dcf46ad790dc7d98847f, type: 2}
   lockoutDuration: 2
   potion: {fileID: -4585920998986257012}
   potionIcon: {fileID: 0}

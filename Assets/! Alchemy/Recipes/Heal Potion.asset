@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5fd0a466ae84ea543949a802e7aa3744, type: 2}
   - {fileID: 11400000, guid: 5fd0a466ae84ea543949a802e7aa3744, type: 2}
   - {fileID: 11400000, guid: 89c482e058bf2c6448e2748d95b47602, type: 2}
-  icon: {fileID: 21300000, guid: a9384ff696ed14c45966800f39b71628, type: 3}
+  icon: {fileID: 21300000, guid: f196221153f58d74cb097362a47ff8bb, type: 3}
   description: 'Heals you by 20HP
 
 

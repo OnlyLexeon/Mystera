@@ -2385,6 +2385,7 @@ GameObject:
   - component: {fileID: 7710759549042431141}
   - component: {fileID: 7526412316563479057}
   - component: {fileID: -366782322091730530}
+  - component: {fileID: 4901590199492372672}
   m_Layer: 0
   m_Name: Frog Sheet
   m_TagString: Untagged
@@ -2818,6 +2819,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4901590199492372672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3250846232140058071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b209c7e406d8ed4d8865a29bdc1fb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: f52c4653c82e13e49bdb242627aec9e1, type: 2}
+  lockoutDuration: 2
 --- !u!1 &3367344246267400710
 GameObject:
   m_ObjectHideFlags: 0

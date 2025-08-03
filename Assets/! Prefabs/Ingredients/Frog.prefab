@@ -603,5 +603,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b209c7e406d8ed4d8865a29bdc1fb49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 3d4be3c570ca1df49848777c6b9f033d, type: 2}
   lockoutDuration: 2

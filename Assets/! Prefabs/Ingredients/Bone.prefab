@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7966128285880161296}
   - component: {fileID: 8021888587466357633}
   - component: {fileID: 2865369155315233388}
+  - component: {fileID: 4270768110926826146}
   m_Layer: 8
   m_Name: Bone
   m_TagString: Untagged
@@ -439,6 +440,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5eb9fa9f37d518744b7f3db77fa8a42e, type: 3}
   pitchRange: {x: 0.9, y: 1.1}
   playCooldown: 0.5
+--- !u!114 &4270768110926826146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748787996389733108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b209c7e406d8ed4d8865a29bdc1fb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 976172fa20a3e2d4fbb34c23659f39dc, type: 2}
+  lockoutDuration: 2
 --- !u!1 &9030895817095802544
 GameObject:
   m_ObjectHideFlags: 0
