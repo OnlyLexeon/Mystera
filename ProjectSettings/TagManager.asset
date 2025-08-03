@@ -9,6 +9,8 @@ TagManager:
   - Draw
   - Hat
   - Chest
+  - Enemy
+  - Pet
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Pickups
   - WallGround
   - Pot
-  - 
+  - Enemy
   - 
   - 
   - 
