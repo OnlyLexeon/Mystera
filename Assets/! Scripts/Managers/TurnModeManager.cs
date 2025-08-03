@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 public class TurnModeManager : MonoBehaviour
 {
     [Header("UI")]
-    public TMP_Dropdown turnModeDropdown; // Replace with TMP_Dropdown if needed
+    public TMP_Dropdown turnModeDropdown;
 
     [Header("XR Turn Providers (on another GameObject)")]
     public SnapTurnProvider snapTurnProvider;
@@ -15,7 +15,11 @@ public class TurnModeManager : MonoBehaviour
 
     private const string TurnModeKey = "TurnMode"; // PlayerPrefs key
 
-    private enum TurnMode { Snap, Continuous }
+    private enum TurnMode
+    {
+        Snap,
+        Continuous
+    }
 
     void Start()
     {

@@ -6,8 +6,6 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
 
-    public GameObject loadingUI;
-
     [Header("Scenes")]
     public string mainScene = "Alchemist";
     public string trainingScene = "TrainingArea";
@@ -41,9 +39,9 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
-        FadeCanvas.instance.StartFadeIn();
+        FadeCanvasInstance.instance.StartFadeIn();
 
-        yield return new WaitForSeconds(FadeCanvas.instance.defaultDuration);
+        yield return new WaitForSeconds(FadeCanvasInstance.instance.defaultDuration);
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         asyncLoad.allowSceneActivation = false;
@@ -84,27 +82,47 @@ public class SceneController : MonoBehaviour
             {
                 Debug.LogWarning("CANT FIND DUNGEON MANAGER");
             }
-            
+
+            //move player
+            DungeonSpawnPoint spawnPoint = DungeonSpawnPoint.instance;
+            if (spawnPoint != null)
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if (player != null)
+                {
+                    CharacterController cc = player.GetComponent<CharacterController>();
+
+                    if (cc != null)
+                    {
+                        cc.enabled = false; //disable before moving
+                        player.transform.position = spawnPoint.spawnPos.position;
+                        cc.enabled = true;  //re-enable after
+                    }
+                    else
+                    {
+                        player.transform.position = spawnPoint.spawnPos.position;
+                    }
+                }
+                else Debug.LogWarning("No player found!");
+            }
+            else Debug.LogWarning("No spawn point found!");
         }
 
         yield return null; // wait 1 frame
 
-        //enable player
-
-
         LoadingScreenManager.instance.Hide();
 
         yield return new WaitForSeconds(LoadingScreenManager.instance.defaultDuration);
-        
-        FadeCanvas.instance.StartFadeOut();
+
+        FadeCanvasInstance.instance.StartFadeOut();
         
     }
 
     public IEnumerator ResetCoroutine()
     {
-        FadeCanvas.instance.StartFadeIn();
+        FadeCanvasInstance.instance.StartFadeIn();
 
-        yield return new WaitForSeconds(FadeCanvas.instance.defaultDuration);
+        yield return new WaitForSeconds(FadeCanvasInstance.instance.defaultDuration);
 
         // Reloads the currently active scene
         Scene currentScene = SceneManager.GetActiveScene();
