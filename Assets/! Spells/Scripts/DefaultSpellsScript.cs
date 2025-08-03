@@ -51,7 +51,7 @@ public class DefaultSpellsScript : MonoBehaviour
         _collided = true;
         if (hitObject.tag == "Enemy")
         {
-            Debug.Log("HIT!");
+            Debug.Log("HIT! :" + hitObject.gameObject.name);
             Enemy enemyScript = hitObject.GetComponent<Enemy>();
             GameObject attacker = GameObject.FindGameObjectWithTag("Player");
             enemyScript.OnTakeDamageWithAttacker(spellData.spellDamge,attacker);
