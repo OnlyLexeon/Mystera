@@ -57,6 +57,12 @@ public class DummyEnemy : Enemy
         // 直接调用自己的SetupInitialState，不调用基类的Start
         SetupInitialState();
         
+        // 订阅伤害事件
+        if (health != null)
+        {
+            health.OnDamaged += OnTakeDamage;
+        }
+        
         if (enableDebugLogs)
         {
             Debug.Log($"[DUMMY] {gameObject.name} initialized as training dummy");
@@ -78,7 +84,7 @@ public class DummyEnemy : Enemy
         // 靶子不检测目标
     }
     
-    protected override void EvaluateAndSelectTarget()
+    protected override void EvaluateAndSelectTarget(Transform closestTarget)
     {
         // 靶子不选择目标
     }
@@ -107,6 +113,23 @@ public class DummyEnemy : Enemy
     {
         // 靶子不会产生仇恨
     }
+
+    protected override void OnTakeDamage(int damage)
+    {
+        if (isDead) return;
+
+        // 只播放受击动画和特效，不触发硬直
+        if (!string.IsNullOrEmpty(hitTrigger))
+        {
+            animator.SetTrigger(hitTrigger);
+        }
+
+        // 生成原有的粒子效果
+        CreateHitParticles();
+        StartCoroutine(FlashRed());
+        // 播放受伤音效
+        PlayHurtSound();
+    }
     
     protected override void OnTakeDamageWithAttacker(int damage, GameObject attacker)
     {
@@ -118,18 +141,11 @@ public class DummyEnemy : Enemy
             Debug.Log($"[DUMMY] {gameObject.name} 受到 {damage} 点伤害，来自 {(attacker != null ? attacker.name : "未知")}");
         }
         
-        // 播放受击动画（不眩晕）
-        if (!string.IsNullOrEmpty(hitTrigger))
-        {
-            animator.SetTrigger(hitTrigger);
-        }
-        
         // 生成受击特效（左右交替）
         SpawnHitEffect(attacker);
         
-        // 生成原有的粒子效果
-        CreateHitParticles();
-        StartCoroutine(FlashRed());
+        // 调用基础伤害处理（不触发硬直）
+        OnTakeDamage(damage);
     }
     
     private void SpawnHitEffect(GameObject attacker)
@@ -196,6 +212,8 @@ public class DummyEnemy : Enemy
         
         return finalPosition;
     }
+    
+
     
     protected override void Die()
     {

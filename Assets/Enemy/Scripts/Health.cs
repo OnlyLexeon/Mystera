@@ -23,8 +23,16 @@ public class Health : MonoBehaviour
     public float lowHealthThreshold = 0.3f;
     public float lowHealthMinIntensity = 0.15f;
     
+    [Header("镜头抖动设置")]
+    public Transform cameraTransform; // 如果为空，会自动查找玩家的相机
+    public float shakeDuration = 0.3f;
+    public float shakeIntensity = 0.15f;
+    public AnimationCurve shakeCurve = AnimationCurve.EaseInOut(0, 1, 1, 0);
+    public float shakeFrequency = 25f; // 抖动频率
+    
     private Vignette vignette;
     private Coroutine vignetteCoroutine;
+    private Coroutine cameraShakeCoroutine;
     private bool isDead = false;
     private bool canRespawn = false;
     
@@ -37,6 +45,10 @@ public class Health : MonoBehaviour
     private GameObject lastAttacker;
     public GameObject LastAttacker => lastAttacker;
     
+    // 相机抖动相关
+    private Vector3 originalCameraLocalPosition;
+    private bool isShaking = false;
+    
     void Start()
     {
         currentHealth = maxHealth;
@@ -44,6 +56,7 @@ public class Health : MonoBehaviour
         canRespawn = false;
         lastAttacker = null;
         
+        // 初始化Vignette
         if (globalVolume != null && globalVolume.profile != null)
         {
             globalVolume.profile.TryGet(out vignette);
@@ -59,6 +72,21 @@ public class Health : MonoBehaviour
         else
         {
             Debug.LogWarning("未设置Global Volume！");
+        }
+        
+        // 初始化相机引用
+        if (CompareTag("Player"))
+        {
+           
+            
+            if (cameraTransform != null)
+            {
+                originalCameraLocalPosition = cameraTransform.localPosition;
+            }
+            else
+            {
+                Debug.LogWarning("未找到相机Transform，镜头抖动效果将不会生效！");
+            }
         }
     }
     
@@ -91,19 +119,69 @@ public class Health : MonoBehaviour
         OnDamaged?.Invoke(actualDamage);
         OnDamagedByAttacker?.Invoke(actualDamage, attacker);
         
-        if (CompareTag("Player") && vignette != null)
+        if (CompareTag("Player"))
         {
-            if (vignetteCoroutine != null)
+            // 播放Vignette动画
+            if (vignette != null)
             {
-                StopCoroutine(vignetteCoroutine);
+                if (vignetteCoroutine != null)
+                {
+                    StopCoroutine(vignetteCoroutine);
+                }
+                vignetteCoroutine = StartCoroutine(PlayVignetteAnimation());
             }
-            vignetteCoroutine = StartCoroutine(PlayVignetteAnimation());
+            
+            // 播放镜头抖动
+            if (cameraTransform != null && !isShaking)
+            {
+                if (cameraShakeCoroutine != null)
+                {
+                    StopCoroutine(cameraShakeCoroutine);
+                }
+                cameraShakeCoroutine = StartCoroutine(CameraShake());
+            }
         }
         
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+    
+    private IEnumerator CameraShake()
+    {
+        isShaking = true;
+        float elapsedTime = 0f;
+        
+        while (elapsedTime < shakeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float normalizedTime = elapsedTime / shakeDuration;
+            
+            // 使用曲线控制抖动强度
+            float currentShakeIntensity = shakeCurve.Evaluate(normalizedTime) * shakeIntensity;
+            
+            // 计算抖动偏移
+            // 使用正弦波创建前后抖动，加上一些随机性
+            float shakeZ = Mathf.Sin(elapsedTime * shakeFrequency) * currentShakeIntensity;
+            float shakeX = Mathf.Sin(elapsedTime * shakeFrequency * 0.7f) * currentShakeIntensity * 0.3f; // 轻微的左右抖动
+            float shakeY = Mathf.Sin(elapsedTime * shakeFrequency * 1.3f) * currentShakeIntensity * 0.2f; // 更轻微的上下抖动
+            
+            // 添加一些随机性使抖动更自然
+            shakeZ += UnityEngine.Random.Range(-0.1f, 0.1f) * currentShakeIntensity;
+            shakeX += UnityEngine.Random.Range(-0.05f, 0.05f) * currentShakeIntensity;
+            shakeY += UnityEngine.Random.Range(-0.03f, 0.03f) * currentShakeIntensity;
+            
+            // 应用抖动
+            Vector3 shakeOffset = new Vector3(shakeX, shakeY, shakeZ);
+            cameraTransform.localPosition = originalCameraLocalPosition + cameraTransform.localRotation * shakeOffset;
+            
+            yield return null;
+        }
+        
+        // 恢复原始位置
+        cameraTransform.localPosition = originalCameraLocalPosition;
+        isShaking = false;
     }
     
     public void SetLastAttacker(GameObject attacker)
@@ -159,6 +237,16 @@ public class Health : MonoBehaviour
         if (lastAttacker != null)
         {
             Debug.Log($"{gameObject.name} 被 {lastAttacker.name} 击杀！");
+        }
+        
+        // 停止所有正在进行的效果
+        if (cameraShakeCoroutine != null)
+        {
+            StopCoroutine(cameraShakeCoroutine);
+            if (cameraTransform != null)
+            {
+                cameraTransform.localPosition = originalCameraLocalPosition;
+            }
         }
         
         if (CompareTag("Player"))
@@ -282,7 +370,7 @@ public class Health : MonoBehaviour
         return currentHealth >= maxHealth;
     }
     
-    // 新增：重置死亡状态（用于复活机制）
+    // 重置死亡状态（用于复活机制）
     public void ResetDeathState()
     {
         isDead = false;
@@ -310,10 +398,21 @@ public class Health : MonoBehaviour
             }
         }
         
+        // 重置相机位置
+        if (cameraTransform != null && isShaking)
+        {
+            if (cameraShakeCoroutine != null)
+            {
+                StopCoroutine(cameraShakeCoroutine);
+            }
+            cameraTransform.localPosition = originalCameraLocalPosition;
+            isShaking = false;
+        }
+        
         Debug.Log($"{gameObject.name} 死亡状态已重置");
     }
     
-    // 新增：设置生命值（用于复活时恢复血量）
+    // 设置生命值（用于复活时恢复血量）
     public void SetHealth(int newHealth)
     {
         if (newHealth < 0) newHealth = 0;
@@ -326,5 +425,38 @@ public class Health : MonoBehaviour
         {
             UpdateLowHealthVignette();
         }
+    }
+    
+    // 手动触发镜头抖动（可选的公共方法）
+    public void TriggerCameraShake(float intensity = -1f, float duration = -1f)
+    {
+        if (cameraTransform == null || !CompareTag("Player")) return;
+        
+        float shakeInt = intensity > 0 ? intensity : shakeIntensity;
+        float shakeDur = duration > 0 ? duration : shakeDuration;
+        
+        if (cameraShakeCoroutine != null)
+        {
+            StopCoroutine(cameraShakeCoroutine);
+        }
+        
+        // 临时保存原始值
+        float originalIntensity = shakeIntensity;
+        float originalDuration = shakeDuration;
+        
+        shakeIntensity = shakeInt;
+        shakeDuration = shakeDur;
+        
+        cameraShakeCoroutine = StartCoroutine(CameraShake());
+        
+        // 恢复原始值
+        StartCoroutine(RestoreShakeValues(originalIntensity, originalDuration, shakeDur));
+    }
+    
+    private IEnumerator RestoreShakeValues(float originalIntensity, float originalDuration, float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        shakeIntensity = originalIntensity;
+        shakeDuration = originalDuration;
     }
 }

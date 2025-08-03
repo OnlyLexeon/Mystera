@@ -512,14 +512,16 @@ public class SkeletonEnemy : Enemy
         }
     }
     
-    protected override void OnDestroy()
+// 修改 OnDestroy 方法，去掉 override 关键字
+protected void OnDestroy()
+{
+    // 清理资源
+    if (currentReviveEffect != null)
     {
-        // 清理资源
-        if (currentReviveEffect != null)
-        {
-            Destroy(currentReviveEffect);
-        }
-        
-        base.OnDestroy();
+        Destroy(currentReviveEffect);
     }
+    
+    // 如果基类将来添加了 OnDestroy，可以调用
+    // base.OnDestroy();
+}
 }

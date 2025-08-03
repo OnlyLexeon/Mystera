@@ -114,7 +114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5360683131785772904
 Transform:
   m_ObjectHideFlags: 0
@@ -221,6 +221,34 @@ MonoBehaviour:
   maxVignetteIntensity: 0.5
   lowHealthThreshold: 0.3
   lowHealthMinIntensity: 0.15
+  cameraTransform: {fileID: 0}
+  shakeDuration: 0.3
+  shakeIntensity: 0.15
+  shakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  shakeFrequency: 25
 --- !u!114 &5862489047276540538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,30 +269,32 @@ MonoBehaviour:
   detectionAngle: 120
   detectionDistance: 15
   detectionHeightOffset: 1
-  detectionInterval: 0.3
   checkLineOfSight: 1
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 0
-  targetLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  preferClosestTarget: 1
-  playerPriorityBonus: 0.8
-  targetSwitchThreshold: 5
-  targetMemoryTime: 5
   alertRadius: 10
   alertDuration: 10
   showAlertEffect: 1
   alertEffectPrefab: {fileID: 0}
   alertSound: {fileID: 0}
-  hatePriority: 0.5
+  alertEffectYOffset: 2
   chaseSpeed: 4
   patrolSpeed: 2
   attackRange: 3
   attackCooldown: 2
   meleeAttackDelay: 0.5
   meleeDamage: 10
+  stoppingDistance: 1.2
+  useEdgeToEdgeDistance: 1
+  desiredAttackDistance: 1.5
+  attackSounds: []
+  hurtSounds:
+  - {fileID: 8300000, guid: f1cbc5b19014f7b41b13db9f1d7b8d0b, type: 3}
+  deathSound: {fileID: 0}
+  combatSoundVolume: 1
+  attackSoundChance: 0.8
+  minSoundInterval: 0.3
   isMovingParam: isMoving
   idle02Trigger: idle02
   attack02Trigger: attack02
@@ -278,9 +308,13 @@ MonoBehaviour:
   particleLifetime: 0.5
   particleMaterial: {fileID: 0}
   enableDebugLogs: 0
-  showDamageNumbers: 1
-  numberFloatHeight: 2
-  numberDuration: 1
+  hitEffectPrefab: {fileID: 8367907410985086596, guid: 0b493b97a8e419d46903c1b023460740, type: 3}
+  effectHeightOffset: 1.5
+  effectHorizontalOffset: 1
+  effectForwardOffset: 0
+  effectLifetime: 2
+  effectFaceAttacker: 1
+  effectScale: {x: 1, y: 1, z: 1}
 --- !u!1 &6774080502169825540
 GameObject:
   m_ObjectHideFlags: 0

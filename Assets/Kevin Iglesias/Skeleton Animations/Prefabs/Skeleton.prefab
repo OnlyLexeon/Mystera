@@ -952,6 +952,34 @@ MonoBehaviour:
   maxVignetteIntensity: 0.5
   lowHealthThreshold: 0.3
   lowHealthMinIntensity: 0.15
+  cameraTransform: {fileID: 0}
+  shakeDuration: 0.3
+  shakeIntensity: 0.15
+  shakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  shakeFrequency: 25
 --- !u!114 &3211199857607666828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,30 +1000,31 @@ MonoBehaviour:
   detectionAngle: 120
   detectionDistance: 15
   detectionHeightOffset: 1
-  detectionInterval: 0.3
   checkLineOfSight: 1
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 0
-  targetLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  preferClosestTarget: 1
-  playerPriorityBonus: 0.8
-  targetSwitchThreshold: 5
-  targetMemoryTime: 5
   alertRadius: 10
   alertDuration: 10
   showAlertEffect: 1
-  alertEffectPrefab: {fileID: 0}
+  alertEffectPrefab: {fileID: 8614747112428934132, guid: 434169f518fa8b943ac8213cbc3390c0, type: 3}
   alertSound: {fileID: 0}
-  hatePriority: 0.5
+  alertEffectYOffset: 2.2
   chaseSpeed: 4
   patrolSpeed: 2
   attackRange: 1.5
-  attackCooldown: 2
-  meleeAttackDelay: 0.5
+  attackCooldown: 0.5
+  meleeAttackDelay: 0.2
   meleeDamage: 10
+  stoppingDistance: 1.2
+  useEdgeToEdgeDistance: 1
+  desiredAttackDistance: 1.5
+  attackSounds: []
+  hurtSounds: []
+  deathSound: {fileID: 0}
+  combatSoundVolume: 1
+  attackSoundChance: 0.8
+  minSoundInterval: 0.3
   isMovingParam: isMoving
   idle02Trigger: idle02
   attack02Trigger: attack02
@@ -1014,8 +1043,9 @@ MonoBehaviour:
   reviveEffectDuration: 3
   reviveEffectPrefab: {fileID: 6220963759936419116, guid: db7744e114f2f7b44a1a0e672bc755c7, type: 3}
   reviveSound: {fileID: 0}
-  reviveTrigger: revive
+  rebirthTrigger: rebirth
   reviveHealthPercent: 0.5
+  invincibilityDuration: 1
 --- !u!1 &2834232223631431927
 GameObject:
   m_ObjectHideFlags: 0
