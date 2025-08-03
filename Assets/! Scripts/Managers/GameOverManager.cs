@@ -10,9 +10,11 @@ public class GameOverManager : MonoBehaviour
 
     public bool isGameOver = false; //used by Menu to prevent opening pause menu when dead
 
+    [Header("References")]
     public Button GoHomeButton;
     public Button RetryDungeonButton;
     public TextMeshProUGUI killedByText;
+    public Camera UICamera;
 
     [Tooltip("The speed at which the canvas fades")]
     public float defaultDuration = 3f;
@@ -32,6 +34,7 @@ public class GameOverManager : MonoBehaviour
     {
         instance = this;
 
+        gameOverUI.SetActive(false);
         canvasGroup = gameOverUI.GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0; //invis
 
@@ -50,6 +53,8 @@ public class GameOverManager : MonoBehaviour
         isGameOver = true;
 
         lastAttacker = attacker;
+
+        UICamera.farClipPlane = 5;
 
         StartCoroutine(CanvasFadeIn()); //fade canvas 3 seconds
 

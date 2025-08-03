@@ -6,6 +6,7 @@ public class Portal : MonoBehaviour
     private bool hasCollided = false;
     private Action onPortalEnter;
 
+    public BoxCollider boxCollider;
     public Animator animator;
     public bool isOpen = false;
 

@@ -6,6 +6,7 @@ using System.IO;
 using System;
 using UnityEditor.Experimental.GraphView;
 using System.Collections;
+using TMPro;
 
 public class AltarTeleport : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class AltarTeleport : MonoBehaviour
 
         if (trainingButton != null)
             trainingButton.onClick.AddListener(() => SetPortal(GoTrainingScene));
+
+        LoadDungeonsButtons();
     }
 
     private void Update()
@@ -85,12 +88,14 @@ public class AltarTeleport : MonoBehaviour
     {
         if (portal.isOpen) //close first
         {
+            portal.boxCollider.enabled = false;
             portal.animator.SetTrigger("Close");
             yield return new WaitForSeconds(0.6f);
         }
 
         //open
         portal.animator.SetTrigger("Open");
+        portal.boxCollider.enabled = true;
     }
 
     // UI
@@ -134,7 +139,7 @@ public class AltarTeleport : MonoBehaviour
         {
             GameObject buttonObj = Instantiate(dungeonButtonPrefab, dungeonButtonHolder);
             Button btn = buttonObj.GetComponent<Button>();
-            Text btnText = buttonObj.GetComponentInChildren<Text>();
+            TextMeshProUGUI btnText = buttonObj.GetComponentInChildren<TextMeshProUGUI>();
 
             //text
             btnText.text = settings.dungeonID;

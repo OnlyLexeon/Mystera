@@ -108,14 +108,13 @@ public class SceneController : MonoBehaviour
             else Debug.LogWarning("No spawn point found!");
         }
 
-        yield return null; // wait 1 frame
+        yield return new WaitForSeconds(3f); // wait 3 seconds
 
         LoadingScreenManager.instance.Hide();
 
         yield return new WaitForSeconds(LoadingScreenManager.instance.defaultDuration);
 
         FadeCanvasInstance.instance.StartFadeOut();
-        
     }
 
     public IEnumerator ResetCoroutine()
