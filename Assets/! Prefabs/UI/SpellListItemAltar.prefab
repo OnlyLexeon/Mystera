@@ -177,8 +177,6 @@ MonoBehaviour:
   spellIndex: 0
   spellIcon: {fileID: 6643014306018028928}
   spellName: {fileID: 419171503374423749}
-  defaultSpellIcon: {fileID: 21300000, guid: ef31b7d12ce36f54185bc50213ae7d4d, type: 3}
-  defaultSpellName: 
 --- !u!1 &6500771560916439312
 GameObject:
   m_ObjectHideFlags: 0
