@@ -28436,6 +28436,7 @@ GameObject:
   - component: {fileID: 1988225752324764284}
   - component: {fileID: 8333618058347131524}
   - component: {fileID: 6519308098242887437}
+  - component: {fileID: -2541653411216649586}
   m_Layer: 0
   m_Name: PortalParticle
   m_TagString: Untagged
@@ -33276,6 +33277,28 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!95 &-2541653411216649586
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5418845667178077926}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e936f4640b9e84e4b8be17f4312f5125, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6445591087346642308
 GameObject:
   m_ObjectHideFlags: 0
