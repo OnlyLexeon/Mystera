@@ -2663,7 +2663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &118770108
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2682,7 +2682,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118770109
 MonoBehaviour:
@@ -6095,7 +6095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dungeonSettings:
-  - dungeonID: Dungeon 1 - Zone 1
+  - dungeonID: Dungeon 1 - 1
     dungeonIcon: {fileID: 0}
     unlocked: 0
     minRooms: 2
@@ -7928,10 +7928,10 @@ RectTransform:
   - {fileID: 1866744014}
   m_Father: {fileID: 118770108}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 40}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -30}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305917404
 MonoBehaviour:
@@ -15314,9 +15314,9 @@ RectTransform:
   m_Father: {fileID: 305917403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &681979390
 MonoBehaviour:
@@ -15914,7 +15914,7 @@ RectTransform:
   m_Father: {fileID: 900854465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.9999997}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 20, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18037,35 +18037,35 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 7821567939610397257}
     m_Modifications:
     - target: {fileID: 1988225752324764284, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.418476
+      value: 0.04847528
       objectReference: {fileID: 0}
     - target: {fileID: 1988225752324764284, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.715
+      value: 1.6203276
       objectReference: {fileID: 0}
     - target: {fileID: 1988225752324764284, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.904
+      value: -2.6470003
       objectReference: {fileID: 0}
     - target: {fileID: 1988225752324764284, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1988225752324764284, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1988225752324764284, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: 0.00000035762784
       objectReference: {fileID: 0}
     - target: {fileID: 1988225752324764284, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1988225752324764284, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18083,11 +18083,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortalParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 5418845667178077926, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
+--- !u!4 &830119404 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1988225752324764284, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
+  m_PrefabInstance: {fileID: 830119403}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &830119405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5621818268949453739, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
+  m_PrefabInstance: {fileID: 830119403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db50c9ee57940574cb465590bf9fafc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &839245706
 GameObject:
   m_ObjectHideFlags: 0
@@ -18123,7 +18143,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -57, y: 3}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &839245708
 MonoBehaviour:
@@ -64989,6 +65009,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 830119404}
   - {fileID: 1104478596}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -65025,6 +65046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a42a90edae8dda44ba92a618fd48b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portal: {fileID: 830119405}
   minPlayerDistance: 2
   onPlayerEnterRange:
     m_PersistentCalls:
@@ -65059,10 +65081,10 @@ MonoBehaviour:
   dungeonsButton: {fileID: 1293540569}
   trainingButton: {fileID: 694827875}
   homeButton: {fileID: 1346302081}
-  dungeonsMenu: {fileID: 0}
-  mainMenu: {fileID: 0}
-  dungeonButtonHolder: {fileID: 0}
-  dungeonButtonPrefab: {fileID: 0}
+  dungeonsMenu: {fileID: 118770107}
+  mainMenu: {fileID: 1580570531}
+  dungeonButtonHolder: {fileID: 839245707}
+  dungeonButtonPrefab: {fileID: 4053737648580216201, guid: 34704bcf55a4b4b4a9cf012e765df2b6, type: 3}
 --- !u!1 &7919875208656336964
 GameObject:
   m_ObjectHideFlags: 0
@@ -71744,4 +71766,3 @@ SceneRoots:
   - {fileID: 725525972}
   - {fileID: 935770018}
   - {fileID: 170837304}
-  - {fileID: 830119403}

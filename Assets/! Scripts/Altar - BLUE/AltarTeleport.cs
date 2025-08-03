@@ -3,9 +3,14 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
+using System;
+using UnityEditor.Experimental.GraphView;
+using System.Collections;
 
 public class AltarTeleport : MonoBehaviour
 {
+    public Portal portal;
+
     [Header("Settings")]
     public float minPlayerDistance = 2f;
 
@@ -39,13 +44,13 @@ public class AltarTeleport : MonoBehaviour
         player = Camera.main.transform;
 
         if (homeButton != null)
-            homeButton.onClick.AddListener(GoHomeScene);
+            homeButton.onClick.AddListener(() => SetPortal(GoHomeScene));
 
         if (dungeonsButton != null)
             dungeonsButton.onClick.AddListener(OpenDungeonsMenu);
 
         if (trainingButton != null)
-            trainingButton.onClick.AddListener(GoTrainingScene);
+            trainingButton.onClick.AddListener(() => SetPortal(GoTrainingScene));
     }
 
     private void Update()
@@ -67,11 +72,28 @@ public class AltarTeleport : MonoBehaviour
         }
     }
 
-    public void GoHomeScene()
-    {
-        sceneController.LoadScene(sceneController.mainScene);
+    // Set Portal Event
+    public void SetPortal(Action function)
+    {        
+        portal.SetEvent(function);
+        portal.isOpen = true;
+
+        StartCoroutine(AnimationPortal());
     }
 
+    private IEnumerator AnimationPortal()
+    {
+        if (portal.isOpen) //close first
+        {
+            portal.animator.SetTrigger("Close");
+            yield return new WaitForSeconds(0.6f);
+        }
+
+        //open
+        portal.animator.SetTrigger("Open");
+    }
+
+    // UI
     public void OpenDungeonsMenu()
     {
         dungeonsMenu.SetActive(true);
@@ -82,6 +104,12 @@ public class AltarTeleport : MonoBehaviour
     {
         dungeonsMenu.SetActive(false);
         mainMenu.SetActive(true);
+    }
+
+    // GO Functions
+    public void GoHomeScene()
+    {
+        sceneController.LoadScene(sceneController.mainScene);
     }
 
     public void GoDungeonScene(string ID)
@@ -111,9 +139,9 @@ public class AltarTeleport : MonoBehaviour
             //text
             btnText.text = settings.dungeonID;
 
-            //setting on button blick
+            //setting on button click
             string dungeonID = settings.dungeonID;
-            btn.onClick.AddListener(() => GoDungeonScene(dungeonID));
+            btn.onClick.AddListener(() => SetPortal(() => GoDungeonScene(dungeonID)));
 
             //gray out locked dungeons
             if (!dungeonManager.IsUnlocked(dungeonID))
