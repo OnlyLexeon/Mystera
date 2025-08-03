@@ -15,6 +15,7 @@ public enum PotionType
     Glow,
     Levitation,
     Duplication,
+    Heal,
 }
 
 [System.Serializable]

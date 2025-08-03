@@ -26,6 +26,7 @@ public class AltarTeleport : MonoBehaviour
     public Button dungeonsButton;
     public Button trainingButton;
     public Button homeButton;
+    public Button nextDungeonButton;
 
     [Header("Dungeon UI")]
     public GameObject dungeonsMenu;
@@ -52,6 +53,19 @@ public class AltarTeleport : MonoBehaviour
 
         if (trainingButton != null)
             trainingButton.onClick.AddListener(() => SetPortal(GoTrainingScene));
+
+        //only enable next dungeon if theres actually a dungeon
+        if(sceneController.isDungeonScene())
+        {
+            string nextDungeon = dungeonManager.GetSettingsByID(sceneController.dungeonID).nextDungeonID;
+            if (dungeonManager.GetSettingsByID(nextDungeon) == null)
+            {
+                nextDungeonButton.gameObject.SetActive(false);
+            }
+        }
+
+        if (nextDungeonButton != null)
+            nextDungeonButton.onClick.AddListener(() => SetPortal(GoNextDungeon));
 
         LoadDungeonsButtons();
     }
@@ -114,6 +128,10 @@ public class AltarTeleport : MonoBehaviour
     // GO Functions
     public void GoHomeScene()
     {
+        if (sceneController.isDungeonScene())  //unlock new dungeon
+        {
+            dungeonManager.UnlockDungeon(dungeonManager.GetSettingsByID(sceneController.dungeonID).nextDungeonID);
+        }
         sceneController.LoadScene(sceneController.mainScene);
     }
 
@@ -125,6 +143,15 @@ public class AltarTeleport : MonoBehaviour
     public void GoTrainingScene()
     {
         sceneController.LoadScene(sceneController.trainingScene);
+    }
+
+    public void GoNextDungeon()
+    {
+        if (sceneController.isDungeonScene()) //unlock new dungeon
+        {
+            dungeonManager.UnlockDungeon(dungeonManager.GetSettingsByID(sceneController.dungeonID).nextDungeonID);
+        }
+        sceneController.LoadScene(sceneController.dungeonScene, dungeonManager.GetSettingsByID(sceneController.dungeonID).nextDungeonID);
     }
 
     //===========================================

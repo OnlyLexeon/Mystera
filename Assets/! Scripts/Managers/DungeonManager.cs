@@ -19,6 +19,8 @@ public class DungeonSettings
     public GameObject exitRoom;
     public List<GameObject> confirmedRooms;
     public List<GameObject> emptyRooms;
+
+    public string nextDungeonID;
 }
 
 
@@ -66,7 +68,7 @@ public class DungeonManager : MonoBehaviour
         generator.Generate();
     }
 
-    private DungeonSettings GetSettingsByID(string id)
+    public DungeonSettings GetSettingsByID(string id)
     {
         foreach (var settings in dungeonSettings)
         {

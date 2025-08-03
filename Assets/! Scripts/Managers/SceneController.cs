@@ -43,10 +43,10 @@ public class SceneController : MonoBehaviour
 
         yield return new WaitForSeconds(FadeCanvasInstance.instance.defaultDuration);
 
+        LoadingScreenManager.instance.Show();
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         asyncLoad.allowSceneActivation = false;
-
-        LoadingScreenManager.instance.Show();
 
         while (asyncLoad.progress < 0.9f)
         {
@@ -136,6 +136,11 @@ public class SceneController : MonoBehaviour
     public bool IsMainScene()
     {
         return (SceneManager.GetActiveScene().name == mainScene);
+    }
+
+    public bool isDungeonScene()
+    {
+        return (SceneManager.GetActiveScene().name == dungeonScene);
     }
 
     public void QuitGame()

@@ -26,12 +26,3 @@ public class StorableObject : MonoBehaviour
     }
 }
 
-[CreateAssetMenu(menuName = "Inventory/Storable Database Entry")]
-public class StorableData : ScriptableObject
-{
-    public string itemID;
-    public string displayName;
-    public Sprite icon;
-    public GameObject prefab;
-}
-

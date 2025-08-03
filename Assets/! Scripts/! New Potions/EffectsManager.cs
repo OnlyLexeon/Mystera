@@ -145,6 +145,13 @@ public class EffectManager : MonoBehaviour
             case PotionType.Levitation:
                 Player.instance.ApplyLevitate(effect.frequency, effect.secondsRemaining);
                 break;
+
+            case PotionType.Heal:
+                Player.instance.GetComponent<Health>().Heal(20);
+                break;
+
+            default:
+                break;
         }
     }
 
@@ -191,6 +198,9 @@ public class EffectManager : MonoBehaviour
 
             case PotionType.Levitation:
                 Player.instance.RemoveLevitate();
+                break;
+
+            default:
                 break;
         }
     }

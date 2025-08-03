@@ -28479,6 +28479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db50c9ee57940574cb465590bf9fafc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxCollider: {fileID: 7458795978029950952}
   animator: {fileID: 7168446587833872773}
   isOpen: 0
 --- !u!199 &8333618058347131524
@@ -33308,7 +33309,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

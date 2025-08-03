@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 4746259061576935392}
   - component: {fileID: 1307690791296611753}
   - component: {fileID: -8273908588414414267}
+  - component: {fileID: 6632861838764109877}
   m_Layer: 8
   m_Name: Frog
   m_TagString: Untagged
@@ -590,3 +591,17 @@ MonoBehaviour:
   particleScale: 0.5
   burnedSound: {fileID: 8300000, guid: 697a4644771096642879f85a88c713a3, type: 3}
   onFireSound: {fileID: 8300000, guid: faafd00bcf091bf468767bfd6a7a28be, type: 3}
+--- !u!114 &6632861838764109877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9190544803535663311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b209c7e406d8ed4d8865a29bdc1fb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  lockoutDuration: 2
