@@ -325,7 +325,7 @@ MonoBehaviour:
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 2
+  m_AttachEaseInTime: 3
   m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1

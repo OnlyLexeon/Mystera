@@ -29,6 +29,7 @@ public class AltarTeleport : MonoBehaviour
     public Button nextDungeonButton;
 
     [Header("Dungeon UI")]
+    public CanvasGroup canvas;
     public GameObject dungeonsMenu;
     public GameObject mainMenu;
     public Transform dungeonButtonHolder;
@@ -40,6 +41,8 @@ public class AltarTeleport : MonoBehaviour
 
     private void Start()
     {
+        canvas.alpha = 0;
+
         sceneController = SceneController.instance;
         dungeonManager = DungeonManager.instance;
 

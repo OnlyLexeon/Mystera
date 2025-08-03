@@ -2361,6 +2361,7 @@ MonoBehaviour:
   trainingButton: {fileID: 6478391579590704847}
   homeButton: {fileID: 7150074948452598790}
   nextDungeonButton: {fileID: 6664537414931621139}
+  canvas: {fileID: 4089083150837624837}
   dungeonsMenu: {fileID: 4943663441064448592}
   mainMenu: {fileID: 7285808259694466625}
   dungeonButtonHolder: {fileID: 2200716998151145749}
