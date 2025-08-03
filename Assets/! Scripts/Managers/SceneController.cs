@@ -31,7 +31,7 @@ public class SceneController : MonoBehaviour
     {
         if (sceneName == dungeonScene)
         {
-            dungeonID = dungeonIDToLoad;
+            if (dungeonIDToLoad != null) dungeonID = dungeonIDToLoad;
         }
 
         StartCoroutine(LoadSceneCoroutine(sceneName));

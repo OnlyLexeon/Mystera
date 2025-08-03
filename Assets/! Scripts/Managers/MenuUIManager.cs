@@ -32,6 +32,8 @@ public class MenuUIManager : MonoBehaviour
 
     public void TogglePauseMenu()
     {
+        if (GameOverManager.instance.isGameOver) return;
+
         isMenuOpen = !isMenuOpen;
 
         if (isMenuOpen)

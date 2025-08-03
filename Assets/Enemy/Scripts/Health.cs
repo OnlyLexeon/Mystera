@@ -90,13 +90,13 @@ public class Health : MonoBehaviour
         }
     }
     
-    void Update()
-    {
-        if (isDead && canRespawn && Input.GetKeyDown(KeyCode.R))
-        {
-            RespawnPlayer();
-        }
-    }
+    //void Update()
+    //{
+    //    if (isDead && canRespawn && Input.GetKeyDown(KeyCode.R))
+    //    {
+    //        RespawnPlayer();
+    //    }
+    //}
     
     public void TakeDamage(int damage)
     {
@@ -184,11 +184,6 @@ public class Health : MonoBehaviour
         isShaking = false;
     }
     
-    public void SetLastAttacker(GameObject attacker)
-    {
-        lastAttacker = attacker;
-    }
-    
     private IEnumerator PlayVignetteAnimation()
     {
         float elapsedTime = 0f;
@@ -267,34 +262,27 @@ public class Health : MonoBehaviour
             controller.enabled = false;
         }
         
-        if (BlackScreenController.Instance != null)
+        if (GameOverManager.instance != null)
         {
-            BlackScreenController.Instance.FadeToBlack(fadeToBlackDuration);
-        }
-        else
-        {
-            Debug.LogWarning("没有找到BlackScreenController！直接暂停游戏。");
-            Time.timeScale = 0f;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            GameOverManager.instance.DoGameOver(lastAttacker);
         }
         
-        StartCoroutine(EnableRespawnAfterDelay());
+        //StartCoroutine(EnableRespawnAfterDelay());
     }
     
-    private IEnumerator EnableRespawnAfterDelay()
-    {
-        yield return new WaitForSeconds(respawnDelay);
-        canRespawn = true;
-        Debug.Log("按下R键重新开始");
-    }
+    //private IEnumerator EnableRespawnAfterDelay()
+    //{
+    //    yield return new WaitForSeconds(respawnDelay);
+    //    canRespawn = true;
+    //    Debug.Log("按下R键重新开始");
+    //}
     
-    private void RespawnPlayer()
-    {
-        Debug.Log("重新加载场景...");
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    //private void RespawnPlayer()
+    //{
+    //    Debug.Log("重新加载场景...");
+    //    Time.timeScale = 1f;
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    //}
     
     public void Heal(int amount)
     {
