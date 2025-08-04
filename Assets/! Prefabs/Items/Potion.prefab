@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e311508d4777a834fb25a1729a564503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: 0.8
+  threshold: 0.7
   OnBegin:
     m_PersistentCalls:
       m_Calls:
@@ -413,7 +413,7 @@ MonoBehaviour:
   audioSource: {fileID: 3164456137886564623}
   drinkingCollider: {fileID: 7757159588864843376}
   sipSound: {fileID: 8300000, guid: 8ba4fa0d349ddb94e95a5895a60afb7f, type: 3}
-  perSipTime: 1
+  perSipTime: 0.5
   sipsToDrink: 3
   sipTimer: 0
   sipsTaken: 0
