@@ -24740,12 +24740,12 @@ MonoBehaviour:
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
   m_SmoothPosition: 1
-  m_SmoothPositionAmount: 8
-  m_TightenPosition: 0.1
+  m_SmoothPositionAmount: 16
+  m_TightenPosition: 0
   m_TrackRotation: 1
   m_SmoothRotation: 1
-  m_SmoothRotationAmount: 8
-  m_TightenRotation: 0.1
+  m_SmoothRotationAmount: 16
+  m_TightenRotation: 0
   m_TrackScale: 1
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8

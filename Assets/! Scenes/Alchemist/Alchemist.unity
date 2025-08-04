@@ -6025,8 +6025,8 @@ MonoBehaviour:
   - dungeonID: Dungeon 1-1
     dungeonIcon: {fileID: 0}
     unlocked: 1
-    minRooms: 2
-    maxRooms: 3
+    minRooms: 3
+    maxRooms: 4
     borderOffset: -0.5
     spawnAttempts: 50
     spawnRoom: {fileID: 2809761665781539431, guid: 91815a769f07c07499680576a0a35138, type: 3}
@@ -6039,7 +6039,7 @@ MonoBehaviour:
   - dungeonID: Dungeon 1-2
     dungeonIcon: {fileID: 0}
     unlocked: 0
-    minRooms: 2
+    minRooms: 3
     maxRooms: 4
     borderOffset: -0.5
     spawnAttempts: 50
@@ -31084,6 +31084,10 @@ PrefabInstance:
     - target: {fileID: 3722311708870802379, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353965598529070521, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4784991192360483055, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
       propertyPath: m_AnchorMax.x

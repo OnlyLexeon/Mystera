@@ -135,6 +135,10 @@ public class AltarTabManager : MonoBehaviour
 
     public void PopulateIngredientsTab()
     {
+        foreach (Transform child in ingredientsHolder)
+        {
+            if (child) Destroy(child);
+        }
         foreach (var ingredient in ingredients)
         {
             var entry = Instantiate(ingredientEntryPrefab, ingredientsHolder);

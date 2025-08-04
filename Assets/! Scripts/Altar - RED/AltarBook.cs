@@ -25,6 +25,8 @@ public class AltarBook : MonoBehaviour
 
     public static AltarBook instance;
 
+    private IngredientsManager ingredientsManager;
+
     [Header("Tutorial Stuff")]
     public bool hasSpawned = false;
 
@@ -35,6 +37,7 @@ public class AltarBook : MonoBehaviour
 
     private void Start()
     {
+        ingredientsManager = IngredientsManager.instance;
         player = Camera.main.transform; // assumes player head is main camera
     }
 
@@ -75,6 +78,8 @@ public class AltarBook : MonoBehaviour
     public void DoAlert(Ingredient ingredient)
     {
         if (ingredient == null || ingredient.sprite == null || alert == null || alertPos == null) return;
+
+        if (ingredientsManager.IsUnlocked(ingredient.ingredientID)) return;
 
         GameObject alertObj = Instantiate(alert, alertPos.position, Quaternion.identity);
         alertObj.GetComponentInChildren<Image>().sprite = ingredient.sprite;
