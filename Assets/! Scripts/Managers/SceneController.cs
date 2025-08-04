@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
@@ -45,16 +46,17 @@ public class SceneController : MonoBehaviour
 
         LoadingScreenManager.instance.Show();
 
+        yield return new WaitForSeconds(LoadingScreenManager.instance.defaultDuration);
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         asyncLoad.allowSceneActivation = false;
 
-        while (asyncLoad.progress < 0.9f)
+        while (asyncLoad.progress < 0.5f)
         {
             LoadingScreenManager.instance.UpdateProgress(asyncLoad.progress);
             yield return null;
         }
 
-        LoadingScreenManager.instance.UpdateProgress(1f);
         yield return new WaitForSeconds(0.25f);
 
         asyncLoad.allowSceneActivation = true;
@@ -83,6 +85,9 @@ public class SceneController : MonoBehaviour
                 Debug.LogWarning("CANT FIND DUNGEON MANAGER");
             }
 
+            //70%
+            LoadingScreenManager.instance.UpdateProgress(0.7f);
+
             //move player
             DungeonSpawnPoint spawnPoint = DungeonSpawnPoint.instance;
             if (spawnPoint != null)
@@ -96,17 +101,20 @@ public class SceneController : MonoBehaviour
                     {
                         cc.enabled = false; //disable before moving
                         player.transform.position = spawnPoint.spawnPos.position;
+                        player.transform.rotation = spawnPoint.spawnPos.rotation;
                         cc.enabled = true;  //re-enable after
+
+                        //80%
+                        LoadingScreenManager.instance.UpdateProgress(0.9f);
                     }
-                    else
-                    {
-                        player.transform.position = spawnPoint.spawnPos.position;
-                    }
+                    else Debug.LogWarning("No Char controller found!");
                 }
                 else Debug.LogWarning("No player found!");
             }
             else Debug.LogWarning("No spawn point found!");
         }
+
+        LoadingScreenManager.instance.UpdateProgress(1f);
 
         yield return new WaitForSeconds(3f); // wait 3 seconds
 

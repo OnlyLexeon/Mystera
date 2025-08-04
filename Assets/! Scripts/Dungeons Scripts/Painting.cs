@@ -3,22 +3,27 @@ using UnityEngine.UI;
 
 public class Painting : MonoBehaviour
 {
-    public Image image;
+    public MeshRenderer paintingRenderer;
     public bool isHorizontal = false;
 
     [Header("Variants")]
-    public Sprite[] paintings;
+    public Texture[] paintingTextures;
 
     private void Start()
     {
-        image.sprite = paintings[Random.Range(0, paintings.Length)];
+        if (paintingTextures.Length == 0) return;
+
+        var index = Random.Range(0, paintingTextures.Length);
+        paintingRenderer.material.mainTexture = paintingTextures[index];
 
         if (isHorizontal)
         {
-            image.rectTransform.localRotation = Quaternion.Euler(0, 0, -90);
-
-            Vector2 originalSize = image.rectTransform.sizeDelta;
-            image.rectTransform.sizeDelta = new Vector2(originalSize.y, originalSize.x);
+            // Rotate UVs 90 degrees counter-clockwise
+            paintingRenderer.material.mainTextureScale = new Vector2(1, 1);
+            paintingRenderer.material.mainTextureOffset = new Vector2(0, 0);
+            paintingRenderer.material.SetTextureScale("_MainTex", new Vector2(1, 1));
+            paintingRenderer.material.SetTextureOffset("_MainTex", new Vector2(0, 0));
+            paintingRenderer.material.SetFloat("_Rotation", 90f); // Only works if shader supports rotation
         }
     }
 }
