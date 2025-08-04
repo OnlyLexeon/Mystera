@@ -88,7 +88,7 @@ public class Hat : MonoBehaviour
             return;
         }
 
-        if (storable.IsInLockout())
+        if (storable.IsInLockout() || storable.HasBeenStored())
         {
             return;
         }
@@ -99,10 +99,14 @@ public class Hat : MonoBehaviour
             return;
         }
 
+        storable.MarkAsStored();
+
         //Effects
         storeParticle.Play();
         audioSource.PlayOneShot(storeSound);
-        ui.RefreshUI();
+
+        //ui
+        ui?.RefreshUI();
 
         Destroy(obj); //stored!
     }

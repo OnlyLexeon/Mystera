@@ -5,8 +5,9 @@ public class StorableObject : MonoBehaviour
 {
     public StorableData data;
 
-    public float lockoutDuration = 2f;
+    private float lockoutDuration = 1f;
     private float spawnTime;
+    private bool hasBeenStored = false;
 
     public string itemID => data != null ? data.itemID : "";
 
@@ -23,6 +24,16 @@ public class StorableObject : MonoBehaviour
     public bool IsInLockout()
     {
         return Time.time - spawnTime < lockoutDuration;
+    }
+
+    public bool HasBeenStored()
+    {
+        return hasBeenStored;
+    }
+
+    public void MarkAsStored()
+    {
+        hasBeenStored = true;
     }
 }
 

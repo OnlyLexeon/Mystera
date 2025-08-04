@@ -70,7 +70,6 @@ public class HatInventoryManager : MonoBehaviour
                     {
                         slot.stackCount++;
                         SaveInventory();
-                        ui?.RefreshUI();
                         return true;
                     }
                 }
@@ -83,7 +82,6 @@ public class HatInventoryManager : MonoBehaviour
                 {
                     slot.stackCount++;
                     SaveInventory();
-                    ui?.RefreshUI();
                     return true;
                 }
             }
