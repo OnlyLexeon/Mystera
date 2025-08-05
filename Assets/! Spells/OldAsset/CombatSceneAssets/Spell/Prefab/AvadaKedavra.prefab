@@ -4857,7 +4857,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7594011474521674743}
+  - {fileID: 8495028408957024856}
   m_Father: {fileID: 232393974443382561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3900009061043220251
@@ -4870,12 +4872,10 @@ GameObject:
   m_Component:
   - component: {fileID: 232393974443382561}
   - component: {fileID: 7825696374146645532}
-  - component: {fileID: 7752198363770787794}
   - component: {fileID: 1976381742156419690}
   - component: {fileID: 2180668411609212375}
   - component: {fileID: 2981095973809939453}
   - component: {fileID: 7267785101885493786}
-  - component: {fileID: -5859250552479366078}
   m_Layer: 3
   m_Name: AvadaKedavra
   m_TagString: Untagged
@@ -4892,7 +4892,7 @@ Transform:
   m_GameObject: {fileID: 3900009061043220251}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0.5, z: -1.186}
+  m_LocalPosition: {x: -0.365, y: 0.5, z: -1.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4900,8 +4900,6 @@ Transform:
   - {fileID: 9168938111507676901}
   - {fileID: 637158390329934159}
   - {fileID: 3726907885071310749}
-  - {fileID: 7594011474521674743}
-  - {fileID: 8495028408957024856}
   - {fileID: 6637476174330742981}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4982,39 +4980,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &7752198363770787794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3900009061043220251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c2b2d6cff47894aa0ebf953d394fa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spell_damage: 100
-  projectile_speed: 25
-  hit_effect: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
-  arch_range: 1
-  min_arch_time: 0.5
-  max_arch_time: 1
-  spell_life_time: 0.5
-  hit_effect_life_time: 5
-  maximum_life_time: 10
-  spell_incantation_audio: {fileID: 8300000, guid: d7f3b5e1953c1f64aa758891e82c97b8, type: 3}
-  spell_sound_effect: {fileID: 8300000, guid: 132ab1b6eb2c24840947cc838ea2730d, type: 3}
-  trail_life_time: 2
-  going_to_trigger_qte: 0
-  start_position_obj_name: Firepoint
-  start_position_obj: {fileID: 3726907885071310749}
-  position_2_obj_name: AvadaPos2
-  position_2_obj: {fileID: 7594011474521674743}
-  position_3_obj_name: AvadaPos3
-  position_3_obj: {fileID: 8495028408957024856}
-  electric_arc: {fileID: 5301889922767603412}
-  sphere_cast_radius: 0
 --- !u!198 &1976381742156419690
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9883,18 +9848,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5859250552479366078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3900009061043220251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e07c438b7f766d4e9f18abd81c5b9b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4070504910515207769
 GameObject:
   m_ObjectHideFlags: 0
@@ -9919,12 +9872,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4070504910515207769}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.221, y: 0.07, z: 1.637}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1, y: -0.1, z: 0.20000005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 232393974443382561}
+  m_Father: {fileID: 3726907885071310749}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4768984654298500367
 GameObject:
@@ -14865,7 +14818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9168938111507676901
 Transform:
   m_ObjectHideFlags: 0
@@ -15082,12 +15035,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7526806458485582143}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: -0.073, z: 0.511}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1, y: 0.1, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 232393974443382561}
+  m_Father: {fileID: 3726907885071310749}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8583915022154272690
 GameObject:
@@ -15155,16 +15108,16 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: -0.25, y: 0.5, z: -1.186}
+      - m_Value: {x: -0.365, y: 0.5, z: -1.43}
         m_Name: Pos1
         m_Overridden: 1
-      - m_Value: {x: 0.02000001, y: 0.427, z: -0.675}
+      - m_Value: {x: -0.26500002, y: 0.6, z: -1.3299999}
         m_Name: Pos2
         m_Overridden: 1
-      - m_Value: {x: -0.029, y: 0.57, z: 0.45099998}
+      - m_Value: {x: -0.465, y: 0.4, z: -1.2299999}
         m_Name: Pos3
         m_Overridden: 1
-      - m_Value: {x: -0.25, y: 0.5, z: -1.186}
+      - m_Value: {x: -0.365, y: 0.5, z: -1.43}
         m_Name: Pos4
         m_Overridden: 1
     m_Vector4f:

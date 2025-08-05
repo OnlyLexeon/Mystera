@@ -24,6 +24,8 @@ public class SpellsManager : MonoBehaviour
     public float _timePassed = 0.0f;
     public int _currentSlotIndex = -1;
 
+    public bool testingMode = false;
+
     private string savePath => Path.Combine(Application.persistentDataPath, "spellSate.json");
 
     private void Awake()
@@ -41,7 +43,8 @@ public class SpellsManager : MonoBehaviour
 
     private void Start()
     {
-        LoadSpellState();
+        if (!testingMode)
+            LoadSpellState();
     }
 
     private void Update()
@@ -74,7 +77,7 @@ public class SpellsManager : MonoBehaviour
 
     public void UnequipSpell()
     {
-        if(_currentSlotIndex >=0)
+        if (_currentSlotIndex >= 0)
         {
             equippedSpells[_currentSlotIndex] = null;
         }

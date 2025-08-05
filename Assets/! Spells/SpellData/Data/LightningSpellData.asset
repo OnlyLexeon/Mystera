@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b49b151147aff4e4fb04cd29f556074f, type: 3}
-  m_Name: FireballSpellData
+  m_Name: LightningSpellData
   m_EditorClassIdentifier: 
   spellsArrayStructure:
+  - {x: 0, y: -1}
+  - {x: -1, y: 0}
+  - {x: 0, y: -1}
   - {x: 1, y: 0}
-  - {x: 0, y: 1}
-  - {x: 1, y: 0}
-  - {x: 0, y: 1}
-  spellDamge: 10
-  spellManaCost: 20
+  spellDamge: 20
+  spellManaCost: 30
   spellChargeTime: 2
-  projectileSpeed: 10
+  projectileSpeed: 25
   applyStatus: 0
   statusDuration: 0
   spellHitBoxRadius: 2
   spellHitBoxMask:
     serializedVersion: 2
-    m_Bits: 2560
+    m_Bits: 2048
   spellIgnoreMask:
     serializedVersion: 2
-    m_Bits: 1463
+    m_Bits: 10167
   spellLifeTime: 0.5
   maximumLifeTime: 10
-  hitEffectObject: {fileID: 1121192042590650, guid: 36e3541d26ac5b6409987643532bf433, type: 3}
+  hitEffectObject: {fileID: 1000011128802252, guid: 6182bf1cab52f2e40b4b890a3ee0823d, type: 3}
   hitEffectLifeTime: 2
   projectileAudio: {fileID: 0}
   hitEffectAudio: {fileID: 0}

@@ -246,7 +246,7 @@ public class SpellCasting : MonoBehaviour
         DefaultSpellsScript newSpellScript =
             Instantiate(_spellManager.equippedSpells[spellIndex].spellPrefab, drawPoint.position, drawPoint.transform.rotation)
             .GetComponent<DefaultSpellsScript>();
-        newSpellScript.ShootProjectile(drawPoint.forward);
+        newSpellScript.ShootProjectile(drawPoint);
     }
 
     public void ResetDrawing()
