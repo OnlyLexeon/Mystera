@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {
+    public GameObject drawingCanvas;
+
     [Header("Fire")]
     public GameObject[] onFireObjects;
 

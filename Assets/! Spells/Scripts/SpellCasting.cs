@@ -13,7 +13,6 @@ public class SpellCasting : MonoBehaviour
 
     [Header("Drawing")]
     public Transform drawPoint;
-    public GameObject drawingCanvasObject;
     public Material lineMaterial;
     public float cooldownTime = 1f;
     public float lineWidth = 0.01f;
@@ -35,7 +34,8 @@ public class SpellCasting : MonoBehaviour
     public List<Vector2> _drawnPoints = new List<Vector2>();
     public int _linePositionIndex = 0;
     public Vector3 _newPoint = new Vector3(0, 0, 0);
-    public LineRenderer _currentLine;
+    public LineRenderer _drawingCanva;
+    public Animator _drawingCanvaAnimation;
     public Vector3 _canvaStartingPoint;
 
     [Header("Private Resamplaing Data (For Debug Only)")]
@@ -63,6 +63,10 @@ public class SpellCasting : MonoBehaviour
 
         showManaBar = false;
         //manaBar.gameObject.SetActive(showManaBar);
+
+        // Initiate the line renderer
+        _drawingCanva = Player.instance.drawingCanvas.GetComponent<LineRenderer>();
+        _drawingCanvaAnimation = Player.instance.drawingCanvas.GetComponent<Animator>();
     }
 
     private void Update()
@@ -105,12 +109,12 @@ public class SpellCasting : MonoBehaviour
         {
             // Add new point to the line renderer
             _linePositionIndex++;
-            _currentLine.positionCount = _linePositionIndex;
+            _drawingCanva.positionCount = _linePositionIndex;
             _newPoint = drawPoint.transform.position - _canvaStartingPoint;
 
             // Cancel out the z-axis
             _newPoint.z = 0f;
-            _currentLine.SetPosition(_linePositionIndex - 1, _newPoint);
+            _drawingCanva.SetPosition(_linePositionIndex - 1, _newPoint);
 
             // Add new point to the drawn point list
             _drawnPoints.Add((Vector2)_newPoint);
@@ -126,18 +130,18 @@ public class SpellCasting : MonoBehaviour
             #endregion
 
             #region Continue draw if only the draw point has gone a distance from the previous point
-            if (Vector3.Distance(_newPoint, _currentLine.GetPosition(_currentLine.positionCount - 1)) > pointInterval)
+            if (Vector3.Distance(_newPoint, _drawingCanva.GetPosition(_drawingCanva.positionCount - 1)) > pointInterval)
             {
                 // Mana drain per point
                 _spellManager.currentMana -= _spellManager.manaDrainPerPoint;
 
                 // Add up the total length along the way for calculation later on
-                _totalLength += Vector3.Distance(_newPoint, _currentLine.GetPosition(_currentLine.positionCount - 1));
+                _totalLength += Vector3.Distance(_newPoint, _drawingCanva.GetPosition(_drawingCanva.positionCount - 1));
 
                 // Put points on the line renderer
                 _linePositionIndex++;
-                _currentLine.positionCount = _linePositionIndex;
-                _currentLine.SetPosition(_linePositionIndex - 1, _newPoint);
+                _drawingCanva.positionCount = _linePositionIndex;
+                _drawingCanva.SetPosition(_linePositionIndex - 1, _newPoint);
 
                 // Add new point to the drawn point list for calculation later on
                 _drawnPoints.Add((Vector2)_newPoint);
@@ -157,22 +161,20 @@ public class SpellCasting : MonoBehaviour
             _totalLength = 0;
             _canDraw = false;
             _isDrawing = true;
+            _drawingCanvaAnimation.SetBool("StartDrawing", true);
 
             // Initiate the starting point of canva
             _canvaStartingPoint = drawPoint.transform.position;
 
-            // Instantiate the line renderer
-            _currentLine = Instantiate(drawingCanvasObject, _canvaStartingPoint, Quaternion.identity).GetComponent<LineRenderer>();
-
             #region Line Renderer Customizations (Mat, Color, Width)
             if (lineMaterial != null)
             {
-                _currentLine.material = lineMaterial;
+                _drawingCanva.material = lineMaterial;
             }
-            _currentLine.startColor = lineColor;
-            _currentLine.startColor = lineColor;
-            _currentLine.startWidth = lineWidth;
-            _currentLine.endWidth = lineWidth;
+            _drawingCanva.startColor = lineColor;
+            _drawingCanva.startColor = lineColor;
+            _drawingCanva.startWidth = lineWidth;
+            _drawingCanva.endWidth = lineWidth;
             #endregion
         }
         #endregion
@@ -183,6 +185,7 @@ public class SpellCasting : MonoBehaviour
         // Turn off the flag
         _isDrawing = false;
         _stopDrawing = false;
+        _drawingCanvaAnimation.SetBool("StartDrawing", false);
 
         if (_drawnPoints.Count >= vectorAmount)
         {
@@ -221,8 +224,6 @@ public class SpellCasting : MonoBehaviour
             // Wand enter cooldown if drawn points are too few
             CastingCoolDown();
         }
-
-        Destroy(_currentLine.gameObject);
     }
 
     public void CastingCoolDown()
@@ -311,10 +312,7 @@ public class SpellCasting : MonoBehaviour
 
         _linePositionIndex = 0;
         _drawnPoints.Clear();
-
-        //_currentLine = null;
-
-        Destroy(_currentLine);
+        _drawingCanva.positionCount = 0;
     }
 
     public void ResampleVectors()

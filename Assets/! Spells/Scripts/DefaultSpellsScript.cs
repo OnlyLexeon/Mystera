@@ -54,7 +54,8 @@ public class DefaultSpellsScript : MonoBehaviour
             Debug.Log("HIT Enemy :" + hitObject.gameObject.name);
             Enemy enemyScript = hitObject.GetComponent<Enemy>();
             GameObject attacker = GameObject.FindGameObjectWithTag("Player");
-            enemyScript.OnTakeDamageWithAttacker(spellData.spellDamge,attacker);
+            int roundedDamage = Mathf.RoundToInt(spellData.spellDamge);
+            enemyScript.OnTakeDamageWithAttacker(roundedDamage, attacker);
         }
         else
         {

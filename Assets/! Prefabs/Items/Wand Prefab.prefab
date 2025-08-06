@@ -25316,8 +25316,7 @@ MonoBehaviour:
   manaBarUI: {fileID: 2395141902020649119}
   manaBarValue: {fileID: 1360363799900802053}
   drawPoint: {fileID: 7130261599960413932}
-  drawingCanvasObject: {fileID: 9147147318837172232, guid: 7527ceb4f5d6bd84681a4312f7f49545, type: 3}
-  lineMaterial: {fileID: 2100000, guid: 842f1b88643f1bb458ba6243088e344e, type: 2}
+  lineMaterial: {fileID: 2100000, guid: cbdc8060c02d72a48a7a8f37e9960b0a, type: 2}
   cooldownTime: 0.1
   lineWidth: 0.01
   lineColor: {r: 1, g: 1, b: 1, a: 1}
@@ -25332,7 +25331,8 @@ MonoBehaviour:
   _drawnPoints: []
   _linePositionIndex: 0
   _newPoint: {x: 0, y: 0, z: 0}
-  _currentLine: {fileID: 0}
+  _drawingCanva: {fileID: 0}
+  _drawingCanvaAnimation: {fileID: 0}
   _canvaStartingPoint: {x: 0, y: 0, z: 0}
   _resamplePoints: []
   _resampleVectors: []
