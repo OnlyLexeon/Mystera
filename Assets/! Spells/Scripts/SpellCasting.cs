@@ -35,7 +35,7 @@ public class SpellCasting : MonoBehaviour
     public int _linePositionIndex = 0;
     public Vector3 _newPoint = new Vector3(0, 0, 0);
     public LineRenderer _drawingCanva;
-    public Animator _drawingCanvaAnimation;
+    public DrawingCanvaScript _drawingCanvaAnimation;
     public Vector3 _canvaStartingPoint;
 
     [Header("Private Resamplaing Data (For Debug Only)")]
@@ -66,7 +66,7 @@ public class SpellCasting : MonoBehaviour
 
         // Initiate the line renderer
         _drawingCanva = Player.instance.drawingCanvas.GetComponent<LineRenderer>();
-        _drawingCanvaAnimation = Player.instance.drawingCanvas.GetComponent<Animator>();
+        _drawingCanvaAnimation = Player.instance.drawingCanvas.GetComponent<DrawingCanvaScript>();
     }
 
     private void Update()
@@ -161,7 +161,7 @@ public class SpellCasting : MonoBehaviour
             _totalLength = 0;
             _canDraw = false;
             _isDrawing = true;
-            _drawingCanvaAnimation.SetBool("StartDrawing", true);
+            _drawingCanvaAnimation.OpenDrawing();
 
             // Initiate the starting point of canva
             _canvaStartingPoint = drawPoint.transform.position;
@@ -185,7 +185,7 @@ public class SpellCasting : MonoBehaviour
         // Turn off the flag
         _isDrawing = false;
         _stopDrawing = false;
-        _drawingCanvaAnimation.SetBool("StartDrawing", false);
+        _drawingCanvaAnimation.CloseDrawing();
 
         if (_drawnPoints.Count >= vectorAmount)
         {
