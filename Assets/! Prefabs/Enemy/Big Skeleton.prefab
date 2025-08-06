@@ -55,7 +55,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92fc3cab0a1f1dd42bdd46a803eba9d3, type: 2}
+  - {fileID: 2100000, guid: 65a9abf6fc6e980478cf826591dac030, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 292420243615764683}
   - component: {fileID: 814016857189064323}
   m_Layer: 11
-  m_Name: Skeleton 1
+  m_Name: Big Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,6 +508,7 @@ MonoBehaviour:
   deathTrigger: death
   hitTrigger: takeDamage
   hitStunDuration: 0.1
+  invincibilityDuration: 1
   particleCount: 20
   particleSize: 0.1
   particleSpeed: 3
@@ -522,7 +523,6 @@ MonoBehaviour:
   reviveSound: {fileID: 0}
   rebirthTrigger: rebirth
   reviveHealthPercent: 0.5
-  invincibilityDuration: 1
 --- !u!65 &814016857189064323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -784,7 +784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3840819639669615627
 Transform:
   m_ObjectHideFlags: 0
@@ -1512,7 +1512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4499291283593929736
 Transform:
   m_ObjectHideFlags: 0

@@ -201,9 +201,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 5
-  m_Range: 3.7
+  m_Color: {r: 1, g: 0.759434, b: 0.97474134, a: 1}
+  m_Intensity: 1.5
+  m_Range: 4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5692,6 +5692,7 @@ MonoBehaviour:
   deathTrigger: death
   hitTrigger: takeDamage
   hitStunDuration: 0.2
+  invincibilityDuration: 0.4
   particleCount: 20
   particleSize: 0.1
   particleSpeed: 3

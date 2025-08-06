@@ -434,6 +434,7 @@ MonoBehaviour:
   deathTrigger: death
   hitTrigger: takeDamage
   hitStunDuration: 0.1
+  invincibilityDuration: 0.4
   particleCount: 20
   particleSize: 0.1
   particleSpeed: 3
@@ -607,7 +608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3438532449351595716
 Transform:
   m_ObjectHideFlags: 0
@@ -1829,7 +1830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2858246892533492775
 Transform:
   m_ObjectHideFlags: 0
