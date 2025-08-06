@@ -51,9 +51,6 @@ public class HatInventoryManager : MonoBehaviour
         if (potionStore != null)
             customData = potionStore.GetPotionData();
 
-        //adding
-        if (slots.Count >= maxSlots) return false;
-
         //try to stack
         foreach (var slot in slots)
         {
@@ -63,29 +60,27 @@ public class HatInventoryManager : MonoBehaviour
             //If potion, try to match with existing
             if (customData is StoredPotionData newPotion && slot.GetDeserializedData() is StoredPotionData existingPotion)
             {
-                if (ArePotionsIdentical(existingPotion, newPotion))
-                {
-                    if (slot.stackCount >= maxStack) continue;
-                    else
-                    {
-                        slot.stackCount++;
-                        SaveInventory();
-                        return true;
-                    }
-                }
+                if (!ArePotionsIdentical(existingPotion, newPotion)) continue;
+
+                if (slot.stackCount >= maxStack) continue;
+
+                slot.stackCount++;
+                SaveInventory();
+                return true;
             }
             //no potion
             else if (customData == null && string.IsNullOrEmpty(slot.jsonData))
             {
                 if (slot.stackCount >= maxStack) continue;
-                else
-                {
-                    slot.stackCount++;
-                    SaveInventory();
-                    return true;
-                }
+
+                slot.stackCount++;
+                SaveInventory();
+                return true;
             }
         }
+
+        //adding
+        if (slots.Count >= maxSlots) return false;
 
         slots.Add(new InventorySlot(storable.itemID, 1, customData));
         SaveInventory();

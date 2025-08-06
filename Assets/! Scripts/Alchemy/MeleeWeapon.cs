@@ -97,9 +97,9 @@ public class MeleeWeapon : MonoBehaviour
         float damageToApply = (t >= 1f) ? chargedDamage : unchargedDamage;
         int roundedDamage = Mathf.RoundToInt(damageToApply);
 
-        if (other.TryGetComponent(out Enemy enemyscript))
+        if (other.TryGetComponent(out Health health))
         {
-            enemyscript.OnTakeDamage(roundedDamage);
+            health.TakeDamage(roundedDamage);
         }
 
         //cd reset

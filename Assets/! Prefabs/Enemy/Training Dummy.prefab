@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 8296847142318420582}
   - component: {fileID: 8189134973491429875}
   m_Layer: 11
-  m_Name: training_dummy
+  m_Name: Training Dummy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInvincible: 0
-  maxHealth: 2147483647
+  canRegen: 1
+  regenAmount: 999
+  regenInterval: 1
+  maxHealth: 1000000
   currentHealth: 0
   fadeToBlackDuration: 2
   respawnDelay: 1
@@ -218,6 +221,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   shakeFrequency: 25
+  damageTextPrefab: {fileID: 5968318152885456666, guid: c6174099081a9324bb6f0624b2dfe5ce, type: 3}
+  damageTextOffset: {x: 1.5, y: 0, z: 1.5}
 --- !u!114 &8189134973491429875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +276,7 @@ MonoBehaviour:
   deathTrigger: death
   hitTrigger: hit
   hitStunDuration: 1
+  invincibilityDuration: 0.4
   particleCount: 20
   particleSize: 0.1
   particleSpeed: 3

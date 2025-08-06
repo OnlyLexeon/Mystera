@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 52377708812bc6442918b0ac625d44e4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - globalVolume: {instanceID: 0}
+  - cameraTransform: {instanceID: 0}
+  - damageTextPrefab: {fileID: 5968318152885456666, guid: c6174099081a9324bb6f0624b2dfe5ce, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

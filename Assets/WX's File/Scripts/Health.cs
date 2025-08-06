@@ -4,12 +4,18 @@ using System.Collections;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
-
     [Header("无敌状态")]
     public bool isInvincible = false; // 勾选后玩家不会受到伤害，但仍会触发受击效果
+
+    [Header("Can Regenerate")]
+    public bool canRegen = false;
+    public int regenAmount = 0;
+    public float regenInterval = 1;
+    private float regenTimer = 0;
 
     [Header("生命值设置")]
     public int maxHealth = 100;
@@ -33,7 +39,11 @@ public class Health : MonoBehaviour
     public float shakeIntensity = 0.15f;
     public AnimationCurve shakeCurve = AnimationCurve.EaseInOut(0, 1, 1, 0);
     public float shakeFrequency = 25f; // 抖动频率
-    
+
+    [Header("Damage Text")]
+    public GameObject damageTextPrefab;
+    public Vector3 damageTextOffset;
+
     private Vignette vignette;
     private Coroutine vignetteCoroutine;
     private Coroutine cameraShakeCoroutine;
@@ -81,8 +91,6 @@ public class Health : MonoBehaviour
         // 初始化相机引用
         if (CompareTag("Player"))
         {
-           
-            
             if (cameraTransform != null)
             {
                 originalCameraLocalPosition = cameraTransform.localPosition;
@@ -93,21 +101,28 @@ public class Health : MonoBehaviour
             }
         }
     }
-    
-    //void Update()
-    //{
-    //    if (isDead && canRespawn && Input.GetKeyDown(KeyCode.R))
-    //    {
-    //        RespawnPlayer();
-    //    }
-    //}
-    
-    public void TakeDamage(int damage)
+
+    void Update()
     {
-        TakeDamage(damage, null);
+        //if (isDead && canRespawn && Input.GetKeyDown(KeyCode.R))
+        //{
+        //    RespawnPlayer();
+        //}
+
+        //Regeneration
+        if (canRegen)
+        {
+            regenTimer -= Time.deltaTime;
+
+            if (regenTimer <= 0f)
+            {
+                regenTimer = regenInterval;
+                Heal(regenAmount);
+            }
+        }
     }
-    
-    public void TakeDamage(int damage, GameObject attacker)
+
+    public void TakeDamage(int damage, GameObject attacker = null)
     {
         if (isInvincible || isDead || damage <= 0) 
             return;
@@ -146,13 +161,45 @@ public class Health : MonoBehaviour
                 cameraShakeCoroutine = StartCoroutine(CameraShake());
             }
         }
+        else //im not player, so i must be an enemy! Do damage text
+        {
+            if (damageTextPrefab != null)
+            {
+                ShowDamageText(damage);
+            }
+        }
         
         if (currentHealth <= 0)
         {
             Die();
         }
     }
-    
+
+    public void ShowDamageText(int amount)
+    {
+        if (damageTextPrefab == null) return;
+
+        Vector3 basePos = transform.position + Vector3.up;
+        float offsetX = UnityEngine.Random.Range(-damageTextOffset.x, damageTextOffset.x);
+        float offsetZ = UnityEngine.Random.Range(-damageTextOffset.z, damageTextOffset.z);
+
+        Vector3 finalPos = basePos + new Vector3(offsetX, 0, offsetZ);
+
+        GameObject dmgObj = Instantiate(damageTextPrefab, finalPos, Quaternion.identity);
+
+        dmgObj.transform.LookAt(Camera.main.transform);
+        dmgObj.transform.Rotate(0, 180f, 0); //flip
+
+        //text
+        TextMeshProUGUI tmp = dmgObj.GetComponentInChildren<TextMeshProUGUI>();
+        if (tmp != null)
+        {
+            tmp.text = amount.ToString();
+        }
+
+        Destroy(dmgObj, 1.5f);
+    }
+
     private IEnumerator CameraShake()
     {
         isShaking = true;
@@ -293,12 +340,8 @@ public class Health : MonoBehaviour
     //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     //}
     
-    public void Heal(int amount)
-    {
-        Heal(amount, null);
-    }
-    
-    public void Heal(int amount, GameObject healer)
+   
+    public void Heal(int amount, GameObject healer = null)
     {
         if (amount <= 0 || isDead) return;
         

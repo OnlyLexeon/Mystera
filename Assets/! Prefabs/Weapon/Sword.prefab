@@ -94,7 +94,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   isSelected: 0
-  boxCollider: {fileID: 0}
+  boxCollider: {fileID: 2843910575432673642}
   cooldownCanvas: {fileID: 5309726217783224743}
   cooldownSlider: {fileID: 5417291354561275606}
   sliderFill: {fileID: 408613051203932965}

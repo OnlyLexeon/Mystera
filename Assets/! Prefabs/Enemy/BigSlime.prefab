@@ -5642,7 +5642,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInvincible: 0
-  maxHealth: 10
+  canRegen: 0
+  regenAmount: 0
+  regenInterval: 1
+  maxHealth: 14
   currentHealth: 0
   fadeToBlackDuration: 2
   respawnDelay: 1
@@ -5703,6 +5706,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   shakeFrequency: 25
+  damageTextPrefab: {fileID: 5968318152885456666, guid: c6174099081a9324bb6f0624b2dfe5ce, type: 3}
+  damageTextOffset: {x: 1.5, y: 0, z: 1.5}
 --- !u!114 &7567132565016036286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5715,30 +5720,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6119ec840cd10d34bbf111dc24b5e3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolRange: 10
+  patrolRange: 4
   minMoveTime: 2
   maxMoveTime: 4
-  idleTime: 1.5
+  idleTime: 4
   idle02Chance: 0.5
   detectionAngle: 120
-  detectionDistance: 15.7
+  detectionDistance: 6
   detectionHeightOffset: 1
   checkLineOfSight: 1
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 0
-  alertRadius: 10
-  alertDuration: 10
+    m_Bits: 512
+  alertRadius: 6
+  alertDuration: 8
   showAlertEffect: 1
   alertEffectPrefab: {fileID: 8614747112428934132, guid: 434169f518fa8b943ac8213cbc3390c0, type: 3}
   alertSound: {fileID: 0}
   alertEffectYOffset: 2
-  chaseSpeed: 4
-  patrolSpeed: 2
-  attackRange: 4
-  attackCooldown: 1.5
+  chaseSpeed: 2
+  patrolSpeed: 1
+  attackRange: 3
+  attackCooldown: 3
   meleeAttackDelay: 0.6
-  meleeDamage: 10
+  meleeDamage: 12
   stoppingDistance: 1.2
   useEdgeToEdgeDistance: 1
   desiredAttackDistance: 1.5
@@ -5756,7 +5761,7 @@ MonoBehaviour:
   deathTrigger: death
   hitTrigger: takeDamage
   hitStunDuration: 0.2
-  invincibilityDuration: 0.4
+  invincibilityDuration: 0.1
   particleCount: 20
   particleSize: 0.1
   particleSpeed: 3
@@ -5779,8 +5784,8 @@ MonoBehaviour:
   rangedDamage: 15
   projectilePrefab: {fileID: 634864396445544149, guid: 19a87ccc936ff8f4183147de2d7bc170, type: 3}
   projectileSpawnPoint: {fileID: 3792541704262615887}
-  projectileArcHeight: 2
-  projectileSpeed: 15
+  projectileArcHeight: 4
+  projectileSpeed: 4
   rangedAttackEffectPrefab: {fileID: 7131401307255788800, guid: 4d9a3b35b3bc07649b697df7fb497b6d, type: 3}
   effectSpawnPoint: {fileID: 3792541704262615887}
   effectDuration: 1

@@ -22,7 +22,7 @@ public abstract class Enemy : MonoBehaviour
     public LayerMask obstacleLayers;
 
     [Header("Alert System")]
-    public float alertRadius = 10f;
+    public float alertRadius = 6f;
     public float alertDuration = 10f;
     public bool showAlertEffect = true;
     public GameObject alertEffectPrefab;

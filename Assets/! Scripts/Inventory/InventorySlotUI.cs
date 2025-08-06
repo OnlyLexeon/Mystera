@@ -55,7 +55,7 @@ public class InventorySlotUI : MonoBehaviour
             RectTransform myRect = GetComponent<RectTransform>();
             if (tooltipRect != null && myRect != null)
             {
-                Vector3 worldAbove = myRect.position + Vector3.up * 0.12f;
+                Vector3 worldAbove = myRect.position + Vector3.up * 0.12f + Vector3.forward * 0.02f;
                 tooltipRect.position = worldAbove;
             }
         }
