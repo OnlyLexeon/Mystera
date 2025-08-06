@@ -10,6 +10,7 @@ public enum RoomType
     Empty
 }
 
+[System.Serializable]
 public class EnemySetting
 {
     public float weightage;
