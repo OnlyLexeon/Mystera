@@ -49024,6 +49024,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3423743557600540635, guid: a2a8bfb4e37eee04a9be8797c1d0a790, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423743557600540635, guid: a2a8bfb4e37eee04a9be8797c1d0a790, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5332427375723399607, guid: a2a8bfb4e37eee04a9be8797c1d0a790, type: 3}
       propertyPath: m_Name
       value: Hammer 1
@@ -54149,6 +54157,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 588894329}
     m_Modifications:
+    - target: {fileID: 904177854374112023, guid: 21d6c6e48a972004ca8f73570cd1e5e6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904177854374112023, guid: 21d6c6e48a972004ca8f73570cd1e5e6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6932210276207258990, guid: 21d6c6e48a972004ca8f73570cd1e5e6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -55865,12 +55881,24 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3728820309033550303, guid: d45161c2ab523b04cb574ec5712a99d2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3851576709923950932, guid: d45161c2ab523b04cb574ec5712a99d2, type: 3}
       propertyPath: m_Name
       value: Sword 1
       objectReference: {fileID: 0}
     - target: {fileID: 3851576709923950932, guid: d45161c2ab523b04cb574ec5712a99d2, type: 3}
       propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935451226788869147, guid: d45161c2ab523b04cb574ec5712a99d2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935451226788869147, guid: d45161c2ab523b04cb574ec5712a99d2, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5454235130706482126, guid: d45161c2ab523b04cb574ec5712a99d2, type: 3}
