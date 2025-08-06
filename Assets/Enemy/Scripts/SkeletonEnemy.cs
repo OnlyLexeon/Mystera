@@ -11,7 +11,7 @@ public class SkeletonEnemy : Enemy
     public AudioClip reviveSound;
     public string rebirthTrigger = "rebirth";
     public float reviveHealthPercent = 0.5f;
-    public float invincibilityDuration = 1f;
+   
     
     // 复活状态
     private bool hasRevived = false;
