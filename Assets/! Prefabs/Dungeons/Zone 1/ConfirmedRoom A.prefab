@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 563885394939808828}
   m_Layer: 9
-  m_Name: Ground&Ceiling
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,9 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7102588065209801916}
+  - {fileID: 4020739896007559325}
   - {fileID: 5894319910987294159}
-  - {fileID: 8638789666906296890}
   - {fileID: 4592034238394507366}
   - {fileID: 648940520536684507}
   - {fileID: 7330022887758493165}
@@ -49,6 +48,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8082024833424588213}
   - component: {fileID: 3644165680699604873}
+  - component: {fileID: 528574438274708836}
   m_Layer: 0
   m_Name: ConfirmedRoom A
   m_TagString: Untagged
@@ -65,7 +65,7 @@ Transform:
   m_GameObject: {fileID: 1422004607655363726}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.58, y: -0.5084707, z: -3.72}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -95,6 +95,40 @@ MonoBehaviour:
   connectors:
   - {fileID: 7682648284646349315}
   boundsCollider: {fileID: 2355072340848808644}
+  hasEnemy: 0
+  enemySpawnPoints: []
+--- !u!114 &528574438274708836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422004607655363726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.13333334
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 90d6d69d36a10c648b5edb2eb3df2752, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &2639584700377908772
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +163,39 @@ Transform:
   - {fileID: 8732583329597482147}
   - {fileID: 7271861626010347528}
   m_Father: {fileID: 8082024833424588213}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3399627635474921032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4020739896007559325}
+  m_Layer: 9
+  m_Name: Ceiling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4020739896007559325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3399627635474921032}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7102588065209801916}
+  - {fileID: 8638789666906296890}
+  m_Father: {fileID: 563885394939808828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4369378755485573408
 GameObject:
@@ -296,7 +363,7 @@ Transform:
   m_LocalScale: {x: 10.1, y: 0.09179791, z: 9.946531}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 563885394939808828}
+  m_Father: {fileID: 4020739896007559325}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1037079488959422169
 MeshFilter:
@@ -2749,7 +2816,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 563885394939808828}
+    m_TransformParent: {fileID: 4020739896007559325}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9987a1a3133dd3d4787a0ac65c6a286d, type: 3}
       propertyPath: m_LocalScale.x
