@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 292420243615764683}
   - component: {fileID: 814016857189064323}
   m_Layer: 11
-  m_Name: Big Skeleton
+  m_Name: Respawn Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
