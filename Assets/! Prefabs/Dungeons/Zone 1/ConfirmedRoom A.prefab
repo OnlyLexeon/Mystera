@@ -69,6 +69,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1116264609736092211}
   - {fileID: 2775763144316741169}
   - {fileID: 5785094978890023876}
   - {fileID: 8533467817829414409}
@@ -95,8 +96,14 @@ MonoBehaviour:
   connectors:
   - {fileID: 7682648284646349315}
   boundsCollider: {fileID: 2355072340848808644}
-  hasEnemy: 0
-  enemySpawnPoints: []
+  hasEnemy: 1
+  enemySpawnPoints:
+  - {fileID: 1116264609736092211}
+  enemyToSpawn:
+  - weightage: 1
+    enemyPrefab: {fileID: 8626756116559743323, guid: 13a53134be600ad42ba22e5f29555de3, type: 3}
+  - weightage: 1
+    enemyPrefab: {fileID: 1088054392046518701, guid: a8d44aad5a69b8f4398c7ef7d669d794, type: 3}
 --- !u!114 &528574438274708836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +203,37 @@ Transform:
   - {fileID: 7102588065209801916}
   - {fileID: 8638789666906296890}
   m_Father: {fileID: 563885394939808828}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3617201432000173877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1116264609736092211}
+  m_Layer: 0
+  m_Name: Enemy Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1116264609736092211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617201432000173877}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.591, y: 3.065, z: -1.662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8082024833424588213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4369378755485573408
 GameObject:

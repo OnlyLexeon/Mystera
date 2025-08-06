@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 4290628345546202845}
   - component: {fileID: 2425776338971890508}
   - component: {fileID: 4422615969840438925}
+  - component: {fileID: -1620531893508082162}
   m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
@@ -89,6 +90,9 @@ MonoBehaviour:
   attackCooldown: 0.8
   chargedDamage: 6
   unchargedDamage: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   isSelected: 0
   cooldownCanvas: {fileID: 5309726217783224743}
   cooldownSlider: {fileID: 5417291354561275606}
@@ -301,6 +305,30 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1940091566293758306}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1940091566293758306}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 6918021919962176005}
         m_TargetAssemblyTypeName: MeleeWeapon, Assembly-CSharp
         m_MethodName: SetSelected
@@ -502,6 +530,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9ccaf2ef303a94d4eb0d548d8545dd93, type: 3}
   pitchRange: {x: 0.9, y: 1.1}
   playCooldown: 0.5
+--- !u!114 &-1620531893508082162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3851576709923950932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b209c7e406d8ed4d8865a29bdc1fb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 08203c91f383e9b4585853d5dd3e6028, type: 2}
 --- !u!1001 &3434662489718503978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -592,15 +633,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1817157764882337329, guid: 9a8f81b3cddcc60439db5b914734bbaa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.325
       objectReference: {fileID: 0}
     - target: {fileID: 1817157764882337329, guid: 9a8f81b3cddcc60439db5b914734bbaa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4952214147835422248, guid: 9a8f81b3cddcc60439db5b914734bbaa, type: 3}
       propertyPath: m_Name
       value: Weapon UI Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952214147835422248, guid: 9a8f81b3cddcc60439db5b914734bbaa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
