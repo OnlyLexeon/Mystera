@@ -25,6 +25,7 @@ public class GameOverManager : MonoBehaviour
     private float alpha = 0.0f;
     private float cameraFar = 25f;
     private Camera mainCamera;
+    public LayerMask noUI;
 
     private GameObject lastAttacker;
 
@@ -54,7 +55,10 @@ public class GameOverManager : MonoBehaviour
 
         lastAttacker = attacker;
 
+        //camera settings
+        mainCamera.cullingMask = noUI;
         UICamera.farClipPlane = 5;
+        UICamera.enabled = true;
 
         StartCoroutine(CanvasFadeIn()); //fade canvas 3 seconds
 

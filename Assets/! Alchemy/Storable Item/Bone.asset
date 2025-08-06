@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 42bb031282cda5249af9e3f516cf00fc, type: 3}
   m_Name: Bone
-  m_EditorClassIdentifier: Assembly-CSharp::StorableData
+  m_EditorClassIdentifier: 
   itemID: Bone
   displayName: Bone
   icon: {fileID: 21300000, guid: d552e02302cc9b64b8481abcb2248098, type: 3}

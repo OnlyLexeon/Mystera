@@ -101,7 +101,7 @@ public class InventorySlotUI : MonoBehaviour
             }
 
             //disable all buttons
-            hatUI.DisableAllButtons(1f);
+            hatUI.DisableAllButtons(0.5f);
 
             //effects
             hatUI.hat.SpawnedDoEffects();

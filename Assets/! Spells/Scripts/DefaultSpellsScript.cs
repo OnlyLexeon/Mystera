@@ -36,9 +36,9 @@ public class DefaultSpellsScript : MonoBehaviour
         }
     }
 
-    public virtual void ShootProjectile(Vector3 fireDirection)
+    public virtual void ShootProjectile(Transform firePoint)
     {
-        FireProjectile(fireDirection);
+        FireProjectile(firePoint.forward);
     }
 
     protected void OnCollisionEnter(Collision collision)
@@ -51,10 +51,14 @@ public class DefaultSpellsScript : MonoBehaviour
         _collided = true;
         if (hitObject.tag == "Enemy")
         {
-            Debug.Log("HIT! :" + hitObject.gameObject.name);
+            Debug.Log("HIT Enemy :" + hitObject.gameObject.name);
             Enemy enemyScript = hitObject.GetComponent<Enemy>();
             GameObject attacker = GameObject.FindGameObjectWithTag("Player");
             enemyScript.OnTakeDamageWithAttacker(spellData.spellDamge,attacker);
+        }
+        else
+        {
+            Debug.Log("HIT SOMETHING ELSE" + hitObject.name);
         }
 
         _rigidBody.linearVelocity = Vector3.zero;

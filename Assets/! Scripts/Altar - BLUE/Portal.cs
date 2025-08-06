@@ -10,15 +10,16 @@ public class Portal : MonoBehaviour
     public Animator animator;
     public bool isOpen = false;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if (hasCollided) return;
 
-        if (collision.collider.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             hasCollided = true;
 
             onPortalEnter?.Invoke();
+            Debug.Log("Invoked!");
         }
     }
 
@@ -31,5 +32,4 @@ public class Portal : MonoBehaviour
     {
         hasCollided = false;
     }
-
 }

@@ -16,6 +16,7 @@ public class SpellsManager : MonoBehaviour
     public float manaDrainPerPoint = 0.1f;
     public int maxSpellSlots = 4;
     public bool isCasting = false;
+    public bool manaRegen = false;
 
     [Header("Player Current Data (For Debug Only)")]
     public float currentMana = 0;
@@ -23,6 +24,8 @@ public class SpellsManager : MonoBehaviour
     [Header("Private Data (For Debug Only)")]
     public float _timePassed = 0.0f;
     public int _currentSlotIndex = -1;
+
+    public bool testingMode = false;
 
     private string savePath => Path.Combine(Application.persistentDataPath, "spellSate.json");
 
@@ -41,24 +44,31 @@ public class SpellsManager : MonoBehaviour
 
     private void Start()
     {
-        LoadSpellState();
+        if (!testingMode)
+            LoadSpellState();
     }
 
     private void Update()
     {
+        manaRegen = false;
         if (!isCasting)
         {
             if (currentMana < maxMana)
             {
-                _timePassed += Time.deltaTime;
-                if (_timePassed > manaRegenRate)
-                {
-                    int manaRegen = (int)(_timePassed / manaRegenRate);
-                    _timePassed -= manaRegen;
-                    currentMana += manaRegen;
-                    if (currentMana > maxMana)
-                        currentMana = maxMana;
-                }
+                manaRegen = true;
+            }
+        }
+
+        if(manaRegen)
+        {
+            _timePassed += Time.deltaTime;
+            if (_timePassed > manaRegenRate)
+            {
+                int manaRegen = (int)(_timePassed / manaRegenRate);
+                _timePassed -= manaRegen;
+                currentMana += manaRegen;
+                if (currentMana > maxMana)
+                    currentMana = maxMana;
             }
         }
     }
@@ -74,7 +84,7 @@ public class SpellsManager : MonoBehaviour
 
     public void UnequipSpell()
     {
-        if(_currentSlotIndex >=0)
+        if (_currentSlotIndex >= 0)
         {
             equippedSpells[_currentSlotIndex] = null;
         }

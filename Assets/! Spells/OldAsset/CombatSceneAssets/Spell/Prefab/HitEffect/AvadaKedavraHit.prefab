@@ -28,8 +28,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4000011693693590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5036,8 +5036,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 3
+      scalar: 0.5
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9545,7 +9545,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 132ab1b6eb2c24840947cc838ea2730d, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 132ab1b6eb2c24840947cc838ea2730d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -19527,7 +19527,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.4666667, g: 0.74509805, b: 0.627451, a: 1}
+  m_Color: {r: 0.46666667, g: 0.6659302, b: 0.74509805, a: 1}
   m_Intensity: 5
   m_Range: 20
   m_SpotAngle: 30

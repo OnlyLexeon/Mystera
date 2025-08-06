@@ -15,6 +15,10 @@ public class DungeonMapGenerator : MonoBehaviour
     public float borderOffset = -0.1f;
     public int spawnAttempts = 100;
 
+    [Header("Fail Safe Settings")]
+    public int maxRegenerationAttempts = 10;
+    private int regenerationTries = 0;
+
     private List<DungeonRoom> spawnedRooms = new();
     private List<DungeonConnector> openConnectors = new();
     private List<int> confirmedRoomSpawnPoints = new();
@@ -26,6 +30,12 @@ public class DungeonMapGenerator : MonoBehaviour
 
     public void Generate()
     {
+        regenerationTries = 0;
+        InternalGenerate();
+    }
+
+    private void InternalGenerate()
+    {
         Debug.Log("==== Dungeon Generation Started ====");
 
         roomsPlaced = 0;
@@ -34,8 +44,19 @@ public class DungeonMapGenerator : MonoBehaviour
 
         PrepareConfirmedRoomSchedule();
         SpawnInitialRoom();
-        TryAddRooms();
-        SpawnExitRoom();
+
+        if (!TryAddRooms())
+        {
+            FailAndRetry("Room generation failed.");
+            return;
+        }
+
+        if (!SpawnExitRoom())
+        {
+            FailAndRetry("Exit room failed to spawn.");
+            return;
+        }
+
         SealUnusedConnectors();
 
         Debug.Log("==== Dungeon Generation Complete ====");
@@ -59,12 +80,11 @@ public class DungeonMapGenerator : MonoBehaviour
     {
         GameObject start = Instantiate(spawnRoom, Vector3.zero, Quaternion.identity);
         DungeonRoom room = start.GetComponent<DungeonRoom>();
-        Debug.Log($"Spawned Spawn Room: {start.name}");
         spawnedRooms.Add(room);
         AddRoomConnectors(room);
     }
 
-    void TryAddRooms()
+    bool TryAddRooms()
     {
         int safety = 0;
 
@@ -74,12 +94,8 @@ public class DungeonMapGenerator : MonoBehaviour
 
             if (openConnectors.Count == 0)
             {
-                Debug.LogWarning("No open connectors. Attempting backtrack...");
                 if (!BacktrackLastRoom())
-                {
-                    Debug.LogError("Backtracking failed. Dungeon generation halted.");
-                    return;
-                }
+                    return false;
                 continue;
             }
 
@@ -93,38 +109,27 @@ public class DungeonMapGenerator : MonoBehaviour
                 availableConnectors.RemoveAt(index);
 
                 GameObject prefab = SelectNextRoomPrefab();
-                Debug.Log($"Trying to spawn room: {prefab.name} at RoomIndex={roomsPlaced}");
-
                 GameObject roomObj = Instantiate(prefab);
                 DungeonRoom newRoom = roomObj.GetComponent<DungeonRoom>();
 
                 if (TryPlaceRoom(newRoom, targetConnector))
                 {
-                    Debug.Log($"Placed room: {newRoom.name} at RoomIndex={roomsPlaced}");
                     spawnedRooms.Add(newRoom);
                     AddRoomConnectors(newRoom);
                     roomsPlaced++;
                     roomPlaced = true;
                     break;
                 }
-                else
-                {
-                    Debug.LogWarning($"Failed to place room: {prefab.name} at connector {targetConnector.name}");
-                    Destroy(roomObj);
-                }
+                Destroy(roomObj);
             }
 
-            if (!roomPlaced)
-            {
-                Debug.LogWarning("All available connectors failed. Attempting backtrack...");
-                if (!BacktrackLastRoom())
-                {
-                    Debug.LogError("Backtracking failed. Dungeon generation halted.");
-                    return;
-                }
-            }
+            if (!roomPlaced && !BacktrackLastRoom())
+                return false;
         }
+
+        return roomsPlaced >= minRooms;
     }
+
 
 
     bool BacktrackLastRoom()
@@ -152,12 +157,12 @@ public class DungeonMapGenerator : MonoBehaviour
         if (scheduledConfirmedRooms.Count > 0 && scheduledConfirmedRooms.Peek().roomIndex == roomsPlaced)
         {
             var scheduled = scheduledConfirmedRooms.Dequeue();
-            Debug.Log($"Spawning scheduled confirmed room: {scheduled.prefab.name}");
+            //Debug.Log($"Spawning scheduled confirmed room: {scheduled.prefab.name}");
             return scheduled.prefab;
         }
 
         var randomEmpty = emptyRooms[Random.Range(0, emptyRooms.Count)];
-        Debug.Log($"Spawning empty room: {randomEmpty.name}");
+       // Debug.Log($"Spawning empty room: {randomEmpty.name}");
         return randomEmpty;
     }
 
@@ -165,7 +170,7 @@ public class DungeonMapGenerator : MonoBehaviour
     {
         foreach (var conn in newRoom.connectors)
         {
-            Debug.Log($"Trying {newRoom.name} connector {conn.name} -> Target {targetConn.name}");
+            //Debug.Log($"Trying {newRoom.name} connector {conn.name} -> Target {targetConn.name}");
 
             AlignRoom(newRoom, conn, targetConn);
 
@@ -180,8 +185,6 @@ public class DungeonMapGenerator : MonoBehaviour
                 conn.MarkUsed();
                 targetConn.MarkUsed();
                 openConnectors.Remove(targetConn);
-
-                Debug.Log($"Connected {newRoom.name} to {targetConn.parentRoom.name} via connector.");
                 return true;
             }
         }
@@ -212,7 +215,7 @@ public class DungeonMapGenerator : MonoBehaviour
             p.Expand(borderOffset);
             if (b.Intersects(p))
             {
-                Debug.LogWarning($"Room {room.name} intersects with {placed.name}");
+                //Debug.LogWarning($"Room {room.name} intersects with {placed.name}");
 
                 return false;
             }
@@ -227,7 +230,6 @@ public class DungeonMapGenerator : MonoBehaviour
             if (!conn.used)
             {
                 openConnectors.Add(conn);
-                Debug.Log($"Added connector from {room.name} to openConnectors.");
             }
 
             if (conn.parentRoom == null)
@@ -235,7 +237,7 @@ public class DungeonMapGenerator : MonoBehaviour
         }
     }
 
-    void SpawnExitRoom()
+    bool SpawnExitRoom()
     {
         int attempts = 0;
 
@@ -243,19 +245,14 @@ public class DungeonMapGenerator : MonoBehaviour
         {
             if (openConnectors.Count == 0)
             {
-                Debug.LogWarning("No open connectors for exit room. Attempting backtrack...");
                 if (!BacktrackLastRoom())
-                {
-                    Debug.LogError("Failed to backtrack for exit room.");
-                    return;
-                }
+                    return false;
+
                 attempts++;
                 continue;
             }
 
             List<DungeonConnector> availableConnectors = new(openConnectors);
-            bool exitPlaced = false;
-
             while (availableConnectors.Count > 0)
             {
                 int index = Random.Range(0, availableConnectors.Count);
@@ -268,7 +265,6 @@ public class DungeonMapGenerator : MonoBehaviour
                 foreach (var exitConn in exitScript.connectors)
                 {
                     AlignRoom(exitScript, exitConn, targetConn);
-
                     exitScript.boundsCollider.enabled = false;
                     exitScript.boundsCollider.enabled = true;
 
@@ -278,26 +274,19 @@ public class DungeonMapGenerator : MonoBehaviour
                         targetConn.MarkUsed();
                         openConnectors.Remove(targetConn);
                         spawnedRooms.Add(exitScript);
-
-                        Debug.Log($"Exit room placed successfully at connector from {targetConn.parentRoom.name}");
-                        exitPlaced = true;
-                        break;
+                        return true;
                     }
                 }
-
-                if (exitPlaced) break;
 
                 Destroy(exitRoomObj);
             }
 
-            if (exitPlaced)
-                return;
-
             attempts++;
         }
 
-        Debug.LogError("Unable to spawn exit room after retries.");
+        return false;
     }
+
 
 
     void SealUnusedConnectors()
@@ -307,10 +296,36 @@ public class DungeonMapGenerator : MonoBehaviour
             foreach (var conn in room.connectors)
             {
                 if (!conn.used)
-                    Debug.Log($"Sealing unused connector on {room.name}");
                 conn.Seal();
             }
         }
+    }
+
+    void FailAndRetry(string reason)
+    {
+        Debug.LogWarning($"[DungeonGen] {reason} Retrying...");
+
+        regenerationTries++;
+
+        if (regenerationTries >= maxRegenerationAttempts)
+        {
+            Debug.LogError($"[DungeonGen] Failed after {maxRegenerationAttempts} attempts. Aborting.");
+            return;
+        }
+
+        ClearDungeon();
+        InternalGenerate();
+    }
+
+    void ClearDungeon()
+    {
+        foreach (DungeonRoom room in spawnedRooms)
+            if (room != null) Destroy(room.gameObject);
+
+        spawnedRooms.Clear();
+        openConnectors.Clear();
+        confirmedRoomSpawnPoints.Clear();
+        scheduledConfirmedRooms.Clear();
     }
 
 #if UNITY_EDITOR

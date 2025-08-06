@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework.Constraints;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Filtering;
+using UnityEngine.UI;
 
 public class SpellCasting : MonoBehaviour
 {
     private SpellsManager _spellManager;
+
+    public GameObject manaBarUI;
+    public Slider manaBarValue;
 
     [Header("Drawing")]
     public Transform drawPoint;
@@ -21,6 +22,7 @@ public class SpellCasting : MonoBehaviour
     [Range(0, 1)]
     public float matchingThreshold = 0.75f;
     public GameObject aimLine;
+    public bool showManaBar = false;
 
     [Header("Matching Algo")]
     [Tooltip("Higher the vectors amount, higher accuracy but more calculation time.")]
@@ -58,6 +60,9 @@ public class SpellCasting : MonoBehaviour
 
         // Disable the aiming line first
         aimLine.SetActive(false);
+
+        showManaBar = false;
+        //manaBar.gameObject.SetActive(showManaBar);
     }
 
     private void Update()
@@ -68,10 +73,27 @@ public class SpellCasting : MonoBehaviour
             UpdateDrawing();
             #endregion
         }
-        if(_stopDrawing)
+        if (_stopDrawing)
         {
             StopDrawing();
         }
+        showManaBar = false;
+        if (SpellsManager.instance.manaRegen || _isDrawing)
+        {
+            showManaBar = true;
+        }
+        if (showManaBar)
+        {
+            ShowManaBar();
+        }
+        if (manaBarUI != null)
+            manaBarUI.SetActive(showManaBar);
+    }
+
+    public void ShowManaBar()
+    {
+        if (manaBarValue != null)
+            manaBarValue.value = SpellsManager.instance.currentMana / SpellsManager.instance.maxMana;
     }
 
     public void UpdateDrawing()
@@ -246,7 +268,7 @@ public class SpellCasting : MonoBehaviour
         DefaultSpellsScript newSpellScript =
             Instantiate(_spellManager.equippedSpells[spellIndex].spellPrefab, drawPoint.position, drawPoint.transform.rotation)
             .GetComponent<DefaultSpellsScript>();
-        newSpellScript.ShootProjectile(drawPoint.forward);
+        newSpellScript.ShootProjectile(drawPoint);
     }
 
     public void ResetDrawing()

@@ -18,6 +18,7 @@ public class HatInventoryUI : MonoBehaviour
     public Transform gridParent;
 
     public bool buttonsDisabled = false;
+    private bool isRefreshing = false;
 
     private void Start()
     {
@@ -40,9 +41,21 @@ public class HatInventoryUI : MonoBehaviour
 
     public void RefreshUI()
     {
-        //clear
+        if (isRefreshing || gridParent == null) return;
+
+        isRefreshing = true;
+        List<Transform> children = new List<Transform>();
         foreach (Transform child in gridParent)
-            Destroy(child.gameObject);
+        {
+            if (child != null)
+                children.Add(child);
+        }
+
+        foreach (Transform child in children)
+        {
+            if (child != null && child.gameObject != null)
+                Destroy(child.gameObject);
+        }
 
         //set
         List<HatInventoryManager.InventorySlot> inventory = HatInventoryManager.instance.GetInventory();
@@ -53,6 +66,8 @@ public class HatInventoryUI : MonoBehaviour
             if (slotUI != null)
                 slotUI.SetSlot(slot);
         }
+
+        isRefreshing = false;
     }
 
 

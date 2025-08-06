@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/! Scenes/Alchemist/Alchemist.unity
+    path: Assets/! Scenes/Alchemist.unity
     guid: 2cca5e72491b30d47bd31b7a21e46a01
+  - enabled: 1
+    path: Assets/! Scenes/Dungeons.unity
+    guid: 86ade907530ba5248a76a4184ef0b45c
+  - enabled: 1
+    path: Assets/! Scenes/TrainingArea.unity
+    guid: 9fa426f0fdcf75441b1c339715c083e8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: dcf0e5a0fde48f84582b5c4d96f5ac79, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: da2b439d1a2de5c46a4f428f8cf4fe19, type: 3}

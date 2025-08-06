@@ -216,10 +216,10 @@ GameObject:
   - component: {fileID: 1761851787866376532}
   - component: {fileID: 4254599785810595928}
   - component: {fileID: 2023968777081933086}
-  - component: {fileID: 8891888290224351533}
   - component: {fileID: 4746259061576935392}
   - component: {fileID: 1307690791296611753}
   - component: {fileID: -8273908588414414267}
+  - component: {fileID: 6632861838764109877}
   m_Layer: 8
   m_Name: Frog
   m_TagString: Untagged
@@ -328,7 +328,31 @@ MonoBehaviour:
       m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4746259061576935392}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4746259061576935392}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -419,31 +443,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.23854256, y: 0.09529479, z: 0.26705337}
-  m_Center: {x: -0.0028104782, y: -0.074074514, z: -0.07346237}
---- !u!136 &8891888290224351533
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9190544803535663311}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.07644004
-  m_Height: 0.3127303
-  m_Direction: 2
-  m_Center: {x: 0.0040433854, y: -0.01352559, z: -0.011326551}
+  m_Size: {x: 0.23854256, y: 0.17755276, z: 0.30159354}
+  m_Center: {x: -0.0028104782, y: -0.03294553, z: -0.051718116}
 --- !u!54 &4746259061576935392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -590,3 +591,16 @@ MonoBehaviour:
   particleScale: 0.5
   burnedSound: {fileID: 8300000, guid: 697a4644771096642879f85a88c713a3, type: 3}
   onFireSound: {fileID: 8300000, guid: faafd00bcf091bf468767bfd6a7a28be, type: 3}
+--- !u!114 &6632861838764109877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9190544803535663311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b209c7e406d8ed4d8865a29bdc1fb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 3d4be3c570ca1df49848777c6b9f033d, type: 2}

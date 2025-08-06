@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireballSpell
   m_EditorClassIdentifier: 
   spellID: FireBall
-  spellSprite: {fileID: 21300000, guid: 8b18cc80a3a41b642b0d458763b87709, type: 3}
+  spellIconSprite: {fileID: 21300000, guid: 8b18cc80a3a41b642b0d458763b87709, type: 3}
   spellArrayStructure: {fileID: 21300000, guid: b0307c2dc256aac4eb7ac009be0aadec, type: 3}
   spellDescrtipion: Fire Balls
   defaultLearned: 1

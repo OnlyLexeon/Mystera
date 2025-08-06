@@ -7,6 +7,7 @@ public class DefaultSpellData : ScriptableObject
     [Header("Spells Data")]
     public List<Vector2> spellsArrayStructure = new List<Vector2>();
     public int spellDamge;
+    public int spellManaCost;
     public float spellChargeTime;
     public float projectileSpeed;
     public int applyStatus;

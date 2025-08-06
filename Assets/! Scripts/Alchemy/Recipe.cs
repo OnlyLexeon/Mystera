@@ -8,7 +8,7 @@ public class Recipe : ScriptableObject
     public string recipeName;
     public List<Ingredient> ingredients;
     public Sprite icon;
-    [TextArea] public string description;
+    [TextArea(1, 100)] public string description;
     
     [Header("Settings")]
     public float defaultDuration = 5f;

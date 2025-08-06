@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3505853777629320742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 777806311140603185}
+  - component: {fileID: 387726969706406579}
+  m_Layer: 0
+  m_Name: SpellsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &777806311140603185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505853777629320742}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.35337147, y: 1.0985425, z: 1.633804}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &387726969706406579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505853777629320742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c862c0c0e2c1a12498d58021a7b414ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellList:
+  - spellObj: {fileID: 11400000, guid: 0fee6f7423671c04ba5d6e91cc1f2d8d, type: 2}
+    learned: 1
+  - spellObj: {fileID: 11400000, guid: 1908af2f7103bed42bc8c25275f43583, type: 2}
+    learned: 1
+  equippedSpells:
+  - {fileID: 11400000, guid: 0fee6f7423671c04ba5d6e91cc1f2d8d, type: 2}
+  - {fileID: 11400000, guid: 1908af2f7103bed42bc8c25275f43583, type: 2}
+  maxMana: 100
+  manaRegenRate: 0.1
+  manaDrainPerPoint: 0.1
+  maxSpellSlots: 2
+  isCasting: 0
+  currentMana: 0
+  _timePassed: 0
+  _currentSlotIndex: -1
+  testingMode: 0
