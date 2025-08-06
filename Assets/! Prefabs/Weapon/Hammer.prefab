@@ -238,7 +238,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 1
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -633,11 +633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1817157764882337329, guid: 9a8f81b3cddcc60439db5b914734bbaa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.325
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1817157764882337329, guid: 9a8f81b3cddcc60439db5b914734bbaa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4952214147835422248, guid: 9a8f81b3cddcc60439db5b914734bbaa, type: 3}
       propertyPath: m_Name
@@ -645,7 +645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4952214147835422248, guid: 9a8f81b3cddcc60439db5b914734bbaa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
