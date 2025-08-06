@@ -13,6 +13,9 @@ public class MeleeWeapon : MonoBehaviour
     private float cooldownTimer = 0f;
     private bool wasSelectedLastFrame = false;
 
+    [Header("Target Layer")]
+    public LayerMask enemyLayer;
+
     [Header("Selection State")]
     public bool isSelected = false;
 
@@ -82,10 +85,10 @@ public class MeleeWeapon : MonoBehaviour
     {
         if (!canDealDamage) return;
 
-        if (onlyDamageOnSelect)
-        {
-            if (!isSelected) return;
-        }
+        if (onlyDamageOnSelect && !isSelected) return;
+
+        if (((1 << collision.gameObject.layer) & enemyLayer.value) == 0)
+            return;
 
         float t = cooldownTimer / attackCooldown;
         float damageToApply = (t >= 1f) ? chargedDamage : unchargedDamage;
