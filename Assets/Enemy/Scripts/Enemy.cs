@@ -58,6 +58,7 @@ public abstract class Enemy : MonoBehaviour
 
     [Header("Hit Effect Settings")]
     public float hitStunDuration = 1f;
+    public float invincibilityDuration = 0.4f;  // 无敌时间
     public int particleCount = 20;
     public float particleSize = 0.1f;
     public float particleSpeed = 3f;
@@ -96,6 +97,10 @@ public abstract class Enemy : MonoBehaviour
     protected Coroutine currentAttackRoutine;
     protected bool isStunned = false;
     protected Coroutine stunCoroutine;
+
+    // Invincibility system
+    protected float lastDamageTime = -999f;
+    protected bool isInvincible = false;
 
     // Flag for immediate detection
     protected bool immediateDetection = false;
@@ -198,6 +203,9 @@ public abstract class Enemy : MonoBehaviour
         if (isDead) return;
         if (isStunned) return;
 
+        // 更新无敌状态
+        UpdateInvincibility();
+
         // 每帧进行简化的目标检测
         DetectTargets();
 
@@ -209,6 +217,19 @@ public abstract class Enemy : MonoBehaviour
 
         // 状态机更新
         UpdateStateMachine();
+    }
+
+    // 更新无敌状态
+    protected virtual void UpdateInvincibility()
+    {
+        if (isInvincible && Time.time - lastDamageTime >= invincibilityDuration)
+        {
+            isInvincible = false;
+            if (enableDebugLogs)
+            {
+                Debug.Log($"[INVINCIBILITY] {gameObject.name} invincibility ended");
+            }
+        }
     }
 
     protected virtual void UpdateStateMachine()
@@ -495,11 +516,25 @@ public abstract class Enemy : MonoBehaviour
     // 伤害回调
     public virtual void OnTakeDamage(int damage)
     {
-        if (isDead || isStunned) return;
+        if (isDead) return;
+
+        // 检查是否在无敌时间内
+        if (isInvincible)
+        {
+            if (enableDebugLogs)
+            {
+                Debug.Log($"[INVINCIBILITY] {gameObject.name} ignored damage during invincibility");
+            }
+            return;
+        }
+
+        // 设置无敌状态
+        isInvincible = true;
+        lastDamageTime = Time.time;
 
         if (enableDebugLogs)
         {
-            Debug.Log($"[DAMAGE] {gameObject.name} took {damage} damage");
+            Debug.Log($"[DAMAGE] {gameObject.name} took {damage} damage, invincible for {invincibilityDuration}s");
         }
 
         // 播放受伤音效
@@ -521,12 +556,22 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void OnTakeDamageWithAttacker(int damage, GameObject attacker)
     {
+        if (isDead) return;
+
+        // 检查是否在无敌时间内
+        if (isInvincible)
+        {
+            if (enableDebugLogs)
+            {
+                Debug.Log($"[INVINCIBILITY] {gameObject.name} ignored damage from {(attacker != null ? attacker.name : "unknown")} during invincibility");
+            }
+            return;
+        }
+
         if (enableDebugLogs)
         {
             Debug.Log($"[DAMAGE] {gameObject.name} took {damage} damage from {(attacker != null ? attacker.name : "unknown")}");
         }
-
-        if (isDead || isStunned) return;
 
         if (attacker != null)
         {
@@ -649,32 +694,32 @@ public abstract class Enemy : MonoBehaviour
         {
             // 计算生成位置（敌人上方）
             Vector3 spawnPosition = transform.position + Vector3.up * alertEffectYOffset;
-            
+
             // 实例化预制体，保持原始旋转和缩放
-            GameObject alertEffect = Instantiate(alertEffectPrefab, 
-                                                spawnPosition, 
+            GameObject alertEffect = Instantiate(alertEffectPrefab,
+                                                spawnPosition,
                                                 Quaternion.identity);
-            
+
             // 设置为敌人的子对象，跟随移动
             alertEffect.transform.SetParent(transform);
-            
+
             // 重置局部位置（保持预制体原始大小）
             alertEffect.transform.localPosition = new Vector3(0, alertEffectYOffset, 0);
-            
+
             // 保持预制体原始旋转
             alertEffect.transform.localRotation = Quaternion.identity;
-            
+
             // 注意：不再修改缩放比例，保持预制体原始大小！
-            
+
             // 2秒后销毁
             Destroy(alertEffect, 2f);
-            
+
             if (enableDebugLogs)
             {
                 Debug.Log($"[ALERT_EFFECT] Spawned with original scale at local position: {alertEffect.transform.localPosition}");
             }
         }
-        
+
         if (alertSound != null)
         {
             AudioSource.PlayClipAtPoint(alertSound, transform.position, combatSoundVolume);
@@ -1089,6 +1134,12 @@ public abstract class Enemy : MonoBehaviour
             }
         }
     }
+
+    // 获取是否处于无敌状态
+    public bool IsInvincible()
+    {
+        return isInvincible;
+    }
     #endregion
 
     #region Debug
@@ -1139,6 +1190,13 @@ public abstract class Enemy : MonoBehaviour
         {
             Gizmos.color = Color.magenta;
             Gizmos.DrawLine(center, currentTarget.position + Vector3.up * detectionHeightOffset);
+        }
+
+        // 绘制无敌状态
+        if (isInvincible)
+        {
+            Gizmos.color = new Color(0, 1, 1, 0.3f);
+            Gizmos.DrawWireSphere(transform.position + Vector3.up, 1f);
         }
     }
     #endregion
