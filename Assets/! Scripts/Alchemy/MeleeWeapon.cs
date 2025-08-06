@@ -18,6 +18,7 @@ public class MeleeWeapon : MonoBehaviour
 
     [Header("Selection State")]
     public bool isSelected = false;
+    public BoxCollider boxCollider;
 
     [Header("UI References")]
     public Canvas cooldownCanvas;
@@ -33,9 +34,11 @@ public class MeleeWeapon : MonoBehaviour
         cooldownCanvas.enabled = false;
     }
 
-    public void SetSelected(bool state)
+    public void DoOnSelected(bool state)
     {
         isSelected = state;
+
+        boxCollider.isTrigger = state; //set to is trigger on held
     }
 
 
@@ -81,33 +84,34 @@ public class MeleeWeapon : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if (!canDealDamage) return;
 
         if (onlyDamageOnSelect && !isSelected) return;
 
-        if (((1 << collision.gameObject.layer) & enemyLayer.value) == 0)
+        if (((1 << other.gameObject.layer) & enemyLayer.value) == 0)
             return;
 
         float t = cooldownTimer / attackCooldown;
         float damageToApply = (t >= 1f) ? chargedDamage : unchargedDamage;
         int roundedDamage = Mathf.RoundToInt(damageToApply);
 
-        if (collision.gameObject.TryGetComponent(out Enemy enemyscript))
+        if (other.TryGetComponent(out Enemy enemyscript))
         {
             enemyscript.OnTakeDamage(roundedDamage);
         }
 
-        // reset
+        //cd reset
         cooldownTimer = 0f;
         cooldownSlider.value = 0f;
         UpdateSliderColor();
 
-        // prevent spam
+        //prevent spam
         canDealDamage = false;
         Invoke(nameof(EnableDamage), 0.05f); // small delay
     }
+
 
     private void EnableDamage() => canDealDamage = true;
 

@@ -63,6 +63,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   isSelected: 0
+  boxCollider: {fileID: 0}
   cooldownCanvas: {fileID: 5814696285850298983}
   cooldownSlider: {fileID: 5922243830698255638}
   sliderFill: {fileID: 2068757300066554085}
@@ -160,7 +161,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9205900549362213564}
         m_TargetAssemblyTypeName: MeleeWeapon, Assembly-CSharp
-        m_MethodName: SetSelected
+        m_MethodName: DoOnSelected
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -199,7 +200,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 9205900549362213564}
         m_TargetAssemblyTypeName: MeleeWeapon, Assembly-CSharp
-        m_MethodName: SetSelected
+        m_MethodName: DoOnSelected
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
