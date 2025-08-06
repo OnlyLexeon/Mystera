@@ -61,8 +61,8 @@ public class IngreAltarButton : MonoBehaviour
         }
 
         if (sprite != null) sprite.color = Color.white;
-        if (ingreName != null) ingreName.color = Color.white;
-        if (description != null) description.color = Color.white;
+        if (ingreName != null) ingreName.color = Color.black;
+        if (description != null) description.color = Color.black;
     }
 
 

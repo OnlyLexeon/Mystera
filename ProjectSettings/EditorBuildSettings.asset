@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/! Scenes/Alchemist/Alchemist.unity
+    path: Assets/! Scenes/Alchemist.unity
     guid: 2cca5e72491b30d47bd31b7a21e46a01
   - enabled: 1
     path: Assets/! Scenes/Dungeons.unity

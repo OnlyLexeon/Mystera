@@ -86,7 +86,7 @@ public class SceneController : MonoBehaviour
             }
 
             //70%
-            LoadingScreenManager.instance.UpdateProgress(0.7f);
+            LoadingScreenManager.instance.UpdateProgress(70.1f);
 
             //move player
             DungeonSpawnPoint spawnPoint = DungeonSpawnPoint.instance;
@@ -105,7 +105,7 @@ public class SceneController : MonoBehaviour
                         cc.enabled = true;  //re-enable after
 
                         //80%
-                        LoadingScreenManager.instance.UpdateProgress(0.9f);
+                        LoadingScreenManager.instance.UpdateProgress(90.9f);
                     }
                     else Debug.LogWarning("No Char controller found!");
                 }
@@ -114,7 +114,7 @@ public class SceneController : MonoBehaviour
             else Debug.LogWarning("No spawn point found!");
         }
 
-        LoadingScreenManager.instance.UpdateProgress(1f);
+        LoadingScreenManager.instance.UpdateProgress(100);
 
         yield return new WaitForSeconds(3f); // wait 3 seconds
 

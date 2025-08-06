@@ -79,8 +79,6 @@ public class AltarBook : MonoBehaviour
     {
         if (ingredient == null || ingredient.sprite == null || alert == null || alertPos == null) return;
 
-        if (ingredientsManager.IsUnlocked(ingredient.ingredientID)) return;
-
         GameObject alertObj = Instantiate(alert, alertPos.position, Quaternion.identity);
         alertObj.GetComponentInChildren<Image>().sprite = ingredient.sprite;
 

@@ -137,7 +137,7 @@ public class AltarTabManager : MonoBehaviour
     {
         foreach (Transform child in ingredientsHolder)
         {
-            if (child) Destroy(child);
+            if (child) Destroy(child.gameObject);
         }
         foreach (var ingredient in ingredients)
         {

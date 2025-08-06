@@ -29,14 +29,44 @@ public class DungeonRoom : MonoBehaviour
 
     private void Start()
     {
+        if (!hasEnemy || enemySpawnPoints.Length == 0 || enemyToSpawn.Length == 0)
+            return;
+
         foreach (Transform spawnPoint in enemySpawnPoints)
         {
-
+            GameObject selectedEnemy = GetRandomEnemyPrefab();
+            if (selectedEnemy != null)
+            {
+                Instantiate(selectedEnemy, spawnPoint.position, spawnPoint.rotation);
+            }
         }
     }
 
     public Bounds GetWorldBounds()
     {
         return boundsCollider.bounds;
+    }
+
+    private GameObject GetRandomEnemyPrefab()
+    {
+        float totalWeight = 0f;
+        foreach (var setting in enemyToSpawn)
+            totalWeight += setting.weightage;
+
+        if (totalWeight <= 0f)
+            return null;
+
+        float randomValue = Random.Range(0, totalWeight);
+        float cumulative = 0f;
+
+        foreach (var setting in enemyToSpawn)
+        {
+            cumulative += setting.weightage;
+            if (randomValue <= cumulative)
+                return setting.enemyPrefab;
+        }
+
+        // Fallback
+        return enemyToSpawn[enemyToSpawn.Length - 1].enemyPrefab;
     }
 }
