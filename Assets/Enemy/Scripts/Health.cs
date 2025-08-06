@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
+
+    [Header("无敌状态")]
+    public bool isInvincible = false; // 勾选后玩家不会受到伤害，但仍会触发受击效果
+
     [Header("生命值设置")]
     public int maxHealth = 100;
     public int currentHealth;
@@ -105,7 +109,8 @@ public class Health : MonoBehaviour
     
     public void TakeDamage(int damage, GameObject attacker)
     {
-        if (damage <= 0 || isDead) return;
+        if (isInvincible || isDead || damage <= 0) 
+            return;
         
         int previousHealth = currentHealth;
         currentHealth = Mathf.Max(0, currentHealth - damage);
@@ -122,7 +127,7 @@ public class Health : MonoBehaviour
         if (CompareTag("Player"))
         {
             // 播放Vignette动画
-            if (vignette != null)
+            if (vignette != null && !isInvincible)
             {
                 if (vignetteCoroutine != null)
                 {
@@ -130,9 +135,9 @@ public class Health : MonoBehaviour
                 }
                 vignetteCoroutine = StartCoroutine(PlayVignetteAnimation());
             }
-            
+
             // 播放镜头抖动
-            if (cameraTransform != null && !isShaking)
+            if (cameraTransform != null && !isShaking && !isInvincible)
             {
                 if (cameraShakeCoroutine != null)
                 {
@@ -183,7 +188,11 @@ public class Health : MonoBehaviour
         cameraTransform.localPosition = originalCameraLocalPosition;
         isShaking = false;
     }
-    
+
+    public void SetLastAttacker(GameObject attacker)
+    {
+        lastAttacker = attacker;
+    }
     private IEnumerator PlayVignetteAnimation()
     {
         float elapsedTime = 0f;

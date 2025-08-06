@@ -76,7 +76,7 @@ public class SlimeEnemy : Enemy
     private int rangedMissCount = 0;
     private GameObject currentAttackEffect;
     private int testAttackCount = 0;
-    private bool immediateDetection = false;
+
     
     // Movement sound management
     private AudioSource movementAudioSource;
