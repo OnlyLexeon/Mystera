@@ -715,10 +715,8 @@ MonoBehaviour:
   - {fileID: 5130769449296330739}
   - {fileID: 5604227534156286804}
   enemyToSpawn:
-  - weightage: 4
-    enemyPrefab: {fileID: 5329152663908878339, guid: 7af46e20b27124a4cbc01aac3b2a5d92, type: 3}
   - weightage: 1
-    enemyPrefab: {fileID: 8626756116559743323, guid: 13a53134be600ad42ba22e5f29555de3, type: 3}
+    enemyPrefab: {fileID: 5329152663908878339, guid: 7af46e20b27124a4cbc01aac3b2a5d92, type: 3}
 --- !u!114 &2869723509405431494
 MonoBehaviour:
   m_ObjectHideFlags: 0

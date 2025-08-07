@@ -760,14 +760,10 @@ MonoBehaviour:
   - {fileID: 2698317160630874226}
   - {fileID: 7442338813395060262}
   enemyToSpawn:
-  - weightage: 3
+  - weightage: 1
     enemyPrefab: {fileID: 613202743058895989, guid: 423c7b88b26502b43b95a9089573d05f, type: 3}
-  - weightage: 3
+  - weightage: 1
     enemyPrefab: {fileID: 5329152663908878339, guid: 7af46e20b27124a4cbc01aac3b2a5d92, type: 3}
-  - weightage: 1
-    enemyPrefab: {fileID: 1088054392046518701, guid: a8d44aad5a69b8f4398c7ef7d669d794, type: 3}
-  - weightage: 1
-    enemyPrefab: {fileID: 8626756116559743323, guid: 13a53134be600ad42ba22e5f29555de3, type: 3}
 --- !u!114 &3996350538566619207
 MonoBehaviour:
   m_ObjectHideFlags: 0

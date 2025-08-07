@@ -42,7 +42,6 @@ public class Health : MonoBehaviour
 
     [Header("Damage Text")]
     public GameObject damageTextPrefab;
-    public Vector3 damageTextOffset;
 
     private Vignette vignette;
     private Coroutine vignetteCoroutine;
@@ -179,16 +178,11 @@ public class Health : MonoBehaviour
     {
         if (damageTextPrefab == null) return;
 
-        Vector3 basePos = transform.position + Vector3.up;
-        float offsetX = UnityEngine.Random.Range(-damageTextOffset.x, damageTextOffset.x);
-        float offsetZ = UnityEngine.Random.Range(-damageTextOffset.z, damageTextOffset.z);
-
-        Vector3 finalPos = basePos + new Vector3(offsetX, 0, offsetZ);
+        float offsetX = UnityEngine.Random.Range(-0.25f, 0.25f);
+        float offsetZ = UnityEngine.Random.Range(-0.25f, 0.25f);
+        Vector3 finalPos = transform.position + new Vector3(offsetX, 1.25f, offsetZ);
 
         GameObject dmgObj = Instantiate(damageTextPrefab, finalPos, Quaternion.identity);
-
-        dmgObj.transform.LookAt(Camera.main.transform);
-        dmgObj.transform.Rotate(0, 180f, 0); //flip
 
         //text
         TextMeshProUGUI tmp = dmgObj.GetComponentInChildren<TextMeshProUGUI>();
