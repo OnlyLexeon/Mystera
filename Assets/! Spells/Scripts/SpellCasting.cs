@@ -36,7 +36,7 @@ public class SpellCasting : MonoBehaviour
     //public Vector3 _newPoint = new Vector3(0, 0, 0);
     public LineRenderer _drawingCanva;
     public DrawingCanvaScript _drawingCanvaAnimation;
-    public Vector3 _canvaStartingPoint;
+    public Transform _canvaStartingPoint;
 
     [Header("Private Resamplaing Data (For Debug Only)")]
     public List<Vector2> _resamplePoints = new List<Vector2>();
@@ -48,6 +48,7 @@ public class SpellCasting : MonoBehaviour
     public bool debugMode = false;
     public LineRenderer testingLine;
     public TextMeshProUGUI text;
+    private Player _player;
 
     private void Start()
     {
@@ -57,6 +58,7 @@ public class SpellCasting : MonoBehaviour
         _stopDrawing = false;
 
         _spellManager = SpellsManager.instance;
+        _player = Player.instance;
 
         // Disable the aiming line first
         aimLine.SetActive(false);
@@ -65,8 +67,8 @@ public class SpellCasting : MonoBehaviour
         //manaBar.gameObject.SetActive(showManaBar);
 
         // Initiate the line renderer
-        _drawingCanva = Player.instance.drawingCanvas.GetComponent<LineRenderer>();
-        _drawingCanvaAnimation = Player.instance.drawingCanvas.GetComponent<DrawingCanvaScript>();
+        _drawingCanva = _player.drawingCanvas.GetComponent<LineRenderer>();
+        _drawingCanvaAnimation = _player.drawingCanvas.GetComponent<DrawingCanvaScript>();
     }
 
     private void Update()
@@ -104,7 +106,8 @@ public class SpellCasting : MonoBehaviour
     {
         //_canvaStartingPoint.transform.position = drawPoint.transform.position;
 
-        Vector3 _newPoint = drawPoint.transform.position - _canvaStartingPoint;
+        //Vector3 _newPoint = drawPoint.transform.position - _canvaStartingPoint;
+        Vector3 _newPoint = _player.transform.InverseTransformPoint(drawPoint.transform.position) - _player.transform.InverseTransformPoint(_canvaStartingPoint.position);
         _newPoint.z = 0f;
 
         #region The first point of the drawing
@@ -165,7 +168,10 @@ public class SpellCasting : MonoBehaviour
             _drawingCanvaAnimation.OpenDrawing();
 
             // Initiate the starting point of canva
-            _canvaStartingPoint = drawPoint.transform.position;
+            //_canvaStartingPoint = drawPoint.transform.position;
+            _canvaStartingPoint = new GameObject("CanvaStartingPoint").transform;
+            _canvaStartingPoint.position = drawPoint.transform.position;
+            _canvaStartingPoint.parent = _player.transform;
 
             #region Line Renderer Customizations (Mat, Color, Width)
             if (lineMaterial != null)
@@ -275,7 +281,7 @@ public class SpellCasting : MonoBehaviour
         SpellObject spellObj = _spellManager.equippedSpells[spellIndex];
         // Call the spell's shooting function
         DefaultSpellsScript newSpellScript =
-            Instantiate(spellObj.spellPrefab, drawPoint.position, drawPoint.transform.rotation)
+            Instantiate(spellObj.spellPrefab, drawPoint.transform.position, drawPoint.transform.rotation)
             .GetComponent<DefaultSpellsScript>();
 
         if (spellObj.spellData.spellManaCost > _spellManager.currentMana)
