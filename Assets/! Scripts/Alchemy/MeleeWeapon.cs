@@ -99,7 +99,7 @@ public class MeleeWeapon : MonoBehaviour
 
         if (other.TryGetComponent(out Health health))
         {
-            health.TakeDamage(roundedDamage);
+            health.TakeDamage(roundedDamage, Player.instance.gameObject);
         }
 
         //cd reset
