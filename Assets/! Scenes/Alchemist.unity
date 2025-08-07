@@ -25166,7 +25166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc1e1b35481f154da3c391203b05a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPaused: 0
   heldLeftItem: {fileID: 0}
   heldRightItem: {fileID: 0}
 --- !u!4 &1138726559

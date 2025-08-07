@@ -29,11 +29,6 @@ public class ItemHoldingManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
-    {
-        inventoryManager = HatInventoryManager.instance;
-    }
-
     //called by XR direct/ray interactable
     public void SetHeldItem(GameObject item, bool isLeftHand)
     {

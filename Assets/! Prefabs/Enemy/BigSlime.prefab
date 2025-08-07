@@ -5663,7 +5663,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   shakeFrequency: 25
   damageTextPrefab: {fileID: 5968318152885456666, guid: c6174099081a9324bb6f0624b2dfe5ce, type: 3}
-  damageTextOffset: {x: 0.5, y: 0, z: 0.5}
+  damageTextOffset: {x: 1.5, y: 0, z: 1.5}
 --- !u!114 &7567132565016036286
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -179,10 +179,11 @@ public class Health : MonoBehaviour
     {
         if (damageTextPrefab == null) return;
 
+        Vector3 basePos = transform.position + Vector3.up;
         float offsetX = UnityEngine.Random.Range(-damageTextOffset.x, damageTextOffset.x);
         float offsetZ = UnityEngine.Random.Range(-damageTextOffset.z, damageTextOffset.z);
 
-        Vector3 finalPos = transform.position + new Vector3(offsetX, -1.25f, offsetZ);
+        Vector3 finalPos = basePos + new Vector3(offsetX, 0, offsetZ);
 
         GameObject dmgObj = Instantiate(damageTextPrefab, finalPos, Quaternion.identity);
 
