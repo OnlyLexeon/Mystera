@@ -33,7 +33,7 @@ public class SpellCasting : MonoBehaviour
     public bool _stopDrawing = false;
     public List<Vector2> _drawnPoints = new List<Vector2>();
     public int _linePositionIndex = 0;
-    public Vector3 _newPoint = new Vector3(0, 0, 0);
+    //public Vector3 _newPoint = new Vector3(0, 0, 0);
     public LineRenderer _drawingCanva;
     public DrawingCanvaScript _drawingCanvaAnimation;
     public Vector3 _canvaStartingPoint;
@@ -104,30 +104,26 @@ public class SpellCasting : MonoBehaviour
     {
         //_canvaStartingPoint.transform.position = drawPoint.transform.position;
 
+        Vector3 _newPoint = drawPoint.transform.position - _canvaStartingPoint;
+        _newPoint.z = 0f;
+
         #region The first point of the drawing
         if (_linePositionIndex == 0)
         {
             // Add new point to the line renderer
             _linePositionIndex++;
             _drawingCanva.positionCount = _linePositionIndex;
-            _newPoint = drawPoint.transform.position - _canvaStartingPoint;
 
-            // Cancel out the z-axis
-            _newPoint.z = 0f;
             _drawingCanva.SetPosition(_linePositionIndex - 1, _newPoint);
 
             // Add new point to the drawn point list
-            _drawnPoints.Add((Vector2)_newPoint);
+            _drawnPoints.Add(_newPoint);
         }
         #endregion
 
         #region Follow up drawings
         else
         {
-            #region Cancel out the z-axis positions
-            _newPoint = drawPoint.transform.position - _canvaStartingPoint;
-            _newPoint.z = 0f;
-            #endregion
 
             #region Continue draw if only the draw point has gone a distance from the previous point
             if (Vector3.Distance(_newPoint, _drawingCanva.GetPosition(_drawingCanva.positionCount - 1)) > pointInterval)
@@ -149,7 +145,7 @@ public class SpellCasting : MonoBehaviour
                 _drawingCanva.SetPosition(_linePositionIndex - 1, _newPoint);
 
                 // Add new point to the drawn point list for calculation later on
-                _drawnPoints.Add((Vector2)_newPoint);
+                _drawnPoints.Add(_newPoint);
             }
             #endregion
         }
