@@ -109,7 +109,36 @@ public class MeleeWeapon : MonoBehaviour
 
         //prevent spam
         canDealDamage = false;
-        Invoke(nameof(EnableDamage), 0.05f); // small delay
+        Invoke(nameof(EnableDamage), 0.1f); // small delay
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //On Collision usually only happens when you throw the weapon
+        if (!canDealDamage) return;
+
+        if (onlyDamageOnSelect && !isSelected) return;
+
+        if (((1 << collision.gameObject.layer) & enemyLayer.value) == 0)
+            return;
+
+        float t = cooldownTimer / attackCooldown;
+        float damageToApply = (t >= 1f) ? chargedDamage : unchargedDamage;
+        int roundedDamage = Mathf.RoundToInt(damageToApply);
+
+        if (collision.collider.TryGetComponent(out Health health))
+        {
+            health.TakeDamage(roundedDamage, Player.instance.gameObject);
+        }
+
+        //cd reset
+        cooldownTimer = 0f;
+        cooldownSlider.value = 0f;
+        UpdateSliderColor();
+
+        //prevent spam
+        canDealDamage = false;
+        Invoke(nameof(EnableDamage), 0.1f); // small delay
     }
 
 

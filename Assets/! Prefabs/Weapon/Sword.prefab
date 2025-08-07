@@ -87,8 +87,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onlyDamageOnSelect: 1
-  attackCooldown: 0.8
-  chargedDamage: 6
+  attackCooldown: 1
+  chargedDamage: 4
   unchargedDamage: 1
   enemyLayer:
     serializedVersion: 2
