@@ -15,10 +15,6 @@ public class SceneController : MonoBehaviour
     [Header("Current")]
     public string currentScene = "";
     public string dungeonID = "";
-    
-    public DungeonManager dungeonManager;
-    public ItemHoldingManager itemHoldManager;
-
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -29,12 +25,6 @@ public class SceneController : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
-        dungeonManager = DungeonManager.instance;
-        itemHoldManager = ItemHoldingManager.instance;
     }
 
     public void LoadScene(string sceneName, string dungeonIDToLoad = "")
@@ -79,6 +69,9 @@ public class SceneController : MonoBehaviour
     private IEnumerator FinalizeSceneLoad()
     {
         currentScene = SceneManager.GetActiveScene().name;
+
+        ItemHoldingManager itemHoldManager = ItemHoldingManager.instance;
+        DungeonManager dungeonManager = DungeonManager.instance;
 
         //player's item holding stuff
         itemHoldManager.SetPauseHoldingItem(true);
