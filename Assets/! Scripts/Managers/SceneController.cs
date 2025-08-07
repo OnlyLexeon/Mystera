@@ -16,6 +16,9 @@ public class SceneController : MonoBehaviour
     public string currentScene = "";
     public string dungeonID = "";
     
+    public DungeonManager dungeonManager;
+    public ItemHoldingManager itemHoldManager;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -26,6 +29,12 @@ public class SceneController : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        dungeonManager = DungeonManager.instance;
+        itemHoldManager = ItemHoldingManager.instance;
     }
 
     public void LoadScene(string sceneName, string dungeonIDToLoad = "")
@@ -71,13 +80,16 @@ public class SceneController : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene().name;
 
+        //player's item holding stuff
+        itemHoldManager.SetPauseHoldingItem(true);
+        itemHoldManager.TryPutHoldingItemsInHat();
+
         // If it's a dungeon, generate
         if (currentScene == dungeonScene)
         {
-            DungeonManager dungeonManager= DungeonManager.instance;
             if (dungeonManager != null)
             {
-                DungeonManager.instance.GenerateDungeon(dungeonID);
+                dungeonManager.GenerateDungeon(dungeonID);
                 Debug.Log($"Generated Dungeon with ID: {dungeonID}");
             }
             else
@@ -113,6 +125,8 @@ public class SceneController : MonoBehaviour
             }
             else Debug.LogWarning("No spawn point found!");
         }
+
+        itemHoldManager.SetPauseHoldingItem(false);
 
         LoadingScreenManager.instance.UpdateProgress(100);
 
