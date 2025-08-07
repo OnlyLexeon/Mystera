@@ -17,7 +17,7 @@ MonoBehaviour:
   - {x: -1, y: 0}
   - {x: 0, y: -1}
   - {x: 1, y: 0}
-  spellDamge: 20
+  spellDamge: 100
   spellManaCost: 30
   spellChargeTime: 2
   projectileSpeed: 25
@@ -26,10 +26,10 @@ MonoBehaviour:
   spellHitBoxRadius: 2
   spellHitBoxMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 2560
   spellIgnoreMask:
     serializedVersion: 2
-    m_Bits: 10167
+    m_Bits: 9655
   spellLifeTime: 0.5
   maximumLifeTime: 10
   hitEffectObject: {fileID: 1000011128802252, guid: 6182bf1cab52f2e40b4b890a3ee0823d, type: 3}

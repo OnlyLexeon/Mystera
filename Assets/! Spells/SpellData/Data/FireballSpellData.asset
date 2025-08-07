@@ -17,7 +17,7 @@ MonoBehaviour:
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   - {x: 0, y: 1}
-  spellDamge: 10
+  spellDamge: 60
   spellManaCost: 20
   spellChargeTime: 2
   projectileSpeed: 10

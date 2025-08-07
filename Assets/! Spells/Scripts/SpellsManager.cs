@@ -13,10 +13,12 @@ public class SpellsManager : MonoBehaviour
     public List<SpellObject> equippedSpells = new List<SpellObject>();
     public float maxMana = 100;
     public float manaRegenRate = 1f;
+    public float manaRegenAmount = 1f;
     public float manaDrainPerPoint = 0.1f;
     public int maxSpellSlots = 4;
     public bool isCasting = false;
     public bool manaRegen = false;
+    public bool manaDrain = false;
 
     [Header("Player Current Data (For Debug Only)")]
     public float currentMana = 0;
@@ -64,8 +66,9 @@ public class SpellsManager : MonoBehaviour
             _timePassed += Time.deltaTime;
             if (_timePassed > manaRegenRate)
             {
-                int manaRegen = (int)(_timePassed / manaRegenRate);
-                _timePassed -= manaRegen;
+                int manaRegenTick = (int)(_timePassed / manaRegenRate);
+                float manaRegen = manaRegenTick * manaRegenAmount;
+                _timePassed -= manaRegenTick;
                 currentMana += manaRegen;
                 if (currentMana > maxMana)
                     currentMana = maxMana;

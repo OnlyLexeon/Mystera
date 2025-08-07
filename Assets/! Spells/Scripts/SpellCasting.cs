@@ -133,7 +133,12 @@ public class SpellCasting : MonoBehaviour
             if (Vector3.Distance(_newPoint, _drawingCanva.GetPosition(_drawingCanva.positionCount - 1)) > pointInterval)
             {
                 // Mana drain per point
-                _spellManager.currentMana -= _spellManager.manaDrainPerPoint;
+                if (_spellManager.manaDrain)
+                {
+                    _spellManager.currentMana -= _spellManager.manaDrainPerPoint;
+                    if (_spellManager.currentMana < 0)
+                        _spellManager.currentMana = 0;
+                }
 
                 // Add up the total length along the way for calculation later on
                 _totalLength += Vector3.Distance(_newPoint, _drawingCanva.GetPosition(_drawingCanva.positionCount - 1));
@@ -210,7 +215,13 @@ public class SpellCasting : MonoBehaviour
                 {
                     // Starting casting 
                     Debug.Log("Found spell :" + spellIndex);
-                    StartCoroutine(StartCasting(spellIndex));
+                    if (_spellManager.equippedSpells[spellIndex].spellData.spellManaCost <= _spellManager.currentMana)
+                        StartCoroutine(StartCasting(spellIndex));
+                    else
+                    {
+                        // Wand enter cooldown if drawn points are too few
+                        CastingCoolDown();
+                    }
                 }
                 else
                 {
@@ -265,10 +276,15 @@ public class SpellCasting : MonoBehaviour
 
     public void FireSpell(int spellIndex)
     {
+        SpellObject spellObj = _spellManager.equippedSpells[spellIndex];
         // Call the spell's shooting function
         DefaultSpellsScript newSpellScript =
-            Instantiate(_spellManager.equippedSpells[spellIndex].spellPrefab, drawPoint.position, drawPoint.transform.rotation)
+            Instantiate(spellObj.spellPrefab, drawPoint.position, drawPoint.transform.rotation)
             .GetComponent<DefaultSpellsScript>();
+
+        if (spellObj.spellData.spellManaCost > _spellManager.currentMana)
+            _spellManager.currentMana -= spellObj.spellData.spellManaCost;
+
         newSpellScript.ShootProjectile(drawPoint);
     }
 
