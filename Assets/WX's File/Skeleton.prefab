@@ -1624,6 +1624,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInvincible: 0
+  canRegen: 0
+  regenAmount: 0
+  regenInterval: 1
   maxHealth: 100
   currentHealth: 0
   fadeToBlackDuration: 2
@@ -1685,6 +1688,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   shakeFrequency: 25
+  damageTextPrefab: {fileID: 5968318152885456666, guid: c6174099081a9324bb6f0624b2dfe5ce, type: 3}
+  damageTextOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &399908473224161651
 MonoBehaviour:
   m_ObjectHideFlags: 0

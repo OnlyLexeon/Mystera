@@ -4,22 +4,33 @@ using System.Collections.Generic;
 
 public class BoundaryTP : MonoBehaviour
 {
-    [Tooltip("How long to wait after an object exits before teleporting it back.")]
     public float outOfBoundsTime = 2f;
 
-    [Tooltip("The point to teleport the object back to.")]
     public Transform teleportPoint;
+    public Transform playerPoint;
 
-    // Track currently waiting objects so we don't start multiple coroutines
     private Dictionary<GameObject, Coroutine> outOfBoundsObjects = new Dictionary<GameObject, Coroutine>();
 
     private void OnTriggerExit(Collider other)
     {
-        // Avoid duplicating coroutines for the same object
         if (!outOfBoundsObjects.ContainsKey(other.gameObject))
         {
             Coroutine teleportRoutine = StartCoroutine(TeleportAfterDelay(other.gameObject));
             outOfBoundsObjects.Add(other.gameObject, teleportRoutine);
+        }
+
+        if (other.CompareTag("Player"))
+        {
+            other.transform.position = teleportPoint.position;
+            other.transform.rotation = teleportPoint.rotation;
+
+            //Reset rigidbody velocity
+            Rigidbody rb = other.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
         }
     }
 

@@ -6,8 +6,6 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals;
-using TMPro;
-using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
 public class MovementManager : MonoBehaviour
 {
@@ -17,15 +15,14 @@ public class MovementManager : MonoBehaviour
         Teleport
     }
 
+    [Header("Cooldown")]
+    public float teleportCooldown = 1.2f;
+    private float lastTeleportTime = -Mathf.Infinity;
+
     [Header("Movement Mode")]
     public MovementMode currentMode = MovementMode.Continuous;
 
-    [Header("Cooldown")]
-    public float teleportCooldown = 2f;
-    private float lastTeleportTime = -Mathf.Infinity;
-
     [Header("References")]
-    public TMP_Dropdown moveModeDropdown;
     public ContinuousMoveProvider continuousMoveProvider;
     public TeleportationProvider teleportationProvider;
     public GameObject leftTeleportRay;
@@ -40,8 +37,6 @@ public class MovementManager : MonoBehaviour
     public UnityEvent OnTeleport;
 
     private bool teleportRayActive = false;
-
-    private const string MoveModeKey = "MoveMode";
 
     private void OnEnable()
     {
@@ -65,45 +60,21 @@ public class MovementManager : MonoBehaviour
         teleportCancel.action.Disable();
     }
 
-    void Start()
+    private void Update()
     {
-        LoadMoveMode();
-        moveModeDropdown.onValueChanged.AddListener(OnDropdownChanged);
-    }
-
-    public void OnDropdownChanged(int index)
-    {
-        SetMoveMode((MovementMode)index);
-        SaveMoveMode(index);
-    }
-
-    private void SetMoveMode(MovementMode mode)
-    {
-        switch (mode)
+        switch (currentMode)
         {
             case MovementMode.Continuous:
-                if (teleportationProvider != null) teleportationProvider.enabled = false;
-                if (continuousMoveProvider != null) continuousMoveProvider.enabled = true;
+                continuousMoveProvider.enabled = true;
+                teleportationProvider.enabled = false;
                 leftTeleportRay.SetActive(false);
                 break;
+
             case MovementMode.Teleport:
-                if (teleportationProvider != null) teleportationProvider.enabled = true;
-                if (continuousMoveProvider != null) continuousMoveProvider.enabled = false;
+                continuousMoveProvider.enabled = false;
+                teleportationProvider.enabled = true;
                 break;
         }
-    }
-
-    private void SaveMoveMode(int index)
-    {
-        PlayerPrefs.SetInt(MoveModeKey, index);
-        PlayerPrefs.Save();
-    }
-
-    private void LoadMoveMode()
-    {
-        int savedIndex = PlayerPrefs.GetInt(MoveModeKey, (int)MovementMode.Continuous);
-        moveModeDropdown.value = savedIndex;
-        SetMoveMode((MovementMode)savedIndex);
     }
 
     private void OnTeleportActivate(InputAction.CallbackContext context)
@@ -119,7 +90,7 @@ public class MovementManager : MonoBehaviour
     {
         if (!teleportRayActive) return;
 
-        //cooldown
+        // Cooldown check
         if (Time.time < lastTeleportTime + teleportCooldown)
         {
             Debug.Log("[Teleport] Cooldown active.");
@@ -178,37 +149,17 @@ public class MovementManager : MonoBehaviour
         CharacterController cc = Player.instance.GetComponent<CharacterController>();
         float radius = cc.radius;
         float height = cc.height;
-        float maxSlopeAngle = 60f;
 
-        //raycast from above to get normal
-        if (Physics.Raycast(destination + Vector3.up * 2f, Vector3.down, out RaycastHit hit, 5f, Physics.AllLayers, QueryTriggerInteraction.Ignore))
-        {
-            float angle = Vector3.Angle(hit.normal, Vector3.up);
+        float groundOffset = 0.05f; // Small offset to prevent clipping into the ground
 
-            if (angle > maxSlopeAngle)
-            {
-                Debug.Log($"[Teleport] Slope too steep: {angle}°");
-                return false;
-            }
+        // Apply offset to lift the capsule slightly above the ground
+        destination += Vector3.up * groundOffset;
 
-            //adjust bottom/top based on hit point
-            Vector3 bottom = hit.point + Vector3.up * radius;
-            Vector3 top = bottom + Vector3.up * (height - 2 * radius);
+        // Calculate capsule points based on character height and radius
+        Vector3 bottom = destination + Vector3.up * radius;
+        Vector3 top = bottom + Vector3.up * (height - 2 * radius);
 
-            bool blocked = Physics.CheckCapsule(bottom, top, radius, Physics.AllLayers, QueryTriggerInteraction.Ignore);
-
-            if (blocked)
-            {
-                Debug.Log("[Teleport] Capsule check blocked.");
-                return false;
-            }
-
-            return true;
-        }
-
-        Debug.Log("[Teleport] No surface detected at target.");
-        return false;
+        return !Physics.CheckCapsule(bottom, top, radius, Physics.AllLayers, QueryTriggerInteraction.Ignore);
     }
-
 
 }

@@ -10268,7 +10268,7 @@ MonoBehaviour:
   socket: {fileID: 0}
   comeBackDistance: 4
   isSelected: 0
-  rejectForce: 1.5
+  rejectForce: 2
   audioSource: {fileID: 3811931587905109784}
   spawnSound: {fileID: 8300000, guid: f9dd7f0b30a7fc844bbdd6b65cdcaa5c, type: 3}
   storeSound: {fileID: 8300000, guid: 552be2c7de401d44998444807d193700, type: 3}

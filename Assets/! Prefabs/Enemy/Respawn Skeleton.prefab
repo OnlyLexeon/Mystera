@@ -476,9 +476,9 @@ MonoBehaviour:
   maxMoveTime: 4
   idleTime: 4
   idle02Chance: 0.5
-  detectionAngle: 120
+  detectionAngle: 160
   detectionDistance: 8
-  detectionHeightOffset: 1
+  detectionHeightOffset: 0.6
   checkLineOfSight: 1
   obstacleLayers:
     serializedVersion: 2

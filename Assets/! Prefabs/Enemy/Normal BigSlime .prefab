@@ -413,7 +413,6 @@ GameObject:
   - component: {fileID: 5924800195523603827}
   - component: {fileID: 8587414364827684269}
   - component: {fileID: 8679806044882732308}
-  - component: {fileID: 3118645636657581582}
   m_Layer: 11
   m_Name: SquareHat
   m_TagString: Untagged
@@ -431,8 +430,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0013792444, z: 0.0000000010477379}
-  m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000002}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8850279219595176071}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -489,27 +488,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3118645636657581582
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4330213512330944788}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.4640788, y: 0.96952623, z: 1.4579473}
-  m_Center: {x: -0.013659358, y: 0.47155818, z: -0.036531597}
 --- !u!1 &4444953505462109614
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +499,6 @@ GameObject:
   - component: {fileID: 6886897564198756022}
   - component: {fileID: 7373418575088751473}
   - component: {fileID: 170453749306857563}
-  - component: {fileID: 5841241958262351572}
   m_Layer: 11
   m_Name: HoneyComb
   m_TagString: Untagged
@@ -597,27 +574,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5841241958262351572
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4444953505462109614}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.08072, y: 0.9222583, z: 0.7358639}
-  m_Center: {x: -0.000000059604645, y: -0.000000059604645, z: 0}
 --- !u!1 &4767616679125519108
 GameObject:
   m_ObjectHideFlags: 0
@@ -5529,8 +5485,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0055523, y: 1.4192891, z: 1}
-  m_Center: {x: -0.0027761236, y: 0.74212134, z: 0}
+  m_Size: {x: 1.0055523, y: 0.98906016, z: 1}
+  m_Center: {x: -0.002776146, y: 0.52700806, z: -1.1146911e-10}
 --- !u!114 &5364741549550343589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5663,7 +5619,7 @@ MonoBehaviour:
   idle02Chance: 0.5
   detectionAngle: 120
   detectionDistance: 6
-  detectionHeightOffset: 1
+  detectionHeightOffset: 0.6
   checkLineOfSight: 1
   obstacleLayers:
     serializedVersion: 2
@@ -5698,10 +5654,10 @@ MonoBehaviour:
   hitTrigger: takeDamage
   hitStunDuration: 0.2
   invincibilityDuration: 0.1
-  particleCount: 20
-  particleSize: 0.1
-  particleSpeed: 3
-  particleLifetime: 0.5
+  particleCount: 5
+  particleSize: 0.05
+  particleSpeed: 1
+  particleLifetime: 0.25
   particleMaterial: {fileID: 0}
   enableDebugLogs: 0
   lastSoundPlayTime: 0

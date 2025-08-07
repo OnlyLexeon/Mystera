@@ -22,7 +22,10 @@ public class Projectile : MonoBehaviour
     [Header("附加效果")]
     public bool applyKnockback = false;         // 是否造成击退
     public float knockbackForce = 5f;           // 击退力度
-    
+
+    [Header("Wall Ground Layer")]
+    public LayerMask groundLayer;
+
     // 私有变量
     private Transform target;
     private Vector3 startPosition;
@@ -276,7 +279,13 @@ public class Projectile : MonoBehaviour
             }
         }
         // 击中地面或障碍物
-        else if (other.CompareTag("Ground") || other.CompareTag("Obstacle"))
+        //else if (other.CompareTag("Ground") || other.CompareTag("Obstacle"))
+        //{
+        //    CreateHitEffect(transform.position);
+        //    Destroy(gameObject);
+        //}
+
+        if (((1 << other.gameObject.layer) & groundLayer) != 0)
         {
             CreateHitEffect(transform.position);
             Destroy(gameObject);

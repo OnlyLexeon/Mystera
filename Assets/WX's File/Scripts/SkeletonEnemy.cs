@@ -16,7 +16,6 @@ public class SkeletonEnemy : Enemy
     // 复活状态
     private bool hasRevived = false;
     private bool isReviving = false;
-    private bool isInvincible = false;
     private GameObject currentReviveEffect;
     private Coroutine invincibilityCoroutine;
     
@@ -492,7 +491,6 @@ public class SkeletonEnemy : Enemy
     // 公开属性
     public bool IsInFakeDeathState => isDead && !hasRevived && canRevive;
     public bool IsReviving => isReviving;
-    public bool IsInvincible => isInvincible;
     
     protected override void OnDrawGizmosSelected()
     {

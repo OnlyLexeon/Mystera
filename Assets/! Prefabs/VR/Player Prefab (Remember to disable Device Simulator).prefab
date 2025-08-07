@@ -13309,11 +13309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08cca06522725c843acd548889b437da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
   spellRefObj: {fileID: 1037697388099273641, guid: 33730c06162457345bf802aaea2e6013, type: 3}
   spellRefHandleObj: {fileID: 6300914796861897560, guid: f2fd58ca29a6bd0418b69efeac91b677, type: 3}
   spellRefHandleEntry: {fileID: 2772008563528501196}
-  currentHandleObj: {fileID: 0}
 --- !u!1 &1805193569440161563
 GameObject:
   m_ObjectHideFlags: 0
@@ -34208,8 +34206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 0
-  teleportCooldown: 2
-  moveModeDropdown: {fileID: 6073331246548897447}
   continuousMoveProvider: {fileID: 7473417467239266919}
   teleportationProvider: {fileID: 3603525393453555}
   leftTeleportRay: {fileID: 1474242793077675223}
@@ -34258,8 +34254,8 @@ MonoBehaviour:
   OnTeleport:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FadeCanvas, Assembly-CSharp
+      - m_Target: {fileID: 5312860456935036393}
+        m_TargetAssemblyTypeName: FadeCanvasInstance, Assembly-CSharp
         m_MethodName: QuickFadeOut
         m_Mode: 1
         m_Arguments:
