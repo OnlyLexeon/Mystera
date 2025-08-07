@@ -13,7 +13,7 @@ public class BoundaryTP : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!outOfBoundsObjects.ContainsKey(other.gameObject))
+        if (!outOfBoundsObjects.ContainsKey(other.gameObject) && !other.CompareTag("Player")) // not player
         {
             Coroutine teleportRoutine = StartCoroutine(TeleportAfterDelay(other.gameObject));
             outOfBoundsObjects.Add(other.gameObject, teleportRoutine);

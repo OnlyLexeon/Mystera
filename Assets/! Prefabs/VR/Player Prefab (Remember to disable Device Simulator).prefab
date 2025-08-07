@@ -6941,7 +6941,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_InputActionReference: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_InputActionReference: {fileID: 0}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualValue: {x: 0, y: 0}
   m_RightHandTurnInput:
@@ -6955,7 +6955,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_InputActionReference: {fileID: -7374733323251553461, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_InputActionReference: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualValue: {x: 0, y: 0}
 --- !u!1 &460312193105388626
@@ -8766,6 +8766,7 @@ GameObject:
   - component: {fileID: 100199703065293901}
   - component: {fileID: 6166971039754835093}
   - component: {fileID: 725306218219089722}
+  - component: {fileID: 6159291837559193159}
   m_Layer: 7
   m_Name: LeftHand Controller (player layer)
   m_TagString: Untagged
@@ -9069,10 +9070,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6159291837559193159}
+        m_TargetAssemblyTypeName: ScenePersistentIItemGrabber, Assembly-CSharp
+        m_MethodName: DoHolding
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6159291837559193159}
+        m_TargetAssemblyTypeName: ScenePersistentIItemGrabber, Assembly-CSharp
+        m_MethodName: DoHolding
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_SelectInput:
@@ -9755,6 +9780,20 @@ MonoBehaviour:
   - groupMember: {fileID: 6580281400956124555}
     overrideGroupMembers:
     - {fileID: 8662849994436389776}
+--- !u!114 &6159291837559193159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248568445848531743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2f2a4687f8b1d4990ce432862eab09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeftHand: 1
+  interactor: {fileID: 8662849994436389776}
 --- !u!1 &1271371881324117614
 GameObject:
   m_ObjectHideFlags: 0
@@ -12002,6 +12041,7 @@ GameObject:
   - component: {fileID: 4748346283539878208}
   - component: {fileID: 5575191652242487844}
   - component: {fileID: 1131765195605310485}
+  - component: {fileID: 3576103199558375953}
   m_Layer: 13
   m_Name: RightHand Ray
   m_TagString: Untagged
@@ -12053,10 +12093,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3576103199558375953}
+        m_TargetAssemblyTypeName: ScenePersistentItemGrabber, Assembly-CSharp
+        m_MethodName: DoHolding
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3576103199558375953}
+        m_TargetAssemblyTypeName: ScenePersistentItemGrabber, Assembly-CSharp
+        m_MethodName: DoHolding
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_SelectInput:
@@ -12628,6 +12692,20 @@ MonoBehaviour:
   m_OverrideInteractorLineOrigin: 1
   m_LineOriginTransform: {fileID: 0}
   m_LineOriginOffset: 0
+--- !u!114 &3576103199558375953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700605146579241815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2f2a4687f8b1d4990ce432862eab09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeftHand: 0
+  interactor: {fileID: 3936400979076941413}
 --- !u!1 &1702866073267445372
 GameObject:
   m_ObjectHideFlags: 0
@@ -25073,6 +25151,7 @@ GameObject:
   - component: {fileID: 6013928319801040137}
   - component: {fileID: 4844691896381412693}
   - component: {fileID: 8579398725186740497}
+  - component: {fileID: 8316804190629227129}
   m_Layer: 13
   m_Name: LeftHand Ray
   m_TagString: Untagged
@@ -25124,10 +25203,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8316804190629227129}
+        m_TargetAssemblyTypeName: ScenePersistentItemGrabber, Assembly-CSharp
+        m_MethodName: DoHolding
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8316804190629227129}
+        m_TargetAssemblyTypeName: ScenePersistentItemGrabber, Assembly-CSharp
+        m_MethodName: DoHolding
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_SelectInput:
@@ -25699,6 +25802,20 @@ MonoBehaviour:
   m_OverrideInteractorLineOrigin: 1
   m_LineOriginTransform: {fileID: 0}
   m_LineOriginOffset: 0
+--- !u!114 &8316804190629227129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4209522996617135183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2f2a4687f8b1d4990ce432862eab09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeftHand: 1
+  interactor: {fileID: 6580281400956124555}
 --- !u!1 &4247536612099588047
 GameObject:
   m_ObjectHideFlags: 0
@@ -29464,6 +29581,7 @@ GameObject:
   - component: {fileID: 1517602209453810451}
   - component: {fileID: 5048299629452952576}
   - component: {fileID: 8969080563096254695}
+  - component: {fileID: 5868692071689310240}
   m_Layer: 7
   m_Name: RightHand Controller (player layer)
   m_TagString: Untagged
@@ -29766,10 +29884,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5868692071689310240}
+        m_TargetAssemblyTypeName: ScenePersistentItemGrabber, Assembly-CSharp
+        m_MethodName: DoHolding
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5868692071689310240}
+        m_TargetAssemblyTypeName: ScenePersistentItemGrabber, Assembly-CSharp
+        m_MethodName: DoHolding
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_SelectInput:
@@ -30341,6 +30483,20 @@ MonoBehaviour:
   - groupMember: {fileID: 3936400979076941413}
     overrideGroupMembers:
     - {fileID: 6714500921342946789}
+--- !u!114 &5868692071689310240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4998619613188927070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2f2a4687f8b1d4990ce432862eab09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeftHand: 0
+  interactor: {fileID: 6714500921342946789}
 --- !u!1 &5018727344861183115
 GameObject:
   m_ObjectHideFlags: 0
@@ -34205,6 +34361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23de1eb380a2927448da5cb0c7b3a96a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleportCooldown: 1.2
   currentMode: 0
   continuousMoveProvider: {fileID: 7473417467239266919}
   teleportationProvider: {fileID: 3603525393453555}
