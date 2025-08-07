@@ -39,6 +39,11 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
+        ItemHoldingManager itemHoldManager = ItemHoldingManager.instance;
+        //player's item holding stuff
+        itemHoldManager.SetPauseHoldingItem(true);
+        itemHoldManager.TryPutHoldingItemsInHat();
+
         FadeCanvasInstance.instance.StartFadeIn();
 
         yield return new WaitForSeconds(FadeCanvasInstance.instance.defaultDuration);
@@ -70,13 +75,7 @@ public class SceneController : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene().name;
 
-        ItemHoldingManager itemHoldManager = ItemHoldingManager.instance;
         DungeonManager dungeonManager = DungeonManager.instance;
-
-        //player's item holding stuff
-        itemHoldManager.SetPauseHoldingItem(true);
-        itemHoldManager.TryPutHoldingItemsInHat();
-
         // If it's a dungeon, generate
         if (currentScene == dungeonScene)
         {
@@ -119,7 +118,7 @@ public class SceneController : MonoBehaviour
             else Debug.LogWarning("No spawn point found!");
         }
 
-        itemHoldManager.SetPauseHoldingItem(false);
+        ItemHoldingManager.instance.SetPauseHoldingItem(false);
 
         LoadingScreenManager.instance.UpdateProgress(100);
 

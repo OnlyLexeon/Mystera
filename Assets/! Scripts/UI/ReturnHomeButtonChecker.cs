@@ -8,9 +8,11 @@ public class ReturnHomeButtonChecker : MonoBehaviour
     void Start()
     {
         SceneController sceneController = SceneController.instance;
-        if (!sceneController.IsMainScene()) returnButton.SetActive(true);
+        if (!sceneController.IsMainScene())
+        {
+            returnButton.SetActive(true);
+            returnButton.GetComponent<Button>().onClick.AddListener(() => sceneController.LoadScene(sceneController.mainScene));
+        }
         else returnButton.SetActive(false);
-
-        returnButton.GetComponent<Button>().onClick.AddListener(() => sceneController.LoadScene(sceneController.mainScene));
     }
 }

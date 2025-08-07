@@ -14201,7 +14201,7 @@ MonoBehaviour:
   m_Camera: {fileID: 5076238266714690245}
   m_OriginBaseGameObject: {fileID: 2176864891003938613}
   m_CameraFloorOffsetObject: {fileID: 5446422927861283274}
-  m_RequestedTrackingOriginMode: 2
+  m_RequestedTrackingOriginMode: 1
   m_CameraYOffset: 1.1176
 --- !u!143 &6607254877843541802
 CharacterController:
@@ -14332,7 +14332,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   shakeFrequency: 25
   damageTextPrefab: {fileID: 0}
-  damageTextOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2218319094817531779
 GameObject:
   m_ObjectHideFlags: 0
@@ -25137,7 +25136,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9029992235903974654}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1313212497788941383}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4209522996617135183
 GameObject:
   m_ObjectHideFlags: 0
