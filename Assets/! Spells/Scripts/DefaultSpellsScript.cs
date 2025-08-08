@@ -10,6 +10,7 @@ public class DefaultSpellsScript : MonoBehaviour
     protected Rigidbody _rigidBody;
     protected SphereCollider _sphereCollider;
     protected AudioSource _audioSource;
+    protected GameObject hitEffectObj;
 
     protected bool _collided = false;
 
@@ -22,7 +23,7 @@ public class DefaultSpellsScript : MonoBehaviour
         _rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
 
         _sphereCollider = GetComponent<SphereCollider>();
-        _sphereCollider.radius = spellData.spellHitBoxRadius;
+        _sphereCollider.radius = spellData.projectileRadius;
         _sphereCollider.includeLayers = spellData.spellHitBoxMask;
         _sphereCollider.excludeLayers = spellData.spellIgnoreMask;
     }
@@ -49,47 +50,79 @@ public class DefaultSpellsScript : MonoBehaviour
     public virtual void ProjectileHit(GameObject hitObject)
     {
         _collided = true;
-        if (hitObject.tag == "Enemy")
+
+        if (spellData.spellHitBoxRadius > 0)
         {
-            Debug.Log(gameObject.name + "HIT Enemy :" + hitObject.gameObject.name);
-
-
-            if (hitObject.TryGetComponent(out Health health))
+            if (!spellData.isAoe)
             {
-                int roundedDamage = Mathf.RoundToInt(spellData.spellDamge);
-                health.TakeDamage(roundedDamage, Player.instance.gameObject);
+                if (hitObject.tag == "Enemy")
+                {
+                    Debug.Log(gameObject.name + " MAINLY HIT Enemy :" + hitObject.gameObject.name);
+                    if (hitObject.TryGetComponent(out Health health))
+                    {
+                        int roundedDamage = Mathf.RoundToInt(spellData.spellMainTargetDamage);
+                        health.TakeDamage(roundedDamage, Player.instance.gameObject);
+                    }
+                }
             }
-
-            //Enemy enemyScript = hitObject.GetComponent<Enemy>();
-            //GameObject attacker = GameObject.FindGameObjectWithTag("Player");
-            //int roundedDamage = Mathf.RoundToInt(spellData.spellDamge);
-            //enemyScript.OnTakeDamageWithAttacker(roundedDamage, attacker);
+            Collider[] aoeHitObjects = Physics.OverlapSphere(transform.position, spellData.spellHitBoxRadius);
+            foreach (Collider aoeHitObject in aoeHitObjects)
+            {
+                Debug.Log("AOE HIT:" + aoeHitObject.name);
+                if (aoeHitObject.GetInstanceID() != hitObject.GetInstanceID())
+                {
+                    if (aoeHitObject.tag == "Enemy")
+                    {
+                        Debug.Log(gameObject.name + " AOE HIT Enemy :" + hitObject.gameObject.name);
+                        if (aoeHitObject.TryGetComponent(out Health health))
+                        {
+                            int roundedDamage = Mathf.RoundToInt(spellData.spellAoeDamage);
+                            health.TakeDamage(roundedDamage, Player.instance.gameObject);
+                        }
+                    }
+                }
+            }
         }
         else
         {
-            Debug.Log("HIT SOMETHING ELSE" + hitObject.name);
+            if (hitObject.tag == "Enemy")
+            {
+                Debug.Log(gameObject.name + " HIT Enemy :" + hitObject.gameObject.name);
+                if (hitObject.TryGetComponent(out Health health))
+                {
+                    int roundedDamage = Mathf.RoundToInt(spellData.spellMainTargetDamage);
+                    health.TakeDamage(roundedDamage, Player.instance.gameObject);
+                }
+            }
         }
 
         _rigidBody.linearVelocity = Vector3.zero;
-        var hitEffectObj = Instantiate(spellData.hitEffectObject, transform.position, transform.rotation);
+        hitEffectObj = Instantiate(spellData.hitEffectObject, transform.position, transform.rotation);
 
-        if (spellData.hitEffectAudio != null)
+        SpellEffectCleanUp();
+    }
+
+    public virtual void SpellEffectCleanUp()
+    {
+        AudioClip hitEffectAudio = spellData.hitEffectAudio;
+
+        if (hitEffectAudio != null)
         {
-            AudioSource hitEffectAudio;
+            AudioSource hitEffectAudioSource;
             if (hitEffectObj.GetComponent<AudioSource>() == null)
             {
-                hitEffectAudio = hitEffectObj.AddComponent<AudioSource>();
+                hitEffectAudioSource = hitEffectObj.AddComponent<AudioSource>();
             }
             else
             {
-                hitEffectAudio = hitEffectObj.GetComponent<AudioSource>();
+                hitEffectAudioSource = hitEffectObj.GetComponent<AudioSource>();
             }
-            hitEffectAudio.clip = spellData.hitEffectAudio;
-            hitEffectAudio.Play();
+            hitEffectAudioSource.clip = hitEffectAudio;
+            hitEffectAudioSource.Play();
 
-            if (spellData.hitEffectLifeTime < spellData.hitEffectAudio.length)
+            if (spellData.hitEffectLifeTime < hitEffectAudio.length)
             {
-                Destroy(hitEffectObj, spellData.hitEffectAudio.length);
+                Destroy(hitEffectObj, hitEffectAudio.length);
             }
             else
             {
@@ -101,7 +134,23 @@ public class DefaultSpellsScript : MonoBehaviour
             Destroy(hitEffectObj, spellData.hitEffectLifeTime);
         }
 
-        Destroy(gameObject, spellData.spellLifeTime);
+        AudioClip projectileAudio = spellData.projectileAudio;
+
+        if (projectileAudio != null)
+        {
+            if (spellData.projectileLifeTime < projectileAudio.length)
+            {
+                Destroy(gameObject, projectileAudio.length);
+            }
+            else
+            {
+                Destroy(gameObject, spellData.projectileLifeTime);
+            }
+        }
+        else
+        {
+            Destroy(gameObject, spellData.projectileLifeTime);
+        }
     }
 
     private void Update()
@@ -120,5 +169,10 @@ public class DefaultSpellsScript : MonoBehaviour
     protected virtual void SpellLifeTimeLimit()
     {
         Destroy(gameObject, spellData.maximumLifeTime);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, spellData.spellHitBoxRadius);
     }
 }

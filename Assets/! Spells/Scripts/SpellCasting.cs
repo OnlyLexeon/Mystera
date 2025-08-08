@@ -288,7 +288,7 @@ public class SpellCasting : MonoBehaviour
             Instantiate(spellObj.spellPrefab, drawPoint.transform.position, drawPoint.transform.rotation)
             .GetComponent<DefaultSpellsScript>();
 
-        if (spellObj.spellData.spellManaCost > _spellManager.currentMana)
+        if (spellObj.spellData.spellManaCost <= _spellManager.currentMana)
             _spellManager.currentMana -= spellObj.spellData.spellManaCost;
 
         newSpellScript.ShootProjectile(drawPoint);
@@ -316,19 +316,6 @@ public class SpellCasting : MonoBehaviour
                 }
             }
             Debug.Log("Angle" + totalAngle);
-
-            //testingLine.positionCount = _resampleVectors.Count + 1;
-            //for (int i = 0; i < _resampleVectors.Count; i++)
-            //{
-            //    testingLine.SetPosition(i, _resampleVectors[i]);
-            //}
-            //testingLine.SetPosition(testingLine.positionCount - 1, averagePosition);
-
-            //testingLine.positionCount = _resamplePoints.Count;
-            //for (int i = 0; i < _resamplePoints.Count; i++)
-            //{
-            //    testingLine.SetPosition(i, _resamplePoints[i]);
-            //}
         }
         #endregion
 

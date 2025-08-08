@@ -17,22 +17,25 @@ MonoBehaviour:
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   - {x: 0, y: 1}
-  spellDamge: 60
+  spellMainTargetDamage: 0
+  spellAoeDamage: 16
   spellManaCost: 20
-  spellChargeTime: 2
+  spellChargeTime: 1.5
   projectileSpeed: 10
   applyStatus: 0
   statusDuration: 0
-  spellHitBoxRadius: 2
+  projectileRadius: 0.5
+  isAoe: 1
+  spellHitBoxRadius: 3
   spellHitBoxMask:
     serializedVersion: 2
     m_Bits: 2560
   spellIgnoreMask:
     serializedVersion: 2
-    m_Bits: 1463
-  spellLifeTime: 0.5
+    m_Bits: 9655
+  projectileLifeTime: 0
   maximumLifeTime: 10
   hitEffectObject: {fileID: 1121192042590650, guid: 36e3541d26ac5b6409987643532bf433, type: 3}
   hitEffectLifeTime: 2
-  projectileAudio: {fileID: 0}
-  hitEffectAudio: {fileID: 0}
+  projectileAudio: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+  hitEffectAudio: {fileID: 8300000, guid: 5ab3fed341228244eb5d59b62ab21593, type: 3}
