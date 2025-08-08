@@ -27,7 +27,7 @@ public class SpellCasting : MonoBehaviour
     [Tooltip("Higher the vectors amount, higher accuracy but more calculation time.")]
     public int vectorAmount = 10;
 
-    [Header("Private Attributes (For Debug Only)")]
+    [Header("Private Attributes (Set Public For Debug Only)")]
     public bool _canDraw = true;
     public bool _isDrawing = false;
     public bool _stopDrawing = false;
@@ -37,6 +37,7 @@ public class SpellCasting : MonoBehaviour
     public LineRenderer _drawingCanva;
     public DrawingCanvaScript _drawingCanvaAnimation;
     public Transform _canvaStartingPoint;
+    public float drawingDeccelerator = 0.2f;
 
     [Header("Private Resamplaing Data (For Debug Only)")]
     public List<Vector2> _resamplePoints = new List<Vector2>();
@@ -107,7 +108,7 @@ public class SpellCasting : MonoBehaviour
         //_canvaStartingPoint.transform.position = drawPoint.transform.position;
 
         //Vector3 _newPoint = drawPoint.transform.position - _canvaStartingPoint;
-        Vector3 _newPoint = _player.transform.InverseTransformPoint(drawPoint.transform.position) - _player.transform.InverseTransformPoint(_canvaStartingPoint.position);
+        Vector3 _newPoint = (drawPoint.transform.InverseTransformPoint(drawPoint.transform.position) - drawPoint.transform.InverseTransformPoint(_canvaStartingPoint.position)) * drawingDeccelerator;
         _newPoint.z = 0f;
 
         #region The first point of the drawing

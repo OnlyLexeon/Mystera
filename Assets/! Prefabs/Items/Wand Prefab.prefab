@@ -25330,10 +25330,10 @@ MonoBehaviour:
   _stopDrawing: 0
   _drawnPoints: []
   _linePositionIndex: 0
-  _newPoint: {x: 0, y: 0, z: 0}
   _drawingCanva: {fileID: 0}
   _drawingCanvaAnimation: {fileID: 0}
-  _canvaStartingPoint: {x: 0, y: 0, z: 0}
+  _canvaStartingPoint: {fileID: 0}
+  drawingDeccelerator: 0.2
   _resamplePoints: []
   _resampleVectors: []
   _totalLength: 0
