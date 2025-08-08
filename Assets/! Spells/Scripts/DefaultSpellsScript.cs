@@ -51,11 +51,19 @@ public class DefaultSpellsScript : MonoBehaviour
         _collided = true;
         if (hitObject.tag == "Enemy")
         {
-            Debug.Log("HIT Enemy :" + hitObject.gameObject.name);
-            Enemy enemyScript = hitObject.GetComponent<Enemy>();
-            GameObject attacker = GameObject.FindGameObjectWithTag("Player");
-            int roundedDamage = Mathf.RoundToInt(spellData.spellDamge);
-            enemyScript.OnTakeDamageWithAttacker(roundedDamage, attacker);
+            Debug.Log(gameObject.name + "HIT Enemy :" + hitObject.gameObject.name);
+
+
+            if (hitObject.TryGetComponent(out Health health))
+            {
+                int roundedDamage = Mathf.RoundToInt(spellData.spellDamge);
+                health.TakeDamage(roundedDamage, Player.instance.gameObject);
+            }
+
+            //Enemy enemyScript = hitObject.GetComponent<Enemy>();
+            //GameObject attacker = GameObject.FindGameObjectWithTag("Player");
+            //int roundedDamage = Mathf.RoundToInt(spellData.spellDamge);
+            //enemyScript.OnTakeDamageWithAttacker(roundedDamage, attacker);
         }
         else
         {
@@ -98,7 +106,7 @@ public class DefaultSpellsScript : MonoBehaviour
 
     private void Update()
     {
-        if(_collided)
+        if (_collided)
         {
             _sphereCollider.enabled = false;
         }

@@ -108,7 +108,8 @@ public class SpellCasting : MonoBehaviour
         //_canvaStartingPoint.transform.position = drawPoint.transform.position;
 
         //Vector3 _newPoint = drawPoint.transform.position - _canvaStartingPoint;
-        Vector3 _newPoint = (drawPoint.transform.InverseTransformPoint(drawPoint.transform.position) - drawPoint.transform.InverseTransformPoint(_canvaStartingPoint.position)) * drawingDeccelerator;
+        //Vector3 _newPoint = (drawPoint.transform.InverseTransformPoint(drawPoint.transform.position) - drawPoint.transform.InverseTransformPoint(_canvaStartingPoint.position)) * drawingDeccelerator;
+        Vector3 _newPoint = _player.transform.InverseTransformPoint(drawPoint.transform.position) - _player.transform.InverseTransformPoint(_canvaStartingPoint.position);
         _newPoint.z = 0f;
 
         #region The first point of the drawing
@@ -172,6 +173,7 @@ public class SpellCasting : MonoBehaviour
             //_canvaStartingPoint = drawPoint.transform.position;
             _canvaStartingPoint = new GameObject("CanvaStartingPoint").transform;
             _canvaStartingPoint.position = drawPoint.transform.position;
+            _canvaStartingPoint.rotation = drawPoint.transform.rotation;
             _canvaStartingPoint.parent = _player.transform;
 
             #region Line Renderer Customizations (Mat, Color, Width)
@@ -194,6 +196,7 @@ public class SpellCasting : MonoBehaviour
         _isDrawing = false;
         _stopDrawing = false;
         _drawingCanvaAnimation.CloseDrawing();
+        Destroy(_canvaStartingPoint.gameObject);
 
         if (_drawnPoints.Count >= vectorAmount)
         {
@@ -217,7 +220,7 @@ public class SpellCasting : MonoBehaviour
                 if (spellIndex >= 0)
                 {
                     // Starting casting 
-                    Debug.Log("Found spell :" + spellIndex);
+                    //Debug.Log("Found spell :" + spellIndex);
                     if (_spellManager.equippedSpells[spellIndex].spellData.spellManaCost <= _spellManager.currentMana)
                         StartCoroutine(StartCasting(spellIndex));
                     else
@@ -390,7 +393,7 @@ public class SpellCasting : MonoBehaviour
             text.text = (matchingScore / vectorAmount).ToString() + "%";
         #endregion
 
-        Debug.Log("Similarity with ref : " + (matchingScore / vectorAmount));
+        //Debug.Log("Similarity with ref : " + (matchingScore / vectorAmount));
 
         return matchingScore / vectorAmount;
     }
@@ -408,7 +411,7 @@ public class SpellCasting : MonoBehaviour
                 //DefaultSpellsScript spellScript = _spellManager.equippedSpells[i].GetComponent<DefaultSpellsScript>();
                 //subMatchingScore = CompareVectors(spellScript.spellData.spellsArrayStructure);
                 subMatchingScore = CompareVectors(_spellManager.equippedSpells[i].spellData.spellsArrayStructure);
-                Debug.Log("Sub:" + subMatchingScore + ":::" + matchingScore);
+                //Debug.Log("Sub:" + subMatchingScore + ":::" + matchingScore);
                 if (subMatchingScore >= matchingScore)
                 {
                     matchingScore = subMatchingScore;
