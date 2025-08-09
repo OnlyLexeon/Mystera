@@ -156,6 +156,10 @@ public class SpellsManager : MonoBehaviour
             {
                 spells.learned = spells.spellObj.defaultLearned;
             }
+            int index = 0;
+            while (!spellList[index].learned)
+                index++;
+            equippedSpells[0] = spellList[index].spellObj;
         }
     }
 

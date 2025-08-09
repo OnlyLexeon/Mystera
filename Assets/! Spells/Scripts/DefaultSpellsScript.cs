@@ -51,13 +51,13 @@ public class DefaultSpellsScript : MonoBehaviour
     {
         _collided = true;
 
-        if (spellData.spellHitBoxRadius > 0)
+        if (spellData.spellHitBoxRadius > 0.01)
         {
             if (!spellData.isAoe)
             {
                 if (hitObject.tag == "Enemy")
                 {
-                    Debug.Log(gameObject.name + " MAINLY HIT Enemy :" + hitObject.gameObject.name);
+                    //Debug.Log(gameObject.name + " MAINLY HIT Enemy :" + hitObject.gameObject.name);
                     if (hitObject.TryGetComponent(out Health health))
                     {
                         int roundedDamage = Mathf.RoundToInt(spellData.spellMainTargetDamage);
@@ -68,12 +68,12 @@ public class DefaultSpellsScript : MonoBehaviour
             Collider[] aoeHitObjects = Physics.OverlapSphere(transform.position, spellData.spellHitBoxRadius);
             foreach (Collider aoeHitObject in aoeHitObjects)
             {
-                Debug.Log("AOE HIT:" + aoeHitObject.name);
-                if (aoeHitObject.GetInstanceID() != hitObject.GetInstanceID())
+                //Debug.Log("AOE HIT:" + aoeHitObject.name);
+                if (aoeHitObject.tag == "Enemy")
                 {
-                    if (aoeHitObject.tag == "Enemy")
+                    if (aoeHitObject != hitObject || spellData.isAoe)
                     {
-                        Debug.Log(gameObject.name + " AOE HIT Enemy :" + hitObject.gameObject.name);
+                        //Debug.Log(gameObject.name + " AOE HIT Enemy :" + hitObject.gameObject.name);
                         if (aoeHitObject.TryGetComponent(out Health health))
                         {
                             int roundedDamage = Mathf.RoundToInt(spellData.spellAoeDamage);
@@ -87,7 +87,7 @@ public class DefaultSpellsScript : MonoBehaviour
         {
             if (hitObject.tag == "Enemy")
             {
-                Debug.Log(gameObject.name + " HIT Enemy :" + hitObject.gameObject.name);
+                //Debug.Log(gameObject.name + " HIT Enemy :" + hitObject.gameObject.name);
                 if (hitObject.TryGetComponent(out Health health))
                 {
                     int roundedDamage = Mathf.RoundToInt(spellData.spellMainTargetDamage);
