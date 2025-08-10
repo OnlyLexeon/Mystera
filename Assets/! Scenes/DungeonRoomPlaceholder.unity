@@ -1187,6 +1187,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4328653792198085771, guid: 7ebd6c71748a6334c8d03abde74f6490, type: 3}
+      propertyPath: startDelay.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328653792198085771, guid: 7ebd6c71748a6334c8d03abde74f6490, type: 3}
+      propertyPath: startDelay.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7059354160690692145, guid: 7ebd6c71748a6334c8d03abde74f6490, type: 3}
       propertyPath: m_Name
       value: WaterdropletParticle
