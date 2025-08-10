@@ -214,6 +214,12 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.unity.uiextensions": {
+      "version": "file:../com.unity.uiextensions-release",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.visualeffectgraph": {
       "version": "17.0.3",
       "depth": 0,
