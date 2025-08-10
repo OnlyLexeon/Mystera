@@ -1416,6 +1416,14 @@
       <Project>{CEB66543-0DA8-7C82-BC63-D1B439A19B51}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityUIExtensions.editor.csproj">
+      <Project>{38AC1924-13E8-7776-170D-10FFB74C234E}</Project>
+      <Name>UnityUIExtensions.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityUIExtensions.csproj">
+      <Project>{D6167D4B-948F-F52E-BF3F-82FDE73EDC4E}</Project>
+      <Name>UnityUIExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
       <Project>{762CC3A4-32B3-2570-1612-72D23BCC85F1}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
