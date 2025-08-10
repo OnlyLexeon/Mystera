@@ -371,9 +371,11 @@ public class SpellCasting : MonoBehaviour
     public float CompareVectors(List<Vector2> targetVectors)
     {
         float matchingScore = 0;
+        float terbalikMatchingScore = 0;
         for (int i = 0; i < vectorAmount; i++)
         {
             matchingScore += Vector2.Dot(_resampleVectors[i], targetVectors[i]);
+            terbalikMatchingScore += Vector2.Dot(_resampleVectors[i], targetVectors[vectorAmount - 1 - i]);
         }
         #region Show similarity percentage (Debug Mode)
         if (debugMode)
@@ -382,7 +384,8 @@ public class SpellCasting : MonoBehaviour
 
         //Debug.Log("Similarity with ref : " + (matchingScore / vectorAmount));
 
-        return matchingScore / vectorAmount;
+        //return matchingScore / vectorAmount;
+        return matchingScore > Mathf.Abs(terbalikMatchingScore) ? (matchingScore / vectorAmount) : (Mathf.Abs(terbalikMatchingScore) / vectorAmount);
     }
 
     public int FindHighestScoreSpell()
