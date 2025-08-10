@@ -19,9 +19,9 @@ MonoBehaviour:
   - {x: 0, y: 1}
   spellMainTargetDamage: 0
   spellAoeDamage: 16
-  spellManaCost: 20
-  spellChargeTime: 1.5
-  projectileSpeed: 10
+  spellManaCost: 25
+  spellChargeTime: 2
+  projectileSpeed: 12
   applyStatus: 0
   statusDuration: 0
   projectileRadius: 0.5
@@ -34,7 +34,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 9655
   projectileLifeTime: 0
-  maximumLifeTime: 10
+  maximumLifeTime: 8
   hitEffectObject: {fileID: 1121192042590650, guid: 36e3541d26ac5b6409987643532bf433, type: 3}
   hitEffectLifeTime: 2
   projectileAudio: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}

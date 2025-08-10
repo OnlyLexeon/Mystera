@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onlyDamageOnSelect: 1
-  attackCooldown: 1
+  attackCooldown: 1.2
   chargedDamage: 4
   unchargedDamage: 1
   enemyLayer:
