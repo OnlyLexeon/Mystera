@@ -19899,7 +19899,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 20}
+  m_SizeDelta: {x: 120, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360363799900802053
 MonoBehaviour:
@@ -25333,7 +25333,7 @@ MonoBehaviour:
   _drawingCanva: {fileID: 0}
   _drawingCanvaAnimation: {fileID: 0}
   _canvaStartingPoint: {fileID: 0}
-  drawingDeccelerator: 0.2
+  drawingDeccelerator: 0.1
   _resamplePoints: []
   _resampleVectors: []
   _totalLength: 0

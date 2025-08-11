@@ -34,21 +34,37 @@ public class DungeonMusicManager : MonoBehaviour
 
     private enum MusicState { Ambience, Battle, FadingOutToAmbience }
     private MusicState state = MusicState.Ambience;
+    private bool isDungeon;
+
+    public void OnSceneLoadCheck()
+    {
+        if (SceneController.instance.isDungeonScene()) isDungeon = true;
+        else isDungeon = false;
+
+        if (isDungeon)
+        {
+            audioSource.loop = true;
+            audioSource.clip = GetRandomAmbience();
+            audioSource.volume = 0f; // ambience will fade in
+            state = MusicState.Ambience;
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.Stop();
+        }
+    }
 
     private void Start()
     {
         if (audioSource == null) audioSource = GetComponent<AudioSource>();
         if (audioSource == null) return;
-
-        audioSource.loop = true;
-        audioSource.clip = GetRandomAmbience();
-        audioSource.volume = 0f; // ambience will fade in
-        state = MusicState.Ambience;
-        audioSource.Play();
     }
 
     private void Update()
     {
+        if (!isDungeon) return;
+
         if (mainCamera == null) mainCamera = Camera.main;
         if (audioSource == null || mainCamera == null) return;
 

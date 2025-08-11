@@ -108,8 +108,8 @@ public class SpellCasting : MonoBehaviour
         //_canvaStartingPoint.transform.position = drawPoint.transform.position;
 
         //Vector3 _newPoint = drawPoint.transform.position - _canvaStartingPoint;
-        //Vector3 _newPoint = (drawPoint.transform.InverseTransformPoint(drawPoint.transform.position) - drawPoint.transform.InverseTransformPoint(_canvaStartingPoint.position)) * drawingDeccelerator;
-        Vector3 _newPoint = _player.transform.InverseTransformPoint(drawPoint.transform.position) - _player.transform.InverseTransformPoint(_canvaStartingPoint.position);
+        Vector3 _newPoint = (drawPoint.transform.InverseTransformPoint(drawPoint.transform.position) - drawPoint.transform.InverseTransformPoint(_canvaStartingPoint.position)) * drawingDeccelerator;
+        //Vector3 _newPoint = _player.transform.InverseTransformPoint(drawPoint.transform.position) - _player.transform.InverseTransformPoint(_canvaStartingPoint.position);
         _newPoint.z = 0f;
 
         #region The first point of the drawing
