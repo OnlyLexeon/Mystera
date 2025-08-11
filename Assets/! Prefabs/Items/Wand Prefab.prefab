@@ -19899,7 +19899,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 20}
+  m_SizeDelta: {x: 120, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360363799900802053
 MonoBehaviour:
@@ -24913,8 +24913,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.015924536, y: 0.013651551, z: 0.5959209}
-  m_Center: {x: 0.00047871724, y: 0.00021754506, z: 0.08300938}
+  m_Size: {x: 0.0232862, y: 0.021691551, z: 0.5959209}
+  m_Center: {x: 0.0018327055, y: 0.0008539539, z: 0.08300936}
 --- !u!54 &6919925645808417154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25106,7 +25106,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 0
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 1
-  m_MovementType: 0
+  m_MovementType: 2
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -25333,7 +25333,7 @@ MonoBehaviour:
   _drawingCanva: {fileID: 0}
   _drawingCanvaAnimation: {fileID: 0}
   _canvaStartingPoint: {fileID: 0}
-  drawingDeccelerator: 0.2
+  drawingDeccelerator: 0.1
   _resamplePoints: []
   _resampleVectors: []
   _totalLength: 0

@@ -458,7 +458,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   shakeFrequency: 25
   damageTextPrefab: {fileID: 5968318152885456666, guid: c6174099081a9324bb6f0624b2dfe5ce, type: 3}
-  damageTextOffset: {x: 1.5, y: 0, z: 1.5}
 --- !u!114 &292420243615764683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +475,7 @@ MonoBehaviour:
   maxMoveTime: 4
   idleTime: 4
   idle02Chance: 0.5
-  detectionAngle: 160
+  detectionAngle: 165
   detectionDistance: 8
   detectionHeightOffset: 0.6
   checkLineOfSight: 1

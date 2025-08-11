@@ -1,3 +1,4 @@
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -28,11 +29,24 @@ public class DungeonRoom : MonoBehaviour
     public Transform[] enemySpawnPoints;
     public EnemySetting[] enemyToSpawn;
 
+    [Header("Spawn Delay")]
+    public float spawnDelay = 1f; // 生成延时，默认1秒
+
     private void Start()
     {
         if (!hasEnemy || enemySpawnPoints.Length == 0 || enemyToSpawn.Length == 0)
             return;
 
+        // 使用协程延时生成敌人
+        StartCoroutine(SpawnEnemiesWithDelay());
+    }
+
+    private IEnumerator SpawnEnemiesWithDelay()
+    {
+        // 等待指定时间
+        yield return new WaitForSeconds(spawnDelay);
+
+        // 生成敌人
         foreach (Transform spawnPoint in enemySpawnPoints)
         {
             GameObject selectedEnemy = GetRandomEnemyPrefab();

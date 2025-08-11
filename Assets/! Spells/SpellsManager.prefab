@@ -53,10 +53,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0fee6f7423671c04ba5d6e91cc1f2d8d, type: 2}
   - {fileID: 11400000, guid: 1908af2f7103bed42bc8c25275f43583, type: 2}
   maxMana: 100
-  manaRegenRate: 0.1
+  manaRegenRate: 0.8
+  manaRegenAmount: 1
   manaDrainPerPoint: 0.1
   maxSpellSlots: 2
   isCasting: 0
+  manaRegen: 0
+  manaDrain: 0
   currentMana: 0
   _timePassed: 0
   _currentSlotIndex: -1

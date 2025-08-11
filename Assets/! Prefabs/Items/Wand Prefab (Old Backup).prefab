@@ -19509,7 +19509,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287249060671797441}
   serializedVersion: 4
-  m_Mass: 3
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -19692,7 +19692,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 0
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 1
-  m_MovementType: 0
+  m_MovementType: 2
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -19746,6 +19746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529d28021c243af468c8958c71c6f60d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCombat: 0
   wandMode: 0
   isPressed: 0
   isSelected: 0
@@ -19886,7 +19887,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 964c058ca60e4394bbc184f3d8e32392, type: 2}
-  lockoutDuration: 2
 --- !u!1 &5743885067682997569
 GameObject:
   m_ObjectHideFlags: 0
