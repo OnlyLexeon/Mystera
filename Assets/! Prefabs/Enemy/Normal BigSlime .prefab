@@ -505,7 +505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6886897564198756022
 Transform:
   m_ObjectHideFlags: 0
@@ -601,7 +601,7 @@ Transform:
   m_GameObject: {fileID: 4767616679125519108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.623}
+  m_LocalPosition: {x: 0, y: 0, z: -0.246}
   m_LocalScale: {x: 0.591926, y: 0.591926, z: 0.591926}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5348,7 +5348,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32f66b9c8db71114cb340bd9d4ad4673, type: 2}
+  - {fileID: 2100000, guid: d301df0deb03642febbd406742b1b207, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5537,7 +5537,7 @@ MonoBehaviour:
   canRegen: 0
   regenAmount: 0
   regenInterval: 1
-  maxHealth: 6
+  maxHealth: 20
   currentHealth: 0
   fadeToBlackDuration: 2
   respawnDelay: 1
@@ -5599,7 +5599,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   shakeFrequency: 25
   damageTextPrefab: {fileID: 5968318152885456666, guid: c6174099081a9324bb6f0624b2dfe5ce, type: 3}
-  damageTextOffset: {x: 1.5, y: 0, z: 1.5}
 --- !u!114 &2591747656003501356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5639,12 +5638,13 @@ MonoBehaviour:
   stoppingDistance: 1.2
   useEdgeToEdgeDistance: 1
   desiredAttackDistance: 1.5
-  attackSounds: []
+  attackSounds:
+  - {fileID: 8300000, guid: d98bb34fecbbbfa47a40ed4c076a6ff1, type: 3}
   hurtSounds:
-  - {fileID: 8300000, guid: 5d0d5d2c18379af419c138acc7a3f7f4, type: 3}
+  - {fileID: 8300000, guid: 678e6c8020d147943838823750f9950c, type: 3}
   deathSound: {fileID: 8300000, guid: 0732ea3ede4ad2049be5a5c0e5fff93c, type: 3}
   combatSoundVolume: 1
-  attackSoundChance: 0.8
+  attackSoundChance: 1
   minSoundInterval: 0.3
   isMovingParam: isMoving
   idle02Trigger: idle02
@@ -5654,13 +5654,17 @@ MonoBehaviour:
   hitTrigger: takeDamage
   hitStunDuration: 0.2
   invincibilityDuration: 0.1
-  particleCount: 5
+  particleCount: 15
   particleSize: 0.05
   particleSpeed: 1
   particleLifetime: 0.25
   particleMaterial: {fileID: 0}
   enableDebugLogs: 0
   lastSoundPlayTime: 0
+  deathEffectPrefab: {fileID: 8814787579770015478, guid: 11b2461f6c6455348b1bd605d25f7753, type: 3}
+  deathEffectDuration: 3
+  deathEffectOffset: {x: 0, y: 0, z: 0}
+  hideBodyOnDeath: 1
 --- !u!1 &5988957127705288517
 GameObject:
   m_ObjectHideFlags: 0

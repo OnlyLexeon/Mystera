@@ -34,7 +34,7 @@ public abstract class Enemy : MonoBehaviour
     public float patrolSpeed = 2f;
     public float attackRange = 3f;
     public float attackCooldown = 2f;
-    public float meleeAttackDelay = 0.5f;
+    public float meleeAttackDelay = 0.0f;
     public int meleeDamage = 10;
     public float stoppingDistance = 1.2f;
     public bool useEdgeToEdgeDistance = true;
@@ -45,8 +45,8 @@ public abstract class Enemy : MonoBehaviour
     public AudioClip[] hurtSounds;        // 受伤音效数组（随机播放）
     public AudioClip deathSound;          // 死亡音效
     public float combatSoundVolume = 1f;  // 战斗音效音量
-    [Range(0f, 1f)] public float attackSoundChance = 0.8f;  // 攻击音效播放概率
-    public float minSoundInterval = 0.3f; // 音效最小间隔时间（避免音效重叠）
+    [Range(0f, 1f)] public float attackSoundChance = 1.0f;  // 攻击音效播放概率
+    public float minSoundInterval = 0.05f; // 音效最小间隔时间（避免音效重叠）
 
     [Header("Animation Parameters")]
     public string isMovingParam = "isMoving";
@@ -151,7 +151,7 @@ public abstract class Enemy : MonoBehaviour
         gameObject.tag = "Enemy";
 
         // 初始化目标层级 - 默认检测Player和Pet层
-        targetLayers = LayerMask.GetMask("Player", "Pet");
+        targetLayers = LayerMask.GetMask("Player1", "Pet");
     }
 
     protected virtual void SetupInitialState()
@@ -251,7 +251,7 @@ public abstract class Enemy : MonoBehaviour
         float closestDistance = float.MaxValue;
 
         // 查找所有玩家
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player1");
         foreach (GameObject player in players)
         {
             Transform target = player.transform;
@@ -333,7 +333,7 @@ public abstract class Enemy : MonoBehaviour
         if (targetHealth == null || targetHealth.currentHealth <= 0) return false;
 
         // 检查标签
-        if (target.CompareTag("Player") || target.CompareTag("Pet"))
+        if (target.CompareTag("Player1") || target.CompareTag("Pet"))
         {
             return true;
         }
@@ -814,25 +814,30 @@ public abstract class Enemy : MonoBehaviour
             );
             transform.LookAt(lookPos);
 
-            // 播放攻击动画
-            PerformMeleeAttack();
+            // 只播放攻击动画，不播放音效
+            TriggerAttackAnimation();
 
             yield return new WaitForSeconds(meleeAttackDelay);
 
-            // 检查距离并造成伤害
+            // 检查距离并同时播放音效和造成伤害
             currentDistance = Vector3.Distance(transform.position, currentTarget.position);
             if (currentDistance <= attackRange * 1.2f && IsValidTarget(currentTarget))
             {
-                DealMeleeDamage();
+                PlayAttackSound();  // 在这里播放音效
+                DealMeleeDamage();  // 同时造成伤害
             }
 
             lastAttackTime = Time.time;
-            yield return new WaitForSeconds(0.5f);
+            // yield return new WaitForSeconds(0.5f);  // 注释掉这行，减少延迟
         }
 
         agent.isStopped = false;
         currentState = State.Chase;
         currentAttackRoutine = null;
+    }
+    protected virtual void TriggerAttackAnimation()
+    {
+        animator.SetTrigger(attack03Trigger);
     }
 
     protected virtual void PerformMeleeAttack()
@@ -1025,9 +1030,9 @@ public abstract class Enemy : MonoBehaviour
             rb.mass = 0.1f;
 
             Vector3 randomDirection = new Vector3(
-                Random.Range(-1f, 1f),
-                Random.Range(0.5f, 1.5f),
-                Random.Range(-1f, 1f)
+                Random.Range(-2f, 2f),
+                Random.Range(0.3f, 2f),
+                Random.Range(-2f, 2f)
             ).normalized;
 
             rb.linearVelocity = randomDirection * particleSpeed * Random.Range(0.8f, 1.2f);

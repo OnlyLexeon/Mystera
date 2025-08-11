@@ -242,23 +242,15 @@ public class SlimeEnemy : Enemy
     // 重写基类的攻击音效方法
     protected override void PlayAttackSound()
     {
-        // 如果使用史莱姆专用音效且有设置近战音效
-        if (useSlimeSpecificSounds && slimeMeleeAttackSounds != null && slimeMeleeAttackSounds.Length > 0)
+        if (attackSounds != null && attackSounds.Length > 0)
         {
-            if (CanPlaySound())
+            // 移除 CanPlaySound() 检查，确保攻击音效总是播放
+            AudioClip clip = attackSounds[Random.Range(0, attackSounds.Length)];
+            if (clip != null)
             {
-                AudioClip clip = slimeMeleeAttackSounds[Random.Range(0, slimeMeleeAttackSounds.Length)];
-                if (clip != null)
-                {
-                    AudioSource.PlayClipAtPoint(clip, transform.position, combatSoundVolume);
-                    lastSoundPlayTime = Time.time;
-                }
+                AudioSource.PlayClipAtPoint(clip, transform.position, combatSoundVolume);
+                lastSoundPlayTime = Time.time;
             }
-        }
-        else
-        {
-            // 否则使用基类的攻击音效
-            base.PlayAttackSound();
         }
     }
     

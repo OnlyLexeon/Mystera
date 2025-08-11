@@ -238,6 +238,7 @@ MonoBehaviour:
   maxRooms: 0
   borderOffset: 0
   spawnAttempts: 0
+  maxRegenerationAttempts: 10
 --- !u!4 &581080864
 Transform:
   m_ObjectHideFlags: 0
@@ -317,6 +318,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3717758658279348603, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717758658279348603, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3722311708870802379, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -332,6 +341,10 @@ PrefabInstance:
     - target: {fileID: 3722311708870802379, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747313953465361656, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4784991192360483055, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -420,6 +433,14 @@ PrefabInstance:
     - target: {fileID: 6748607432583054993, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859032007963809519, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 328752404}
+    - target: {fileID: 6859032007963809519, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: maxVignetteIntensity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
