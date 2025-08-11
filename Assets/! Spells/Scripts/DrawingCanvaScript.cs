@@ -38,4 +38,12 @@ public class DrawingCanvaScript : MonoBehaviour
 
         Destroy(currentHandleObj);
     }
+
+    public void CloseDrawing(bool isSuccess)
+    {
+        animator.SetBool("StartDrawing", false);
+        animator.SetBool("isSuccess", isSuccess);
+
+        Destroy(currentHandleObj);
+    }
 }

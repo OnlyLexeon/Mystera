@@ -5050,6 +5050,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4880182221791336068, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880182221791336068, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880182221791336068, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880182221791336068, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4990648714571173473, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7137,6 +7153,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 387726969706406579, guid: 0025b5adadc1fd941a39aac66c942230, type: 3}
       propertyPath: testingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 387726969706406579, guid: 0025b5adadc1fd941a39aac66c942230, type: 3}
+      propertyPath: manaRegenRate
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 777806311140603185, guid: 0025b5adadc1fd941a39aac66c942230, type: 3}

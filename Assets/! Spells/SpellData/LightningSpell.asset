@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellID: Lightning
   spellIconSprite: {fileID: 21300000, guid: 46252853c21c951438f8294cb3c2415f, type: 3}
-  spellArrayStructure: {fileID: 21300000, guid: b6eecc3e6fa03414cbe564b72e4fe819, type: 3}
+  spellArrayStructure: {fileID: 21300000, guid: e0822d2da3a35c540a377a1e1985bda6, type: 3}
   spellDescrtipion: 
   defaultLearned: 1
   spellPrefab: {fileID: 3900009061043220251, guid: dc6e52ee69ed7bf42b978cd27ce5552e, type: 3}

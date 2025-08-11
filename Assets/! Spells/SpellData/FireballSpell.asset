@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellID: FireBall
   spellIconSprite: {fileID: 21300000, guid: 8b18cc80a3a41b642b0d458763b87709, type: 3}
-  spellArrayStructure: {fileID: 21300000, guid: b0307c2dc256aac4eb7ac009be0aadec, type: 3}
+  spellArrayStructure: {fileID: 21300000, guid: d2a1a92a7c7c8df4c9f370b67ae51475, type: 3}
   spellDescrtipion: Fire Balls
   defaultLearned: 1
   spellPrefab: {fileID: 9103599611973347509, guid: 0d1cc665966e7814bbaf03c7e445bad2, type: 3}

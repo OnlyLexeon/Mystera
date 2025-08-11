@@ -195,8 +195,9 @@ public class SpellCasting : MonoBehaviour
         // Turn off the flag
         _isDrawing = false;
         _stopDrawing = false;
-        _drawingCanvaAnimation.CloseDrawing();
+        //_drawingCanvaAnimation.CloseDrawing();
         Destroy(_canvaStartingPoint.gameObject);
+        bool isSuccess = false;
 
         if (_drawnPoints.Count >= vectorAmount)
         {
@@ -222,7 +223,10 @@ public class SpellCasting : MonoBehaviour
                     // Starting casting 
                     //Debug.Log("Found spell :" + spellIndex);
                     if (_spellManager.equippedSpells[spellIndex].spellData.spellManaCost <= _spellManager.currentMana)
+                    {
+                        isSuccess = true;
                         StartCoroutine(StartCasting(spellIndex));
+                    }
                     else
                     {
                         // Wand enter cooldown if drawn points are too few
@@ -241,6 +245,7 @@ public class SpellCasting : MonoBehaviour
             // Wand enter cooldown if drawn points are too few
             CastingCoolDown();
         }
+        _drawingCanvaAnimation.CloseDrawing(isSuccess);
     }
 
     public void CastingCoolDown()
