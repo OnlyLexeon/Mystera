@@ -19031,6 +19031,14 @@ PrefabInstance:
     - target: {fileID: 2501401252996037176, guid: ca230cfd43177334e98231e37a33e47b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 425632760}
+    - target: {fileID: 2501401252996037176, guid: ca230cfd43177334e98231e37a33e47b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTimeMorning
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501401252996037176, guid: ca230cfd43177334e98231e37a33e47b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DayNightManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6296467825526079973, guid: ca230cfd43177334e98231e37a33e47b, type: 3}
       propertyPath: m_LocalPosition.x
