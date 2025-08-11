@@ -420,7 +420,7 @@ MonoBehaviour:
   attackCooldown: 3
   meleeAttackDelay: 0.2
   meleeDamage: 10
-  stoppingDistance: 1
+  stoppingDistance: 1.1
   useEdgeToEdgeDistance: 1
   desiredAttackDistance: 1.5
   attackSounds:

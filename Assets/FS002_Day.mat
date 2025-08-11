@@ -63,12 +63,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AtmosphereThickness: 0.8869676
+    - _AtmosphereThickness: 0.7798482
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Exposure: 0.90218616
+    - _Exposure: 0.7831646
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
