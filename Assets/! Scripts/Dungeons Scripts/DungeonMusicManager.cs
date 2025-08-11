@@ -4,10 +4,18 @@ public class DungeonMusicManager : MonoBehaviour
 {
     [Header("Audio Settings")]
     public AudioSource audioSource;
-    public float updateInterval = 0.1f;
-    public float volumeChangeStep = 0.05f;
     public float maxVolume = 1f;
     public float minVolume = 0f;
+
+    [Tooltip("How fast battle/ambience ramps up (volume per second).")]
+    public float battleFadeInPerSec = 1.2f;
+    public float ambienceFadeInPerSec = 0.25f;
+
+    [Tooltip("How fast we fade down to silence before swapping back to ambience.")]
+    public float fadeOutPerSec = 1.0f;
+
+    [Header("Detection Tick")]
+    public float updateInterval = 0.1f;
 
     [Header("Enemy Detection Settings")]
     public float detectionRadius = 10f;
@@ -20,59 +28,91 @@ public class DungeonMusicManager : MonoBehaviour
     public AudioClip[] battleMusic;
 
     private Camera mainCamera;
-    private float timer;
-    private float currentVolume = 0f;
-    private bool inBattle = false;
+    private float detectTimer;
+    private bool contactLOS; // in sight + in distance
     private float lastSeenEnemyTime = -999f;
 
-    private readonly Collider[] _hits = new Collider[32];
+    private enum MusicState { Ambience, Battle, FadingOutToAmbience }
+    private MusicState state = MusicState.Ambience;
 
     private void Start()
     {
         if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.loop = true;
-            // start in ambience
-            audioSource.clip = GetAmbience();
-            audioSource.Play();
-            currentVolume = maxVolume; // ambience full
-            audioSource.volume = currentVolume;
-        }
+        if (audioSource == null) return;
+
+        audioSource.loop = true;
+        audioSource.clip = GetRandomAmbience();
+        audioSource.volume = 0f; // ambience will fade in
+        state = MusicState.Ambience;
+        audioSource.Play();
     }
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if (timer < updateInterval) return;
-        timer = 0f;
-
         if (mainCamera == null) mainCamera = Camera.main;
-        if (mainCamera == null || audioSource == null) return;
+        if (audioSource == null || mainCamera == null) return;
 
-        bool enemyVisible = CheckForEnemiesInSight();
-        if (enemyVisible) lastSeenEnemyTime = Time.time;
-
-        bool shouldBeBattle = enemyVisible || (Time.time - lastSeenEnemyTime) < loseSightGrace;
-        
-        if (shouldBeBattle && !inBattle)
+        detectTimer += Time.deltaTime;
+        if (detectTimer >= updateInterval)
         {
-            inBattle = true;
-            currentVolume = minVolume;
-            audioSource.clip = GetRandomBattle();
-            audioSource.Play();
-        }
-        else if (!shouldBeBattle && inBattle)
-        {
-            inBattle = false;
-            currentVolume = minVolume;
-            audioSource.clip = GetRandomAmbience();
-            audioSource.Play();
+            detectTimer = 0f;
+            bool visible = CheckForEnemiesInSight();
+            if (visible) lastSeenEnemyTime = Time.time;
+            contactLOS = visible || (Time.time - lastSeenEnemyTime) < loseSightGrace;
         }
 
-        //ramp volume
-        currentVolume = Mathf.MoveTowards(currentVolume, maxVolume, volumeChangeStep);
-        audioSource.volume = Mathf.Clamp(currentVolume, minVolume, maxVolume);
+        switch (state)
+        {
+            case MusicState.Battle:
+                if (contactLOS)
+                {
+                    audioSource.volume = Move(audioSource.volume, maxVolume, battleFadeInPerSec);
+                }
+                else
+                {
+                    state = MusicState.FadingOutToAmbience;
+                }
+                break;
+
+            case MusicState.FadingOutToAmbience:
+                if (contactLOS)
+                {
+                    state = MusicState.Battle;
+                    break;
+                }
+
+                audioSource.volume = Move(audioSource.volume, minVolume, fadeOutPerSec);
+
+                if (audioSource.volume <= minVolume + 0.0001f)
+                {
+                    audioSource.clip = GetRandomAmbience();
+                    audioSource.volume = minVolume; // start quiet
+                    audioSource.Play();
+                    state = MusicState.Ambience;
+                }
+                break;
+
+            case MusicState.Ambience:
+                audioSource.volume = Move(audioSource.volume, maxVolume, ambienceFadeInPerSec);
+
+                if (contactLOS)
+                {
+                    if (!IsClipFromArray(audioSource.clip, battleMusic))
+                    {
+                        audioSource.clip = GetRandomBattle();
+                        audioSource.Play();
+                    }
+                    state = MusicState.Battle;
+                }
+                break;
+        }
+    }
+
+    // Smooth volume helper
+    private float Move(float current, float target, float perSec)
+    {
+        if (perSec <= 0f) return target;
+        return Mathf.MoveTowards(current, target, perSec * Time.deltaTime);
     }
 
     private AudioClip GetRandomAmbience()
@@ -87,25 +127,33 @@ public class DungeonMusicManager : MonoBehaviour
         return battleMusic[Random.Range(0, battleMusic.Length)];
     }
 
+    private bool IsClipFromArray(AudioClip clip, AudioClip[] array)
+    {
+        if (!clip || array == null) return false;
+        for (int i = 0; i < array.Length; i++)
+            if (array[i] == clip) return true;
+        return false;
+    }
+
+    //los
     private bool CheckForEnemiesInSight()
     {
         if (mainCamera == null) return false;
 
-        //enemies
         Collider[] hits = Physics.OverlapSphere(mainCamera.transform.position, detectionRadius, enemyLayer);
-
-        foreach (var hit in hits)
+        for (int i = 0; i < hits.Length; i++)
         {
-            Vector3 dirToEnemy = (hit.transform.position - mainCamera.transform.position).normalized;
-            float distToEnemy = Vector3.Distance(mainCamera.transform.position, hit.transform.position);
+            var t = hits[i].transform;
+            Vector3 dir = (t.position - mainCamera.transform.position);
+            float dist = dir.magnitude;
+            if (dist <= 0.001f) continue;
 
-            //line of sight
-            if (!Physics.Raycast(mainCamera.transform.position, dirToEnemy, distToEnemy, obstructionLayers))
-            {
-                return true; //found 1, stops
-            }
+            dir /= dist; // normalize
+
+            // Clear line of sight?
+            if (!Physics.Raycast(mainCamera.transform.position, dir, dist, obstructionLayers))
+                return true;
         }
-
         return false;
     }
 }

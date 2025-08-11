@@ -752,6 +752,7 @@ MonoBehaviour:
   enemyToSpawn:
   - weightage: 1
     enemyPrefab: {fileID: 5329152663908878339, guid: 7af46e20b27124a4cbc01aac3b2a5d92, type: 3}
+  spawnDelay: 1
 --- !u!114 &2869723509405431494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,7 +783,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.13333334
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 693a057e0a33fb84d93897c767d590a4, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 7a20a7f9a97bd3f48824f39b9b457ab3, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &194646494183763802
 PrefabInstance:
@@ -2515,6 +2516,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dc3516be673aab44bd172050efdb754, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1787697175474093189, guid: 8dc3516be673aab44bd172050efdb754, type: 3}
+      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8dc3516be673aab44bd172050efdb754, type: 3}

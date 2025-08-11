@@ -64,14 +64,17 @@ public class SpellsManager : MonoBehaviour
         if(manaRegen)
         {
             _timePassed += Time.deltaTime;
-            if (_timePassed > manaRegenRate)
+
+            while (_timePassed >= manaRegenRate)
             {
-                int manaRegenTick = (int)(_timePassed / manaRegenRate);
-                float manaRegen = manaRegenTick * manaRegenAmount;
-                _timePassed -= manaRegenTick;
-                currentMana += manaRegen;
+                _timePassed -= manaRegenRate;
+                currentMana += manaRegenAmount;
+
                 if (currentMana > maxMana)
+                {
                     currentMana = maxMana;
+                    break;
+                }
             }
         }
     }

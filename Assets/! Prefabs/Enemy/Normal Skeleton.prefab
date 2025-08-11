@@ -322,7 +322,7 @@ MonoBehaviour:
   canRegen: 0
   regenAmount: 0
   regenInterval: 1
-  maxHealth: 40
+  maxHealth: 36
   currentHealth: 0
   fadeToBlackDuration: 2
   respawnDelay: 1
@@ -401,7 +401,7 @@ MonoBehaviour:
   maxMoveTime: 4
   idleTime: 4
   idle02Chance: 0.5
-  detectionAngle: 160
+  detectionAngle: 165
   detectionDistance: 8
   detectionHeightOffset: 0.6
   checkLineOfSight: 1

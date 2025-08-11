@@ -6123,11 +6123,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 250576791}
-  updateInterval: 0.15
-  currentVolume: 1
-  volumeChangeStep: 0.1
   maxVolume: 1
   minVolume: 0.25
+  battleFadeInPerSec: 0.4
+  ambienceFadeInPerSec: 0.25
+  fadeOutPerSec: 0.4
+  updateInterval: 0.15
   detectionRadius: 10
   enemyLayer:
     serializedVersion: 2
@@ -6135,7 +6136,11 @@ MonoBehaviour:
   obstructionLayers:
     serializedVersion: 2
     m_Bits: 512
-  dungeonAmbience: []
+  loseSightGrace: 1
+  dungeonAmbience:
+  - {fileID: 8300000, guid: dfd62db541a015840a04748dcf272f72, type: 3}
+  - {fileID: 8300000, guid: 7a49fd9b386c7e448907f8889763715a, type: 3}
+  - {fileID: 8300000, guid: 4889bc344a6967540bf9f25085f1908c, type: 3}
   battleMusic:
   - {fileID: 8300000, guid: 9a5220fb931cdb24cb091e04296174c9, type: 3}
   - {fileID: 8300000, guid: e508babd9b236d843a00d1fdc54d032c, type: 3}
