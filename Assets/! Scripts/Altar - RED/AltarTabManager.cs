@@ -1,12 +1,6 @@
-using JetBrains.Annotations;
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.EventSystems.EventTrigger;
 
 [System.Serializable]
 public class ParchmentNonIngre
