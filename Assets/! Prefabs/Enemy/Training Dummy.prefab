@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 3897536923349402307}
   - component: {fileID: 8296847142318420582}
   - component: {fileID: 8189134973491429875}
+  - component: {fileID: 1661849311609819590}
   m_Layer: 11
   m_Name: Training Dummy
   m_TagString: Enemy
@@ -222,7 +223,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   shakeFrequency: 25
   damageTextPrefab: {fileID: 5968318152885456666, guid: c6174099081a9324bb6f0624b2dfe5ce, type: 3}
-  damageTextOffset: {x: 1.5, y: 0, z: 1.5}
 --- !u!114 &8189134973491429875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +291,27 @@ MonoBehaviour:
   effectLifetime: 2
   effectFaceAttacker: 1
   effectScale: {x: 1, y: 1, z: 1}
+--- !u!65 &1661849311609819590
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900028479538016369}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.81025, y: 2.5319543, z: 1}
+  m_Center: {x: 0.06582525, y: 0.76596856, z: 2.7072755e-10}
 --- !u!1 &2720656277132334626
 GameObject:
   m_ObjectHideFlags: 0

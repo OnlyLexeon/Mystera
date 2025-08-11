@@ -6139,9 +6139,7 @@ MonoBehaviour:
     m_Bits: 512
   loseSightGrace: 1
   dungeonAmbience:
-  - {fileID: 8300000, guid: dfd62db541a015840a04748dcf272f72, type: 3}
-  - {fileID: 8300000, guid: 7a49fd9b386c7e448907f8889763715a, type: 3}
-  - {fileID: 8300000, guid: 4889bc344a6967540bf9f25085f1908c, type: 3}
+  - {fileID: 8300000, guid: 78238e082ba28f7439361d199850263c, type: 3}
   battleMusic:
   - {fileID: 8300000, guid: 9a5220fb931cdb24cb091e04296174c9, type: 3}
   - {fileID: 8300000, guid: e508babd9b236d843a00d1fdc54d032c, type: 3}
