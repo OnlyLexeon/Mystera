@@ -151,7 +151,7 @@ public abstract class Enemy : MonoBehaviour
         gameObject.tag = "Enemy";
 
         // 初始化目标层级 - 默认检测Player和Pet层
-        targetLayers = LayerMask.GetMask("Player1", "Pet");
+        targetLayers = LayerMask.GetMask("Player", "Pet");
     }
 
     protected virtual void SetupInitialState()
@@ -251,7 +251,7 @@ public abstract class Enemy : MonoBehaviour
         float closestDistance = float.MaxValue;
 
         // 查找所有玩家
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player1");
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
         {
             Transform target = player.transform;
@@ -333,7 +333,7 @@ public abstract class Enemy : MonoBehaviour
         if (targetHealth == null || targetHealth.currentHealth <= 0) return false;
 
         // 检查标签
-        if (target.CompareTag("Player1") || target.CompareTag("Pet"))
+        if (target.CompareTag("Player") || target.CompareTag("Pet"))
         {
             return true;
         }

@@ -14156,6 +14156,7 @@ GameObject:
   - component: {fileID: 6495479372363036397}
   - component: {fileID: 6607254877843541802}
   - component: {fileID: 13045703325147657}
+  - component: {fileID: 1150023660077506511}
   m_Layer: 7
   m_Name: XR Rig - Player (Tagged)
   m_TagString: Player
@@ -14253,6 +14254,84 @@ MonoBehaviour:
   isLevitating: 0
   currentJumpHeight: 0
   currentGravity: 0
+--- !u!114 &1150023660077506511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176864891003938613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52377708812bc6442918b0ac625d44e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInvincible: 0
+  canRegen: 1
+  regenAmount: 1
+  regenInterval: 2
+  maxHealth: 100
+  currentHealth: 0
+  fadeToBlackDuration: 2
+  respawnDelay: 1
+  globalVolume: {fileID: 0}
+  vignetteCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  vignetteAnimDuration: 0.8
+  maxVignetteIntensity: 0.5
+  lowHealthThreshold: 0.3
+  lowHealthMinIntensity: 0.15
+  cameraTransform: {fileID: 484425121859329498}
+  shakeDuration: 0.3
+  shakeIntensity: 0.15
+  shakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  shakeFrequency: 25
+  damageTextPrefab: {fileID: 0}
 --- !u!1 &2218319094817531779
 GameObject:
   m_ObjectHideFlags: 0
@@ -20541,7 +20620,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Belt Offset:'
+  m_text: 'Hat Offset:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
   m_sharedMaterial: {fileID: 2661962436221633166, guid: fe0f5f6146ebdcf4b8daaeaf8201ddbd, type: 2}
@@ -46980,6 +47059,10 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4617849388405235379, guid: f2cacf71d259d494cab590b26b7fe78d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4617849388405235379, guid: f2cacf71d259d494cab590b26b7fe78d, type: 3}
       propertyPath: m_TagString
       value: Player1
       objectReference: {fileID: 0}
@@ -46987,7 +47070,8 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 484425121859329498}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6602068187179072652, guid: f2cacf71d259d494cab590b26b7fe78d, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4955363522712641506, guid: f2cacf71d259d494cab590b26b7fe78d, type: 3}
     m_AddedGameObjects: []

@@ -88,7 +88,7 @@ public class Health : MonoBehaviour
         }
         
         // 初始化相机引用
-        if (CompareTag("Player1"))
+        if (CompareTag("Player"))
         {
             if (cameraTransform != null)
             {
@@ -138,7 +138,7 @@ public class Health : MonoBehaviour
         OnDamaged?.Invoke(actualDamage);
         OnDamagedByAttacker?.Invoke(actualDamage, attacker);
         
-        if (CompareTag("Player1"))
+        if (CompareTag("Player"))
         {
             // 播放Vignette动画
             if (vignette != null && !isInvincible)
@@ -294,7 +294,7 @@ public class Health : MonoBehaviour
             }
         }
         
-        if (CompareTag("Player1"))
+        if (CompareTag("Player"))
         {
             HandlePlayerDeath();
         }
@@ -345,7 +345,7 @@ public class Health : MonoBehaviour
         
         OnHealed?.Invoke(actualHealing);
         
-        if (CompareTag("Player1") && vignette != null)
+        if (CompareTag("Player") && vignette != null)
         {
             UpdateLowHealthVignette();
         }
@@ -412,7 +412,7 @@ public class Health : MonoBehaviour
         lastAttacker = null;
         
         // 如果是玩家，重置Vignette效果
-        if (CompareTag("Player1") && vignette != null)
+        if (CompareTag("Player") && vignette != null)
         {
             if (vignetteCoroutine != null)
             {
@@ -455,7 +455,7 @@ public class Health : MonoBehaviour
         currentHealth = newHealth;
         
         // 更新玩家的Vignette效果
-        if (CompareTag("Player1") && vignette != null)
+        if (CompareTag("Player") && vignette != null)
         {
             UpdateLowHealthVignette();
         }
@@ -464,7 +464,7 @@ public class Health : MonoBehaviour
     // 手动触发镜头抖动（可选的公共方法）
     public void TriggerCameraShake(float intensity = -1f, float duration = -1f)
     {
-        if (cameraTransform == null || !CompareTag("Player1")) return;
+        if (cameraTransform == null || !CompareTag("Player")) return;
         
         float shakeInt = intensity > 0 ? intensity : shakeIntensity;
         float shakeDur = duration > 0 ? duration : shakeDuration;

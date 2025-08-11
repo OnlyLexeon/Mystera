@@ -2418,6 +2418,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2803048578590851931, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
+      propertyPath: m_RenderMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767791572168726774, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5418845667178077926, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
       propertyPath: m_Name
       value: PortalParticle
@@ -2429,6 +2437,10 @@ PrefabInstance:
     - target: {fileID: 7458795978029950952, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453557096565868255, guid: 4cab4fa01f86020439d1cd8b4525b942, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

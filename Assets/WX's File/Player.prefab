@@ -183,7 +183,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInvincible: 0
-  maxHealth: 1000
+  canRegen: 0
+  regenAmount: 0
+  regenInterval: 1
+  maxHealth: 100
   currentHealth: 0
   fadeToBlackDuration: 2
   respawnDelay: 1
@@ -244,6 +247,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   shakeFrequency: 25
+  damageTextPrefab: {fileID: 0}
 --- !u!1 &4955363522712641506
 GameObject:
   m_ObjectHideFlags: 0
