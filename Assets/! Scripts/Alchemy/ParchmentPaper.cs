@@ -83,16 +83,22 @@ public class ParchmentPaper : MonoBehaviour
         if (ingredientPrefab != null)
         {
             GameObject obj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
-            Ingredient ingredient = obj.GetComponent<IngredientObject>().ingredient;
+            IngredientObject ingredientObjScript = obj.GetComponent<IngredientObject>();
 
-            IngredientsManager ingrManager = IngredientsManager.instance;
-            if (ingrManager.IsUnlocked(ingredient.ingredientID) == false)
+            if (ingredientObjScript)
             {
-                Debug.Log($"Unlocked {ingredient.ingredientID}");
-                IngredientsManager.instance.UnlockIngredient(ingredient.ingredientID);
-                AltarBook.instance.DoAlert(ingredient);
-                AltarTabManager.instance.PopulateIngredientsTab();
+                Ingredient ingredient = ingredientObjScript.ingredient;
+                IngredientsManager ingrManager = IngredientsManager.instance;
+                if (ingrManager.IsUnlocked(ingredient.ingredientID) == false)
+                {
+                    Debug.Log($"Unlocked {ingredient.ingredientID}");
+                    IngredientsManager.instance.UnlockIngredient(ingredient.ingredientID);
+                    AltarBook.instance.DoAlert(ingredient);
+                    AltarTabManager.instance.PopulateIngredientsTab();
+                }
             }
+
+            
         }
 
         //Set parchment on fire

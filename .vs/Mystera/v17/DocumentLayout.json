@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\admin\\Downloads\\Mystera\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\! scripts\\managers\\gameovermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\gameovermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\admin\\downloads\\mystera\\assets\\! scripts\\managers\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\! scripts\\actions\\fadecanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\actions\\fadecanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\admin\\downloads\\mystera\\assets\\! scripts\\dungeons scripts\\dungeonroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\dungeons scripts\\dungeonroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,7 +35,7 @@
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\ingredientmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\admin\\downloads\\mystera\\assets\\! scripts\\altar - red\\altarbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\! scripts\\altar - red\\altarbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\altar - red\\altarbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -91,16 +107,8 @@
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\inventory\\storableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\! scripts\\managers\\gameovermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\gameovermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\! scripts\\altar - blue\\portal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\altar - blue\\portal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\! scripts\\conditions\\onsceneload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -115,24 +123,20 @@
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\menuuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\enemy\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\enemy\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\! scripts\\actions\\fadecanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\actions\\fadecanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\enemy\\scripts\\cameradamageraycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\enemy\\scripts\\cameradamageraycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\assets\\! scripts\\ui\\bed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\ui\\bed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Altar - RED\\AltarTabManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:Assets\\! Scripts\\Altar - RED\\AltarTabManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\admin\\Downloads\\Mystera\\Assets\\Enemy\\Scripts\\Health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Enemy\\Scripts\\Health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\admin\\Downloads\\Mystera\\Assets\\Enemy\\Scripts\\CameraDamageRaycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Enemy\\Scripts\\CameraDamageRaycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -142,88 +146,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DungeonRoom.cs",
-              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
-              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwCoAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "MovementManager.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\MovementManager.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\MovementManager.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\MovementManager.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Managers\\MovementManager.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAwwEkAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T10:39:33.098Z",
+              "WhenOpened": "2025-08-12T09:47:02.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameOverManager.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\GameOverManager.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\GameOverManager.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\GameOverManager.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Managers\\GameOverManager.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAQwEgAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T15:32:52.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DungeonMapGenerator.cs",
-              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
-              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAwFEAAAA9AAAA",
+              "Title": "FadeCanvasInstance.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAIwBcAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T07:47:46.271Z",
+              "WhenOpened": "2025-08-02T19:03:48.995Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IngredientManager.cs",
-              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\IngredientManager.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\IngredientManager.cs",
-              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\IngredientManager.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Managers\\IngredientManager.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAuwCQAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T08:14:40.618Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AltarBook.cs",
-              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Altar - RED\\AltarBook.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Altar - RED\\AltarBook.cs",
-              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Altar - RED\\AltarBook.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Altar - RED\\AltarBook.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAA9wFkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T08:14:27.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ParchmentPaper.cs",
-              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Alchemy\\ParchmentPaper.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Alchemy\\ParchmentPaper.cs",
-              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Alchemy\\ParchmentPaper.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Alchemy\\ParchmentPaper.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAIwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T08:14:01.419Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DungeonManager.cs",
-              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\DungeonManager.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\DungeonManager.cs",
-              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\DungeonManager.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Managers\\DungeonManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T19:18:02.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "HatInventoryManager.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Inventory\\HatInventoryManager.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Inventory\\HatInventoryManager.cs",
@@ -235,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "PlayerDrink.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Alchemy\\PlayerDrink.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Alchemy\\PlayerDrink.cs",
@@ -247,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "ActiveEffectsSlot.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\UI\\ActiveEffectsSlot.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\UI\\ActiveEffectsSlot.cs",
@@ -259,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "EffectsManager.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\! New Potions\\EffectsManager.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\! New Potions\\EffectsManager.cs",
@@ -271,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Painting.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\Painting.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\Painting.cs",
@@ -283,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 31,
               "Title": "AltarTabManager.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Altar - RED\\AltarTabManager.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Altar - RED\\AltarTabManager.cs",
@@ -295,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "SceneController.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\SceneController.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\SceneController.cs",
@@ -307,7 +273,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 3,
+              "Title": "FadeCanvas.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Actions\\FadeCanvas.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Actions\\FadeCanvas.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Actions\\FadeCanvas.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Actions\\FadeCanvas.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAuwGsAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-02T19:02:58.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DungeonManager.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-02T19:18:02.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ParchmentPaper.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Alchemy\\ParchmentPaper.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Alchemy\\ParchmentPaper.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Alchemy\\ParchmentPaper.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Alchemy\\ParchmentPaper.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T08:14:01.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AltarBook.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Altar - RED\\AltarBook.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Altar - RED\\AltarBook.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Altar - RED\\AltarBook.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Altar - RED\\AltarBook.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAA9wFkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T08:14:27.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IngredientManager.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\IngredientManager.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\IngredientManager.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\IngredientManager.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Managers\\IngredientManager.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAuwCQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T08:14:40.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DungeonMapGenerator.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAwFEAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T07:47:46.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DungeonRoom.cs",
+              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
+              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T10:39:33.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
               "Title": "Bed.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\UI\\Bed.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\UI\\Bed.cs",
@@ -319,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "LoadingScreenManager.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\LoadingScreenManager.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\LoadingScreenManager.cs",
@@ -331,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "HatInventoryUI.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Inventory\\HatInventoryUI.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Inventory\\HatInventoryUI.cs",
@@ -343,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "InventorySlotUI.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Inventory\\InventorySlotUI.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Inventory\\InventorySlotUI.cs",
@@ -355,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "ActiveEffectsUI.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\UI\\ActiveEffectsUI.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\UI\\ActiveEffectsUI.cs",
@@ -367,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "StorableDatabase.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Inventory\\StorableDatabase.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Inventory\\StorableDatabase.cs",
@@ -379,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "Potion.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\! New Potions\\Potion.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\! New Potions\\Potion.cs",
@@ -391,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "StorableData.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Inventory\\StorableData.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Inventory\\StorableData.cs",
@@ -403,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "Recipe.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Alchemy\\Recipe.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Alchemy\\Recipe.cs",
@@ -415,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "StorableObject.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Inventory\\StorableObject.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Inventory\\StorableObject.cs",
@@ -427,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "AltarTeleport.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Altar - BLUE\\AltarTeleport.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Altar - BLUE\\AltarTeleport.cs",
@@ -439,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "Portal.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Altar - BLUE\\Portal.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Altar - BLUE\\Portal.cs",
@@ -451,19 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "FadeCanvasInstance.cs",
-              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs",
-              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Actions\\FadeCanvasInstance.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAIwBcAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T19:03:48.995Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "OnSceneLoad.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Conditions\\OnSceneLoad.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Conditions\\OnSceneLoad.cs",
@@ -475,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "ReturnHomeButtonChecker.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\UI\\ReturnHomeButtonChecker.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\UI\\ReturnHomeButtonChecker.cs",
@@ -487,31 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "GameOverManager.cs",
-              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\GameOverManager.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\GameOverManager.cs",
-              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\GameOverManager.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Managers\\GameOverManager.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAUwDwAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T15:32:52.126Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "FadeCanvas.cs",
-              "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Actions\\FadeCanvas.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Actions\\FadeCanvas.cs",
-              "ToolTip": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Actions\\FadeCanvas.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Actions\\FadeCanvas.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAAwGsAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T19:02:58.168Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "Health.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\Enemy\\Scripts\\Health.cs",
               "RelativeDocumentMoniker": "Assets\\Enemy\\Scripts\\Health.cs",
@@ -523,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "MenuUIManager.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\! Scripts\\Managers\\MenuUIManager.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\MenuUIManager.cs",
@@ -535,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "CameraDamageRaycast.cs",
               "DocumentMoniker": "D:\\admin\\Downloads\\Mystera\\Assets\\Enemy\\Scripts\\CameraDamageRaycast.cs",
               "RelativeDocumentMoniker": "Assets\\Enemy\\Scripts\\CameraDamageRaycast.cs",

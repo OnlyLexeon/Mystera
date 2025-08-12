@@ -61,33 +61,40 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.34f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\WX&apos;s File\Scripts\SimplePetNavMesh.cs" />
     <Compile Include="Assets\! Scripts\Conditions\OnButtonPress.cs" />
     <Compile Include="Assets\! Scripts\Dungeons Scripts\DungeonConnector.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\CameraShake.cs" />
     <Compile Include="Assets\! Scripts\TutorialParchmentComplete.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\CameraDamageRaycast.cs" />
     <Compile Include="Assets\! Scripts\Managers\SceneController.cs" />
     <Compile Include="Assets\! Scripts\Altar - RED\AltarBook.cs" />
     <Compile Include="Assets\! Scripts\Actions\SpawnFromList.cs" />
+    <Compile Include="Assets\! Scripts\Immersion\DropletSound.cs" />
     <Compile Include="Assets\! Scripts\UI\Bed.cs" />
     <Compile Include="Assets\! Scripts\Actions\ToggleRay.cs" />
     <Compile Include="Assets\! Scripts\Actions\StickToObject.cs" />
     <Compile Include="Assets\! Scripts\UI\ReturnHomeButtonChecker.cs" />
     <Compile Include="Assets\! Scripts\Actions\TeleportPlayer.cs" />
     <Compile Include="Assets\! Scripts\Actions\DestroyObject.cs" />
+    <Compile Include="Assets\! Scripts\Immersion\ScenePersistentItemGrabber.cs" />
     <Compile Include="Assets\! Scripts\Managers\DungeonManager.cs" />
     <Compile Include="Assets\! Scripts\Inventory\InventorySlotUI.cs" />
     <Compile Include="Assets\! Scripts\Actions\VibrateController.cs" />
     <Compile Include="Assets\! Scripts\Actions\SetMaterialColor.cs" />
     <Compile Include="Assets\! Scripts\Altar - RED\SpellListAltar.cs" />
+    <Compile Include="Assets\! Spells\Scripts\DrawingCanvaScript.cs" />
     <Compile Include="Assets\! Scripts\Conditions\OnTrigger.cs" />
+    <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\! Scripts\Actions\RemoveObjectsWithTag.cs" />
     <Compile Include="Assets\! Scripts\Alchemy\Ingredient.cs" />
     <Compile Include="Assets\! Scripts\Actions\LookAtPlayer.cs" />
     <Compile Include="Assets\! Scripts\Controls\XRKnob.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\AlwaysFaceCamera.cs" />
     <Compile Include="Assets\! Scripts\Actions\ToggleVisibility.cs" />
-    <Compile Include="Assets\Enemy\Scripts\DummyEnemy.cs" />
     <Compile Include="Assets\! Scripts\Inventory\Hat.cs" />
     <Compile Include="Assets\! Scripts\Conditions\OnCollision.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\NormalSlime.cs" />
     <Compile Include="Assets\! Scripts\Conditions\OnJoystickMove.cs" />
     <Compile Include="Assets\! Scripts\Altar - RED\AltarTabManager.cs" />
     <Compile Include="Assets\! Scripts\Actions\SetLightColor.cs" />
@@ -95,6 +102,7 @@
     <Compile Include="Assets\! Scripts\Dungeons Scripts\DungeonMapGenerator.cs" />
     <Compile Include="Assets\! Scripts\Actions\PlayVideo.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\DestroyAfterTime.cs" />
+    <Compile Include="Assets\! Spells\Scripts\ReferenceSpellItem.cs" />
     <Compile Include="Assets\! Scripts\Actions\PlayContinuousSound.cs" />
     <Compile Include="Assets\! Scripts\Conditions\OnTilt.cs" />
     <Compile Include="Assets\! Scripts\UI\ActiveEffectsUI.cs" />
@@ -104,44 +112,41 @@
     <Compile Include="Assets\! Scripts\Player\Player.cs" />
     <Compile Include="Assets\! Scripts\Actions\TranslateObject.cs" />
     <Compile Include="Assets\! Scripts\UI\DayNightUI.cs" />
-    <Compile Include="Assets\Enemy\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\! Scripts\Actions\ManuallySelectObject.cs" />
-    <Compile Include="Assets\Enemy\Scripts\Health.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\AnimatorTriggerControl.cs" />
     <Compile Include="Assets\! Scripts\Conditions\TagSpecificSocket.cs" />
-    <Compile Include="Assets\Enemy\Scripts\SkeletonEnemy.cs" />
     <Compile Include="Assets\! Scripts\Player\PokeHaptic.cs" />
     <Compile Include="Assets\! Scripts\Actions\SetParticleRate.cs" />
-    <Compile Include="Assets\Enemy\Scripts\Enemy.cs" />
     <Compile Include="Assets\! Scripts\Alchemy\PlayerDrink.cs" />
     <Compile Include="Assets\! Scripts\Altar - RED\RecipeAltarTab.cs" />
     <Compile Include="Assets\! Scripts\! New Potions\ShaderManager.cs" />
-    <Compile Include="Assets\NormalSlime.cs" />
     <Compile Include="Assets\! Scripts\Actions\ToggleLight.cs" />
     <Compile Include="Assets\! Scripts\UI\Bard.cs" />
-    <Compile Include="Assets\Enemy\Scripts\AnimatorTriggerControl.cs" />
     <Compile Include="Assets\! Scripts\Controls\XRButton.cs" />
     <Compile Include="Assets\! Spells\Scripts\LightningSpell.cs" />
     <Compile Include="Assets\! Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\! Scripts\! New Potions\EffectsManager.cs" />
     <Compile Include="Assets\! Scripts\Actions\ChangeMaterial.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\SlimeEnemy.cs" />
     <Compile Include="Assets\! Scripts\Actions\ToggleParticle.cs" />
-    <Compile Include="Assets\! Scripts\Clock.cs" />
     <Compile Include="Assets\! Scripts\Actions\SpawnObject.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\Projectile.cs" />
     <Compile Include="Assets\! Scripts\Immersion\PlantSocketInteractor.cs" />
     <Compile Include="Assets\! Spells\Scripts\SpellsManager.cs" />
     <Compile Include="Assets\! Scripts\Actions\MatchRotation.cs" />
     <Compile Include="Assets\! Scripts\Actions\ConvertValueToHue.cs" />
     <Compile Include="Assets\! Scripts\Actions\LoadScene.cs" />
     <Compile Include="Assets\! Scripts\Altar - BLUE\AltarTeleport.cs" />
+    <Compile Include="Assets\! Scripts\Controls\AcceleratingMoveProvider.cs" />
     <Compile Include="Assets\! Scripts\Dungeons Scripts\DungeonRoom.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\RewindParticleSystemSimple.cs" />
     <Compile Include="Assets\! Scripts\Immersion\DelayedEvent.cs" />
     <Compile Include="Assets\! Scripts\Alchemy\ParchmentPaper.cs" />
     <Compile Include="Assets\! Scripts\Inventory\StorableObject.cs" />
     <Compile Include="Assets\! Scripts\Actions\FadeCanvasInstance.cs" />
-    <Compile Include="Assets\Enemy\Scripts\PlayerController.cs" />
     <Compile Include="Assets\! Scripts\Actions\ToggleInterface.cs" />
     <Compile Include="Assets\! Scripts\UI\ActiveEffectsSlot.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\DummyEnemy.cs" />
     <Compile Include="Assets\! Scripts\Actions\ScaleObject.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\TransformNoise.cs" />
     <Compile Include="Assets\! Spells\Scripts\SpellObject.cs" />
@@ -160,11 +165,14 @@
     <Compile Include="Assets\! Scripts\Immersion\OnLandPlaySound.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\TrailRenderers.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\ParticleSystemTimeRemap.cs" />
-    <Compile Include="Assets\Enemy\Scripts\SlimeEnemy.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\Health.cs" />
     <Compile Include="Assets\! Scripts\Testing\Notes.cs" />
     <Compile Include="Assets\! Scripts\Conditions\OnTimedInterval.cs" />
     <Compile Include="Assets\! Scripts\Alchemy\DrawableLine.cs" />
     <Compile Include="Assets\! Scripts\Conditions\OnSceneLoad.cs" />
+    <Compile Include="Assets\! Scripts\Immersion\ItemHoldingManager.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\NormalSkeleton.cs" />
     <Compile Include="Assets\! Scripts\Managers\PotionMaterialsManager.cs" />
     <Compile Include="Assets\! Scripts\Actions\CreateTrail.cs" />
     <Compile Include="Assets\! Scripts\UI\ButtonEventAttacher.cs" />
@@ -185,18 +193,18 @@
     <Compile Include="Assets\! Scripts\Managers\VolumeManager.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\RendererSortingOrder.cs" />
     <Compile Include="Assets\! Scripts\Dungeons Scripts\DungeonSpawnPoint.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\Enemy.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\DestroyOnTrailsDestroyed.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\AnimatedLight.cs" />
     <Compile Include="Assets\! Scripts\Immersion\GlowableObject.cs" />
     <Compile Include="Assets\! Scripts\Inventory\StorableData.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\RewindParticleSystemSuperSimple.cs" />
     <Compile Include="Assets\! Scripts\Altar - RED\SpellSlotAltar.cs" />
-    <Compile Include="Assets\Enemy\Scripts\CameraDamageRaycast.cs" />
+    <Compile Include="Assets\! Scripts\UI\DayTimeUIChecker.cs" />
     <Compile Include="Assets\! Scripts\Managers\MenuUIManager.cs" />
-    <Compile Include="Assets\Enemy\Scripts\AlwaysFaceCamera.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\PerlinNoise.cs" />
-    <Compile Include="Assets\Enemy\Scripts\SimplePetNavMesh.cs" />
     <Compile Include="Assets\! Scripts\Inventory\HatInventoryUI.cs" />
+    <Compile Include="Assets\! Scripts\Dungeons Scripts\DungeonMusicManager.cs" />
     <Compile Include="Assets\! Scripts\Actions\SetInteractionLayer.cs" />
     <Compile Include="Assets\! Scripts\Immersion\LevitatableObject.cs" />
     <Compile Include="Assets\! Scripts\Immersion\MidasedObject.cs" />
@@ -204,9 +212,9 @@
     <Compile Include="Assets\! Scripts\Immersion\BoundaryTP.cs" />
     <Compile Include="Assets\! Scripts\Managers\DayNightManager.cs" />
     <Compile Include="Assets\! Spells\Scripts\DefaultSpellsScript.cs" />
-    <Compile Include="Assets\Enemy\Scripts\Projectile.cs" />
     <Compile Include="Assets\! Scripts\Altar - RED\IngreAltarButton.cs" />
     <Compile Include="Assets\! Scripts\Managers\TurnModeManager.cs" />
+    <Compile Include="Assets\! Scripts\Alchemy\MeleeWeapon.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\DestroyOnParticlesDead.cs" />
     <Compile Include="Assets\! Scripts\Managers\LoadingScreenManager.cs" />
     <Compile Include="Assets\! Spells\Scripts\SpellData\DefaultSpellData.cs" />
@@ -214,6 +222,7 @@
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\Billboard.cs" />
     <Compile Include="Assets\! Scripts\Actions\PlaySoundsFromList.cs" />
     <Compile Include="Assets\! Scripts\Managers\DayNightAmbience.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\SkeletonEnemy.cs" />
     <Compile Include="Assets\! Scripts\Immersion\Frog.cs" />
     <Compile Include="Assets\! Scripts\Player\PlayerRightHand.cs" />
     <Compile Include="Assets\! Scripts\Actions\FadeCanvasOnOverlap.cs" />
@@ -225,6 +234,7 @@
     <Compile Include="Assets\! Scripts\Player\PlayerLeftHand.cs" />
     <Compile Include="Assets\! Scripts\Altar - BLUE\Portal.cs" />
     <Compile Include="Assets\! Scripts\Actions\PlayQuickSound.cs" />
+    <Compile Include="Assets\WX&apos;s File\Scripts\PlayerController.cs" />
     <Compile Include="Assets\! Scripts\Testing\TeleportAreaWithFade.cs" />
     <Compile Include="Assets\! Scripts\UI\Billboard.cs" />
     <Compile Include="Assets\! Scripts\Conditions\OnPull.cs" />
@@ -251,6 +261,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
     <None Include="Assets\MekaruStudios\CustomizableMonsters\CustomizableSlimes\Shader\SlimeShader\Lighting.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
@@ -261,11 +272,13 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\QuickOutline\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\QuickOutline\Resources\Shaders\OutlineFill.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
@@ -1544,6 +1557,14 @@
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.csproj">
       <Project>{CEB66543-0DA8-7C82-BC63-D1B439A19B51}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityUIExtensions.editor.csproj">
+      <Project>{38AC1924-13E8-7776-170D-10FFB74C234E}</Project>
+      <Name>UnityUIExtensions.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityUIExtensions.csproj">
+      <Project>{D6167D4B-948F-F52E-BF3F-82FDE73EDC4E}</Project>
+      <Name>UnityUIExtensions</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
       <Project>{762CC3A4-32B3-2570-1612-72D23BCC85F1}</Project>
