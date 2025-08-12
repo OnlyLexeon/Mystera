@@ -553,30 +553,55 @@ public abstract class Enemy : MonoBehaviour
     {
         if (isDead) return;
 
-        // 检查是否在无敌时间内
+        if (enableDebugLogs)
+        {
+            Debug.Log($"[ATTACKER_DEBUG] {gameObject.name} - OnTakeDamageWithAttacker called");
+            Debug.Log($"[ATTACKER_DEBUG] Attacker: {(attacker != null ? attacker.name : "null")}");
+            Debug.Log($"[ATTACKER_DEBUG] isDead: {isDead}, isInvincible: {isInvincible}");
+        }
+
+        // 重要：先处理仇恨系统，不管是否无敌
+        if (attacker != null)
+        {
+            Transform attackerTransform = attacker.transform;
+
+            if (enableDebugLogs)
+            {
+                Debug.Log($"[ATTACKER_DEBUG] Checking if {attackerTransform.name} is valid target");
+            }
+
+            if (IsValidTarget(attackerTransform))
+            {
+                if (enableDebugLogs)
+                {
+                    Debug.Log($"[ATTACKER_DEBUG] {attackerTransform.name} is valid, setting hate target");
+                }
+
+                SetHateTarget(attackerTransform);
+                AlertNearbyAllies(attackerTransform);
+            }
+            else
+            {
+                if (enableDebugLogs)
+                {
+                    Debug.Log($"[ATTACKER_DEBUG] {attackerTransform.name} is NOT valid target");
+                }
+            }
+        }
+
+        // 然后检查是否在无敌时间内（只影响伤害，不影响仇恨）
         if (isInvincible)
         {
             if (enableDebugLogs)
             {
                 Debug.Log($"[INVINCIBILITY] {gameObject.name} ignored damage from {(attacker != null ? attacker.name : "unknown")} during invincibility");
             }
-            return;
+            return; // 只是不造成伤害，但仇恨已经设置了
         }
 
         if (enableDebugLogs)
         {
             Debug.Log($"[DAMAGE] {gameObject.name} took {damage} damage from {(attacker != null ? attacker.name : "unknown")}");
-        }
-
-        if (attacker != null)
-        {
-            Transform attackerTransform = attacker.transform;
-
-            if (IsValidTarget(attackerTransform))
-            {
-                SetHateTarget(attackerTransform);
-                AlertNearbyAllies(attackerTransform);
-            }
         }
 
         // 调用基础伤害处理
