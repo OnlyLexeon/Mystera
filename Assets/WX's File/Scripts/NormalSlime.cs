@@ -21,6 +21,34 @@ public class NormalSlime : Enemy
         }
     }
 
+    protected override System.Collections.IEnumerator FlashRed()
+{
+    Renderer[] renderers = GetComponentsInChildren<Renderer>();
+    Color[] originalColors = new Color[renderers.Length];
+    
+    // 保存原始颜色
+    for (int i = 0; i < renderers.Length; i++)
+    {
+        if (renderers[i]?.material != null)
+        {
+            originalColors[i] = renderers[i].material.color;
+            // 使用白色更明显
+            renderers[i].material.color = Color.white;
+        }
+    }
+    
+    yield return new WaitForSeconds(0.1f);
+    
+    // 恢复原始颜色
+    for (int i = 0; i < renderers.Length; i++)
+    {
+        if (renderers[i]?.material != null)
+        {
+            renderers[i].material.color = originalColors[i];
+        }
+    }
+}
+
     // 重写死亡方法
     protected override void OnDeath()
     {

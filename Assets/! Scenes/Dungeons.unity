@@ -266,6 +266,10 @@ PrefabInstance:
       propertyPath: globalVolume
       value: 
       objectReference: {fileID: 328752404}
+    - target: {fileID: 1150023660077506511, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
+      propertyPath: maxVignetteIntensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1602900890340213522, guid: 691e6e40bf69a4c4188a871576dd8cb1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -32,7 +32,11 @@ public class Health : MonoBehaviour
     public float maxVignetteIntensity = 0.5f;
     public float lowHealthThreshold = 0.3f;
     public float lowHealthMinIntensity = 0.15f;
-    
+
+    [Header("Vignette Color")]
+    public Color vignetteHurtColor = Color.red;
+
+
     [Header("镜头抖动设置")]
     public Transform cameraTransform; // 如果为空，会自动查找玩家的相机
     public float shakeDuration = 0.3f;
@@ -48,6 +52,7 @@ public class Health : MonoBehaviour
     private Coroutine cameraShakeCoroutine;
     private bool isDead = false;
     private bool canRespawn = false;
+
     
     // 事件委托
     public event Action OnDeath;

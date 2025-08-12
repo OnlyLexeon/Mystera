@@ -1023,7 +1023,7 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    protected IEnumerator FlashRed()
+    protected virtual IEnumerator FlashRed()
     {
         Renderer renderer = GetComponentInChildren<Renderer>();
         if (renderer != null && renderer.material != null)

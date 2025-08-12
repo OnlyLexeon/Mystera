@@ -17,10 +17,7 @@ public class AlwaysFaceCamera : MonoBehaviour
             targetCamera = Camera.main;
         }
 
-        if (targetCamera == null)
-        {
-            Debug.LogError("No camera assigned and no MainCamera found!");
-        }
+      
     }
 
     void LateUpdate()
