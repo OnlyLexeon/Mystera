@@ -244,7 +244,9 @@ public class Health : MonoBehaviour
         float elapsedTime = 0f;
         float healthPercentage = GetHealthPercentage();
         float minIntensity = healthPercentage < lowHealthThreshold ? lowHealthMinIntensity : 0f;
-        
+
+        vignette.color.value = vignetteHurtColor;
+
         float[] keyTimes = { 0f, 0.3f, 0.6f, 1f };
         float[] keyValues = { 
             vignette.intensity.value,
