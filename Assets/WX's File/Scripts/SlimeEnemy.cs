@@ -194,7 +194,7 @@ public class SlimeEnemy : Enemy
     
     void UpdateMovementSound()
     {
-        if (movementAudioSource == null || !playMovementSound || isDead || isStunned) 
+        if (movementAudioSource == null || !playMovementSound || isDead) 
         {
             if (movementAudioSource != null && movementAudioSource.isPlaying)
             {

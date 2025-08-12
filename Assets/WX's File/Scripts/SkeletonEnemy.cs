@@ -96,12 +96,7 @@ public class SkeletonEnemy : Enemy
             currentAttackRoutine = null;
         }
         
-        if (stunCoroutine != null)
-        {
-            StopCoroutine(stunCoroutine);
-            stunCoroutine = null;
-        }
-        
+  
         // 停止巡逻协程
         StopCoroutine("PatrolRoutine");
         
@@ -218,7 +213,7 @@ public class SkeletonEnemy : Enemy
         currentTarget = null;
         hateTarget = null;
         isAlerted = false;
-        isStunned = false;
+   
         
         // 清空目标记录
         potentialTargets.Clear();

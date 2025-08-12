@@ -34,7 +34,7 @@ public abstract class Enemy : MonoBehaviour
     public float patrolSpeed = 2f;
     public float attackRange = 3f;
     public float attackCooldown = 2f;
-    public float meleeAttackDelay = 0.0f;
+    public float meleeAttackDelay = 0.5f;
     public int meleeDamage = 10;
     public float stoppingDistance = 1.2f;
     public bool useEdgeToEdgeDistance = true;
@@ -45,8 +45,8 @@ public abstract class Enemy : MonoBehaviour
     public AudioClip[] hurtSounds;        // 受伤音效数组（随机播放）
     public AudioClip deathSound;          // 死亡音效
     public float combatSoundVolume = 1f;  // 战斗音效音量
-    [Range(0f, 1f)] public float attackSoundChance = 1.0f;  // 攻击音效播放概率
-    public float minSoundInterval = 0.05f; // 音效最小间隔时间（避免音效重叠）
+    [Range(0f, 1f)] public float attackSoundChance = 0.8f;  // 攻击音效播放概率
+    public float minSoundInterval = 0.3f; // 音效最小间隔时间（避免音效重叠）
 
     [Header("Animation Parameters")]
     public string isMovingParam = "isMoving";
@@ -57,7 +57,6 @@ public abstract class Enemy : MonoBehaviour
     public string hitTrigger = "hit";
 
     [Header("Hit Effect Settings")]
-    public float hitStunDuration = 1f;
     public float invincibilityDuration = 0.4f;  // 无敌时间
     public int particleCount = 20;
     public float particleSize = 0.1f;
@@ -95,8 +94,6 @@ public abstract class Enemy : MonoBehaviour
     protected float detectionInterval = 0.3f;
     protected LayerMask targetLayers;
     protected Coroutine currentAttackRoutine;
-    protected bool isStunned = false;
-    protected Coroutine stunCoroutine;
 
     // Invincibility system
     protected float lastDamageTime = -999f;
@@ -201,7 +198,6 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         if (isDead) return;
-        if (isStunned) return;
 
         // 更新无敌状态
         UpdateInvincibility();
@@ -540,12 +536,11 @@ public abstract class Enemy : MonoBehaviour
         // 播放受伤音效
         PlayHurtSound();
 
-        // 触发受击硬直
-        if (stunCoroutine != null)
+        // 播放受击动画（但不会硬直）
+        if (!string.IsNullOrEmpty(hitTrigger))
         {
-            StopCoroutine(stunCoroutine);
+            animator.SetTrigger(hitTrigger);
         }
-        stunCoroutine = StartCoroutine(HitStunRoutine());
 
         // 生成受击粒子效果
         CreateHitParticles();
@@ -606,17 +601,14 @@ public abstract class Enemy : MonoBehaviour
 
         if (currentState == State.Patrol || currentState == State.Chase)
         {
-            if (!isStunned)
-            {
-                StopAllCoroutines();
-                currentState = State.Chase;
-                agent.speed = chaseSpeed;
-                agent.isStopped = false;
+            StopAllCoroutines();
+            currentState = State.Chase;
+            agent.speed = chaseSpeed;
+            agent.isStopped = false;
 
-                if (agent.enabled && agent.isOnNavMesh)
-                {
-                    agent.SetDestination(lastKnownTargetPosition);
-                }
+            if (agent.enabled && agent.isOnNavMesh)
+            {
+                agent.SetDestination(lastKnownTargetPosition);
             }
         }
 
@@ -814,30 +806,25 @@ public abstract class Enemy : MonoBehaviour
             );
             transform.LookAt(lookPos);
 
-            // 只播放攻击动画，不播放音效
-            TriggerAttackAnimation();
+            // 播放攻击动画
+            PerformMeleeAttack();
 
             yield return new WaitForSeconds(meleeAttackDelay);
 
-            // 检查距离并同时播放音效和造成伤害
+            // 检查距离并造成伤害
             currentDistance = Vector3.Distance(transform.position, currentTarget.position);
             if (currentDistance <= attackRange * 1.2f && IsValidTarget(currentTarget))
             {
-                PlayAttackSound();  // 在这里播放音效
-                DealMeleeDamage();  // 同时造成伤害
+                DealMeleeDamage();
             }
 
             lastAttackTime = Time.time;
-            // yield return new WaitForSeconds(0.5f);  // 注释掉这行，减少延迟
+            yield return new WaitForSeconds(0.5f);
         }
 
         agent.isStopped = false;
         currentState = State.Chase;
         currentAttackRoutine = null;
-    }
-    protected virtual void TriggerAttackAnimation()
-    {
-        animator.SetTrigger(attack03Trigger);
     }
 
     protected virtual void PerformMeleeAttack()
@@ -971,37 +958,6 @@ public abstract class Enemy : MonoBehaviour
     #endregion
 
     #region Effects
-    protected virtual IEnumerator HitStunRoutine()
-    {
-        isStunned = true;
-
-        if (currentAttackRoutine != null)
-        {
-            StopCoroutine(currentAttackRoutine);
-            currentAttackRoutine = null;
-        }
-
-        agent.isStopped = true;
-        agent.velocity = Vector3.zero;
-
-        if (!string.IsNullOrEmpty(hitTrigger))
-        {
-            animator.SetTrigger(hitTrigger);
-        }
-
-        yield return new WaitForSeconds(hitStunDuration);
-
-        isStunned = false;
-        agent.isStopped = false;
-
-        if (currentState == State.Chase && currentTarget != null)
-        {
-            agent.SetDestination(lastKnownTargetPosition);
-        }
-
-        stunCoroutine = null;
-    }
-
     protected void CreateHitParticles()
     {
         Vector3 hitPoint = transform.position + Vector3.up * 1f;
@@ -1030,9 +986,9 @@ public abstract class Enemy : MonoBehaviour
             rb.mass = 0.1f;
 
             Vector3 randomDirection = new Vector3(
-                Random.Range(-2f, 2f),
-                Random.Range(0.3f, 2f),
-                Random.Range(-2f, 2f)
+                Random.Range(-1f, 1f),
+                Random.Range(0.5f, 1.5f),
+                Random.Range(-1f, 1f)
             ).normalized;
 
             rb.linearVelocity = randomDirection * particleSpeed * Random.Range(0.8f, 1.2f);
