@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 1728700771820516403}
   - component: {fileID: 8179582378773131649}
   - component: {fileID: 7707474902387473751}
-  - component: {fileID: 1464234506244810676}
   - component: {fileID: 5397073788124679324}
+  - component: {fileID: 5740927436735230683}
+  - component: {fileID: 7867158828392064554}
+  - component: {fileID: 5468409430262042982}
   m_Layer: 0
   m_Name: Chair_05
   m_TagString: Untagged
@@ -88,28 +90,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1464234506244810676
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2238774848667802588}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 4223162519f0c7048aae61fd40b1a884, type: 3}
 --- !u!54 &5397073788124679324
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -137,3 +117,67 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!65 &5740927436735230683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238774848667802588}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.48336235, y: 0.4344429, z: 0.4414626}
+  m_Center: {x: -0.004958108, y: 0.21745344, z: -0.0047534555}
+--- !u!65 &7867158828392064554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238774848667802588}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.48336235, y: 0.87903553, z: 0.09230192}
+  m_Center: {x: -0.004958108, y: 0.43974975, z: -0.1793338}
+--- !u!114 &5468409430262042982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238774848667802588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b737542b103eed45bcfca6820404c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flammableByCollision: 1
+  flammableTime: 2
+  flammableTimer: 0
+  isOnFire: 0
+  health: 7.5
+  isBurned: 0
+  particleFire: {fileID: 785221139251955134, guid: edd1d166a8f073e458f105731aecfba8, type: 3}
+  particleScale: 1.5
+  burnedSound: {fileID: 8300000, guid: 697a4644771096642879f85a88c713a3, type: 3}
+  onFireSound: {fileID: 8300000, guid: faafd00bcf091bf468767bfd6a7a28be, type: 3}

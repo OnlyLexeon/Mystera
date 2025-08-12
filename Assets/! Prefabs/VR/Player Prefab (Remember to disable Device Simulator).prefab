@@ -8352,7 +8352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5225508234889066865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14320,6 +14320,7 @@ MonoBehaviour:
   maxVignetteIntensity: 0.5
   lowHealthThreshold: 0.3
   lowHealthMinIntensity: 0.15
+  vignetteHurtColor: {r: 1, g: 0, b: 0, a: 1}
   cameraTransform: {fileID: 484425121859329498}
   shakeDuration: 0.3
   shakeIntensity: 0.15
@@ -14918,9 +14919,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4606944182049932823}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2457639800175106464
@@ -22694,7 +22695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4047132836655042855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22769,8 +22770,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -23523,7 +23524,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 200}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2166620302248619983
 MonoBehaviour:
@@ -24808,9 +24809,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4606944182049932823}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -10}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4445705770676754864
@@ -24868,8 +24869,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -31310,7 +31311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2508431913665981598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34390,6 +34391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23de1eb380a2927448da5cb0c7b3a96a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
   teleportCooldown: 1.2
   currentMode: 0
   continuousMoveProvider: {fileID: 2226541273879186879}
@@ -41129,11 +41131,11 @@ MonoBehaviour:
   RetryDungeonButton: {fileID: 2079288292725858482}
   killedByText: {fileID: 880949275771492283}
   UICamera: {fileID: 5512245079353334794}
-  defaultDuration: 3
+  defaultDuration: 2
   gameOverUI: {fileID: 9145125788026110859}
   noUI:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 12183
 --- !u!1 &7046345022249127692
 GameObject:
   m_ObjectHideFlags: 0
@@ -46530,13 +46532,14 @@ GameObject:
   - component: {fileID: 3605914986672833852}
   - component: {fileID: 3056610896769894205}
   - component: {fileID: 4324634922664169128}
+  - component: {fileID: 4101062325316648396}
   m_Layer: 5
   m_Name: Game Over UI Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4271458287218531277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46630,9 +46633,28 @@ CanvasGroup:
   m_GameObject: {fileID: 9145125788026110859}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 0
+  m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4101062325316648396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145125788026110859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &9149173450438491277
 GameObject:
   m_ObjectHideFlags: 0

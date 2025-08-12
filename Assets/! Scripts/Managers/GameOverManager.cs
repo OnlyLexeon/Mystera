@@ -53,34 +53,42 @@ public class GameOverManager : MonoBehaviour
     {
         isGameOver = true;
 
+        //disable moving
+        MovementManager.instance.DisableMovement();
+
         lastAttacker = attacker;
+        
+        gameOverUI.SetActive(true);
 
         //camera settings
         mainCamera.cullingMask = noUI;
         UICamera.farClipPlane = 5;
         UICamera.enabled = true;
 
-        StartCoroutine(CanvasFadeIn()); //fade canvas 3 seconds
+        StartCoroutine(DoCoroutines());
+    }
 
-        StartCoroutine(CameraFadeIn());
+    private IEnumerator DoCoroutines()
+    {
+        StartCoroutine(CanvasFadeIn(defaultDuration)); //fade canvas 3 seconds
+        StartCoroutine(CameraFadeIn(defaultDuration));
+
+        yield return new WaitForSeconds(defaultDuration);
 
         StartCoroutine(EnableButtons());
     }
 
     private IEnumerator EnableButtons()
     {
-        yield return new WaitForSeconds(defaultDuration);
-
         if (lastAttacker != null) killedByText.text = "by " + lastAttacker.name;
         else killedByText.text = "by Unknown";
+        yield return new WaitForSeconds(1);
+        killedByText.gameObject.SetActive(true);
 
         GoHomeButton.onClick.AddListener(GoHomeScene);
         RetryDungeonButton.onClick.AddListener(RetryDungeon);
-
         GoHomeButton.gameObject.SetActive(true);
-
         yield return new WaitForSeconds(1);
-
         RetryDungeonButton.gameObject.SetActive(true);
     }
 
@@ -94,21 +102,29 @@ public class GameOverManager : MonoBehaviour
         sceneController.LoadScene(sceneController.dungeonScene); //no need to input ID
     }
 
-    private IEnumerator CameraFadeIn()
+    private IEnumerator CameraFadeIn(float duration)
     {
         float elapsedTime = 0.0f;
 
-        cameraFar = 25;
+        float startFar = 25f;
+        float endFar = 2.5f;
 
-        while (cameraFar > 0.2f)
+        SetCameraFar(startFar);
+
+        while (elapsedTime < duration)
         {
-            SetCameraFar(elapsedTime / defaultDuration);
             elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+            cameraFar = Mathf.Lerp(startFar, endFar, t);
+            SetCameraFar(cameraFar);
             yield return null;
         }
+
+        SetCameraFar(endFar);
     }
 
-    private IEnumerator CanvasFadeIn()
+
+    private IEnumerator CanvasFadeIn(float duration)
     {
         float elapsedTime = 0.0f;
 
@@ -116,7 +132,7 @@ public class GameOverManager : MonoBehaviour
 
         while (alpha <= 1.0f)
         {
-            SetAlpha(elapsedTime / defaultDuration);
+            SetAlpha(elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

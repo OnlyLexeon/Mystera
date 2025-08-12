@@ -15,6 +15,8 @@ public class MovementManager : MonoBehaviour
         Teleport
     }
 
+    public bool canMove = true;
+
     [Header("Cooldown")]
     public float teleportCooldown = 1.2f;
     private float lastTeleportTime = -Mathf.Infinity;
@@ -38,6 +40,13 @@ public class MovementManager : MonoBehaviour
 
     private bool teleportRayActive = false;
 
+    public static MovementManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void OnEnable()
     {
         teleportActivate.action.performed += OnTeleportActivate;
@@ -60,8 +69,17 @@ public class MovementManager : MonoBehaviour
         teleportCancel.action.Disable();
     }
 
+    public void DisableMovement()
+    {
+        canMove = false;
+        continuousMoveProvider.enabled = false;
+        teleportationProvider.enabled = false;
+    }
+
     private void Update()
     {
+        if (!canMove) return;
+
         switch (currentMode)
         {
             case MovementMode.Continuous:
