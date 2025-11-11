@@ -12,7 +12,7 @@ public class DungeonMapGenerator : MonoBehaviour
     [Header("Room Settings")]
     public int minRooms = 5;
     public int maxRooms = 10;
-    public float borderOffset = -0.1f;
+    [Tooltip("Default: -0.5")] public float borderOffset = -0.5f;
     [Tooltip("Default: 50")] public int spawnAttempts = 100;
 
     [Header("Fail Safe Settings")]
@@ -319,7 +319,7 @@ public class DungeonMapGenerator : MonoBehaviour
 
 
 #if UNITY_EDITOR
-    [ContextMenu("Regenerate Dungeon")]
+    [ContextMenu("Clear Dungeon")]
     public void ClearDungeon()
     {
         foreach (DungeonRoom room in spawnedRooms)
