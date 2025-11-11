@@ -13,10 +13,10 @@ public class DungeonMapGenerator : MonoBehaviour
     public int minRooms = 5;
     public int maxRooms = 10;
     public float borderOffset = -0.1f;
-    public int spawnAttempts = 100;
+    [Tooltip("Default: 50")] public int spawnAttempts = 100;
 
     [Header("Fail Safe Settings")]
-    public int maxRegenerationAttempts = 10;
+    [Tooltip("Default: 10")] public int maxRegenerationAttempts = 10; //regenerate whole map if failed to have exit/spawn/confirmed rooms
     private int regenerationTries = 0;
 
     private List<DungeonRoom> spawnedRooms = new();
@@ -317,10 +317,13 @@ public class DungeonMapGenerator : MonoBehaviour
         InternalGenerate();
     }
 
-    void ClearDungeon()
+
+#if UNITY_EDITOR
+    [ContextMenu("Regenerate Dungeon")]
+    public void ClearDungeon()
     {
         foreach (DungeonRoom room in spawnedRooms)
-            if (room != null) Destroy(room.gameObject);
+            if (room != null) DestroyImmediate(room.gameObject);
 
         spawnedRooms.Clear();
         openConnectors.Clear();
@@ -328,22 +331,10 @@ public class DungeonMapGenerator : MonoBehaviour
         scheduledConfirmedRooms.Clear();
     }
 
-#if UNITY_EDITOR
     [ContextMenu("Regenerate Dungeon")]
     public void RegenerateDungeon()
     {
-        // Destroy previously spawned rooms
-        foreach (DungeonRoom room in spawnedRooms)
-        {
-            if (room != null)
-                DestroyImmediate(room.gameObject);
-        }
-
-        // Clean up state
-        spawnedRooms.Clear();
-        openConnectors.Clear();
-        confirmedRoomSpawnPoints.Clear();
-        scheduledConfirmedRooms.Clear();
+        ClearDungeon();
 
         Debug.Log("Dungeon cleared. Regenerating...");
         Generate();
