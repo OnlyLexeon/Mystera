@@ -228,12 +228,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3589ee9ac838c1948baffe2367dc7ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRoom: {fileID: 0}
-  exitRoom: {fileID: 0}
+  spawnRoom: {fileID: 2809761665781539431, guid: 91815a769f07c07499680576a0a35138, type: 3}
+  exitRoom: {fileID: 5777055608155821452, guid: 88247687673b3294bbba8ea0d93317df, type: 3}
   confirmedRooms:
-  - {fileID: 0}
-  - {fileID: 0}
-  emptyRooms: []
+  - {fileID: 1422004607655363726, guid: 61d242befd7d4384a9eba36a9fe3294a, type: 3}
+  - {fileID: 7669959323972676615, guid: 271c490d2f944dd42a89b28219c28769, type: 3}
+  emptyRooms:
+  - {fileID: 2445939977664700597, guid: 437e084ba21337a4892e53c7702755a1, type: 3}
+  - {fileID: 1003779618799175490, guid: c3ba52d106002cc49963846574390f6a, type: 3}
+  - {fileID: 9127114648112549455, guid: b2e8b949234dd504b86bb73127aee2f8, type: 3}
+  - {fileID: 8713898892064612652, guid: 02cd2acaa6c9a1f45a04cac15fb5f6ef, type: 3}
   minRooms: 0
   maxRooms: 0
   borderOffset: 0
