@@ -317,13 +317,22 @@ public class DungeonMapGenerator : MonoBehaviour
         InternalGenerate();
     }
 
+    public void KillAllMobs()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+            if (enemy != null) Destroy(enemy);
+    }
 
 #if UNITY_EDITOR
     [ContextMenu("Clear Dungeon")]
     public void ClearDungeon()
     {
         foreach (DungeonRoom room in spawnedRooms)
-            if (room != null) DestroyImmediate(room.gameObject);
+            if (room != null) Destroy(room.gameObject);
+
+        KillAllMobs();
 
         spawnedRooms.Clear();
         openConnectors.Clear();
