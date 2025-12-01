@@ -19,6 +19,9 @@ public class DungeonMapGenerator : MonoBehaviour
     [Tooltip("Default: 10")] public int maxRegenerationAttempts = 10; //regenerate whole map if failed to have exit/spawn/confirmed rooms
     private int regenerationTries = 0;
 
+    //[Header("Debug Tools")]
+    //public float spawnRoomDelay = 0.2f;
+
     private List<DungeonRoom> spawnedRooms = new();
     private List<DungeonConnector> openConnectors = new();
     private List<int> confirmedRoomSpawnPoints = new();
@@ -127,6 +130,7 @@ public class DungeonMapGenerator : MonoBehaviour
                 return false;
         }
 
+        //false = not enough rooms, true = enough
         return roomsPlaced >= minRooms;
     }
 

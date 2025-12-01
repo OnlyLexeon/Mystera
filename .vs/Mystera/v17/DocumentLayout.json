@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "D:\\Unity Projects\\Mystera\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\Unity Projects\\Mystera\\assets\\! scripts\\dungeons scripts\\dungeonroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\unity projects\\mystera\\assets\\! scripts\\dungeons scripts\\dungeonmapgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\dungeons scripts\\dungeonmapgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\unity projects\\mystera\\assets\\! scripts\\managers\\dungeonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\dungeonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\unity projects\\mystera\\assets\\! scripts\\dungeons scripts\\dungeonroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\dungeons scripts\\dungeonroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\unity projects\\mystera\\assets\\! scripts\\dungeons scripts\\dungeonconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\Unity Projects\\Mystera\\assets\\! scripts\\dungeons scripts\\dungeonconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\dungeons scripts\\dungeonconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,6 +31,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DungeonManager.cs",
+              "DocumentMoniker": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "ToolTip": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAcwFAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T15:27:42.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DungeonMapGenerator.cs",
+              "DocumentMoniker": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
+              "ToolTip": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T15:22:16.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DungeonConnector.cs",
               "DocumentMoniker": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonConnector.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\DungeonConnector.cs",
@@ -30,18 +64,17 @@
               "RelativeToolTip": "Assets\\! Scripts\\Dungeons Scripts\\DungeonConnector.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T14:16:46.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-01T14:16:46.306Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "DungeonRoom.cs",
               "DocumentMoniker": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
               "ToolTip": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
               "RelativeToolTip": "Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBMAAAAAAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwBMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-06T10:39:33.098Z",
               "EditorCaption": ""
