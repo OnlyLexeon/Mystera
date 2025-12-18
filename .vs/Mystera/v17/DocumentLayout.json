@@ -1,22 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Unity Projects\\Mystera\\",
+  "WorkspaceRootPath": "C:\\Unity Projects\\Mystera\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\unity projects\\mystera\\assets\\! scripts\\dungeons scripts\\dungeonmapgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\dungeons scripts\\dungeonmapgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\dungeons scripts\\dungeonmapgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\unity projects\\mystera\\assets\\! scripts\\managers\\dungeonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\dungeonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|c:\\unity projects\\mystera\\assets\\! scripts\\! new potions\\effectsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\! new potions\\effectsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|d:\\unity projects\\mystera\\assets\\! scripts\\dungeons scripts\\dungeonroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\! new potions\\potion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\! new potions\\potion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\alchemy\\potiondrinker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\alchemy\\potiondrinker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\alchemy\\playerdrink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\alchemy\\playerdrink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\inventory\\hatinventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\inventory\\hatinventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\inventory\\inventoryslotui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\inventory\\inventoryslotui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\dungeons scripts\\dungeonroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\dungeons scripts\\dungeonroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|D:\\Unity Projects\\Mystera\\assets\\! scripts\\dungeons scripts\\dungeonconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\inventory\\storabledatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\inventory\\storabledatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\alchemy\\pot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\alchemy\\pot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\dungeons scripts\\dungeonconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\dungeons scripts\\dungeonconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|C:\\Unity Projects\\Mystera\\assets\\! scripts\\managers\\dungeonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD53129-2BDF-E2B8-EE42-95FB9DE2297E}|Assembly-CSharp.csproj|solutionrelative:assets\\! scripts\\managers\\dungeonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +62,165 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DungeonManager.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Managers\\DungeonManager.cs",
-              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\DungeonManager.cs",
-              "ToolTip": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Managers\\DungeonManager.cs",
-              "RelativeToolTip": "Assets\\! Scripts\\Managers\\DungeonManager.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAAAcwFAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T15:27:42.259Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "DungeonMapGenerator.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
-              "ToolTip": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
               "RelativeToolTip": "Assets\\! Scripts\\Dungeons Scripts\\DungeonMapGenerator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAApAAAA",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAawGEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T15:22:16.268Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Player\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Player\\Player.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Player\\Player.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Player\\Player.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:31:25.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerDrink.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Alchemy\\PlayerDrink.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Alchemy\\PlayerDrink.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Alchemy\\PlayerDrink.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Alchemy\\PlayerDrink.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:31:08.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EffectsManager.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\! New Potions\\EffectsManager.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\! New Potions\\EffectsManager.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\! New Potions\\EffectsManager.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\! New Potions\\EffectsManager.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAewFsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:31:03.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InventorySlotUI.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Inventory\\InventorySlotUI.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Inventory\\InventorySlotUI.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Inventory\\InventorySlotUI.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Inventory\\InventorySlotUI.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAjwE0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:25:18.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HatInventoryManager.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Inventory\\HatInventoryManager.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Inventory\\HatInventoryManager.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Inventory\\HatInventoryManager.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Inventory\\HatInventoryManager.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAIwGoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:19:03.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StorableDatabase.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Inventory\\StorableDatabase.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Inventory\\StorableDatabase.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Inventory\\StorableDatabase.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Inventory\\StorableDatabase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:19:04.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Pot.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Alchemy\\Pot.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Alchemy\\Pot.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Alchemy\\Pot.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Alchemy\\Pot.cs",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:04:16.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DungeonManager.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Managers\\DungeonManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T15:27:42.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Potion.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\! New Potions\\Potion.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\! New Potions\\Potion.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\! New Potions\\Potion.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\! New Potions\\Potion.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAwwBEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:31:34.703Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "PotionDrinker.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Alchemy\\PotionDrinker.cs",
+              "RelativeDocumentMoniker": "Assets\\! Scripts\\Alchemy\\PotionDrinker.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Alchemy\\PotionDrinker.cs",
+              "RelativeToolTip": "Assets\\! Scripts\\Alchemy\\PotionDrinker.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:31:40.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "DungeonConnector.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonConnector.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonConnector.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\DungeonConnector.cs",
-              "ToolTip": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonConnector.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonConnector.cs",
               "RelativeToolTip": "Assets\\! Scripts\\Dungeons Scripts\\DungeonConnector.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-01T14:16:46.306Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "DungeonRoom.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
               "RelativeDocumentMoniker": "Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
-              "ToolTip": "D:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
+              "ToolTip": "C:\\Unity Projects\\Mystera\\Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
               "RelativeToolTip": "Assets\\! Scripts\\Dungeons Scripts\\DungeonRoom.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwBMAAAAAAAAA",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T10:39:33.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-06T10:39:33.098Z"
             }
           ]
         }

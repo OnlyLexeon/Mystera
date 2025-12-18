@@ -12,7 +12,7 @@ public class DungeonMapGenerator : MonoBehaviour
     [Header("Room Settings")]
     public int minRooms = 5;
     public int maxRooms = 10;
-    [Tooltip("Default: -0.5")] public float borderOffset = -0.5f;
+    [Tooltip("Default: -0.5")] public float borderOffset = -0.5f; //negative = border get smaller when making checks | positive = increase border when check
     [Tooltip("Default: 50")] public int spawnAttempts = 100;
 
     [Header("Fail Safe Settings")]
@@ -29,6 +29,7 @@ public class DungeonMapGenerator : MonoBehaviour
     private int roomsPlaced = 0;
     private int maxTargetRooms;
     private Queue<(int roomIndex, GameObject prefab)> scheduledConfirmedRooms = new();
+    private int confirmedRoomsSpawned = 0;
 
 
     public void Generate()
@@ -42,6 +43,7 @@ public class DungeonMapGenerator : MonoBehaviour
         Debug.Log("==== Dungeon Generation Started ====");
 
         roomsPlaced = 0;
+        confirmedRoomsSpawned = 0;
         maxTargetRooms = Random.Range(minRooms, maxRooms + 1);
         Debug.Log($"Target room count: {maxTargetRooms}");
 
@@ -51,6 +53,14 @@ public class DungeonMapGenerator : MonoBehaviour
         if (!TryAddRooms())
         {
             FailAndRetry("Room generation failed.");
+            return;
+        }
+
+        if (confirmedRoomsSpawned < confirmedRooms.Count)
+        {
+            FailAndRetry(
+                $"Only spawned {confirmedRoomsSpawned}/{confirmedRooms.Count} confirmed rooms."
+            );
             return;
         }
 
@@ -161,12 +171,13 @@ public class DungeonMapGenerator : MonoBehaviour
         if (scheduledConfirmedRooms.Count > 0 && scheduledConfirmedRooms.Peek().roomIndex == roomsPlaced)
         {
             var scheduled = scheduledConfirmedRooms.Dequeue();
-            //Debug.Log($"Spawning scheduled confirmed room: {scheduled.prefab.name}");
+            confirmedRoomsSpawned++;
+            Debug.Log($"Spawning scheduled confirmed room: {scheduled.prefab.name}");
             return scheduled.prefab;
         }
 
         var randomEmpty = emptyRooms[Random.Range(0, emptyRooms.Count)];
-       // Debug.Log($"Spawning empty room: {randomEmpty.name}");
+        Debug.Log($"Spawning empty room: {randomEmpty.name}");
         return randomEmpty;
     }
 
@@ -174,7 +185,7 @@ public class DungeonMapGenerator : MonoBehaviour
     {
         foreach (var conn in newRoom.connectors)
         {
-            //Debug.Log($"Trying {newRoom.name} connector {conn.name} -> Target {targetConn.name}");
+            Debug.Log($"Trying {newRoom.name} connector {conn.name} -> Target {targetConn.name}");
 
             AlignRoom(newRoom, conn, targetConn);
 
